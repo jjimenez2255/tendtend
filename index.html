@@ -177,6 +177,45 @@
             font-size: 14px;
         }
 
+        /* Category Bar */
+        .category-bar {
+            padding-top: 100px;
+            padding-bottom: 0;
+            position: relative;
+            z-index: 1;
+        }
+
+        .category-pills {
+            display: flex;
+            justify-content: center;
+            gap: 8px;
+            flex-wrap: wrap;
+        }
+
+        .category-pill {
+            padding: 10px 20px;
+            background: var(--bg-elevated);
+            border: 1px solid var(--border);
+            border-radius: 100px;
+            color: var(--text-secondary);
+            font-size: 14px;
+            font-weight: 500;
+            cursor: pointer;
+            transition: all 0.2s;
+            font-family: inherit;
+        }
+
+        .category-pill:hover {
+            border-color: var(--border-light);
+            color: var(--text);
+        }
+
+        .category-pill.active {
+            background: var(--accent);
+            border-color: var(--accent);
+            color: var(--bg);
+        }
+
         /* Hero */
         .hero {
             min-height: 100vh;
@@ -798,6 +837,95 @@
             border-color: var(--border-light);
         }
 
+        /* Meetup Banner */
+        .meetup-banner {
+            padding: 80px 0;
+            background: linear-gradient(135deg, rgba(34, 197, 94, 0.1) 0%, rgba(34, 197, 94, 0.02) 100%);
+            border-top: 1px solid var(--border);
+            border-bottom: 1px solid var(--border);
+        }
+
+        .meetup-content {
+            text-align: center;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        .meetup-badge {
+            display: inline-block;
+            padding: 6px 16px;
+            background: var(--accent);
+            color: var(--bg);
+            font-size: 12px;
+            font-weight: 600;
+            letter-spacing: 0.1em;
+            border-radius: 100px;
+            margin-bottom: 24px;
+        }
+
+        .meetup-banner h2 {
+            font-size: 48px;
+            font-weight: 700;
+            margin-bottom: 8px;
+        }
+
+        .meetup-subtitle {
+            font-size: 20px;
+            color: var(--text-secondary);
+            margin-bottom: 16px;
+        }
+
+        .meetup-desc {
+            color: var(--text-secondary);
+            margin-bottom: 32px;
+            line-height: 1.7;
+        }
+
+        .meetup-details {
+            display: flex;
+            justify-content: center;
+            gap: 32px;
+            margin-bottom: 32px;
+            flex-wrap: wrap;
+        }
+
+        .meetup-details span {
+            color: var(--text-secondary);
+            font-size: 14px;
+        }
+
+        .meetup-form {
+            display: flex;
+            gap: 12px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .meetup-form input {
+            padding: 14px 20px;
+            background: var(--bg);
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            color: var(--text);
+            font-size: 16px;
+            width: 280px;
+            font-family: inherit;
+        }
+
+        .meetup-form input:focus {
+            outline: none;
+            border-color: var(--accent);
+        }
+
+        .meetup-btn {
+            background: var(--accent);
+            color: var(--bg);
+        }
+
+        .meetup-btn:hover {
+            background: #16a34a;
+        }
+
         /* Footer */
         footer {
             padding: 24px 0;
@@ -936,81 +1064,6 @@
                 text-align: center;
             }
         }
-
-        /* Meetup Banner */
-        .meetup-banner {
-            padding: 80px 0;
-            background: linear-gradient(135deg, rgba(34, 197, 94, 0.1) 0%, rgba(34, 197, 94, 0.02) 100%);
-            border-top: 1px solid var(--border);
-            border-bottom: 1px solid var(--border);
-        }
-
-        .meetup-content {
-            text-align: center;
-            max-width: 700px;
-            margin: 0 auto;
-        }
-
-        .meetup-badge {
-            display: inline-block;
-            padding: 6px 16px;
-            background: var(--accent);
-            color: var(--bg);
-            font-size: 12px;
-            font-weight: 600;
-            letter-spacing: 0.1em;
-            border-radius: 100px;
-            margin-bottom: 24px;
-        }
-
-        .meetup-banner h2 {
-            font-size: 48px;
-            font-weight: 700;
-            margin-bottom: 8px;
-        }
-
-        .meetup-subtitle {
-            font-size: 20px;
-            color: var(--text-secondary);
-            margin-bottom: 16px;
-        }
-
-        .meetup-desc {
-            color: var(--text-secondary);
-            margin-bottom: 32px;
-            line-height: 1.7;
-        }
-
-        .meetup-details {
-            display: flex;
-            justify-content: center;
-            gap: 32px;
-            margin-bottom: 32px;
-            flex-wrap: wrap;
-        }
-
-        .meetup-details span {
-            color: var(--text-secondary);
-            font-size: 14px;
-        }
-
-        .meetup-btn {
-            background: var(--accent);
-            color: var(--bg);
-        }
-
-        .meetup-btn:hover {
-            background: #16a34a;
-        }
-
-        @media (max-width: 768px) {
-            .meetup-banner h2 {
-                font-size: 32px;
-            }
-            .meetup-details {
-                gap: 16px;
-            }
-        }
     </style>
 </head>
 <body>
@@ -1024,20 +1077,34 @@
                 <a href="#features" class="nav-link">Features</a>
                 <a href="#how" class="nav-link">How it works</a>
                 <a href="#pricing" class="nav-link">Pricing</a>
-                <a href="#cta" class="btn">Book Your Free Audit</a>
+                <a href="https://cal.com/clawdbotdfw/15min" target="_blank" class="btn">Book Your Free Audit</a>
             </div>
         </div>
     </nav>
+
+    <!-- Category Selector -->
+    <section class="category-bar">
+        <div class="container">
+            <div class="category-pills">
+                <button class="category-pill active" data-category="general">All Businesses</button>
+                <button class="category-pill" data-category="admin">Admin</button>
+                <button class="category-pill" data-category="legal">Legal</button>
+                <button class="category-pill" data-category="finance">Finance</button>
+                <button class="category-pill" data-category="sales">Sales</button>
+                <button class="category-pill" data-category="entrepreneur">Entrepreneurs</button>
+            </div>
+        </div>
+    </section>
 
     <!-- Hero -->
     <section class="hero">
         <div class="container">
             <div class="hero-label">AI automation for DFW businesses</div>
-            <h1>Your business, <span class="highlight">running while you sleep.</span></h1>
-            <p class="hero-sub">Tend runs your scheduling, follow-ups, invoicing, and customer responses — automatically, in the background, whether you're working or not.</p>
-            <p class="hero-punch">You don't prompt it. You don't open an app. It just runs.</p>
+            <h1 id="hero-headline">Your business, <span class="highlight">running while you sleep.</span></h1>
+            <p class="hero-sub" id="hero-sub">Tend runs your scheduling, follow-ups, invoicing, and customer responses — automatically, in the background, whether you're working or not.</p>
+            <p class="hero-punch" id="hero-punch">You don't prompt it. You don't open an app. It just runs.</p>
             <div class="hero-cta">
-                <a href="#cta" class="btn btn-lg">Book Your Free Audit</a>
+                <a href="https://cal.com/clawdbotdfw/15min" target="_blank" class="btn btn-lg">Book Your Free Audit</a>
                 <a href="#how" class="btn btn-ghost btn-lg">How it works</a>
             </div>
             <div class="hero-price">Starting at <strong>$200/mo</strong> · $500 one-time setup</div>
@@ -1194,7 +1261,7 @@
                         <div class="pricing-feature">Cancel anytime</div>
                     </div>
                     <div class="pricing-cta">
-                        <a href="#cta" class="btn btn-lg">Book Your Free Audit</a>
+                        <a href="#cta" class="btn btn-lg">Get Tend</a>
                     </div>
                 </div>
                 <div class="pricing-divider"></div>
@@ -1330,10 +1397,7 @@
         <div class="container">
             <h2>Ready to stop losing leads?</h2>
             <p>Book a free 15-minute audit. We'll show you exactly what's slipping through the cracks.</p>
-            <form class="cta-form" onsubmit="handleSubmit(event)">
-                <input type="email" placeholder="Enter your email" required>
-                <button type="submit" class="btn btn-lg">Book Your Free Audit</button>
-            </form>
+            <a href="https://cal.com/clawdbotdfw/15min" target="_blank" class="btn btn-lg">Book Your Free Audit</a>
         </div>
     </section>
 
@@ -1350,7 +1414,10 @@
                     <span>📅 March 2026</span>
                     <span>👥 100+ Attendees</span>
                 </div>
-                <a href="#meetup-register" class="btn btn-lg meetup-btn">Register for Free</a>
+                <form class="meetup-form" onsubmit="handleMeetupSignup(event)">
+                    <input type="email" placeholder="Enter your email to register" required>
+                    <button type="submit" class="btn btn-lg meetup-btn">Register for Free</button>
+                </form>
             </div>
         </div>
     </section>
@@ -1364,7 +1431,6 @@
                 <a href="#how">Process</a>
                 <a href="#pricing">Pricing</a>
                 <a href="#meetup">DFW Meetup</a>
-                <a href="/cdn-cgi/l/email-protection#6d05080101022d19080309430c04">Contact</a>
             </div>
         </div>
     </footer>
@@ -1383,3 +1449,65 @@
         function handleSubmit(e) {
             e.preventDefault();
             const email = e.target.querySelector('in
+put').value;
+            alert('Thanks! We\'ll be in touch soon.');
+            e.target.reset();
+        }
+
+        function handleMeetupSignup(e) {
+            e.preventDefault();
+            const email = e.target.querySelector('input').value;
+            alert('You\'re registered for the DFW AI Meetup! We\'ll send details to ' + email);
+            e.target.reset();
+        }
+
+        // Category switching
+        const categoryData = {
+            general: {
+                headline: 'Your business, <span class="highlight">running while you sleep.</span>',
+                sub: 'Tend runs your scheduling, follow-ups, invoicing, and customer responses — automatically, in the background, whether you\'re working or not.',
+                punch: 'You don\'t prompt it. You don\'t open an app. It just runs.'
+            },
+            admin: {
+                headline: 'Admin work, <span class="highlight">handled automatically.</span>',
+                sub: 'Scheduling, email responses, data entry, and follow-ups — running in the background while you focus on what matters.',
+                punch: 'Stop drowning in busywork. Let Tend handle it.'
+            },
+            legal: {
+                headline: 'Your firm, <span class="highlight">running while you sleep.</span>',
+                sub: 'Client intake, appointment scheduling, document follow-ups, and billing reminders — automated and compliant.',
+                punch: 'More billable hours. Less administrative overhead.'
+            },
+            finance: {
+                headline: 'Finance ops, <span class="highlight">on autopilot.</span>',
+                sub: 'Invoice generation, payment reminders, client follow-ups, and reporting — handled automatically, accurately, on time.',
+                punch: 'Close the books faster. Chase fewer payments.'
+            },
+            sales: {
+                headline: 'Never miss a lead, <span class="highlight">ever again.</span>',
+                sub: 'Instant lead response, automated follow-ups, meeting scheduling, and pipeline updates — 24/7, without lifting a finger.',
+                punch: 'Respond in 60 seconds. Close more deals.'
+            },
+            entrepreneur: {
+                headline: 'Run your business, <span class="highlight">not your inbox.</span>',
+                sub: 'Customer responses, scheduling, invoicing, and follow-ups — automated so you can focus on growth.',
+                punch: 'You started a business, not an admin job.'
+            }
+        };
+
+        document.querySelectorAll('.category-pill').forEach(pill => {
+            pill.addEventListener('click', function() {
+                document.querySelectorAll('.category-pill').forEach(p => p.classList.remove('active'));
+                this.classList.add('active');
+                
+                const category = this.dataset.category;
+                const data = categoryData[category];
+                
+                document.getElementById('hero-headline').innerHTML = data.headline;
+                document.getElementById('hero-sub').textContent = data.sub;
+                document.getElementById('hero-punch').textContent = data.punch;
+            });
+        });
+    </script>
+</body>
+</html>
