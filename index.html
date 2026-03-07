@@ -55,7 +55,7 @@
             font-family: 'Geist', -apple-system, BlinkMacSystemFont, sans-serif;
             background: var(--bg);
             color: var(--text);
-            line-height: 1.5;
+            line-height: 1.8;
             -webkit-font-smoothing: antialiased;
         }
 
@@ -75,9 +75,9 @@
         }
 
         .container {
-            max-width: 1200px;
+            max-width: 1100px;
             margin: 0 auto;
-            padding: 0 24px;
+            padding: 0 32px;
             position: relative;
             z-index: 1;
         }
@@ -172,29 +172,23 @@
         }
 
         .btn-lg {
-            height: 44px;
-            padding: 0 24px;
-            font-size: 14px;
+            height: 52px;
+            padding: 0 32px;
+            font-size: 15px;
         }
 
-        /* Category Bar */
-        .category-bar {
-            padding-top: 100px;
-            padding-bottom: 0;
-            position: relative;
-            z-index: 1;
-        }
-
+        /* Category Pills (inside hero) */
         .category-pills {
             display: flex;
             justify-content: center;
-            gap: 8px;
+            gap: 10px;
             flex-wrap: wrap;
+            margin-bottom: 32px;
         }
 
         .category-pill {
-            padding: 10px 20px;
-            background: var(--bg-elevated);
+            padding: 14px 24px;
+            background: transparent;
             border: 1px solid var(--border);
             border-radius: 100px;
             color: var(--text-secondary);
@@ -203,16 +197,20 @@
             cursor: pointer;
             transition: all 0.2s;
             font-family: inherit;
+            min-height: 48px;
+            display: flex;
+            align-items: center;
         }
 
         .category-pill:hover {
-            border-color: var(--border-light);
+            border-color: var(--text-secondary);
             color: var(--text);
+            background: var(--bg-elevated);
         }
 
         .category-pill.active {
-            background: var(--accent);
-            border-color: var(--accent);
+            background: var(--text);
+            border-color: var(--text);
             color: var(--bg);
         }
 
@@ -222,7 +220,7 @@
             display: flex;
             flex-direction: column;
             justify-content: center;
-            padding: 120px 0 80px;
+            padding: 160px 0 120px;
             position: relative;
         }
 
@@ -329,21 +327,27 @@
         .hero-sub {
             font-size: 18px;
             color: var(--text-secondary);
-            max-width: 480px;
-            line-height: 1.6;
-            margin-bottom: 16px;
-        }
-
-        .hero-punch {
-            font-family: 'Geist Mono', monospace;
-            font-size: 14px;
-            color: var(--accent);
+            max-width: 520px;
+            line-height: 1.7;
             margin-bottom: 48px;
         }
 
         .hero-cta {
             display: flex;
-            gap: 12px;
+            flex-direction: column;
+            align-items: flex-start;
+            gap: 20px;
+        }
+
+        .hero-cta .text-link {
+            color: var(--text-secondary);
+            text-decoration: none;
+            font-size: 15px;
+            transition: color 0.2s;
+        }
+
+        .hero-cta .text-link:hover {
+            color: var(--text);
         }
 
         .hero-visual {
@@ -406,11 +410,11 @@
 
         /* Section */
         .section {
-            padding: 120px 0;
+            padding: 140px 0;
         }
 
         .section-header {
-            margin-bottom: 64px;
+            margin-bottom: 80px;
         }
 
         .section-label {
@@ -902,13 +906,14 @@
         }
 
         .meetup-form input {
-            padding: 14px 20px;
+            padding: 16px 24px;
             background: var(--bg);
             border: 1px solid var(--border);
             border-radius: 8px;
             color: var(--text);
             font-size: 16px;
-            width: 280px;
+            width: 300px;
+            min-height: 52px;
             font-family: inherit;
         }
 
@@ -1077,14 +1082,17 @@
                 <a href="#features" class="nav-link">Features</a>
                 <a href="#how" class="nav-link">How it works</a>
                 <a href="#pricing" class="nav-link">Pricing</a>
-                <a href="https://cal.com/clawdbotdfw/15min" target="_blank" class="btn">Book Your Free Audit</a>
+                <a href="https://cal.com/clawdbotdfw/15min" target="_blank" class="btn">Book a Call</a>
             </div>
         </div>
     </nav>
 
-    <!-- Category Selector -->
-    <section class="category-bar">
+    <!-- Hero -->
+    <section class="hero">
         <div class="container">
+            <div class="hero-label">AI automation for DFW businesses</div>
+            
+            <!-- Category Pills inside hero -->
             <div class="category-pills">
                 <button class="category-pill active" data-category="general">All Businesses</button>
                 <button class="category-pill" data-category="admin">Admin</button>
@@ -1093,21 +1101,15 @@
                 <button class="category-pill" data-category="sales">Sales</button>
                 <button class="category-pill" data-category="entrepreneur">Entrepreneurs</button>
             </div>
-        </div>
-    </section>
-
-    <!-- Hero -->
-    <section class="hero">
-        <div class="container">
-            <div class="hero-label">AI automation for DFW businesses</div>
+            
             <h1 id="hero-headline">Your business, <span class="highlight">running while you sleep.</span></h1>
             <p class="hero-sub" id="hero-sub">Tend runs your scheduling, follow-ups, invoicing, and customer responses — automatically, in the background, whether you're working or not.</p>
-            <p class="hero-punch" id="hero-punch">You don't prompt it. You don't open an app. It just runs.</p>
+            
             <div class="hero-cta">
                 <a href="https://cal.com/clawdbotdfw/15min" target="_blank" class="btn btn-lg">Book Your Free Audit</a>
-                <a href="#how" class="btn btn-ghost btn-lg">How it works</a>
+                <a href="#how" class="text-link">See how it works →</a>
             </div>
-            <div class="hero-price">Starting at <strong>$200/mo</strong> · $500 one-time setup</div>
+            
             <div class="social-proof">
                 <div class="social-proof-avatars">
                     <div class="social-proof-avatar">JM</div>
