@@ -36,7 +36,7 @@
             --border: #27272a;
             --border-light: #3f3f46;
             --text: #fafafa;
-            --text-secondary: #a1a1aa;
+            --text-secondary: #d4d4dc;
             --text-muted: #52525b;
             --accent: #22c55e;
         }
@@ -177,13 +177,14 @@
             font-size: 15px;
         }
 
-        /* Category Pills (inside hero) */
+        /* Category Pills (below headline) */
         .category-pills {
             display: flex;
-            justify-content: center;
+            justify-content: flex-start;
             gap: 10px;
             flex-wrap: wrap;
-            margin-bottom: 32px;
+            margin-top: 32px;
+            margin-bottom: 40px;
         }
 
         .category-pill {
@@ -325,9 +326,9 @@
         }
 
         .hero-sub {
-            font-size: 18px;
+            font-size: 20px;
             color: var(--text-secondary);
-            max-width: 520px;
+            max-width: 540px;
             line-height: 1.7;
             margin-bottom: 48px;
         }
@@ -1092,7 +1093,9 @@
         <div class="container">
             <div class="hero-label">AI automation for DFW businesses</div>
             
-            <!-- Category Pills inside hero -->
+            <h1 id="hero-headline">Your business, <span class="highlight">running while you sleep.</span></h1>
+            
+            <!-- Category Pills below headline -->
             <div class="category-pills">
                 <button class="category-pill active" data-category="general">All Businesses</button>
                 <button class="category-pill" data-category="admin">Admin</button>
@@ -1102,7 +1105,6 @@
                 <button class="category-pill" data-category="entrepreneur">Entrepreneurs</button>
             </div>
             
-            <h1 id="hero-headline">Your business, <span class="highlight">running while you sleep.</span></h1>
             <p class="hero-sub" id="hero-sub">Tend runs your scheduling, follow-ups, invoicing, and customer responses — automatically, in the background, whether you're working or not.</p>
             
             <div class="hero-cta">
