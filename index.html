@@ -1458,6 +1458,8 @@
             
             fetch('https://script.google.com/macros/s/AKfycbweViAOIN6H0KwBzlMYlpXWqjP6Yl3-YCicopr9webBkUyNNzcFBaDOpU6RhNjWRq0B/exec', {
                 method: 'POST',
+                mode: 'no-cors',
+                headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify({ email: email, source: 'tend-cta', type: 'audit-request' })
             }).then(() => {
                 btn.textContent = 'Thanks!';
@@ -1477,6 +1479,8 @@
             
             fetch('https://script.google.com/macros/s/AKfycbweViAOIN6H0KwBzlMYlpXWqjP6Yl3-YCicopr9webBkUyNNzcFBaDOpU6RhNjWRq0B/exec', {
                 method: 'POST',
+                mode: 'no-cors',
+                headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify({ email: email, source: 'dfw-meetup', type: 'meetup-registration' })
             }).then(() => {
                 btn.textContent = 'You\'re In!';
