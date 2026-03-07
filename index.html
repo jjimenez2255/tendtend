@@ -1453,15 +1453,39 @@
         function handleSubmit(e) {
             e.preventDefault();
             const email = e.target.querySelector('input').value;
-            alert('Thanks! We\'ll be in touch soon.');
-            e.target.reset();
+            const btn = e.target.querySelector('button');
+            btn.textContent = 'Sending...';
+            
+            fetch('https://script.google.com/macros/s/AKfycbweViAOIN6H0KwBzlMYlpXWqjP6Yl3-YCicopr9webBkUyNNzcFBaDOpU6RhNjWRq0B/exec', {
+                method: 'POST',
+                body: JSON.stringify({ email: email, source: 'tend-cta', type: 'audit-request' })
+            }).then(() => {
+                btn.textContent = 'Thanks!';
+                e.target.reset();
+                setTimeout(() => { btn.textContent = 'Book Your Free Audit'; }, 2000);
+            }).catch(() => {
+                btn.textContent = 'Book Your Free Audit';
+                alert('Something went wrong. Email us directly.');
+            });
         }
 
         function handleMeetupSignup(e) {
             e.preventDefault();
             const email = e.target.querySelector('input').value;
-            alert('You\'re registered for the DFW AI Meetup! We\'ll send details to ' + email);
-            e.target.reset();
+            const btn = e.target.querySelector('button');
+            btn.textContent = 'Registering...';
+            
+            fetch('https://script.google.com/macros/s/AKfycbweViAOIN6H0KwBzlMYlpXWqjP6Yl3-YCicopr9webBkUyNNzcFBaDOpU6RhNjWRq0B/exec', {
+                method: 'POST',
+                body: JSON.stringify({ email: email, source: 'dfw-meetup', type: 'meetup-registration' })
+            }).then(() => {
+                btn.textContent = 'You\'re In!';
+                e.target.reset();
+                setTimeout(() => { btn.textContent = 'Register for Free'; }, 2000);
+            }).catch(() => {
+                btn.textContent = 'Register for Free';
+                alert('Something went wrong. Try again.');
+            });
         }
 
         // Category switching
