@@ -1,1613 +1,510 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <!-- Meta Pixel Code -->
-    <script>
-    !function(f,b,e,v,n,t,s)
-    {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
-    n.callMethod.apply(n,arguments):n.queue.push(arguments)};
-    if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
-    n.queue=[];t=b.createElement(e);t.async=!0;
-    t.src=v;s=b.getElementsByTagName(e)[0];
-    s.parentNode.insertBefore(t,s)}(window, document,'script',
-    'https://connect.facebook.net/en_US/fbevents.js');
-    fbq('init', '1577161653585270');
-    fbq('track', 'PageView');
-    </script>
-    <noscript><img height="1" width="1" style="display:none"
-    src="https://www.facebook.com/tr?id=1577161653585270&ev=PageView&noscript=1"
-    /></noscript>
-    <!-- End Meta Pixel Code -->
-    
-    <!-- Google tag (gtag.js) - Google Ads Conversion Tracking -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18002968891"></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-      gtag('config', 'AW-18002968891');
-    </script>
-    
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tend — Your business, running while you sleep | DFW</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Geist+Mono:wght@400;500;600&family=Geist:wght@400;500;600;700&display=swap" rel="stylesheet">
-    <style>
-        @font-face {
-            font-family: 'Geist';
-            src: url('https://cdn.jsdelivr.net/npm/geist@1.0.0/dist/fonts/geist-sans/Geist-Regular.woff2') format('woff2');
-            font-weight: 400;
-        }
-        @font-face {
-            font-family: 'Geist';
-            src: url('https://cdn.jsdelivr.net/npm/geist@1.0.0/dist/fonts/geist-sans/Geist-Medium.woff2') format('woff2');
-            font-weight: 500;
-        }
-        @font-face {
-            font-family: 'Geist';
-            src: url('https://cdn.jsdelivr.net/npm/geist@1.0.0/dist/fonts/geist-sans/Geist-SemiBold.woff2') format('woff2');
-            font-weight: 600;
-        }
-        @font-face {
-            font-family: 'Geist Mono';
-            src: url('https://cdn.jsdelivr.net/npm/geist@1.0.0/dist/fonts/geist-mono/GeistMono-Regular.woff2') format('woff2');
-            font-weight: 400;
-        }
-
-        :root {
-            --bg: #09090b;
-            --bg-elevated: #111113;
-            --bg-hover: #18181b;
-            --border: #27272a;
-            --border-light: #3f3f46;
-            --text: #fafafa;
-            --text-secondary: #d4d4dc;
-            --text-muted: #52525b;
-            --accent: #22c55e;
-        }
-
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        html {
-            scroll-behavior: smooth;
-        }
-
-        body {
-            font-family: 'Geist', -apple-system, BlinkMacSystemFont, sans-serif;
-            background: var(--bg);
-            color: var(--text);
-            line-height: 1.8;
-            -webkit-font-smoothing: antialiased;
-        }
-
-        /* Grid background */
-        .grid-bg {
-            position: fixed;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background-image: 
-                linear-gradient(rgba(39, 39, 42, 0.3) 1px, transparent 1px),
-                linear-gradient(90deg, rgba(39, 39, 42, 0.3) 1px, transparent 1px);
-            background-size: 64px 64px;
-            pointer-events: none;
-            z-index: 0;
-        }
-
-        .container {
-            max-width: 1100px;
-            margin: 0 auto;
-            padding: 0 32px;
-            position: relative;
-            z-index: 1;
-        }
-
-        /* Navigation */
-        nav {
-            position: fixed;
-            top: 0;
-            left: 0;
-            right: 0;
-            z-index: 100;
-            padding: 16px 0;
-            background: rgba(9, 9, 11, 0.8);
-            backdrop-filter: blur(12px);
-            border-bottom: 1px solid var(--border);
-        }
-
-        nav .container {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-
-        .logo {
-            font-family: 'Geist Mono', monospace;
-            font-size: 16px;
-            font-weight: 500;
-            letter-spacing: -0.3px;
-            display: flex;
-            align-items: center;
-            gap: 10px;
-        }
-
-        .logo::before {
-            content: '';
-            width: 8px;
-            height: 8px;
-            background: var(--accent);
-            border-radius: 2px;
-        }
-
-        .nav-right {
-            display: flex;
-            align-items: center;
-            gap: 8px;
-        }
-
-        .nav-link {
-            padding: 8px 16px;
-            color: var(--text-secondary);
-            text-decoration: none;
-            font-size: 13px;
-            font-weight: 500;
-            transition: color 0.15s;
-        }
-
-        .nav-link:hover {
-            color: var(--text);
-        }
-
-        .btn {
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            gap: 8px;
-            height: 36px;
-            padding: 0 16px;
-            background: var(--text);
-            color: var(--bg);
-            border: none;
-            font-size: 13px;
-            font-weight: 500;
-            font-family: inherit;
-            cursor: pointer;
-            transition: all 0.15s;
-            text-decoration: none;
-        }
-
-        .btn:hover {
-            background: #e4e4e7;
-        }
-
-        .btn-ghost {
-            background: transparent;
-            color: var(--text);
-            border: 1px solid var(--border);
-        }
-
-        .btn-ghost:hover {
-            background: var(--bg-hover);
-            border-color: var(--border-light);
-        }
-
-        .btn-lg {
-            height: 52px;
-            padding: 0 32px;
-            font-size: 15px;
-        }
-
-        /* Category Pills (below headline) */
-        .category-pills {
-            display: flex;
-            justify-content: flex-start;
-            gap: 10px;
-            flex-wrap: wrap;
-            margin-top: 32px;
-            margin-bottom: 40px;
-        }
-
-        .category-pill {
-            padding: 14px 24px;
-            background: transparent;
-            border: 1px solid var(--border);
-            border-radius: 100px;
-            color: var(--text-secondary);
-            font-size: 14px;
-            font-weight: 500;
-            cursor: pointer;
-            transition: all 0.2s;
-            font-family: inherit;
-            min-height: 48px;
-            display: flex;
-            align-items: center;
-        }
-
-        .category-pill:hover {
-            border-color: var(--text-secondary);
-            color: var(--text);
-            background: var(--bg-elevated);
-        }
-
-        .category-pill.active {
-            background: var(--text);
-            border-color: var(--text);
-            color: var(--bg);
-        }
-
-        /* Hero */
-        .hero {
-            min-height: 100vh;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            padding: 160px 0 120px;
-            position: relative;
-        }
-
-        .hero-label {
-            display: inline-flex;
-            align-items: center;
-            gap: 8px;
-            font-family: 'Geist Mono', monospace;
-            font-size: 12px;
-            color: var(--bg);
-            background: var(--accent);
-            padding: 6px 12px;
-            margin-bottom: 24px;
-            text-transform: uppercase;
-            letter-spacing: 0.5px;
-        }
-
-        .hero-label::before {
-            content: '';
-            width: 6px;
-            height: 6px;
-            background: var(--bg);
-            border-radius: 50%;
-            animation: pulse 2s infinite;
-        }
-
-        @keyframes pulse {
-            0%, 100% { opacity: 1; }
-            50% { opacity: 0.4; }
-        }
-
-        .hero-price {
-            display: inline-flex;
-            align-items: center;
-            gap: 6px;
-            font-family: 'Geist Mono', monospace;
-            font-size: 13px;
-            color: var(--text-secondary);
-            margin-top: 24px;
-            padding-top: 24px;
-            border-top: 1px solid var(--border);
-        }
-
-        .hero-price strong {
-            color: var(--text);
-        }
-
-        .social-proof {
-            display: flex;
-            align-items: center;
-            gap: 16px;
-            margin-top: 64px;
-            padding-top: 32px;
-            border-top: 1px solid var(--border);
-        }
-
-        .social-proof-text {
-            font-size: 13px;
-            color: var(--text-muted);
-        }
-
-        .social-proof-avatars {
-            display: flex;
-        }
-
-        .social-proof-avatar {
-            width: 32px;
-            height: 32px;
-            background: var(--bg-elevated);
-            border: 2px solid var(--bg);
-            border-radius: 50%;
-            margin-left: -8px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 12px;
-            font-weight: 500;
-        }
-
-        .social-proof-avatar:first-child {
-            margin-left: 0;
-        }
-
-        .social-proof-avatar.count {
-            background: var(--accent);
-            color: var(--bg);
-            font-family: 'Geist Mono', monospace;
-            font-size: 10px;
-        }
-
-        .hero h1 {
-            font-size: clamp(48px, 8vw, 88px);
-            font-weight: 600;
-            letter-spacing: -2.5px;
-            line-height: 1;
-            margin-bottom: 32px;
-            max-width: 800px;
-        }
-
-        .hero h1 .highlight {
-            color: var(--accent);
-        }
-
-        .hero-sub {
-            font-size: 20px;
-            color: var(--text-secondary);
-            max-width: 540px;
-            line-height: 1.7;
-            margin-bottom: 48px;
-        }
-
-        .hero-cta {
-            display: flex;
-            flex-direction: column;
-            align-items: flex-start;
-            gap: 20px;
-        }
-
-        .hero-cta .text-link {
-            color: var(--text-secondary);
-            text-decoration: none;
-            font-size: 15px;
-            transition: color 0.2s;
-        }
-
-        .hero-cta .text-link:hover {
-            color: var(--text);
-        }
-
-        .scarcity-line {
-            font-size: 13px;
-            color: var(--text-muted, #666);
-            margin-top: 16px;
-            font-weight: 400;
-        }
-
-        /* Sticky Mobile CTA */
-        .sticky-mobile-cta {
-            display: none;
-            position: fixed;
-            bottom: 0;
-            left: 0;
-            right: 0;
-            z-index: 99;
-            padding: 12px 16px;
-            padding-bottom: calc(12px + env(safe-area-inset-bottom));
-            background: rgba(255,255,255,0.95);
-            backdrop-filter: blur(20px);
-            -webkit-backdrop-filter: blur(20px);
-            border-top: 1px solid rgba(0,0,0,0.08);
-        }
-
-        .sticky-mobile-cta .btn {
-            display: block;
-            width: 100%;
-            text-align: center;
-        }
-
-        @media (max-width: 768px) {
-            .sticky-mobile-cta {
-                display: block;
-            }
-            body {
-                padding-bottom: 80px;
-            }
-        }
-
-        .hero-visual {
-            position: absolute;
-            right: 0;
-            top: 50%;
-            transform: translateY(-50%);
-            width: 400px;
-            height: 400px;
-            opacity: 0.6;
-        }
-
-        .hero-visual::before {
-            content: '';
-            position: absolute;
-            inset: 0;
-            border: 1px solid var(--border);
-            transform: rotate(45deg);
-        }
-
-        .hero-visual::after {
-            content: '';
-            position: absolute;
-            inset: 40px;
-            border: 1px solid var(--border);
-            transform: rotate(45deg);
-        }
-
-        /* Stats bar */
-        .stats-bar {
-            display: flex;
-            border-top: 1px solid var(--border);
-            border-bottom: 1px solid var(--border);
-            background: var(--bg-elevated);
-        }
-
-        .stat {
-            flex: 1;
-            padding: 32px;
-            border-right: 1px solid var(--border);
-            text-align: center;
-        }
-
-        .stat:last-child {
-            border-right: none;
-        }
-
-        .stat-value {
-            font-family: 'Geist Mono', monospace;
-            font-size: 32px;
-            font-weight: 500;
-            letter-spacing: -1px;
-            margin-bottom: 4px;
-        }
-
-        .stat-label {
-            font-size: 13px;
-            color: var(--text-muted);
-        }
-
-        /* Section */
-        .section {
-            padding: 140px 0;
-        }
-
-        .section-header {
-            margin-bottom: 80px;
-        }
-
-        .section-label {
-            font-family: 'Geist Mono', monospace;
-            font-size: 11px;
-            font-weight: 500;
-            letter-spacing: 1px;
-            text-transform: uppercase;
-            color: var(--accent);
-            margin-bottom: 16px;
-            display: flex;
-            align-items: center;
-            gap: 8px;
-        }
-
-        .section-label::before {
-            content: '';
-            width: 16px;
-            height: 1px;
-            background: var(--accent);
-        }
-
-        .section-title {
-            font-size: clamp(32px, 4vw, 48px);
-            font-weight: 600;
-            letter-spacing: -1.5px;
-            max-width: 600px;
-            line-height: 1.1;
-        }
-
-        /* Features */
-        .features-grid {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 1px;
-            background: var(--border);
-        }
-
-        .feature {
-            background: var(--bg);
-            padding: 40px 32px;
-            position: relative;
-            transition: background 0.15s;
-        }
-
-        .feature:hover {
-            background: var(--bg-elevated);
-        }
-
-        .feature-index {
-            font-family: 'Geist Mono', monospace;
-            font-size: 11px;
-            color: var(--text-muted);
-            margin-bottom: 20px;
-        }
-
-        .feature h3 {
-            font-size: 18px;
-            font-weight: 600;
-            letter-spacing: -0.3px;
-            margin-bottom: 12px;
-        }
-
-        .feature p {
-            font-size: 14px;
-            color: var(--text-secondary);
-            line-height: 1.6;
-        }
-
-        /* How it works */
-        .steps-container {
-            position: relative;
-        }
-
-        .steps-line {
-            position: absolute;
-            left: 20px;
-            top: 48px;
-            bottom: 48px;
-            width: 1px;
-            background: linear-gradient(to bottom, var(--border), var(--accent), var(--border));
-        }
-
-        .step {
-            display: grid;
-            grid-template-columns: 40px 1fr 300px;
-            gap: 48px;
-            padding: 48px 0;
-            border-bottom: 1px solid var(--border);
-            align-items: start;
-        }
-
-        .step:last-child {
-            border-bottom: none;
-        }
-
-        .step-number {
-            width: 40px;
-            height: 40px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            background: var(--bg-elevated);
-            border: 1px solid var(--border);
-            font-family: 'Geist Mono', monospace;
-            font-size: 14px;
-            font-weight: 500;
-            position: relative;
-            z-index: 1;
-        }
-
-        .step-content h3 {
-            font-size: 24px;
-            font-weight: 600;
-            letter-spacing: -0.5px;
-            margin-bottom: 12px;
-        }
-
-        .step-content p {
-            font-size: 15px;
-            color: var(--text-secondary);
-            line-height: 1.6;
-        }
-
-        .step-meta {
-            padding: 24px;
-            background: var(--bg-elevated);
-            border: 1px solid var(--border);
-        }
-
-        .step-meta-label {
-            font-family: 'Geist Mono', monospace;
-            font-size: 11px;
-            color: var(--text-muted);
-            text-transform: uppercase;
-            letter-spacing: 0.5px;
-            margin-bottom: 8px;
-        }
-
-        .step-meta-value {
-            font-family: 'Geist Mono', monospace;
-            font-size: 20px;
-            font-weight: 500;
-            color: var(--accent);
-        }
-
-        /* Pricing */
-        .pricing-container {
-            display: grid;
-            grid-template-columns: 1fr 1px 1fr;
-            background: var(--bg-elevated);
-            border: 1px solid var(--border);
-            position: relative;
-        }
-
-        .pricing-container.three-col {
-            grid-template-columns: 1fr 1px 1fr 1px 1fr;
-        }
-
-        .pricing-container::before {
-            content: '';
-            position: absolute;
-            top: -1px;
-            left: 0;
-            right: 0;
-            height: 2px;
-            background: linear-gradient(90deg, transparent, var(--accent), transparent);
-        }
-
-        .pricing-divider {
-            background: var(--border);
-        }
-
-        .pricing-block {
-            padding: 64px;
-            text-align: center;
-        }
-
-        .pricing-type {
-            font-family: 'Geist Mono', monospace;
-            font-size: 11px;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            color: var(--text-muted);
-            margin-bottom: 24px;
-        }
-
-        .pricing-amount {
-            font-size: 72px;
-            font-weight: 600;
-            letter-spacing: -3px;
-            line-height: 1;
-            margin-bottom: 8px;
-        }
-
-        .pricing-period {
-            font-size: 14px;
-            color: var(--text-secondary);
-        }
-
-        .pricing-features {
-            margin-top: 48px;
-            text-align: left;
-        }
-
-        .pricing-feature {
-            display: flex;
-            align-items: center;
-            gap: 12px;
-            padding: 14px 0;
-            font-size: 14px;
-            color: var(--text-secondary);
-            border-bottom: 1px solid var(--border);
-        }
-
-        .pricing-feature:last-child {
-            border-bottom: none;
-        }
-
-        .pricing-feature::before {
-            content: '→';
-            font-family: 'Geist Mono', monospace;
-            color: var(--accent);
-        }
-
-        .pricing-cta {
-            margin-top: 48px;
-        }
-
-        .pricing-cta .btn {
-            width: 100%;
-        }
-
-        /* Industries */
-        .industries-grid {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 8px;
-        }
-
-        .industry {
-            padding: 12px 20px;
-            background: var(--bg-elevated);
-            border: 1px solid var(--border);
-            font-size: 13px;
-            font-weight: 500;
-            transition: all 0.15s;
-            cursor: default;
-        }
-
-        .industry:hover {
-            border-color: var(--border-light);
-            background: var(--bg-hover);
-        }
-
-        /* Testimonials */
-        .testimonials-grid {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 1px;
-            background: var(--border);
-        }
-
-        .testimonial {
-            background: var(--bg);
-            padding: 40px 32px;
-        }
-
-        .testimonial-quote {
-            font-size: 16px;
-            line-height: 1.6;
-            margin-bottom: 24px;
-            color: var(--text);
-        }
-
-        .testimonial-author {
-            display: flex;
-            flex-direction: column;
-            gap: 4px;
-        }
-
-        .testimonial-name {
-            font-size: 14px;
-            font-weight: 500;
-        }
-
-        .testimonial-role {
-            font-size: 13px;
-            color: var(--text-muted);
-        }
-
-        .testimonial-metric {
-            margin-top: 20px;
-            padding-top: 20px;
-            border-top: 1px solid var(--border);
-            display: flex;
-            align-items: baseline;
-            gap: 8px;
-        }
-
-        .testimonial-metric-value {
-            font-family: 'Geist Mono', monospace;
-            font-size: 24px;
-            font-weight: 500;
-            color: var(--accent);
-        }
-
-        .testimonial-metric-label {
-            font-size: 13px;
-            color: var(--text-muted);
-        }
-
-        /* FAQ */
-        .faq-grid {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 1px;
-            background: var(--border);
-            border: 1px solid var(--border);
-        }
-
-        .faq-item {
-            background: var(--bg);
-            padding: 32px;
-        }
-
-        .faq-question {
-            font-size: 16px;
-            font-weight: 600;
-            margin-bottom: 12px;
-            display: flex;
-            align-items: flex-start;
-            gap: 12px;
-        }
-
-        .faq-question::before {
-            content: 'Q';
-            font-family: 'Geist Mono', monospace;
-            font-size: 11px;
-            font-weight: 500;
-            color: var(--accent);
-            flex-shrink: 0;
-            width: 20px;
-            height: 20px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            border: 1px solid var(--accent);
-            margin-top: 2px;
-        }
-
-        .faq-answer {
-            font-size: 14px;
-            color: var(--text-secondary);
-            line-height: 1.6;
-            padding-left: 32px;
-        }
-
-        /* CTA */
-        .cta {
-            padding: 160px 0;
-            text-align: center;
-            border-top: 1px solid var(--border);
-            position: relative;
-        }
-
-        .cta::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 400px;
-            height: 400px;
-            background: radial-gradient(circle, rgba(34, 197, 94, 0.08) 0%, transparent 70%);
-            pointer-events: none;
-        }
-
-        .cta h2 {
-            font-size: clamp(36px, 5vw, 56px);
-            font-weight: 600;
-            letter-spacing: -1.5px;
-            margin-bottom: 16px;
-            line-height: 1.1;
-            position: relative;
-        }
-
-        .cta p {
-            font-size: 16px;
-            color: var(--text-secondary);
-            margin-bottom: 40px;
-            max-width: 400px;
-            margin-left: auto;
-            margin-right: auto;
-            position: relative;
-        }
-
-        .cta-form {
-            display: flex;
-            gap: 8px;
-            max-width: 400px;
-            margin: 0 auto;
-            position: relative;
-        }
-
-        .cta-form input {
-            flex: 1;
-            height: 44px;
-            padding: 0 16px;
-            background: var(--bg-elevated);
-            border: 1px solid var(--border);
-            font-size: 14px;
-            font-family: inherit;
-            color: var(--text);
-            outline: none;
-            transition: border-color 0.15s;
-        }
-
-        .cta-form input::placeholder {
-            color: var(--text-muted);
-        }
-
-        .cta-form input:focus {
-            border-color: var(--border-light);
-        }
-
-        /* Meetup Banner */
-        .meetup-banner {
-            padding: 80px 0;
-            background: linear-gradient(135deg, rgba(34, 197, 94, 0.1) 0%, rgba(34, 197, 94, 0.02) 100%);
-            border-top: 1px solid var(--border);
-            border-bottom: 1px solid var(--border);
-        }
-
-        .meetup-content {
-            text-align: center;
-            max-width: 700px;
-            margin: 0 auto;
-        }
-
-        .meetup-badge {
-            display: inline-block;
-            padding: 6px 16px;
-            background: var(--accent);
-            color: var(--bg);
-            font-size: 12px;
-            font-weight: 600;
-            letter-spacing: 0.1em;
-            border-radius: 100px;
-            margin-bottom: 24px;
-        }
-
-        .meetup-banner h2 {
-            font-size: 48px;
-            font-weight: 700;
-            margin-bottom: 8px;
-        }
-
-        .meetup-subtitle {
-            font-size: 20px;
-            color: var(--text-secondary);
-            margin-bottom: 16px;
-        }
-
-        .meetup-desc {
-            color: var(--text-secondary);
-            margin-bottom: 32px;
-            line-height: 1.7;
-        }
-
-        .meetup-details {
-            display: flex;
-            justify-content: center;
-            gap: 32px;
-            margin-bottom: 32px;
-            flex-wrap: wrap;
-        }
-
-        .meetup-details span {
-            color: var(--text-secondary);
-            font-size: 14px;
-        }
-
-        .meetup-form {
-            display: flex;
-            gap: 12px;
-            justify-content: center;
-            flex-wrap: wrap;
-        }
-
-        .meetup-form input {
-            padding: 16px 24px;
-            background: var(--bg);
-            border: 1px solid var(--border);
-            border-radius: 8px;
-            color: var(--text);
-            font-size: 16px;
-            width: 300px;
-            min-height: 52px;
-            font-family: inherit;
-        }
-
-        .meetup-form input:focus {
-            outline: none;
-            border-color: var(--accent);
-        }
-
-        .meetup-btn {
-            background: var(--accent);
-            color: var(--bg);
-        }
-
-        .meetup-btn:hover {
-            background: #16a34a;
-        }
-
-        /* Footer */
-        footer {
-            padding: 24px 0;
-            border-top: 1px solid var(--border);
-        }
-
-        footer .container {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-
-        .footer-left {
-            font-family: 'Geist Mono', monospace;
-            font-size: 13px;
-            color: var(--text-muted);
-        }
-
-        .footer-right {
-            display: flex;
-            gap: 24px;
-        }
-
-        .footer-right a {
-            font-size: 13px;
-            color: var(--text-muted);
-            text-decoration: none;
-            transition: color 0.15s;
-        }
-
-        .footer-right a:hover {
-            color: var(--text);
-        }
-
-        /* Responsive */
-        @media (max-width: 1024px) {
-            .hero-visual {
-                display: none;
-            }
-
-            .step {
-                grid-template-columns: 40px 1fr;
-            }
-
-            .step-meta {
-                display: none;
-            }
-
-            .pricing-container,
-            .pricing-container.three-col {
-                grid-template-columns: 1fr;
-            }
-
-            .pricing-divider {
-                height: 1px;
-                width: 100%;
-            }
-        }
-
-        @media (max-width: 768px) {
-            .features-grid {
-                grid-template-columns: 1fr;
-            }
-
-            .stats-bar {
-                flex-direction: column;
-            }
-
-            .stat {
-                border-right: none;
-                border-bottom: 1px solid var(--border);
-            }
-
-            .stat:last-child {
-                border-bottom: none;
-            }
-
-            .nav-link {
-                display: none;
-            }
-
-            .steps-line {
-                display: none;
-            }
-
-            .step {
-                grid-template-columns: 1fr;
-                gap: 16px;
-            }
-
-            .step-number {
-                width: 32px;
-                height: 32px;
-                font-size: 12px;
-            }
-
-            .testimonials-grid {
-                grid-template-columns: 1fr;
-            }
-
-            .faq-grid {
-                grid-template-columns: 1fr;
-            }
-
-            .social-proof {
-                flex-direction: column;
-                align-items: flex-start;
-                gap: 12px;
-            }
-        }
-
-        @media (max-width: 480px) {
-            .hero-cta {
-                flex-direction: column;
-            }
-
-            .hero-cta .btn {
-                width: 100%;
-            }
-
-            .cta-form {
-                flex-direction: column;
-            }
-
-            .cta-form .btn {
-                width: 100%;
-            }
-
-            .pricing-block {
-                padding: 40px 24px;
-            }
-
-            footer .container {
-                flex-direction: column;
-                gap: 16px;
-                text-align: center;
-            }
-        }
-    </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Tend — Fractional AI Operations</title>
+<meta name="description" content="We show up and build. AI automation for businesses that want results, not demos.">
+
+<!-- Google Ads Tag -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=AW-18002968891"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'AW-18002968891');
+</script>
+
+<!-- Meta Pixel -->
+<script>
+!function(f,b,e,v,n,t,s)
+{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+n.queue=[];t=b.createElement(e);t.async=!0;
+t.src=v;s=b.getElementsByTagName(e)[0];
+s.parentNode.insertBefore(t,s)}(window, document,'script',
+'https://connect.facebook.net/en_US/fbevents.js');
+fbq('init', '1577161653585270');
+fbq('track', 'PageView');
+</script>
+
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+:root {
+  --bg: #09090b;
+  --surface: #18181b;
+  --border: #27272a;
+  --text: #fafafa;
+  --muted: #71717a;
+  --accent: #22c55e;
+}
+
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: 'SF Mono', 'Fira Code', 'Monaco', monospace;
+  background: var(--bg);
+  color: var(--text);
+  line-height: 1.7;
+  font-size: 14px;
+}
+
+.container {
+  max-width: 680px;
+  margin: 0 auto;
+  padding: 60px 24px;
+}
+
+/* HEADER */
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 0;
+  border-bottom: 1px solid var(--border);
+  margin-bottom: 60px;
+}
+
+.logo {
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 2px;
+  color: var(--text);
+}
+
+.status {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: var(--muted);
+}
+
+.status-dot {
+  width: 8px;
+  height: 8px;
+  background: var(--accent);
+  border-radius: 50%;
+  animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.5; }
+}
+
+/* HERO */
+.hero {
+  margin-bottom: 80px;
+}
+
+.hero-meta {
+  display: flex;
+  gap: 24px;
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: var(--muted);
+  margin-bottom: 24px;
+}
+
+.hero h1 {
+  font-size: 28px;
+  font-weight: 400;
+  line-height: 1.4;
+  margin-bottom: 24px;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+}
+
+.hero-lead {
+  font-size: 15px;
+  color: var(--muted);
+  line-height: 1.8;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+}
+
+/* SECTIONS */
+.section {
+  margin-bottom: 80px;
+}
+
+.section-header {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 24px;
+}
+
+.section-label {
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  color: var(--muted);
+}
+
+.section-num {
+  font-size: 11px;
+  color: var(--accent);
+}
+
+.section h2 {
+  font-size: 20px;
+  font-weight: 400;
+  margin-bottom: 16px;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+}
+
+.section p {
+  color: var(--muted);
+  margin-bottom: 16px;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+}
+
+/* PRICING */
+.pricing-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+  margin: 32px 0;
+}
+
+.pricing-card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  padding: 24px;
+}
+
+.pricing-card:hover {
+  border-color: var(--accent);
+}
+
+.pricing-name {
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  color: var(--accent);
+  margin-bottom: 8px;
+}
+
+.pricing-amount {
+  font-size: 32px;
+  font-weight: 300;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  margin-bottom: 4px;
+}
+
+.pricing-period {
+  font-size: 14px;
+  color: var(--muted);
+}
+
+.pricing-desc {
+  font-size: 13px;
+  color: var(--muted);
+  margin-top: 16px;
+  line-height: 1.7;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+}
+
+/* LISTS */
+.check-list {
+  list-style: none;
+}
+
+.check-list li {
+  padding: 12px 0;
+  border-bottom: 1px solid var(--border);
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+}
+
+.check-list li:last-child {
+  border-bottom: none;
+}
+
+.check-list .icon {
+  color: var(--accent);
+  font-size: 14px;
+  margin-top: 2px;
+}
+
+.check-list .text {
+  color: var(--muted);
+}
+
+/* FIT CHECK */
+.fit-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px;
+  margin: 24px 0;
+}
+
+.fit-column h3 {
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  margin-bottom: 16px;
+  font-weight: 400;
+}
+
+.fit-column.deploy h3 { color: var(--accent); }
+.fit-column.abort h3 { color: #ef4444; }
+
+.fit-column ul {
+  list-style: none;
+}
+
+.fit-column li {
+  font-size: 13px;
+  color: var(--muted);
+  margin-bottom: 12px;
+  padding-left: 16px;
+  position: relative;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+}
+
+.fit-column li::before {
+  content: '—';
+  position: absolute;
+  left: 0;
+  color: var(--border);
+}
+
+/* CTA */
+.cta-section {
+  text-align: center;
+  padding: 60px 0;
+  border-top: 1px solid var(--border);
+}
+
+.cta-section h2 {
+  font-size: 24px;
+  font-weight: 400;
+  margin-bottom: 24px;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+}
+
+.cta-button {
+  display: inline-block;
+  background: var(--accent);
+  color: var(--bg);
+  padding: 16px 48px;
+  font-size: 13px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  text-decoration: none;
+  transition: all 0.2s;
+}
+
+.cta-button:hover {
+  background: var(--text);
+  transform: translateY(-2px);
+}
+
+.cta-note {
+  font-size: 12px;
+  color: var(--muted);
+  margin-top: 16px;
+}
+
+/* FOOTER */
+.footer {
+  text-align: center;
+  padding: 40px 0;
+  font-size: 11px;
+  color: var(--muted);
+  border-top: 1px solid var(--border);
+}
+
+/* RESPONSIVE */
+@media (max-width: 600px) {
+  .container { padding: 40px 20px; }
+  .pricing-grid { grid-template-columns: 1fr; }
+  .fit-grid { grid-template-columns: 1fr; }
+  .hero h1 { font-size: 22px; }
+  .hero-meta { flex-wrap: wrap; gap: 12px; }
+}
+</style>
 </head>
 <body>
-    <div class="grid-bg"></div>
 
-    <!-- Navigation -->
-    <nav>
-        <div class="container">
-            <div class="logo">tend</div>
-            <div class="nav-right">
-                <a href="#features" class="nav-link">Features</a>
-                <a href="#how" class="nav-link">How it works</a>
-                <a href="#pricing" class="nav-link">Pricing</a>
-                <a href="https://cal.com/clawdbotdfw/15min" target="_blank" class="btn">Book a Call</a>
-            </div>
-        </div>
-    </nav>
+<div class="container">
 
-    <!-- Hero -->
-    <section class="hero">
-        <div class="container">
-            <div class="hero-label">AI automation for DFW businesses</div>
-            
-            <h1 id="hero-headline">Your business, <span class="highlight">running while you sleep.</span></h1>
-            
-            <!-- Category Pills below headline -->
-            <div class="category-pills">
-                <button class="category-pill active" data-category="general">All Businesses</button>
-                <button class="category-pill" data-category="admin">Admin</button>
-                <button class="category-pill" data-category="legal">Legal</button>
-                <button class="category-pill" data-category="finance">Finance</button>
-                <button class="category-pill" data-category="sales">Sales</button>
-                <button class="category-pill" data-category="entrepreneur">Entrepreneurs</button>
-            </div>
-            
-            <p class="hero-sub" id="hero-sub">Tend runs your scheduling, follow-ups, invoicing, and customer responses — automatically, in the background, whether you're working or not.</p>
-            
-            <div class="hero-cta">
-                <a href="https://cal.com/clawdbotdfw/15min" target="_blank" class="btn btn-lg">Book Your Free Audit</a>
-                <p class="scarcity-line">⚡ Only 3 onboarding spots open this month — DFW businesses only.</p>
-            </div>
-            
-            <div class="social-proof">
-                <div class="social-proof-avatars">
-                    <div class="social-proof-avatar">JM</div>
-                    <div class="social-proof-avatar">KR</div>
-                    <div class="social-proof-avatar">AL</div>
-                    <div class="social-proof-avatar">TS</div>
-                    <div class="social-proof-avatar count">+47</div>
-                </div>
-                <div class="social-proof-text">Trusted by 50+ DFW businesses</div>
-            </div>
-        </div>
-        <div class="hero-visual"></div>
-    </section>
-
-    <!-- Stats -->
-    <div class="stats-bar">
-        <div class="stat">
-            <div class="stat-value">48h</div>
-            <div class="stat-label">Setup time</div>
-        </div>
-        <div class="stat">
-            <div class="stat-value">24/7</div>
-            <div class="stat-label">Operation</div>
-        </div>
-        <div class="stat">
-            <div class="stat-value">$500</div>
-            <div class="stat-label">One-time setup</div>
-        </div>
-        <div class="stat">
-            <div class="stat-value">∞</div>
-            <div class="stat-label">Automations</div>
-        </div>
+  <header class="header">
+    <div class="logo">TEND</div>
+    <div class="status">
+      <span class="status-dot"></span>
+      ACCEPTING CLIENTS
     </div>
+  </header>
 
-    <!-- Features -->
-    <section class="section" id="features">
-        <div class="container">
-            <div class="section-header">
-                <div class="section-label">Capabilities</div>
-                <h2 class="section-title">Runs your back office. Without you.</h2>
-            </div>
-            <div class="features-grid">
-                <div class="feature">
-                    <div class="feature-index">01</div>
-                    <h3>Answers questions</h3>
-                    <p>Responds to customer inquiries in under 60 seconds — via text, email, or chat. Whether you're awake or not.</p>
-                </div>
-                <div class="feature">
-                    <div class="feature-index">02</div>
-                    <h3>Books appointments</h3>
-                    <p>Fills your calendar automatically. Sends confirmations and reminders. No back-and-forth. No manual entry.</p>
-                </div>
-                <div class="feature">
-                    <div class="feature-index">03</div>
-                    <h3>Sends invoices</h3>
-                    <p>Invoices go out. Reminders follow. Payments come in. You don't touch a spreadsheet.</p>
-                </div>
-                <div class="feature">
-                    <div class="feature-index">04</div>
-                    <h3>Follows up</h3>
-                    <p>Every lead gets a response. Every quote gets a check-in. Automatically, on schedule, without you prompting it.</p>
-                </div>
-                <div class="feature">
-                    <div class="feature-index">05</div>
-                    <h3>Tracks everything</h3>
-                    <p>Real-time dashboard shows what Tend did today — tasks completed, messages sent, revenue collected.</p>
-                </div>
-                <div class="feature">
-                    <div class="feature-index">06</div>
-                    <h3>Never stops</h3>
-                    <p>Works nights, weekends, holidays. Doesn't call in sick. Doesn't ask for time off. Always on.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- How it works -->
-    <section class="section" id="how">
-        <div class="container">
-            <div class="section-header">
-                <div class="section-label">Process</div>
-                <h2 class="section-title">Set up in 48 hours. Runs forever.</h2>
-            </div>
-            <div class="steps-container">
-                <div class="steps-line"></div>
-                <div class="step">
-                    <div class="step-number">01</div>
-                    <div class="step-content">
-                        <h3>Workflow audit</h3>
-                        <p>Tell us how your business runs. What tools you use. Where time gets wasted. We map it out and identify what to automate first.</p>
-                    </div>
-                    <div class="step-meta">
-                        <div class="step-meta-label">Duration</div>
-                        <div class="step-meta-value">30 min</div>
-                    </div>
-                </div>
-                <div class="step">
-                    <div class="step-number">02</div>
-                    <div class="step-content">
-                        <h3>Installation</h3>
-                        <p>We configure Tend for your specific workflows, connect your existing systems, and train it on your business data and processes.</p>
-                    </div>
-                    <div class="step-meta">
-                        <div class="step-meta-label">Duration</div>
-                        <div class="step-meta-value">48 hours</div>
-                    </div>
-                </div>
-                <div class="step">
-                    <div class="step-number">03</div>
-                    <div class="step-content">
-                        <h3>Operation</h3>
-                        <p>Tend handles the admin. You focus on the work that matters. We monitor, optimize, and support—ongoing.</p>
-                    </div>
-                    <div class="step-meta">
-                        <div class="step-meta-label">Duration</div>
-                        <div class="step-meta-value">24/7</div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Pricing -->
-    <section class="section" id="pricing">
-        <div class="container">
-            <div class="section-header">
-                <div class="section-label">Pricing</div>
-                <h2 class="section-title">Simple. Predictable.</h2>
-            </div>
-            <div class="pricing-container three-col">
-                <div class="pricing-block">
-                    <div class="pricing-type">One-time</div>
-                    <div class="pricing-amount">$500</div>
-                    <div class="pricing-period">setup fee</div>
-                    <div class="pricing-features">
-                        <div class="pricing-feature">Full workflow audit</div>
-                        <div class="pricing-feature">System configuration</div>
-                        <div class="pricing-feature">Data training</div>
-                        <div class="pricing-feature">Integration setup</div>
-                    </div>
-                </div>
-                <div class="pricing-divider"></div>
-                <div class="pricing-block">
-                    <div class="pricing-type">Monthly</div>
-                    <div class="pricing-amount">$200</div>
-                    <div class="pricing-period">per month</div>
-                    <div class="pricing-features">
-                        <div class="pricing-feature">Unlimited automations</div>
-                        <div class="pricing-feature">24/7 operation</div>
-                        <div class="pricing-feature">Ongoing support</div>
-                        <div class="pricing-feature">Cancel anytime</div>
-                    </div>
-                    <div class="pricing-cta">
-                        <a href="#cta" class="btn btn-lg">Get Tend</a>
-                    </div>
-                </div>
-                <div class="pricing-divider"></div>
-                <div class="pricing-block">
-                    <div class="pricing-type">Enterprise</div>
-                    <div class="pricing-amount">Custom</div>
-                    <div class="pricing-period">tailored to your scale</div>
-                    <div class="pricing-features">
-                        <div class="pricing-feature">Multi-location support</div>
-                        <div class="pricing-feature">Custom integrations</div>
-                        <div class="pricing-feature">Dedicated account manager</div>
-                        <div class="pricing-feature">SLA guarantees</div>
-                    </div>
-                    <div class="pricing-cta">
-                        <a href="mailto:hello@tend.ai" class="btn btn-ghost btn-lg">Contact sales</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Industries -->
-    <section class="section">
-        <div class="container">
-            <div class="section-header">
-                <div class="section-label">Use cases</div>
-                <h2 class="section-title">For any business that runs on admin.</h2>
-            </div>
-            <div class="industries-grid">
-                <div class="industry">Restaurants</div>
-                <div class="industry">Medical clinics</div>
-                <div class="industry">Dental offices</div>
-                <div class="industry">Law firms</div>
-                <div class="industry">Accounting</div>
-                <div class="industry">Real estate</div>
-                <div class="industry">Salons</div>
-                <div class="industry">Fitness studios</div>
-                <div class="industry">Auto shops</div>
-                <div class="industry">HVAC</div>
-                <div class="industry">Plumbing</div>
-                <div class="industry">Contractors</div>
-                <div class="industry">Agencies</div>
-                <div class="industry">Consulting</div>
-                <div class="industry">E-commerce</div>
-                <div class="industry">Property management</div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Testimonials -->
-    <section class="section">
-        <div class="container">
-            <div class="section-header">
-                <div class="section-label">Results</div>
-                <h2 class="section-title">What businesses are saying.</h2>
-            </div>
-            <div class="testimonials-grid">
-                <div class="testimonial">
-                    <p class="testimonial-quote">"We were spending 3 hours a day on appointment confirmations and follow-ups. Now it just happens. I check the dashboard once a week."</p>
-                    <div class="testimonial-author">
-                        <span class="testimonial-name">Owner</span>
-                        <span class="testimonial-role">Dental practice, Dallas TX</span>
-                    </div>
-                    <div class="testimonial-metric">
-                        <span class="testimonial-metric-value">22 hrs</span>
-                        <span class="testimonial-metric-label">saved per week</span>
-                    </div>
-                </div>
-                <div class="testimonial">
-                    <p class="testimonial-quote">"Our no-show rate dropped from 18% to 4% in the first month. Tend sends reminders I never had time to send."</p>
-                    <div class="testimonial-author">
-                        <span class="testimonial-name">Manager</span>
-                        <span class="testimonial-role">Med spa, Orange County CA</span>
-                    </div>
-                    <div class="testimonial-metric">
-                        <span class="testimonial-metric-value">78%</span>
-                        <span class="testimonial-metric-label">fewer no-shows</span>
-                    </div>
-                </div>
-                <div class="testimonial">
-                    <p class="testimonial-quote">"I'm an HVAC guy, not an office manager. Tend handles the invoices and follow-ups so I can stay on jobs."</p>
-                    <div class="testimonial-author">
-                        <span class="testimonial-name">Owner</span>
-                        <span class="testimonial-role">HVAC contractor, Houston TX</span>
-                    </div>
-                    <div class="testimonial-metric">
-                        <span class="testimonial-metric-value">$8K</span>
-                        <span class="testimonial-metric-label">collected in overdue invoices</span>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- FAQ -->
-    <section class="section">
-        <div class="container">
-            <div class="section-header">
-                <div class="section-label">FAQ</div>
-                <h2 class="section-title">Common questions.</h2>
-            </div>
-            <div class="faq-grid">
-                <div class="faq-item">
-                    <h3 class="faq-question">What systems does Tend connect to?</h3>
-                    <p class="faq-answer">Most common tools — Google Calendar, Outlook, Square, Stripe, QuickBooks, most scheduling software. If you use it, we can probably connect to it. We'll confirm during the audit.</p>
-                </div>
-                <div class="faq-item">
-                    <h3 class="faq-question">What happens if something breaks?</h3>
-                    <p class="faq-answer">We monitor Tend 24/7. If something fails, we fix it — usually before you notice. You also get direct support via text or email anytime.</p>
-                </div>
-                <div class="faq-item">
-                    <h3 class="faq-question">Can I cancel anytime?</h3>
-                    <p class="faq-answer">Yes. No contracts, no lock-in. Cancel anytime and we'll help you transition. The $500 setup is non-refundable, but the monthly is pay-as-you-go.</p>
-                </div>
-                <div class="faq-item">
-                    <h3 class="faq-question">How is this different from Zapier or Make?</h3>
-                    <p class="faq-answer">Those are tools you build with. Tend is done-for-you. We audit your workflow, build the automations, install them, and keep them running. You don't touch a dashboard.</p>
-                </div>
-                <div class="faq-item">
-                    <h3 class="faq-question">Is my data secure?</h3>
-                    <p class="faq-answer">Yes. Tend runs on-premise where possible, meaning your data stays local. For cloud integrations, we use encrypted connections and never store sensitive customer data.</p>
-                </div>
-                <div class="faq-item">
-                    <h3 class="faq-question">What if I need custom automations later?</h3>
-                    <p class="faq-answer">Included. As your business changes, we update Tend. New workflow? New integration? Just tell us. It's part of the monthly.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- CTA -->
-    <section class="cta" id="cta">
-        <div class="container">
-            <h2>Ready to stop losing leads?</h2>
-            <p>Book a free 15-minute audit. We'll show you exactly what's slipping through the cracks.</p>
-            <a href="https://cal.com/clawdbotdfw/15min" target="_blank" class="btn btn-lg">Book Your Free Audit</a>
-        </div>
-    </section>
-
-    <!-- Meetup Banner -->
-    <section class="meetup-banner" id="meetup">
-        <div class="container">
-            <div class="meetup-content">
-                <div class="meetup-badge">UPCOMING EVENT</div>
-                <h2>DFW AI Meetup</h2>
-                <p class="meetup-subtitle">For Small Business Owners & Entrepreneurs</p>
-                <p class="meetup-desc">Learn how local businesses are using AI to respond faster, work less, and grow revenue. Live demos. Real case studies. No fluff.</p>
-                <div class="meetup-details">
-                    <span>📍 Dallas-Fort Worth</span>
-                    <span>📅 March 2026</span>
-                    <span>👥 100+ Attendees</span>
-                </div>
-                <form class="meetup-form" onsubmit="handleMeetupSignup(event)">
-                    <input type="email" placeholder="Enter your email to register" required>
-                    <button type="submit" class="btn btn-lg meetup-btn">Register for Free</button>
-                </form>
-            </div>
-        </div>
-    </section>
-
-    <!-- Footer -->
-    <footer>
-        <div class="container">
-            <div class="footer-left">© 2026 Tend</div>
-            <div class="footer-right">
-                <a href="#features">Features</a>
-                <a href="#how">Process</a>
-                <a href="#pricing">Pricing</a>
-                <a href="#meetup">DFW Meetup</a>
-            </div>
-        </div>
-    </footer>
-
-    <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                const target = document.querySelector(this.getAttribute('href'));
-                if (target) {
-                    target.scrollIntoView({ behavior: 'smooth', block: 'start' });
-                }
-            });
-        });
-
-        function handleSubmit(e) {
-            e.preventDefault();
-            const email = e.target.querySelector('input').value;
-            const btn = e.target.querySelector('button');
-            btn.textContent = 'Sending...';
-            
-            fetch('https://script.google.com/macros/s/AKfycbweViAOIN6H0KwBzlMYlpXWqjP6Yl3-YCicopr9webBkUyNNzcFBaDOpU6RhNjWRq0B/exec', {
-                method: 'POST',
-                mode: 'no-cors',
-                headers: { 'Content-Type': 'application/json' },
-                body: JSON.stringify({ email: email, source: 'tend-cta', type: 'audit-request' })
-            }).then(() => {
-                btn.textContent = 'Thanks!';
-                e.target.reset();
-                setTimeout(() => { btn.textContent = 'Book Your Free Audit'; }, 2000);
-            }).catch(() => {
-                btn.textContent = 'Book Your Free Audit';
-                alert('Something went wrong. Email us directly.');
-            });
-        }
-
-        function handleMeetupSignup(e) {
-            e.preventDefault();
-            const email = e.target.querySelector('input').value;
-            const btn = e.target.querySelector('button');
-            btn.textContent = 'Registering...';
-            
-            fetch('https://script.google.com/macros/s/AKfycbweViAOIN6H0KwBzlMYlpXWqjP6Yl3-YCicopr9webBkUyNNzcFBaDOpU6RhNjWRq0B/exec', {
-                method: 'POST',
-                mode: 'no-cors',
-                headers: { 'Content-Type': 'application/json' },
-                body: JSON.stringify({ email: email, source: 'dfw-meetup', type: 'meetup-registration' })
-            }).then(() => {
-                btn.textContent = 'You\'re In!';
-                e.target.reset();
-                setTimeout(() => { btn.textContent = 'Register for Free'; }, 2000);
-            }).catch(() => {
-                btn.textContent = 'Register for Free';
-                alert('Something went wrong. Try again.');
-            });
-        }
-
-        // Category switching
-        const categoryData = {
-            general: {
-                headline: 'Your business, <span class="highlight">running while you sleep.</span>',
-                sub: 'Tend runs your scheduling, follow-ups, invoicing, and customer responses — automatically, in the background, whether you\'re working or not.',
-                punch: 'You don\'t prompt it. You don\'t open an app. It just runs.'
-            },
-            admin: {
-                headline: 'Admin work, <span class="highlight">handled automatically.</span>',
-                sub: 'Scheduling, email responses, data entry, and follow-ups — running in the background while you focus on what matters.',
-                punch: 'Stop drowning in busywork. Let Tend handle it.'
-            },
-            legal: {
-                headline: 'Your firm, <span class="highlight">running while you sleep.</span>',
-                sub: 'Client intake, appointment scheduling, document follow-ups, and billing reminders — automated and compliant.',
-                punch: 'More billable hours. Less administrative overhead.'
-            },
-            finance: {
-                headline: 'Finance ops, <span class="highlight">on autopilot.</span>',
-                sub: 'Invoice generation, payment reminders, client follow-ups, and reporting — handled automatically, accurately, on time.',
-                punch: 'Close the books faster. Chase fewer payments.'
-            },
-            sales: {
-                headline: 'Never miss a lead, <span class="highlight">ever again.</span>',
-                sub: 'Instant lead response, automated follow-ups, meeting scheduling, and pipeline updates — 24/7, without lifting a finger.',
-                punch: 'Respond in 60 seconds. Close more deals.'
-            },
-            entrepreneur: {
-                headline: 'Run your business, <span class="highlight">not your inbox.</span>',
-                sub: 'Customer responses, scheduling, invoicing, and follow-ups — automated so you can focus on growth.',
-                punch: 'You started a business, not an admin job.'
-            }
-        };
-
-        document.querySelectorAll('.category-pill').forEach(pill => {
-            pill.addEventListener('click', function() {
-                document.querySelectorAll('.category-pill').forEach(p => p.classList.remove('active'));
-                this.classList.add('active');
-                
-                const category = this.dataset.category;
-                const data = categoryData[category];
-                
-                document.getElementById('hero-headline').innerHTML = data.headline;
-                document.getElementById('hero-sub').textContent = data.sub;
-            });
-        });
-    </script>
-
-    <!-- Sticky Mobile CTA -->
-    <div class="sticky-mobile-cta">
-        <a href="https://cal.com/clawdbotdfw/15min" target="_blank" class="btn">Book Your Free Audit</a>
+  <section class="hero">
+    <div class="hero-meta">
+      <span>FRACTIONAL AI OPS</span>
+      <span>EST. 2026</span>
+      <span>DFW + REMOTE</span>
     </div>
+    <h1>Cut through the AI noise. Ship what matters.</h1>
+    <p class="hero-lead">
+      We help businesses run on AI — not talk about it. No strategy decks. No 6-month roadmaps. 
+      We show up, audit your workflows, and install systems that actually work. Then we stick around to make sure they keep working.
+    </p>
+  </section>
+
+  <section class="section">
+    <div class="section-header">
+      <span class="section-label">THE PROBLEM</span>
+      <span class="section-num">01</span>
+    </div>
+    <h2>You know AI changes everything. You're just not sure what to do about it.</h2>
+    <p>
+      Your team is curious but stretched thin. You've seen the demos but can't connect them to your actual workflows. 
+      You don't need another tool with a free trial. You need someone who's done this before to show up and start building.
+    </p>
+  </section>
+
+  <section class="section">
+    <div class="section-header">
+      <span class="section-label">THE SOLUTION</span>
+      <span class="section-num">02</span>
+    </div>
+    <h2>A fractional AI operations partner.</h2>
+    <p>
+      We embed with your team. We find where AI creates real leverage — scheduling, follow-ups, invoicing, customer responses, 
+      the 100 small tasks eating your week. Then we build systems that handle it automatically, 24/7.
+    </p>
+    <p>
+      Not consulting. Not a chatbot. A working system, installed and managed.
+    </p>
+  </section>
+
+  <section class="section">
+    <div class="section-header">
+      <span class="section-label">ENGAGEMENTS</span>
+      <span class="section-num">03</span>
+    </div>
+    
+    <div class="pricing-grid">
+      <div class="pricing-card">
+        <div class="pricing-name">Deploy</div>
+        <div class="pricing-amount">$5,000</div>
+        <p class="pricing-desc">
+          10 hours. 30-day window. AI audit, workflow mapping, system installation. 
+          Quick wins shipped. Not a discovery call — we show up and build.
+        </p>
+      </div>
+      <div class="pricing-card">
+        <div class="pricing-name">Partner</div>
+        <div class="pricing-amount">$5,000<span class="pricing-period">/mo</span></div>
+        <p class="pricing-desc">
+          20 hours/month. Ongoing AI operations — optimization, expansion, support. 
+          3-month minimum. We already know your business. Context compounds.
+        </p>
+      </div>
+    </div>
+    
+    <p style="font-size: 13px; color: var(--muted);">
+      Most Deploy clients convert to Partner. Make of that what you will.
+    </p>
+  </section>
+
+  <section class="section">
+    <div class="section-header">
+      <span class="section-label">WHAT WE BUILD</span>
+      <span class="section-num">04</span>
+    </div>
+    
+    <ul class="check-list">
+      <li>
+        <span class="icon">→</span>
+        <span class="text"><strong>Instant lead response</strong> — New inquiry comes in, AI responds in seconds. Books appointments. Qualifies. Never sleeps.</span>
+      </li>
+      <li>
+        <span class="icon">→</span>
+        <span class="text"><strong>Automated follow-ups</strong> — No more leads falling through cracks. Sequences that run themselves.</span>
+      </li>
+      <li>
+        <span class="icon">→</span>
+        <span class="text"><strong>Smart scheduling</strong> — Clients book themselves. Reminders sent. Reschedules handled. Zero phone tag.</span>
+      </li>
+      <li>
+        <span class="icon">→</span>
+        <span class="text"><strong>Invoice automation</strong> — Jobs complete, invoices fly. Payment reminders on autopilot.</span>
+      </li>
+      <li>
+        <span class="icon">→</span>
+        <span class="text"><strong>Customer support</strong> — Common questions answered instantly. Escalations routed to humans.</span>
+      </li>
+      <li>
+        <span class="icon">→</span>
+        <span class="text"><strong>Custom workflows</strong> — Whatever repetitive task is eating your week, we automate it.</span>
+      </li>
+    </ul>
+  </section>
+
+  <section class="section">
+    <div class="section-header">
+      <span class="section-label">FIT CHECK</span>
+      <span class="section-num">05</span>
+    </div>
+    
+    <div class="fit-grid">
+      <div class="fit-column deploy">
+        <h3>↳ Deploy If</h3>
+        <ul>
+          <li>You're losing leads to slow follow-up</li>
+          <li>Admin tasks are eating your week</li>
+          <li>You want AI that works, not AI that demos well</li>
+          <li>Speed is your competitive advantage</li>
+          <li>You're ready to build, not just explore</li>
+        </ul>
+      </div>
+      <div class="fit-column abort">
+        <h3>↳ Abort If</h3>
+        <ul>
+          <li>You want a chatbot widget</li>
+          <li>You need a strategy PDF</li>
+          <li>You're not ready to change workflows</li>
+          <li>You want the cheapest option</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="section-header">
+      <span class="section-label">HOW IT WORKS</span>
+      <span class="section-num">06</span>
+    </div>
+    <p>
+      No decks. No frameworks. No 90-day discovery phase.
+    </p>
+    <p>
+      We get on a call. If there's a fit, we start. Week one, you'll see systems running. 
+      If we're not adding obvious value, fire us. No contracts, no guilt.
+    </p>
+  </section>
+
+  <section class="cta-section">
+    <h2>Let's talk.</h2>
+    <a href="https://cal.com/clawdbotdfw/15min" class="cta-button" onclick="gtag('event', 'conversion', {'send_to': 'AW-18002968891/click'}); fbq('track', 'Lead');">Book a Call</a>
+    <p class="cta-note">30 minutes. No pitch. Just figuring out if there's a fit.</p>
+  </section>
+
+  <footer class="footer">
+    TEND — AI Operations Partner<br>
+    Dallas-Fort Worth + Remote
+  </footer>
+
+</div>
+
 </body>
 </html>
