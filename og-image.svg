@@ -1,0 +1,14 @@
+<svg width="1200" height="630" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#FAFAF8"/>
+      <stop offset="100%" style="stop-color:#F0EFEB"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="630" fill="url(#bg)"/>
+  <text x="100" y="280" font-family="system-ui, -apple-system, sans-serif" font-size="72" font-weight="600" fill="#1A1A1A">Tend</text>
+  <text x="100" y="360" font-family="system-ui, -apple-system, sans-serif" font-size="32" fill="#5A5A5A">Fractional AI Operations</text>
+  <text x="100" y="420" font-family="system-ui, -apple-system, sans-serif" font-size="24" fill="#8A8A8A">We show up and build. 24/7 automation, managed for you.</text>
+  <rect x="100" y="480" width="120" height="44" rx="22" fill="#2A5CFF"/>
+  <text x="160" y="510" font-family="system-ui, -apple-system, sans-serif" font-size="16" font-weight="500" fill="#FFFFFF" text-anchor="middle">tend.team</text>
+</svg>
