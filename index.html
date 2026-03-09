@@ -517,9 +517,9 @@ fbq('track', 'PageView');
   /* === PRICING === */
   .pricing-grid {
     display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 16px;
-    max-width: 780px;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    max-width: 960px;
   }
 
   .price-card {
@@ -963,7 +963,7 @@ fbq('track', 'PageView');
     <p class="section-desc">One setup fee. One monthly cost. Less than a part-time hire that still makes mistakes.</p>
   </div>
 
-  <div class="pricing-grid" style="grid-template-columns: repeat(3, 1fr);">
+  <div class="pricing-grid">
     <div class="price-card" style="border: 2px solid #f59e0b; position: relative; overflow: visible;">
       <div style="position: absolute; top: -12px; left: 50%; transform: translateX(-50%); background: linear-gradient(135deg, #f59e0b, #d97706); color: #fff; font-family: var(--mono); font-size: 10px; font-weight: 600; padding: 4px 12px; border-radius: 100px; white-space: nowrap; letter-spacing: 0.5px;">MARCH ONLY — DFW</div>
       <div class="price-tag" style="color: #f59e0b;">Limited</div>
