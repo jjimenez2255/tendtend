@@ -529,6 +529,8 @@ fbq('track', 'PageView');
     padding: 40px 32px;
     position: relative;
     transition: all 0.25s;
+    display: flex;
+    flex-direction: column;
   }
 
   .price-card:hover {
@@ -611,6 +613,10 @@ fbq('track', 'PageView');
     flex-shrink: 0;
     font-size: 10px;
     color: var(--accent);
+  }
+
+  .price-list {
+    flex-grow: 1;
   }
 
   .price-cta {
@@ -999,7 +1005,7 @@ fbq('track', 'PageView');
         <li><span class="check">✓</span> Full tool integration</li>
         <li><span class="check">✓</span> Same-day operational</li>
       </ul>
-      <a href="https://cal.com/clawdbotdfw/15min" class="price-cta" style="background: linear-gradient(135deg, #f59e0b, #d97706);">Claim DFW Spot</a>
+      <a href="https://cal.com/clawdbotdfw/15min" class="price-cta">Claim DFW Spot</a>
     </div>
     <div class="price-card featured">
       <div class="price-tag">One-time</div>
@@ -1027,7 +1033,7 @@ fbq('track', 'PageView');
         <li><span class="check">✓</span> Priority support</li>
         <li><span class="check">✓</span> System health monitoring</li>
       </ul>
-      <a href="https://cal.com/clawdbotdfw/15min" class="price-cta" style="background: var(--fg); color: var(--bg);">Let's Talk</a>
+      <a href="https://cal.com/clawdbotdfw/15min" class="price-cta">Let's Talk</a>
     </div>
   </div>
 </section>
