@@ -1202,7 +1202,7 @@
             <div class="stat-label">Operation</div>
         </div>
         <div class="stat">
-            <div class="stat-value">$5,000</div>
+            <div class="stat-value">$500</div>
             <div class="stat-label">One-time setup</div>
         </div>
         <div class="stat">
@@ -1309,7 +1309,7 @@
             <div class="pricing-container three-col">
                 <div class="pricing-block">
                     <div class="pricing-type">One-time</div>
-                    <div class="pricing-amount">$5,000</div>
+                    <div class="pricing-amount">$500</div>
                     <div class="pricing-period">setup fee</div>
                     <div class="pricing-features">
                         <div class="pricing-feature">Full workflow audit</div>
@@ -1321,7 +1321,7 @@
                 <div class="pricing-divider"></div>
                 <div class="pricing-block">
                     <div class="pricing-type">Monthly</div>
-                    <div class="pricing-amount">$5,000</div>
+                    <div class="pricing-amount">$200</div>
                     <div class="pricing-period">per month</div>
                     <div class="pricing-features">
                         <div class="pricing-feature">Unlimited automations</div>
@@ -1443,7 +1443,7 @@
                 </div>
                 <div class="faq-item">
                     <h3 class="faq-question">Can I cancel anytime?</h3>
-                    <p class="faq-answer">Yes. No contracts, no lock-in. Cancel anytime and we'll help you transition. The $5,000 setup is non-refundable, but the monthly is pay-as-you-go.</p>
+                    <p class="faq-answer">Yes. No contracts, no lock-in. Cancel anytime and we'll help you transition. The $500 setup is non-refundable, but the monthly is pay-as-you-go.</p>
                 </div>
                 <div class="faq-item">
                     <h3 class="faq-question">How is this different from Zapier or Make?</h3>
