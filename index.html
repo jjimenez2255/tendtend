@@ -727,7 +727,7 @@ fbq('track', 'PageView');
     .nav-links { display: none; }
     .features-grid { grid-template-columns: 1fr; }
     .steps-grid { grid-template-columns: 1fr; gap: 32px; }
-    .pricing-grid { grid-template-columns: 1fr; }
+    .pricing-grid { grid-template-columns: 1fr !important; }
     .trust-stats { flex-direction: column; gap: 24px; }
     .trust-divider { width: 40px; height: 1px; }
     .hero-ctas { flex-direction: column; width: 100%; max-width: 320px; margin-left: auto; margin-right: auto; }
@@ -962,7 +962,22 @@ fbq('track', 'PageView');
     <p class="section-desc">One setup fee. One monthly cost. Less than a part-time hire that still makes mistakes.</p>
   </div>
 
-  <div class="pricing-grid">
+  <div class="pricing-grid" style="grid-template-columns: repeat(3, 1fr);">
+    <div class="price-card" style="border: 2px solid #f59e0b; position: relative; overflow: visible;">
+      <div style="position: absolute; top: -12px; left: 50%; transform: translateX(-50%); background: linear-gradient(135deg, #f59e0b, #d97706); color: #fff; font-family: var(--mono); font-size: 10px; font-weight: 600; padding: 4px 12px; border-radius: 100px; white-space: nowrap; letter-spacing: 0.5px;">MARCH ONLY — DFW</div>
+      <div class="price-tag" style="color: #f59e0b;">Limited</div>
+      <div class="price-label">Clawdbot Install</div>
+      <div class="price-amount">$3,000</div>
+      <p class="price-desc">On-site AI hardware installation in Dallas-Fort Worth. Physical system you own.</p>
+      <ul class="price-list">
+        <li><span class="check">✓</span> Mac Mini hardware (yours to keep)</li>
+        <li><span class="check">✓</span> On-site installation in DFW</li>
+        <li><span class="check">✓</span> Custom AI configuration</li>
+        <li><span class="check">✓</span> Full tool integration</li>
+        <li><span class="check">✓</span> Same-day operational</li>
+      </ul>
+      <a href="https://cal.com/clawdbotdfw/30min" class="price-cta" style="background: linear-gradient(135deg, #f59e0b, #d97706);">Claim DFW Spot</a>
+    </div>
     <div class="price-card featured">
       <div class="price-tag">One-time</div>
       <div class="price-label">Deploy</div>
