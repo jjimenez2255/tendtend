@@ -816,6 +816,7 @@ fbq('track', 'PageView');
     <li><a href="#features">Features</a></li>
     <li><a href="#how">How it works</a></li>
     <li><a href="#pricing">Pricing</a></li>
+    <li><a href="#meetup">DFW Meetup</a></li>
     <li><a href="https://cal.com/clawdbotdfw/15min" class="nav-cta">Book a call</a></li>
   </ul>
 </nav>
@@ -1044,6 +1045,25 @@ fbq('track', 'PageView');
   </div>
 </section>
 
+<!-- DFW MEETUP -->
+<section style="padding: 80px 24px; background: linear-gradient(135deg, rgba(42,92,255,0.06) 0%, rgba(42,92,255,0.02) 100%); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border);" id="meetup">
+  <div style="max-width: 700px; margin: 0 auto; text-align: center;">
+    <div style="display: inline-block; padding: 6px 16px; background: var(--accent); color: #fff; font-size: 11px; font-weight: 600; letter-spacing: 1px; border-radius: 100px; margin-bottom: 24px;">UPCOMING EVENT</div>
+    <h2 style="font-size: 42px; font-weight: 600; margin-bottom: 8px; letter-spacing: -1px;">DFW AI Meetup</h2>
+    <p style="font-size: 18px; color: var(--fg-secondary); margin-bottom: 16px;">For Small Business Owners & Entrepreneurs</p>
+    <p style="color: var(--fg-secondary); margin-bottom: 24px; max-width: 520px; margin-left: auto; margin-right: auto;">Learn how local businesses are using AI to respond faster, work less, and grow revenue. Live demos. Real case studies. No fluff.</p>
+    <div style="display: flex; justify-content: center; gap: 24px; margin-bottom: 32px; font-size: 14px; color: var(--fg-muted);">
+      <span>📍 Dallas-Fort Worth</span>
+      <span>📅 March 2026</span>
+      <span>👥 Limited Spots</span>
+    </div>
+    <form onsubmit="handleMeetupSignup(event)" style="display: flex; gap: 12px; justify-content: center; max-width: 420px; margin: 0 auto;">
+      <input type="email" placeholder="Enter your email" required style="flex: 1; padding: 14px 20px; border: 1px solid var(--border-strong); border-radius: 100px; font-size: 14px; background: var(--surface); color: var(--fg);">
+      <button type="submit" class="btn-primary" style="white-space: nowrap;">Register Free</button>
+    </form>
+  </div>
+</section>
+
 <!-- FINAL CTA -->
 <section class="final-cta" id="book">
   <h2>Ready to stop doing<br>the work twice?</h2>
@@ -1080,6 +1100,28 @@ fbq('track', 'PageView');
 
   // Rotate every 3 seconds
   setInterval(rotateWord, 3000);
+
+  // Meetup signup handler
+  function handleMeetupSignup(e) {
+    e.preventDefault();
+    const email = e.target.querySelector('input').value;
+    const btn = e.target.querySelector('button');
+    btn.textContent = 'Registering...';
+    
+    fetch('https://script.google.com/macros/s/AKfycbweViAOIN6H0KwBzlMYlpXWqjP6Yl3-YCicopr9webBkUyNNzcFBaDOpU6RhNjWRq0B/exec', {
+      method: 'POST',
+      mode: 'no-cors',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ email: email, source: 'tend-dfw-meetup', type: 'meetup-registration' })
+    }).then(() => {
+      btn.textContent = "You're In!";
+      e.target.reset();
+      setTimeout(() => { btn.textContent = 'Register Free'; }, 2000);
+    }).catch(() => {
+      btn.textContent = 'Register Free';
+      alert('Something went wrong. Try again.');
+    });
+  }
 </script>
 
 </body>
