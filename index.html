@@ -85,6 +85,24 @@ fbq('track', 'PageView');
     overflow-x: hidden;
   }
 
+  /* Scroll animations */
+  .animate {
+    opacity: 0;
+    transform: translateY(40px);
+    transition: opacity 0.8s ease, transform 0.8s ease;
+  }
+
+  .animate.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  .animate.d1 { transition-delay: 0.1s; }
+  .animate.d2 { transition-delay: 0.2s; }
+  .animate.d3 { transition-delay: 0.3s; }
+  .animate.d4 { transition-delay: 0.4s; }
+  .animate.d5 { transition-delay: 0.5s; }
+
   .container {
     max-width: 1120px;
     margin: 0 auto;
@@ -914,39 +932,39 @@ fbq('track', 'PageView');
 
 <!-- FEATURES -->
 <section class="container" id="features">
-  <div class="section-header">
+  <div class="section-header animate">
     <div class="section-label">What you get</div>
     <h2 class="section-title">Fractional AI operations.<br>Built for your business.</h2>
     <p class="section-desc">Not another app to log into. A dedicated team running your automations, configured for your workflows, handling real work while you focus on growth.</p>
   </div>
 
   <div class="features-grid">
-    <div class="feature-card">
+    <div class="feature-card animate">
       <div class="feature-icon">⬡</div>
       <h3>Dedicated systems</h3>
       <p>AI systems configured for your specific business. Running 24/7, managed by our team. No IT overhead.</p>
     </div>
-    <div class="feature-card">
+    <div class="feature-card animate">
       <div class="feature-icon">◈</div>
       <h3>Custom configuration</h3>
       <p>Set up for your specific workflows — lead follow-up, scheduling, invoicing, customer comms. Whatever your bottleneck is.</p>
     </div>
-    <div class="feature-card">
+    <div class="feature-card animate">
       <div class="feature-icon">◎</div>
       <h3>Runs without you</h3>
       <p>Once deployed, it operates autonomously. No IT team required. No employee to manage. Works while you sleep.</p>
     </div>
-    <div class="feature-card">
+    <div class="feature-card animate">
       <div class="feature-icon">⬢</div>
       <h3>Connects to your tools</h3>
       <p>Integrates with your email, calendar, CRM, phone system — whatever you already use. Zero workflow disruption.</p>
     </div>
-    <div class="feature-card">
+    <div class="feature-card animate">
       <div class="feature-icon">◇</div>
       <h3>Fast deployment</h3>
       <p>We integrate with your tools, configure the automations, test everything, and train your team. Operational in days, not months.</p>
     </div>
-    <div class="feature-card">
+    <div class="feature-card animate">
       <div class="feature-icon">⊞</div>
       <h3>Monthly optimization</h3>
       <p>We review performance, tune workflows, and add new automations. Your system gets smarter every single month.</p>
@@ -956,7 +974,7 @@ fbq('track', 'PageView');
 
 <!-- HOW IT WORKS -->
 <section class="container" id="how" style="padding-top: 40px;">
-  <div class="section-header">
+  <div class="section-header animate">
     <div class="section-label">How it works</div>
     <h2 class="section-title">Three steps. One visit.<br>You're operational.</h2>
     <p class="section-desc">No 6-month implementation. No endless meetings. We deploy fast and you're running within days.</p>
@@ -983,14 +1001,14 @@ fbq('track', 'PageView');
 
 <!-- PRICING -->
 <section class="container" id="pricing">
-  <div class="section-header">
+  <div class="section-header animate">
     <div class="section-label">Pricing</div>
     <h2 class="section-title">Simple. Transparent.</h2>
     <p class="section-desc">One setup fee. One monthly cost. Less than a part-time hire that still makes mistakes.</p>
   </div>
 
   <div class="pricing-grid">
-    <div class="price-card" style="border: 2px solid #f59e0b; position: relative; overflow: visible;">
+    <div class="price-card animate" style="border: 2px solid #f59e0b; position: relative; overflow: visible;">
       <div style="position: absolute; top: -12px; left: 50%; transform: translateX(-50%); background: linear-gradient(135deg, #f59e0b, #d97706); color: #fff; font-family: var(--mono); font-size: 10px; font-weight: 600; padding: 4px 12px; border-radius: 100px; white-space: nowrap; letter-spacing: 0.5px;">MARCH ONLY — DFW</div>
       <div class="price-tag" style="color: #f59e0b;">Limited</div>
       <div class="price-label">Clawdbot Install</div>
@@ -1005,7 +1023,7 @@ fbq('track', 'PageView');
       </ul>
       <a href="https://cal.com/clawdbotdfw/15min" class="price-cta">Claim DFW Spot</a>
     </div>
-    <div class="price-card featured">
+    <div class="price-card featured animate">
       <div class="price-tag">One-time</div>
       <div class="price-label">Deploy</div>
       <div class="price-amount">$5,000</div>
@@ -1019,7 +1037,7 @@ fbq('track', 'PageView');
       </ul>
       <a href="https://cal.com/clawdbotdfw/15min" class="price-cta">Get Started</a>
     </div>
-    <div class="price-card">
+    <div class="price-card animate">
       <div class="price-tag">Monthly</div>
       <div class="price-label">Partner</div>
       <div class="price-amount">Custom</div>
@@ -1038,33 +1056,33 @@ fbq('track', 'PageView');
 
 <!-- FAQ -->
 <section class="container" id="faq" style="padding-bottom: 60px;">
-  <div class="section-header">
+  <div class="section-header animate">
     <div class="section-label">FAQ</div>
     <h2 class="section-title">Common questions</h2>
   </div>
 
   <div class="faq-list">
-    <div class="faq-item" onclick="this.classList.toggle('open')">
+    <div class="faq-item animate" onclick="this.classList.toggle('open')">
       <div class="faq-q">What exactly does Tend do? <span class="faq-toggle">+</span></div>
       <div class="faq-a">It's a physical AI system installed in your office that automates repetitive business operations — email responses, scheduling, lead follow-up, data entry, invoicing, customer support. Whatever's eating your time and not generating revenue.</div>
     </div>
-    <div class="faq-item" onclick="this.classList.toggle('open')">
+    <div class="faq-item animate" onclick="this.classList.toggle('open')">
       <div class="faq-q">Do I need any technical knowledge? <span class="faq-toggle">+</span></div>
       <div class="faq-a">No. We handle everything — install, setup, configuration, integrations. You continue running your business as normal. The system works in the background.</div>
     </div>
-    <div class="faq-item" onclick="this.classList.toggle('open')">
+    <div class="faq-item animate" onclick="this.classList.toggle('open')">
       <div class="faq-q">How is this different from ChatGPT? <span class="faq-toggle">+</span></div>
       <div class="faq-a">ChatGPT is a chat window you manually use. Tend is an always-on system that acts on its own — monitoring inboxes, responding to leads, executing tasks. It's the difference between having a search engine and having an employee.</div>
     </div>
-    <div class="faq-item" onclick="this.classList.toggle('open')">
+    <div class="faq-item animate" onclick="this.classList.toggle('open')">
       <div class="faq-q">What kind of ROI can I expect? <span class="faq-toggle">+</span></div>
       <div class="faq-a">Most businesses recover the setup cost within 30 days through time saved alone. At $5,000/month, you're paying less than a single hour of a part-time employee per week for 24/7 automation.</div>
     </div>
-    <div class="faq-item" onclick="this.classList.toggle('open')">
+    <div class="faq-item animate" onclick="this.classList.toggle('open')">
       <div class="faq-q">What happens if something breaks? <span class="faq-toggle">+</span></div>
       <div class="faq-a">Your monthly service includes priority support and system health monitoring. We catch issues before you do, and if anything needs attention, we handle it remotely or on-site.</div>
     </div>
-    <div class="faq-item" onclick="this.classList.toggle('open')">
+    <div class="faq-item animate" onclick="this.classList.toggle('open')">
       <div class="faq-q">Is my data secure? <span class="faq-toggle">+</span></div>
       <div class="faq-a">Your data lives on hardware in your office — not on a shared cloud server. You control it entirely. Nothing leaves your network unless you configure it to.</div>
     </div>
@@ -1148,6 +1166,19 @@ fbq('track', 'PageView');
       alert('Something went wrong. Try again.');
     });
   }
+</script>
+
+<script>
+// Scroll animations
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add('visible');
+    }
+  });
+}, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+
+document.querySelectorAll('.animate').forEach(el => observer.observe(el));
 </script>
 
 </body>
