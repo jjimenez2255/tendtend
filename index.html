@@ -515,6 +515,11 @@ fbq('track', 'PageView');
     grid-template-columns: repeat(3, 1fr);
     gap: 40px;
   }
+  
+  .steps-grid.steps-5 {
+    grid-template-columns: repeat(5, 1fr);
+    gap: 24px;
+  }
 
   .step-card {
     position: relative;
@@ -810,7 +815,7 @@ fbq('track', 'PageView');
     nav { padding: 0 16px; }
     .nav-links { display: none; }
     .features-grid { grid-template-columns: 1fr; }
-    .steps-grid { grid-template-columns: 1fr; gap: 32px; }
+    .steps-grid, .steps-grid.steps-5 { grid-template-columns: 1fr !important; gap: 32px !important; }
     .pricing-grid { grid-template-columns: 1fr !important; }
     .trust-stats { flex-direction: column; gap: 24px; }
     .trust-divider { width: 40px; height: 1px; }
@@ -1039,7 +1044,7 @@ fbq('track', 'PageView');
     <p class="section-desc">No 6-month implementation. No endless meetings. We deploy fast and you're running within days.</p>
   </div>
 
-  <div class="steps-grid" style="grid-template-columns: repeat(5, 1fr);">
+  <div class="steps-grid steps-5">
     <div class="step-card">
       <div class="step-num">01</div>
       <h3>Discovery Call</h3>
