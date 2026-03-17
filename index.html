@@ -8,7 +8,7 @@
   function gtag(){dataLayer.push(arguments);}
   gtag('js', new Date());
   gtag('config', 'AW-18002968891');
-  gtag('config', 'G-TEXBWRKN36'); // GA4 Analytics
+  gtag('config', 'G-TEXBWRKN36');
 </script>
 
 <!-- Meta Pixel Code -->
@@ -27,11 +27,11 @@ fbq('track', 'PageView');
 
 <!-- Microsoft Clarity -->
 <script type="text/javascript">
-    (function(c,l,a,r,i,t,y){
-        c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
-        t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
-        y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
-    })(window, document, "clarity", "script", "vww1t6yauz");
+(function(c,l,a,r,i,t,y){
+    c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+    t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+    y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+})(window, document, "clarity", "script", "vww1t6yauz");
 </script>
 
 <meta charset="UTF-8">
@@ -39,1234 +39,680 @@ fbq('track', 'PageView');
 <title>Tend — Dedicated AI Operators for Your Business</title>
 <meta name="description" content="We build, run, and support dedicated AI operators for your business. Custom automation that handles lead follow-up, scheduling, invoicing, customer comms — managed by our team.">
 
-<!-- Favicon -->
-<link rel="icon" type="image/svg+xml" href="/favicon.svg">
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect x='15' y='20' width='70' height='12' fill='black'/><rect x='15' y='40' width='70' height='12' fill='black'/><rect x='40' y='60' width='20' height='20' fill='black'/></svg>">
 
-<!-- Open Graph / Social -->
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://tend.team">
 <meta property="og:title" content="Tend — Dedicated AI Operators for Your Business">
-<meta property="og:description" content="We build, run, and support dedicated AI operators for your business. Custom automation, managed by our team.">
-<meta property="og:image" content="https://tend.team/og-image.png">
+<meta property="og:description" content="We build, run, and support dedicated AI operators for your business.">
 
-<!-- Twitter -->
-<meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="Tend — Dedicated AI Operators for Your Business">
-<meta name="twitter:description" content="We build, run, and support dedicated AI operators for your business. Custom automation, managed by our team.">
-<meta name="twitter:image" content="https://tend.team/og-image.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
 
-<link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,300;1,9..40,400&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
 <style>
-  :root {
-    --bg: #FAFAF8;
-    --bg-warm: #F5F4F0;
-    --surface: #FFFFFF;
-    --surface-dim: #F0EFEB;
-    --border: rgba(0,0,0,0.06);
-    --border-strong: rgba(0,0,0,0.1);
-    --fg: #1A1A1A;
-    --fg-secondary: #5A5A5A;
-    --fg-muted: #8A8A8A;
-    --fg-dim: #B0B0B0;
-    --accent: #2A5CFF;
-    --accent-soft: rgba(42,92,255,0.06);
-    --accent-medium: rgba(42,92,255,0.1);
-    --accent-hover: #1A4AE0;
-    --success: #1DB954;
-    --mono: 'IBM Plex Mono', monospace;
-    --sans: 'DM Sans', -apple-system, sans-serif;
-    --radius: 12px;
-    --radius-lg: 20px;
-    --shadow-sm: 0 1px 3px rgba(0,0,0,0.04);
-    --shadow-md: 0 4px 20px rgba(0,0,0,0.06);
-    --shadow-lg: 0 12px 40px rgba(0,0,0,0.08);
-  }
-
-  * { margin: 0; padding: 0; box-sizing: border-box; }
-  ::selection { background: var(--accent); color: #fff; }
-  html { scroll-behavior: smooth; font-size: 16px; }
-
-  body {
-    font-family: var(--sans);
-    background: var(--bg);
-    color: var(--fg);
-    -webkit-font-smoothing: antialiased;
-    line-height: 1.6;
-    overflow-x: hidden;
-  }
-
-  /* Scroll animations */
-  .animate {
-    opacity: 0;
-    transform: translateY(40px);
-    transition: opacity 0.8s ease, transform 0.8s ease;
-  }
-
-  .animate.visible {
-    opacity: 1;
-    transform: translateY(0);
-  }
-
-  .animate.d1 { transition-delay: 0.1s; }
-  .animate.d2 { transition-delay: 0.2s; }
-  .animate.d3 { transition-delay: 0.3s; }
-  .animate.d4 { transition-delay: 0.4s; }
-  .animate.d5 { transition-delay: 0.5s; }
-
-  .container {
-    max-width: 1120px;
-    margin: 0 auto;
-    padding: 0 24px;
-  }
-
-  /* === NAV === */
-  nav {
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    z-index: 100;
-    height: 64px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 0 32px;
-    background: rgba(250,250,248,0.85);
-    backdrop-filter: blur(20px);
-    -webkit-backdrop-filter: blur(20px);
-    border-bottom: 1px solid var(--border);
-  }
-
-  .nav-left {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-  }
-
-  .nav-logo {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-  }
-
-  .nav-logo-mark {
-    width: 22px;
-    height: 22px;
-  }
-
-  .nav-logo-mark svg {
-    width: 100%;
-    height: 100%;
-    fill: var(--fg);
-  }
-
-  .nav-logo-text {
-    font-family: var(--sans);
-    font-weight: 600;
-    font-size: 17px;
-    letter-spacing: -0.3px;
-    color: var(--fg);
-  }
-
-  .nav-badge {
-    font-family: var(--mono);
-    font-size: 10px;
-    font-weight: 500;
-    color: var(--accent);
-    background: var(--accent-soft);
-    padding: 3px 10px;
-    border-radius: 100px;
-    letter-spacing: 0.5px;
-  }
-
-  .nav-links {
-    display: flex;
-    gap: 32px;
-    align-items: center;
-    list-style: none;
-  }
-
-  .nav-links a {
-    font-size: 14px;
-    font-weight: 400;
-    color: var(--fg-secondary);
-    text-decoration: none;
-    transition: color 0.2s;
-  }
-
-  .nav-links a:hover { color: var(--fg); }
-
-  .nav-cta {
-    font-family: var(--sans);
-    font-size: 14px;
-    font-weight: 500;
-    color: #fff !important;
-    background: var(--fg);
-    padding: 9px 22px;
-    border-radius: 100px;
-    text-decoration: none;
-    transition: all 0.2s;
-    border: none;
-    cursor: pointer;
-  }
-
-  .nav-cta:hover {
-    background: #333;
-    transform: translateY(-1px);
-  }
-
-  /* === HERO === */
-  .hero {
-    padding: 160px 24px 100px;
-    text-align: center;
-    position: relative;
-    overflow: hidden;
-  }
-
-  .hero::before {
-    content: '';
-    position: absolute;
-    top: -120px;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 800px;
-    height: 600px;
-    background: radial-gradient(ellipse, rgba(42,92,255,0.04) 0%, transparent 70%);
-    pointer-events: none;
-  }
-
-  .hero-pill {
-    display: inline-flex;
-    align-items: center;
-    gap: 8px;
-    font-family: var(--mono);
-    font-size: 12px;
-    font-weight: 500;
-    color: var(--accent);
-    background: var(--accent-soft);
-    border: 1px solid var(--accent-medium);
-    padding: 6px 16px;
-    border-radius: 100px;
-    margin-bottom: 32px;
-  }
-
-  .hero-pill .dot {
-    width: 6px;
-    height: 6px;
-    background: var(--success);
-    border-radius: 50%;
-    animation: pulse 2s ease-in-out infinite;
-  }
-
-  @keyframes pulse {
-    0%, 100% { opacity: 1; }
-    50% { opacity: 0.4; }
-  }
-
-  .hero h1 {
-    font-family: var(--sans);
-    font-weight: 600;
-    font-size: clamp(40px, 6vw, 64px);
-    line-height: 1.05;
-    letter-spacing: -1.5px;
-    color: var(--fg);
-    margin-bottom: 24px;
-    max-width: 700px;
-    margin-left: auto;
-    margin-right: auto;
-  }
-
-  .hero-sub {
-    font-size: 17px;
-    font-weight: 300;
-    color: var(--fg-secondary);
-    max-width: 520px;
-    margin: 0 auto 40px;
-    line-height: 1.65;
-  }
-
-  .hero-ctas {
-    display: flex;
-    gap: 12px;
-    justify-content: center;
-    align-items: center;
-    margin-bottom: 64px;
-  }
-
-  .btn-primary {
-    font-family: var(--sans);
-    font-size: 15px;
-    font-weight: 500;
-    color: #fff;
-    background: var(--accent);
-    padding: 13px 28px;
-    border-radius: 100px;
-    text-decoration: none;
-    transition: all 0.25s;
-    border: none;
-    cursor: pointer;
-    box-shadow: 0 2px 8px rgba(42,92,255,0.2);
-  }
-
-  .btn-primary:hover {
-    background: var(--accent-hover);
-    transform: translateY(-1px);
-    box-shadow: 0 4px 16px rgba(42,92,255,0.25);
-  }
-
-  .btn-ghost {
-    font-family: var(--sans);
-    font-size: 15px;
-    font-weight: 500;
-    color: var(--fg-secondary);
-    background: transparent;
-    padding: 13px 28px;
-    border-radius: 100px;
-    text-decoration: none;
-    border: 1px solid var(--border-strong);
-    transition: all 0.2s;
-    cursor: pointer;
-  }
-
-  .btn-ghost:hover {
-    border-color: var(--fg-muted);
-    color: var(--fg);
-  }
-
-  /* === HERO VISUAL === */
-  .hero-visual {
-    max-width: 900px;
-    margin: 0 auto;
-    background: var(--surface);
-    border-radius: var(--radius-lg);
-    border: 1px solid var(--border);
-    box-shadow: var(--shadow-lg);
-    padding: 40px;
-    position: relative;
-  }
-
-  .terminal-header {
-    display: flex;
-    align-items: center;
-    gap: 8px;
-    margin-bottom: 24px;
-  }
-
-  .terminal-dot {
-    width: 10px;
-    height: 10px;
-    border-radius: 50%;
-    background: var(--surface-dim);
-  }
-
-  .terminal-label {
-    font-family: var(--mono);
-    font-size: 11px;
-    color: var(--fg-muted);
-    margin-left: 8px;
-  }
-
-  .terminal-body {
-    font-family: var(--mono);
-    font-size: 13px;
-    line-height: 2;
-    color: var(--fg-secondary);
-  }
-
-  .terminal-body .cmd {
-    color: var(--fg-muted);
-    user-select: none;
-  }
-
-  .terminal-body .highlight {
-    color: var(--accent);
-    font-weight: 500;
-  }
-
-  .terminal-body .success {
-    color: var(--success);
-  }
-
-  .terminal-body .dim {
-    color: var(--fg-dim);
-  }
-
-  /* === TRUST === */
-  .trust-section {
-    padding: 48px 0;
-    text-align: center;
-  }
-
-  .trust-label {
-    font-family: var(--mono);
-    font-size: 11px;
-    color: var(--fg-muted);
-    letter-spacing: 1px;
-    text-transform: uppercase;
-    margin-bottom: 24px;
-  }
-
-  .trust-stats {
-    display: flex;
-    justify-content: center;
-    gap: 64px;
-    align-items: center;
-  }
-
-  .trust-stat .number {
-    font-family: var(--sans);
-    font-weight: 600;
-    font-size: 32px;
-    letter-spacing: -1px;
-    color: var(--fg);
-  }
-
-  .trust-stat .label {
-    font-size: 13px;
-    color: var(--fg-muted);
-    margin-top: 2px;
-  }
-
-  .trust-divider {
-    width: 1px;
-    height: 40px;
-    background: var(--border-strong);
-  }
-
-  /* === SECTION === */
-  section {
-    padding: 100px 0;
-  }
-
-  .section-header {
-    margin-bottom: 56px;
-  }
-
-  .section-label {
-    font-family: var(--mono);
-    font-size: 12px;
-    font-weight: 500;
-    color: var(--accent);
-    letter-spacing: 1px;
-    text-transform: uppercase;
-    margin-bottom: 12px;
-  }
-
-  .section-title {
-    font-family: var(--sans);
-    font-weight: 600;
-    font-size: clamp(28px, 4vw, 40px);
-    line-height: 1.15;
-    letter-spacing: -0.5px;
-    color: var(--fg);
-    margin-bottom: 16px;
-  }
-
-  .section-desc {
-    font-size: 16px;
-    font-weight: 300;
-    color: var(--fg-secondary);
-    max-width: 520px;
-    line-height: 1.6;
-  }
-
-  /* === FEATURES GRID === */
-  .features-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 16px;
-  }
-
-  .feature-card {
-    background: var(--surface);
-    border: 1px solid var(--border);
-    border-radius: var(--radius-lg);
-    padding: 36px 28px;
-    transition: all 0.25s;
-  }
-
-  .feature-card:hover {
-    border-color: var(--border-strong);
-    box-shadow: var(--shadow-md);
-    transform: translateY(-2px);
-  }
-
-  .feature-icon {
-    width: 44px;
-    height: 44px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background: var(--accent-soft);
-    border-radius: 12px;
-    margin-bottom: 20px;
-    font-size: 18px;
-  }
-
-  .feature-card h3 {
-    font-family: var(--sans);
-    font-weight: 600;
-    font-size: 16px;
-    margin-bottom: 10px;
-    letter-spacing: -0.2px;
-  }
-
-  .feature-card p {
-    font-size: 14px;
-    font-weight: 300;
-    color: var(--fg-secondary);
-    line-height: 1.6;
-  }
-
-  /* === HOW IT WORKS === */
-  .steps-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 40px;
-  }
+:root {
+  --void-black: #000000;
+  --engine-charcoal: #141414;
+  --field-gray: #737373;
+  --canvas-white: #F2F2F2;
+  --signal-white: #FFFFFF;
   
-  .steps-grid.steps-5 {
-    grid-template-columns: repeat(5, 1fr);
-    gap: 24px;
-  }
+  --bg: var(--canvas-white);
+  --surface: var(--signal-white);
+  --fg: var(--void-black);
+  --fg-muted: var(--field-gray);
+  
+  --font: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  --radius: 8px;
+}
 
-  .step-card {
-    position: relative;
-  }
+* { margin: 0; padding: 0; box-sizing: border-box; }
+html { scroll-behavior: smooth; }
 
-  .step-num {
-    font-family: var(--mono);
-    font-size: 11px;
-    font-weight: 500;
-    color: var(--accent);
-    background: var(--accent-soft);
-    width: 32px;
-    height: 32px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    border-radius: 10px;
-    margin-bottom: 20px;
-  }
+body {
+  font-family: var(--font);
+  background: var(--bg);
+  color: var(--fg);
+  -webkit-font-smoothing: antialiased;
+  line-height: 1.6;
+}
 
-  .step-card h3 {
-    font-family: var(--sans);
-    font-weight: 600;
-    font-size: 18px;
-    margin-bottom: 10px;
-    letter-spacing: -0.2px;
-  }
+/* === TYPOGRAPHY === */
+h1, h2, h3 {
+  font-weight: 300;
+  letter-spacing: -0.02em;
+  line-height: 1.2;
+}
 
-  .step-card p {
-    font-size: 14px;
-    font-weight: 300;
-    color: var(--fg-secondary);
-    line-height: 1.65;
-  }
+h1 { font-size: clamp(2.5rem, 6vw, 4rem); }
+h2 { font-size: clamp(1.75rem, 4vw, 2.5rem); }
+h3 { font-size: 1.25rem; font-weight: 500; }
 
-  /* === PRICING === */
-  .pricing-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 20px;
-    max-width: 960px;
-    align-items: stretch;
-  }
+p { color: var(--fg-muted); }
 
-  .price-card {
-    background: var(--surface);
-    border: 1px solid var(--border);
-    border-radius: var(--radius-lg);
-    padding: 40px 32px;
-    position: relative;
-    transition: all 0.25s;
-    display: flex;
-    flex-direction: column;
-  }
+/* === LAYOUT === */
+.container {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 80px 24px;
+}
 
-  .price-card:hover {
-    box-shadow: var(--shadow-md);
-  }
+.section-label {
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--fg-muted);
+  margin-bottom: 16px;
+}
 
-  .price-card.featured {
-    border-color: var(--accent);
-    box-shadow: 0 0 0 1px var(--accent), var(--shadow-md);
-  }
+/* === NAV === */
+nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 100;
+  padding: 20px 24px;
+  background: rgba(242, 242, 242, 0.9);
+  backdrop-filter: blur(20px);
+  border-bottom: 1px solid rgba(0,0,0,0.05);
+}
 
-  .price-tag {
-    font-family: var(--mono);
-    font-size: 10px;
-    font-weight: 500;
-    color: var(--accent);
-    background: var(--accent-soft);
-    padding: 4px 10px;
-    border-radius: 100px;
-    letter-spacing: 0.5px;
-    display: inline-block;
-    margin-bottom: 20px;
-  }
+.nav-inner {
+  max-width: 1100px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
 
-  .price-label {
-    font-size: 13px;
-    color: var(--fg-muted);
-    margin-bottom: 8px;
-  }
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  text-decoration: none;
+  color: var(--fg);
+}
 
-  .price-amount {
-    font-family: var(--sans);
-    font-weight: 600;
-    font-size: 44px;
-    letter-spacing: -2px;
-    color: var(--fg);
-    margin-bottom: 4px;
-  }
+.logo-icon {
+  width: 32px;
+  height: 32px;
+}
 
-  .price-amount span {
-    font-size: 16px;
-    font-weight: 400;
-    color: var(--fg-muted);
-    letter-spacing: 0;
-  }
+.logo-text {
+  font-size: 20px;
+  font-weight: 300;
+  letter-spacing: 0.05em;
+}
 
-  .price-desc {
-    font-size: 14px;
-    font-weight: 300;
-    color: var(--fg-secondary);
-    line-height: 1.5;
-    margin-bottom: 28px;
-  }
+.nav-cta {
+  padding: 10px 20px;
+  background: var(--void-black);
+  color: var(--signal-white);
+  text-decoration: none;
+  font-size: 14px;
+  font-weight: 500;
+  border-radius: var(--radius);
+  transition: opacity 0.2s;
+}
 
-  .price-list {
-    list-style: none;
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-    flex-grow: 1;
-  }
+.nav-cta:hover { opacity: 0.85; }
 
-  .price-list li {
-    font-size: 14px;
-    font-weight: 400;
-    color: var(--fg-secondary);
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    line-height: 1.4;
-  }
+/* === HERO === */
+.hero {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  padding-top: 80px;
+}
 
-  .check {
-    width: 18px;
-    height: 18px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background: var(--accent-soft);
-    border-radius: 50%;
-    flex-shrink: 0;
-    font-size: 10px;
-    color: var(--accent);
-  }
+.hero-content {
+  max-width: 700px;
+}
 
-  .price-cta {
-    display: block;
-    width: 100%;
-    text-align: center;
-    font-family: var(--sans);
-    font-size: 15px;
-    font-weight: 600;
-    color: #fff;
-    background: var(--accent);
-    padding: 16px 24px;
-    border-radius: 12px;
-    text-decoration: none;
-    transition: all 0.25s;
-    margin-top: 24px;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-  }
+.hero h1 {
+  margin-bottom: 24px;
+}
 
-  .price-cta:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 4px 16px rgba(0,0,0,0.15);
-  }
+.hero p {
+  font-size: 1.25rem;
+  margin-bottom: 40px;
+  max-width: 540px;
+}
 
-  /* === FAQ === */
-  .faq-list {
-    max-width: 640px;
-  }
+.hero-cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 16px 32px;
+  background: var(--void-black);
+  color: var(--signal-white);
+  text-decoration: none;
+  font-size: 16px;
+  font-weight: 500;
+  border-radius: var(--radius);
+  transition: opacity 0.2s;
+}
 
-  .faq-item {
-    border-bottom: 1px solid var(--border);
-    padding: 20px 0;
-    cursor: pointer;
-  }
+.hero-cta:hover { opacity: 0.85; }
 
-  .faq-q {
-    font-family: var(--sans);
-    font-weight: 500;
-    font-size: 15px;
-    color: var(--fg);
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    gap: 16px;
-  }
+.hero-cta svg {
+  width: 16px;
+  height: 16px;
+}
 
-  .faq-toggle {
-    width: 24px;
-    height: 24px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    border-radius: 50%;
-    background: var(--surface-dim);
-    font-size: 14px;
-    color: var(--fg-muted);
-    flex-shrink: 0;
-    transition: all 0.2s;
-  }
+/* === FEATURES === */
+.features {
+  background: var(--surface);
+  border-radius: 16px;
+  padding: 64px;
+}
 
-  .faq-item.open .faq-toggle {
-    background: var(--accent-soft);
-    color: var(--accent);
-    transform: rotate(45deg);
-  }
+.features-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 48px;
+  margin-top: 48px;
+}
 
-  .faq-a {
-    font-size: 14px;
-    font-weight: 300;
-    color: var(--fg-secondary);
-    line-height: 1.65;
-    max-height: 0;
-    overflow: hidden;
-    transition: max-height 0.3s ease, padding 0.3s ease;
-    padding-top: 0;
-  }
+.feature h3 {
+  margin-bottom: 12px;
+}
 
-  .faq-item.open .faq-a {
-    max-height: 200px;
-    padding-top: 14px;
-  }
+.feature p {
+  font-size: 15px;
+  line-height: 1.7;
+}
 
-  /* === FINAL CTA === */
-  .final-cta {
-    text-align: center;
-    padding: 100px 24px;
-    background: var(--surface);
-    border-top: 1px solid var(--border);
-    border-bottom: 1px solid var(--border);
-  }
+/* === PROCESS === */
+.process-grid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 24px;
+  margin-top: 48px;
+}
 
-  .final-cta h2 {
-    font-family: var(--sans);
-    font-weight: 600;
-    font-size: clamp(32px, 5vw, 48px);
-    line-height: 1.1;
-    letter-spacing: -1px;
-    color: var(--fg);
-    margin-bottom: 16px;
-  }
+.step {
+  background: var(--surface);
+  border-radius: 12px;
+  padding: 32px 24px;
+}
 
-  .final-cta p {
-    font-size: 16px;
-    font-weight: 300;
-    color: var(--fg-secondary);
-    max-width: 440px;
-    margin: 0 auto 36px;
-    line-height: 1.6;
-  }
+.step-num {
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--fg-muted);
+  margin-bottom: 16px;
+}
 
-  /* === BIG WORDMARK === */
-  .big-wordmark {
-    width: 100%;
-    overflow: hidden;
-    padding: 60px 0 0;
-    text-align: center;
-    position: relative;
-  }
+.step h3 {
+  margin-bottom: 12px;
+  font-size: 1.1rem;
+}
 
-  .big-wordmark span {
-    font-family: var(--sans);
-    font-size: clamp(120px, 25vw, 280px);
-    font-weight: 700;
-    letter-spacing: -8px;
-    color: var(--fg);
-    opacity: 0.08;
-    display: block;
-    line-height: 0.8;
-    transform: translateY(20%);
-    user-select: none;
-  }
+.step p {
+  font-size: 14px;
+  line-height: 1.6;
+}
 
-  /* === FOOTER === */
-  footer {
-    padding: 32px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-  }
+/* === PRICING === */
+.pricing-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 24px;
+  max-width: 800px;
+  margin: 48px auto 0;
+}
 
-  footer span {
-    font-size: 13px;
-    color: var(--fg-dim);
-  }
+.price-card {
+  background: var(--surface);
+  border-radius: 12px;
+  padding: 40px;
+}
 
-  footer a {
-    font-size: 13px;
-    color: var(--fg-muted);
-    text-decoration: none;
-    transition: color 0.2s;
-  }
+.price-card.featured {
+  border: 2px solid var(--void-black);
+}
 
-  footer a:hover { color: var(--fg); }
+.price-label {
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: var(--fg-muted);
+  margin-bottom: 8px;
+}
 
-  /* === RESPONSIVE === */
-  @media (max-width: 768px) {
-    nav { padding: 0 16px; }
-    .nav-links { display: none; }
-    .features-grid { grid-template-columns: 1fr; }
-    .steps-grid, .steps-grid.steps-5 { grid-template-columns: 1fr !important; gap: 32px !important; }
-    .pricing-grid { grid-template-columns: 1fr !important; }
-    .trust-stats { flex-direction: column; gap: 24px; }
-    .trust-divider { width: 40px; height: 1px; }
-    .hero-ctas { flex-direction: column; width: 100%; max-width: 320px; margin-left: auto; margin-right: auto; }
-    .btn-primary, .btn-ghost { width: 100%; text-align: center; }
-    footer { flex-direction: column; gap: 8px; text-align: center; }
-    .hero-visual { padding: 24px; }
-  }
+.price-amount {
+  font-size: 3rem;
+  font-weight: 300;
+  letter-spacing: -0.02em;
+  margin-bottom: 16px;
+}
 
-  /* === ANIMATIONS === */
-  @keyframes fadeUp {
-    from { opacity: 0; transform: translateY(20px); }
-    to { opacity: 1; transform: translateY(0); }
-  }
+.price-amount span {
+  font-size: 1rem;
+  color: var(--fg-muted);
+}
 
-  .animate {
-    opacity: 0;
-    animation: fadeUp 0.5s ease forwards;
-  }
+.price-card p {
+  font-size: 15px;
+  margin-bottom: 24px;
+}
 
-  .d1 { animation-delay: 0.05s; }
-  .d2 { animation-delay: 0.1s; }
-  .d3 { animation-delay: 0.15s; }
-  .d4 { animation-delay: 0.2s; }
-  .d5 { animation-delay: 0.3s; }
-  .d6 { animation-delay: 0.4s; }
+.price-list {
+  list-style: none;
+  margin-bottom: 32px;
+}
 
-  /* === ROTATING WORDS === */
-  .rotating-word {
-    display: inline-block;
-    color: var(--accent);
-    position: relative;
-  }
+.price-list li {
+  padding: 8px 0;
+  font-size: 14px;
+  color: var(--fg-muted);
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
 
-  .rotating-word::after {
-    content: '';
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    height: 3px;
-    background: var(--accent);
-    opacity: 0.3;
-    border-radius: 2px;
-  }
+.price-list li::before {
+  content: "✓";
+  font-weight: 600;
+  color: var(--void-black);
+}
 
-  @keyframes fadeInUp {
-    0% {
-      opacity: 0;
-      transform: translateY(10px);
-    }
-    100% {
-      opacity: 1;
-      transform: translateY(0);
-    }
-  }
+.price-cta {
+  display: block;
+  width: 100%;
+  padding: 14px 24px;
+  background: var(--void-black);
+  color: var(--signal-white);
+  text-decoration: none;
+  text-align: center;
+  font-size: 14px;
+  font-weight: 500;
+  border-radius: var(--radius);
+  transition: opacity 0.2s;
+}
 
-  @keyframes fadeOutUp {
-    0% {
-      opacity: 1;
-      transform: translateY(0);
-    }
-    100% {
-      opacity: 0;
-      transform: translateY(-10px);
-    }
-  }
+.price-cta:hover { opacity: 0.85; }
 
-  .rotating-word.fade-in {
-    animation: fadeInUp 0.4s ease forwards;
-  }
+.price-cta.secondary {
+  background: transparent;
+  color: var(--void-black);
+  border: 1px solid var(--void-black);
+}
 
-  .rotating-word.fade-out {
-    animation: fadeOutUp 0.4s ease forwards;
-  }
+/* === DFW OFFER === */
+.dfw-offer {
+  background: var(--surface);
+  border-radius: 12px;
+  padding: 32px 40px;
+  margin-top: 32px;
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 32px;
+}
+
+.dfw-badge {
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: var(--signal-white);
+  background: var(--void-black);
+  padding: 4px 10px;
+  border-radius: 4px;
+  margin-bottom: 8px;
+  display: inline-block;
+}
+
+.dfw-offer h3 {
+  margin-bottom: 4px;
+}
+
+.dfw-offer p {
+  font-size: 14px;
+}
+
+.dfw-price {
+  font-size: 2rem;
+  font-weight: 300;
+  white-space: nowrap;
+}
+
+/* === PROOF === */
+.proof {
+  text-align: center;
+}
+
+.proof-quote {
+  max-width: 700px;
+  margin: 48px auto 0;
+  background: var(--surface);
+  border-radius: 12px;
+  padding: 48px;
+}
+
+.proof-quote blockquote {
+  font-size: 1.5rem;
+  font-weight: 300;
+  line-height: 1.5;
+  color: var(--fg);
+  margin-bottom: 24px;
+}
+
+.proof-quote cite {
+  font-style: normal;
+  font-size: 14px;
+  color: var(--fg-muted);
+}
+
+/* === FAQ === */
+.faq-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 24px;
+  margin-top: 48px;
+}
+
+.faq-item {
+  background: var(--surface);
+  border-radius: 12px;
+  padding: 32px;
+}
+
+.faq-item h3 {
+  margin-bottom: 12px;
+  font-size: 1rem;
+}
+
+.faq-item p {
+  font-size: 14px;
+  line-height: 1.7;
+}
+
+/* === CTA === */
+.final-cta {
+  text-align: center;
+  padding: 120px 24px;
+}
+
+.final-cta h2 {
+  margin-bottom: 16px;
+}
+
+.final-cta p {
+  font-size: 1.125rem;
+  margin-bottom: 40px;
+}
+
+.final-cta .hero-cta {
+  font-size: 18px;
+  padding: 18px 40px;
+}
+
+/* === FOOTER === */
+footer {
+  padding: 40px 24px;
+  text-align: center;
+  font-size: 13px;
+  color: var(--fg-muted);
+}
+
+footer a {
+  color: var(--fg-muted);
+  text-decoration: none;
+}
+
+footer a:hover { color: var(--fg); }
+
+/* === RESPONSIVE === */
+@media (max-width: 900px) {
+  .features-grid { grid-template-columns: 1fr; gap: 32px; }
+  .features { padding: 40px 32px; }
+  .process-grid { grid-template-columns: 1fr; gap: 16px; }
+  .pricing-grid { grid-template-columns: 1fr; }
+  .faq-grid { grid-template-columns: 1fr; }
+  .dfw-offer { flex-direction: column; text-align: center; }
+}
+
+@media (max-width: 600px) {
+  .container { padding: 60px 20px; }
+  .hero { min-height: auto; padding: 120px 0 60px; }
+  .features { padding: 32px 24px; }
+  h1 { font-size: 2rem; }
+  h2 { font-size: 1.5rem; }
+}
+
+/* === ANIMATIONS === */
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.animate {
+  opacity: 0;
+  animation: fadeUp 0.6s ease forwards;
+}
+
+.animate-delay-1 { animation-delay: 0.1s; }
+.animate-delay-2 { animation-delay: 0.2s; }
+.animate-delay-3 { animation-delay: 0.3s; }
 </style>
 </head>
 <body>
 
 <!-- NAV -->
 <nav>
-  <div class="nav-left">
-    <span class="nav-logo">
-      <span class="nav-logo-mark">
-        <svg viewBox="0 0 100 100">
-          <rect x="5" y="12" width="90" height="18"/>
-          <rect x="5" y="40" width="90" height="18"/>
-          <rect x="30" y="68" width="40" height="30"/>
-        </svg>
-      </span>
-      <span class="nav-logo-text">tend</span>
-    </span>
-    <span class="nav-badge">AI OPS</span>
+  <div class="nav-inner">
+    <a href="#" class="logo">
+      <svg class="logo-icon" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <rect x="10" y="15" width="80" height="14" fill="black"/>
+        <rect x="10" y="38" width="80" height="14" fill="black"/>
+        <rect x="38" y="62" width="24" height="24" fill="black"/>
+      </svg>
+      <span class="logo-text">Tend</span>
+    </a>
+    <a href="https://cal.com/clawdbotdfw/15min" class="nav-cta">Book a Call</a>
   </div>
-  <ul class="nav-links">
-    <li><a href="#features">Features</a></li>
-    <li><a href="#how">How it works</a></li>
-    <li><a href="#pricing">Pricing</a></li>
-    <li><a href="#meetup">DFW Meetup</a></li>
-    <li><a href="https://cal.com/clawdbotdfw/15min" class="nav-cta">Book a Discovery Call</a></li>
-  </ul>
 </nav>
 
 <!-- HERO -->
-<section class="hero">
-  <div class="hero-pill animate d1">
-    <span class="dot"></span>
-    Now accepting clients
-  </div>
-
-  <h1 class="animate d2">We build, run, and support<br>dedicated AI operators<br>for your business.</h1>
-
-  <p class="hero-sub animate d3">
-    Not a chatbot. Not a SaaS tool. A custom AI employee that handles your operations — lead follow-up, scheduling, invoicing, customer comms. Built for your business, managed by our team.
-  </p>
-
-  <div class="hero-ctas animate d4">
-    <a href="https://cal.com/clawdbotdfw/15min" class="btn-primary">Book a Discovery Call</a>
-    <a href="#how" class="btn-ghost">See how it works</a>
-  </div>
-
-  <div class="hero-visual animate d5">
-    <div class="terminal-header">
-      <div class="terminal-dot"></div>
-      <div class="terminal-dot"></div>
-      <div class="terminal-dot"></div>
-      <span class="terminal-label">tend — active</span>
-    </div>
-    <div class="terminal-body">
-      <span class="dim">09:01 AM</span> &nbsp; <span class="highlight">New lead</span> from Google Ads — auto-replied in 12s<br>
-      <span class="dim">09:14 AM</span> &nbsp; Invoice #1087 sent to Martinez Roofing — <span class="success">paid</span><br>
-      <span class="dim">09:22 AM</span> &nbsp; Rescheduled Johnson consult → Tue 2:30 PM<br>
-      <span class="dim">10:01 AM</span> &nbsp; <span class="highlight">Weekly report</span> compiled — revenue up 18% WoW<br>
-      <span class="dim">10:45 AM</span> &nbsp; Follow-up sent to 6 cold leads from last Thursday<br>
-      <span class="dim">11:30 AM</span> &nbsp; Appointment confirmed: Davis Electric, Wed 10 AM<br>
-      <span class="dim">12:00 PM</span> &nbsp; <span class="success">✓ All tasks running</span> &nbsp; <span class="dim">0 issues &nbsp; 47 actions today</span>
-    </div>
+<section class="container hero">
+  <div class="hero-content">
+    <h1 class="animate">We build AI operators<br>for your business.</h1>
+    <p class="animate animate-delay-1">Dedicated automation that handles lead follow-up, scheduling, invoicing, and customer comms. Built for you. Run by us.</p>
+    <a href="https://cal.com/clawdbotdfw/15min" class="hero-cta animate animate-delay-2">
+      Book a Discovery Call
+      <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2">
+        <path d="M3 8h10M9 4l4 4-4 4"/>
+      </svg>
+    </a>
   </div>
 </section>
-
-<!-- SOCIAL PROOF - ALFRED -->
-<div class="container" style="padding: 48px 24px;">
-  <div style="background: linear-gradient(135deg, var(--accent-soft) 0%, rgba(42,92,255,0.02) 100%); border: 1px solid var(--accent-medium); border-radius: var(--radius-lg); padding: 32px 40px; max-width: 700px; margin: 0 auto; text-align: center;">
-    <p style="font-size: 17px; color: var(--fg); line-height: 1.7; margin: 0;">
-      <strong>"Our COO is an AI agent named Alfred.</strong> He tracks our pipeline, monitors our ads, preps meeting briefs, and sends us a morning update every day. We don't sell anything we don't use ourselves."
-    </p>
-    <p style="font-size: 13px; color: var(--fg-muted); margin-top: 16px; margin-bottom: 0;">— The Tend Team</p>
-  </div>
-</div>
-
-<!-- TRUST -->
-<div class="container">
-  <div class="trust-section">
-    <div class="trust-label">Built for growing businesses everywhere</div>
-    <div class="trust-stats">
-      <div class="trust-stat">
-        <div class="number">24/7</div>
-        <div class="label">Always running</div>
-      </div>
-      <div class="trust-divider"></div>
-      <div class="trust-stat">
-        <div class="number">&lt;2 hrs</div>
-        <div class="label">Deploy time</div>
-      </div>
-      <div class="trust-divider"></div>
-      <div class="trust-stat">
-        <div class="number">$0</div>
-        <div class="label">Per-user fees</div>
-      </div>
-      <div class="trust-divider"></div>
-      <div class="trust-stat">
-        <div class="number">Local</div>
-        <div class="label">Managed service</div>
-      </div>
-    </div>
-  </div>
-</div>
 
 <!-- FEATURES -->
-<section class="container" id="features">
-  <div class="section-header animate">
-    <div class="section-label">What you get</div>
-    <h2 class="section-title">A dedicated AI operator.<br>Built for your business.</h2>
-    <p class="section-desc">Not a tool you log into. An AI employee that works your workflows — lead follow-up, scheduling, invoicing — while you focus on growth. We build it, we run it, we support it.</p>
-  </div>
-
-  <div class="features-grid">
-    <div class="feature-card animate">
-      <div class="feature-icon">⬡</div>
-      <h3>Dedicated systems</h3>
-      <p>AI systems configured for your specific business. Running 24/7, managed by our team. No IT overhead.</p>
-    </div>
-    <div class="feature-card animate">
-      <div class="feature-icon">◈</div>
-      <h3>Custom configuration</h3>
-      <p>Set up for your specific workflows — lead follow-up, scheduling, invoicing, customer comms. Whatever your bottleneck is.</p>
-    </div>
-    <div class="feature-card animate">
-      <div class="feature-icon">◎</div>
-      <h3>Runs without you</h3>
-      <p>Once deployed, it operates autonomously. No IT team required. No employee to manage. Works while you sleep.</p>
-    </div>
-    <div class="feature-card animate">
-      <div class="feature-icon">⬢</div>
-      <h3>Connects to your tools</h3>
-      <p>Integrates with your email, calendar, CRM, phone system — whatever you already use. Zero workflow disruption.</p>
-    </div>
-    <div class="feature-card animate">
-      <div class="feature-icon">◇</div>
-      <h3>Fast deployment</h3>
-      <p>We integrate with your tools, configure the automations, test everything, and train your team. Operational in days, not months.</p>
-    </div>
-    <div class="feature-card animate">
-      <div class="feature-icon">⊞</div>
-      <h3>Monthly optimization</h3>
-      <p>We review performance, tune workflows, and add new automations. Your system gets smarter every single month.</p>
+<section class="container">
+  <div class="features">
+    <div class="section-label">What We Do</div>
+    <h2>Input becomes output.<br>Noise becomes signal.</h2>
+    
+    <div class="features-grid">
+      <div class="feature">
+        <h3>Lead Response</h3>
+        <p>Instant replies to every inquiry. No more leads lost to slow follow-up. Your AI operator responds 24/7 while you sleep.</p>
+      </div>
+      <div class="feature">
+        <h3>Scheduling</h3>
+        <p>Automated booking, reminders, and calendar management. Reduce no-shows. Fill your schedule without the back-and-forth.</p>
+      </div>
+      <div class="feature">
+        <h3>Customer Comms</h3>
+        <p>Consistent, professional communication across email, SMS, and chat. Your customers get answers fast.</p>
+      </div>
     </div>
   </div>
 </section>
 
-<!-- HOW IT WORKS -->
-<section class="container" id="how" style="padding-top: 40px;">
-  <div class="section-header animate">
-    <div class="section-label">How it works</div>
-    <h2 class="section-title">Three steps. One visit.<br>You're operational.</h2>
-    <p class="section-desc">No 6-month implementation. No endless meetings. We deploy fast and you're running within days.</p>
-  </div>
-
-  <div class="steps-grid steps-5">
-    <div class="step-card">
+<!-- PROCESS -->
+<section class="container" id="how">
+  <div class="section-label">How It Works</div>
+  <h2>Five steps. You're operational.</h2>
+  <p style="max-width: 500px; margin-top: 16px;">No 6-month implementation. No endless meetings. We deploy fast and you're running within days.</p>
+  
+  <div class="process-grid">
+    <div class="step">
       <div class="step-num">01</div>
       <h3>Discovery Call</h3>
-      <p>30 minutes. We learn your business, identify the workflows eating your time, and scope what we'll build.</p>
+      <p>30 minutes. We learn your business and scope what we'll build.</p>
     </div>
-    <div class="step-card">
+    <div class="step">
       <div class="step-num">02</div>
       <h3>Proposal</h3>
-      <p>Within 48 hours. Clear scope, pricing, and timeline. No surprises, no hidden costs.</p>
+      <p>Within 48 hours. Clear scope, pricing, timeline. No surprises.</p>
     </div>
-    <div class="step-card">
+    <div class="step">
       <div class="step-num">03</div>
       <h3>Build</h3>
-      <p>1-2 weeks. We configure your AI operator, connect your tools, test with real data.</p>
+      <p>1-2 weeks. We configure your AI operator and connect your tools.</p>
     </div>
-    <div class="step-card">
+    <div class="step">
       <div class="step-num">04</div>
       <h3>Handoff</h3>
-      <p>45 minutes. We walk you through everything, answer questions, and go live.</p>
+      <p>45 minutes. We walk you through everything and go live.</p>
     </div>
-    <div class="step-card">
+    <div class="step">
       <div class="step-num">05</div>
-      <h3>Ongoing Support</h3>
-      <p>Monthly optimization, monitoring, and improvements. Your operator gets smarter over time.</p>
+      <h3>Support</h3>
+      <p>Ongoing optimization. Your operator gets smarter over time.</p>
     </div>
   </div>
 </section>
 
 <!-- PRICING -->
 <section class="container" id="pricing">
-  <div class="section-header animate">
+  <div style="text-align: center;">
     <div class="section-label">Pricing</div>
-    <h2 class="section-title">Simple. Transparent.</h2>
-    <p class="section-desc">One setup fee. One monthly cost. Less than a part-time hire that still makes mistakes.</p>
+    <h2>Simple. Transparent.</h2>
+    <p style="margin-top: 16px;">One setup fee. One monthly cost. Less than a part-time hire.</p>
   </div>
-
-  <div class="pricing-grid" style="grid-template-columns: repeat(2, 1fr); max-width: 800px; margin: 0 auto;">
-    <div class="price-card featured animate">
-      <div class="price-tag">One-time</div>
-      <div class="price-label">Setup</div>
-      <div class="price-amount">$5,000<span style="font-size: 16px; font-weight: 400; color: var(--fg-muted);"> minimum</span></div>
-      <p class="price-desc">Discovery, build, and handoff. We create your custom AI operator from scratch.</p>
+  
+  <div class="pricing-grid">
+    <div class="price-card featured">
+      <div class="price-label">One-time</div>
+      <div class="price-amount">$5,000<span> min</span></div>
+      <p>Discovery, build, and handoff. We create your custom AI operator from scratch.</p>
       <ul class="price-list">
-        <li><span class="check">✓</span> 30-min discovery call</li>
-        <li><span class="check">✓</span> Custom AI operator build</li>
-        <li><span class="check">✓</span> Full tool integration</li>
-        <li><span class="check">✓</span> 45-min handoff session</li>
-        <li><span class="check">✓</span> Operational in 1-2 weeks</li>
+        <li>30-min discovery call</li>
+        <li>Custom AI operator build</li>
+        <li>Full tool integration</li>
+        <li>45-min handoff session</li>
+        <li>Operational in 1-2 weeks</li>
       </ul>
       <a href="https://cal.com/clawdbotdfw/15min" class="price-cta">Book a Discovery Call</a>
     </div>
-    <div class="price-card animate">
-      <div class="price-tag">Monthly</div>
-      <div class="price-label">Support</div>
-      <div class="price-amount">$2,000<span style="font-size: 16px; font-weight: 400; color: var(--fg-muted);">/month minimum</span></div>
-      <p class="price-desc">Ongoing monitoring, improvements, and support. Your operator gets smarter every month.</p>
+    
+    <div class="price-card">
+      <div class="price-label">Monthly</div>
+      <div class="price-amount">$2,000<span> /mo</span></div>
+      <p>Ongoing support, monitoring, and optimization. 3-month minimum commitment.</p>
       <ul class="price-list">
-        <li><span class="check">✓</span> 24/7 system monitoring</li>
-        <li><span class="check">✓</span> Monthly optimization reviews</li>
-        <li><span class="check">✓</span> New automation buildouts</li>
-        <li><span class="check">✓</span> Priority support</li>
-        <li><span class="check">✓</span> 3-month minimum commitment</li>
+        <li>Dedicated support</li>
+        <li>Performance monitoring</li>
+        <li>Continuous improvements</li>
+        <li>Priority response</li>
+        <li>Cancel anytime after 3 months</li>
       </ul>
-      <a href="https://cal.com/clawdbotdfw/15min" class="price-cta">Book a Discovery Call</a>
+      <a href="https://cal.com/clawdbotdfw/15min" class="price-cta secondary">Get Started</a>
     </div>
   </div>
   
-  <div style="text-align: center; margin-top: 32px; padding: 24px; background: var(--accent-soft); border-radius: var(--radius); max-width: 600px; margin-left: auto; margin-right: auto;">
-    <p style="font-size: 15px; color: var(--fg-secondary); margin: 0;"><strong style="color: var(--fg);">Day one: $7,000</strong> — Setup ($5K) + first month support ($2K). Then $2K/month for months 2-3.</p>
-  </div>
-
-  <!-- DFW LOCAL INSTALL - SECONDARY OFFER -->
-  <div style="margin-top: 48px; padding: 32px; border: 2px solid #f59e0b; border-radius: var(--radius-lg); max-width: 600px; margin-left: auto; margin-right: auto; position: relative; background: linear-gradient(135deg, rgba(245,158,11,0.04) 0%, transparent 100%);">
-    <div style="position: absolute; top: -12px; left: 50%; transform: translateX(-50%); background: linear-gradient(135deg, #f59e0b, #d97706); color: #fff; font-family: var(--mono); font-size: 10px; font-weight: 600; padding: 4px 14px; border-radius: 100px; white-space: nowrap; letter-spacing: 0.5px;">DFW LOCAL — LIMITED</div>
-    <div style="text-align: center;">
-      <h3 style="font-size: 20px; font-weight: 600; margin-bottom: 8px;">On-Site Hardware Install</h3>
-      <p style="font-size: 28px; font-weight: 600; color: #d97706; margin-bottom: 8px;">$3,000</p>
-      <p style="font-size: 14px; color: var(--fg-secondary); margin-bottom: 16px; max-width: 400px; margin-left: auto; margin-right: auto;">Physical Mac Mini system installed at your Dallas-Fort Worth location. Hardware you own, configured and operational same-day.</p>
-      <a href="https://cal.com/clawdbotdfw/15min" class="btn-primary" style="background: #d97706;">Claim DFW Spot</a>
+  <div class="dfw-offer">
+    <div>
+      <span class="dfw-badge">DFW Only</span>
+      <h3>On-site Hardware Install</h3>
+      <p>Local installation in Dallas-Fort Worth. Limited availability.</p>
     </div>
+    <div class="dfw-price">$3,000</div>
+  </div>
+</section>
+
+<!-- PROOF -->
+<section class="container proof">
+  <div class="section-label">Why Us</div>
+  <h2>Our COO is an AI agent.</h2>
+  <p style="max-width: 500px; margin: 16px auto 0;">We don't just sell AI automation — we run our company on it. Alfred handles our operations daily. We know what works because we use it ourselves.</p>
+  
+  <div class="proof-quote">
+    <blockquote>"It's handled."</blockquote>
+    <cite>— The only status update you need</cite>
   </div>
 </section>
 
 <!-- FAQ -->
-<section class="container" id="faq" style="padding-bottom: 60px;">
-  <div class="section-header animate">
+<section class="container" id="faq">
+  <div style="text-align: center;">
     <div class="section-label">FAQ</div>
-    <h2 class="section-title">Common questions</h2>
+    <h2>Questions</h2>
   </div>
-
-  <div class="faq-list">
-    <div class="faq-item animate" onclick="this.classList.toggle('open')">
-      <div class="faq-q">What exactly does Tend do? <span class="faq-toggle">+</span></div>
-      <div class="faq-a">We build and run a custom AI operator for your business. It handles repetitive operations — email responses, scheduling, lead follow-up, invoicing, customer support. Whatever's eating your time and not generating revenue.</div>
+  
+  <div class="faq-grid">
+    <div class="faq-item">
+      <h3>How long until I'm up and running?</h3>
+      <p>Most clients are operational within 1-2 weeks of signing. We move fast because we've done this before.</p>
     </div>
-    <div class="faq-item animate" onclick="this.classList.toggle('open')">
-      <div class="faq-q">Do I need any technical knowledge? <span class="faq-toggle">+</span></div>
-      <div class="faq-a">No. We handle everything — discovery, build, integration, and ongoing support. You continue running your business as normal. The operator works in the background.</div>
+    <div class="faq-item">
+      <h3>What tools do you integrate with?</h3>
+      <p>Most major CRMs, calendars, email providers, and communication platforms. If you use it, we can probably connect it.</p>
     </div>
-    <div class="faq-item animate" onclick="this.classList.toggle('open')">
-      <div class="faq-q">How is this different from ChatGPT or other AI tools? <span class="faq-toggle">+</span></div>
-      <div class="faq-a">ChatGPT is a chat window you manually use. We build an always-on operator that acts on its own — monitoring inboxes, responding to leads, executing tasks. It's the difference between having a search engine and having an employee.</div>
+    <div class="faq-item">
+      <h3>What's the minimum commitment?</h3>
+      <p>3 months for ongoing support. Setup fee is one-time. After 3 months, cancel anytime with 30 days notice.</p>
     </div>
-    <div class="faq-item animate" onclick="this.classList.toggle('open')">
-      <div class="faq-q">Do you use this yourselves? <span class="faq-toggle">+</span></div>
-      <div class="faq-a">Yes. Our COO is an AI agent named Alfred. He tracks our pipeline, monitors our ads, preps meeting briefs, and sends us a morning update every day. We don't sell anything we don't use ourselves.</div>
-    </div>
-    <div class="faq-item animate" onclick="this.classList.toggle('open')">
-      <div class="faq-q">What kind of ROI can I expect? <span class="faq-toggle">+</span></div>
-      <div class="faq-a">Most businesses recover the setup cost within 30 days through time saved alone. At $2,000/month, you're paying a fraction of what you'd spend on a part-time employee — for 24/7 automation that never makes mistakes.</div>
-    </div>
-    <div class="faq-item animate" onclick="this.classList.toggle('open')">
-      <div class="faq-q">What if I want to cancel? <span class="faq-toggle">+</span></div>
-      <div class="faq-a">We require a 3-month minimum commitment. After that, you can cancel monthly support anytime — but we never take your operator down. You own what you paid for.</div>
+    <div class="faq-item">
+      <h3>Do I need technical knowledge?</h3>
+      <p>No. We handle everything. You just use it. That's the whole point.</p>
     </div>
   </div>
 </section>
 
 <!-- FINAL CTA -->
-<section class="final-cta" id="book">
-  <h2>Ready to stop doing<br>the work yourself?</h2>
-  <p>Book a 30-minute discovery call. We'll scope your operator and send a proposal within 48 hours.</p>
-  <a href="https://cal.com/clawdbotdfw/15min" class="btn-primary" style="font-size: 16px; padding: 15px 36px;">Book a Discovery Call →</a>
+<section class="final-cta">
+  <h2>Ready to stop doing busywork?</h2>
+  <p>Book a 30-minute call. We'll figure out if we're a fit.</p>
+  <a href="https://cal.com/clawdbotdfw/15min" class="hero-cta">
+    Book a Discovery Call
+    <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2">
+      <path d="M3 8h10M9 4l4 4-4 4"/>
+    </svg>
+  </a>
 </section>
-
-<!-- DFW MEETUP -->
-<section style="padding: 80px 24px; background: linear-gradient(135deg, rgba(42,92,255,0.06) 0%, rgba(42,92,255,0.02) 100%); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border);" id="meetup">
-  <div style="max-width: 700px; margin: 0 auto; text-align: center;">
-    <div style="display: inline-block; padding: 6px 16px; background: var(--accent); color: #fff; font-size: 11px; font-weight: 600; letter-spacing: 1px; border-radius: 100px; margin-bottom: 24px;">UPCOMING EVENT</div>
-    <h2 style="font-size: 42px; font-weight: 600; margin-bottom: 8px; letter-spacing: -1px;">DFW AI Meetup</h2>
-    <p style="font-size: 18px; color: var(--fg-secondary); margin-bottom: 16px;">For Small Business Owners & Entrepreneurs</p>
-    <p style="color: var(--fg-secondary); margin-bottom: 24px; max-width: 520px; margin-left: auto; margin-right: auto;">Learn how local businesses are using AI to respond faster, work less, and grow revenue. Live demos. Real case studies. No fluff.</p>
-    <div style="display: flex; justify-content: center; gap: 24px; margin-bottom: 32px; font-size: 14px; color: var(--fg-muted);">
-      <span>📍 Dallas-Fort Worth</span>
-      <span>📅 March 2026</span>
-      <span>👥 Limited Spots</span>
-    </div>
-    <form onsubmit="handleMeetupSignup(event)" style="display: flex; gap: 12px; justify-content: center; max-width: 420px; margin: 0 auto;">
-      <input type="email" placeholder="Enter your email" required style="flex: 1; padding: 14px 20px; border: 1px solid var(--border-strong); border-radius: 100px; font-size: 14px; background: var(--surface); color: var(--fg);">
-      <button type="submit" class="btn-primary" style="white-space: nowrap;">Register Free</button>
-    </form>
-  </div>
-</section>
-
-<!-- BIG WORDMARK -->
-<div class="big-wordmark">
-  <span>tend</span>
-</div>
 
 <!-- FOOTER -->
 <footer>
-  <span>© 2026 Tend · Dallas–Fort Worth, TX</span>
-  <a href="https://kyroscapitalpartners.com" target="_blank" rel="noopener" style="display: flex; align-items: center; gap: 6px;">Powered by <span style="font-weight: 500; color: var(--fg-secondary);">KYROS</span></a>
+  <p>© 2026 Tend · <a href="mailto:hello@tend.team">hello@tend.team</a></p>
 </footer>
 
 <script>
-  const words = ['employee', 'personal assistant'];
-  let currentIndex = 0;
-  const rotatingWord = document.querySelector('.rotating-word');
-
-  function rotateWord() {
-    rotatingWord.classList.remove('fade-in');
-    rotatingWord.classList.add('fade-out');
-
-    setTimeout(() => {
-      currentIndex = (currentIndex + 1) % words.length;
-      rotatingWord.textContent = words[currentIndex];
-      rotatingWord.classList.remove('fade-out');
-      rotatingWord.classList.add('fade-in');
-    }, 400);
-  }
-
-  // Initial word
-  rotatingWord.textContent = words[0];
-  rotatingWord.classList.add('fade-in');
-
-  // Rotate every 3 seconds
-  setInterval(rotateWord, 3000);
-
-  // Meetup signup handler
-  function handleMeetupSignup(e) {
-    e.preventDefault();
-    const email = e.target.querySelector('input').value;
-    const btn = e.target.querySelector('button');
-    btn.textContent = 'Registering...';
-    
-    fetch('https://script.google.com/macros/s/AKfycbweViAOIN6H0KwBzlMYlpXWqjP6Yl3-YCicopr9webBkUyNNzcFBaDOpU6RhNjWRq0B/exec', {
-      method: 'POST',
-      mode: 'no-cors',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ email: email, source: 'tend-dfw-meetup', type: 'meetup-registration' })
-    }).then(() => {
-      btn.textContent = "You're In!";
-      e.target.reset();
-      setTimeout(() => { btn.textContent = 'Register Free'; }, 2000);
-    }).catch(() => {
-      btn.textContent = 'Register Free';
-      alert('Something went wrong. Try again.');
-    });
-  }
-</script>
-
-<script>
-// Scroll animations
+// Simple scroll animations
 const observer = new IntersectionObserver((entries) => {
   entries.forEach(entry => {
     if (entry.isIntersecting) {
-      entry.target.classList.add('visible');
+      entry.target.style.animationPlayState = 'running';
     }
   });
-}, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+}, { threshold: 0.1 });
 
-document.querySelectorAll('.animate').forEach(el => observer.observe(el));
+document.querySelectorAll('.animate').forEach(el => {
+  el.style.animationPlayState = 'paused';
+  observer.observe(el);
+});
 </script>
 
 </body>
