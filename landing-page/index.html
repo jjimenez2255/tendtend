@@ -1,0 +1,1375 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=AW-18002968891"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'AW-18002968891');
+  gtag('config', 'G-TEXBWRKN36');
+</script>
+
+<!-- Meta Pixel Code -->
+<script>
+!function(f,b,e,v,n,t,s)
+{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+n.queue=[];t=b.createElement(e);t.async=!0;
+t.src=v;s=b.getElementsByTagName(e)[0];
+s.parentNode.insertBefore(t,s)}(window, document,'script',
+'https://connect.facebook.net/en_US/fbevents.js');
+fbq('init', '1577161653585270');
+fbq('track', 'PageView');
+</script>
+
+<!-- Microsoft Clarity -->
+<script type="text/javascript">
+(function(c,l,a,r,i,t,y){
+    c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+    t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+    y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+})(window, document, "clarity", "script", "vww1t6yauz");
+</script>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Tend — AI That Actually Works</title>
+<meta name="description" content="We deploy AI operators into your real workflows — lead follow-up, scheduling, customer comms — and run them for you. Managed so it keeps working.">
+
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect x='10' y='15' width='80' height='14' fill='black'/><rect x='10' y='38' width='80' height='14' fill='black'/><rect x='38' y='62' width='24' height='24' fill='black'/></svg>">
+
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://tend.team">
+<meta property="og:title" content="Tend — AI That Actually Works">
+<meta property="og:description" content="We deploy AI operators into your real workflows and run them for you. Managed so it keeps working.">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+<style>
+/* === BRAND KIT === */
+:root {
+  --void-black: #000000;
+  --engine-charcoal: #141414;
+  --field-gray: #737373;
+  --canvas-white: #F2F2F2;
+  --signal-white: #FFFFFF;
+  --accent-blue: #3B82F6;
+  --accent-orange: #F59E0B;
+  
+  --bg: var(--canvas-white);
+  --surface: var(--signal-white);
+  --fg: var(--void-black);
+  --fg-muted: var(--field-gray);
+  
+  --font: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  --radius: 8px;
+  --radius-lg: 16px;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: var(--font);
+  background: var(--bg);
+  color: var(--fg);
+  -webkit-font-smoothing: antialiased;
+  line-height: 1.6;
+}
+
+/* === TYPOGRAPHY === */
+h1, h2, h3 {
+  font-weight: 400;
+  letter-spacing: -0.02em;
+  line-height: 1.2;
+}
+
+h1 { font-size: clamp(2rem, 5vw, 3rem); }
+h2 { font-size: clamp(1.5rem, 3vw, 2.25rem); }
+h3 { font-size: 1.125rem; font-weight: 500; }
+
+p { color: var(--fg-muted); }
+
+a { color: var(--fg); }
+
+/* === LAYOUT === */
+.container {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 80px 24px;
+}
+
+.section-label {
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--fg-muted);
+  margin-bottom: 16px;
+}
+
+.section-header {
+  text-align: center;
+  margin-bottom: 48px;
+}
+
+.section-header p {
+  margin-top: 16px;
+  max-width: 550px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* === NAV === */
+nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 100;
+  padding: 16px 24px;
+  background: rgba(242, 242, 242, 0.9);
+  backdrop-filter: blur(20px);
+  border-bottom: 1px solid rgba(0,0,0,0.05);
+}
+
+.nav-inner {
+  max-width: 1000px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  text-decoration: none;
+  color: var(--fg);
+}
+
+.logo-icon { width: 28px; height: 28px; }
+
+.logo-text {
+  font-size: 18px;
+  font-weight: 400;
+  letter-spacing: 0.05em;
+}
+
+.nav-tag {
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  padding: 4px 8px;
+  background: var(--void-black);
+  color: var(--signal-white);
+  border-radius: 4px;
+  margin-left: 8px;
+}
+
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 32px;
+  list-style: none;
+}
+
+.nav-links a {
+  font-size: 14px;
+  color: var(--fg-muted);
+  text-decoration: none;
+  transition: color 0.2s;
+}
+
+.nav-links a:hover { color: var(--fg); }
+
+.hamburger {
+  display: none;
+  width: 32px;
+  height: 32px;
+  flex-direction: column;
+  justify-content: center;
+  gap: 5px;
+  cursor: pointer;
+  background: none;
+  border: none;
+  padding: 0;
+}
+
+.hamburger span {
+  width: 24px;
+  height: 2px;
+  background: var(--fg);
+  border-radius: 2px;
+  transition: all 0.3s;
+}
+
+.mobile-menu {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 16px;
+  right: 16px;
+  background: var(--signal-white);
+  border-radius: 12px;
+  padding: 16px;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+  z-index: 200;
+}
+
+.mobile-menu.open { display: block; }
+
+.mobile-menu a {
+  display: block;
+  padding: 14px 0;
+  color: var(--fg-muted);
+  text-decoration: none;
+  font-size: 15px;
+  border-bottom: 1px solid #eee;
+}
+
+.mobile-menu a:last-of-type { border-bottom: none; }
+
+.mobile-menu .mobile-cta {
+  display: block;
+  margin-top: 16px;
+  padding: 14px;
+  background: var(--accent-blue);
+  color: var(--signal-white);
+  text-align: center;
+  border-radius: 32px;
+  font-weight: 500;
+  border-bottom: none;
+}
+
+.nav-cta {
+  padding: 10px 20px;
+  background: var(--void-black);
+  color: var(--signal-white);
+  text-decoration: none;
+  font-size: 14px;
+  font-weight: 500;
+  border-radius: var(--radius);
+  transition: opacity 0.2s;
+}
+
+.nav-cta:hover { opacity: 0.85; }
+
+/* === HERO === */
+.hero {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding-top: 80px;
+}
+
+.hero-content {
+  max-width: 700px;
+}
+
+.hero-content h1 { margin-bottom: 24px; }
+
+.hero-content > p {
+  font-size: 1.125rem;
+  margin-bottom: 40px;
+  line-height: 1.7;
+}
+
+.hero-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 13px;
+  font-weight: 500;
+  padding: 8px 16px;
+  background: var(--surface);
+  border: 1px solid rgba(0,0,0,0.08);
+  border-radius: 24px;
+  margin-bottom: 32px;
+  color: var(--fg-muted);
+}
+
+.hero-badge .dot {
+  width: 8px;
+  height: 8px;
+  background: #22C55E;
+  border-radius: 50%;
+}
+
+.hero-ctas {
+  display: flex;
+  gap: 16px;
+  justify-content: center;
+}
+
+.btn-primary {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 16px 32px;
+  background: var(--accent-blue);
+  color: var(--signal-white);
+  text-decoration: none;
+  font-size: 16px;
+  font-weight: 500;
+  border-radius: 32px;
+  transition: opacity 0.2s;
+}
+
+.btn-primary:hover { opacity: 0.9; }
+
+.btn-secondary {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 16px 32px;
+  background: var(--surface);
+  color: var(--fg-muted);
+  text-decoration: none;
+  font-size: 16px;
+  font-weight: 500;
+  border-radius: 32px;
+  transition: all 0.2s;
+}
+
+.btn-secondary:hover {
+  background: rgba(255,255,255,0.8);
+  color: var(--fg);
+}
+
+/* === DFW CALLOUT === */
+.dfw-callout {
+  background: var(--void-black);
+  color: var(--signal-white);
+  padding: 14px 24px;
+  text-align: center;
+  font-size: 14px;
+}
+
+.dfw-callout a {
+  color: var(--signal-white);
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.dfw-callout a:hover {
+  text-decoration: underline;
+}
+
+.dfw-callout .arrow {
+  transition: transform 0.2s;
+}
+
+.dfw-callout a:hover .arrow {
+  transform: translateX(3px);
+}
+
+/* === PROBLEM SECTION === */
+.problem-section {
+  background: var(--surface);
+  border-radius: var(--radius-lg);
+  padding: 64px 48px;
+  text-align: center;
+}
+
+.problem-section h2 {
+  margin-bottom: 16px;
+}
+
+.problem-section > p {
+  max-width: 600px;
+  margin: 0 auto;
+  font-size: 1.125rem;
+  line-height: 1.7;
+}
+
+/* === ACTIVITY FEED === */
+.activity-section {
+  padding-top: 0;
+}
+
+.activity-feed {
+  background: var(--void-black);
+  border-radius: var(--radius-lg);
+  padding: 24px;
+  color: var(--signal-white);
+  font-size: 13px;
+  font-family: 'SF Mono', 'Monaco', 'Consolas', monospace;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.activity-feed .header {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 20px;
+}
+
+.activity-feed .window-dot {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+}
+
+.activity-feed .window-dot.red { background: #ff5f57; }
+.activity-feed .window-dot.yellow { background: #febc2e; }
+.activity-feed .window-dot.green { background: #28c840; }
+
+.activity-line {
+  padding: 8px 0;
+  border-bottom: 1px solid rgba(255,255,255,0.1);
+  display: flex;
+  gap: 16px;
+}
+
+.activity-line:last-child { border-bottom: none; }
+
+.activity-time {
+  color: var(--field-gray);
+  flex-shrink: 0;
+}
+
+.activity-text { color: rgba(255,255,255,0.85); }
+
+/* === TRUST STATS === */
+.trust-section {
+  background: var(--surface);
+  border-radius: var(--radius-lg);
+  padding: 48px;
+}
+
+.trust-tools {
+  margin-top: 40px;
+  padding-top: 32px;
+  border-top: 1px solid rgba(0,0,0,0.08);
+  text-align: center;
+}
+
+.trust-tools-label {
+  font-size: 12px;
+  font-weight: 500;
+  color: var(--fg-muted);
+  margin-bottom: 20px;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.trust-logos {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 32px;
+  flex-wrap: wrap;
+  opacity: 0.6;
+}
+
+.trust-logos svg {
+  height: 24px;
+  width: auto;
+}
+
+.trust-logos img {
+  height: 24px;
+  width: auto;
+  filter: grayscale(100%);
+}
+
+.trust-credibility {
+  margin-top: 32px;
+  font-size: 14px;
+  color: var(--fg-muted);
+  text-align: center;
+}
+
+.trust-quote {
+  max-width: 700px;
+  margin: 0 auto 40px;
+  text-align: center;
+}
+
+.trust-quote blockquote {
+  font-size: 1.125rem;
+  font-style: italic;
+  color: var(--fg);
+  margin-bottom: 16px;
+  line-height: 1.7;
+}
+
+.trust-quote cite {
+  font-style: normal;
+  font-size: 14px;
+  color: var(--fg-muted);
+}
+
+.trust-stats {
+  display: flex;
+  justify-content: center;
+  gap: 64px;
+  padding-top: 32px;
+  border-top: 1px solid rgba(0,0,0,0.08);
+}
+
+.stat { text-align: center; }
+
+.stat-value {
+  font-size: 2rem;
+  font-weight: 400;
+  letter-spacing: -0.02em;
+}
+
+.stat-label {
+  font-size: 13px;
+  color: var(--fg-muted);
+  margin-top: 4px;
+}
+
+/* === FEATURES === */
+.features-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+}
+
+.feature-card {
+  background: var(--surface);
+  border-radius: var(--radius-lg);
+  padding: 32px;
+}
+
+.feature-icon {
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--canvas-white);
+  border-radius: 10px;
+  margin-bottom: 20px;
+  font-size: 18px;
+}
+
+.feature-card h3 { margin-bottom: 12px; }
+
+.feature-card p {
+  font-size: 14px;
+  line-height: 1.7;
+}
+
+/* === PROCESS === */
+.process-grid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 16px;
+}
+
+.step {
+  background: var(--surface);
+  border-radius: var(--radius-lg);
+  padding: 28px 20px;
+  text-align: center;
+}
+
+.step-num {
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--fg-muted);
+  margin-bottom: 16px;
+}
+
+.step h3 {
+  font-size: 1rem;
+  margin-bottom: 12px;
+}
+
+.step p {
+  font-size: 13px;
+  line-height: 1.6;
+}
+
+/* === PRICING === */
+.pricing-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 24px;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.price-card {
+  background: var(--surface);
+  border-radius: var(--radius-lg);
+  padding: 40px;
+}
+
+.price-card.dark {
+  background: var(--void-black);
+  color: var(--signal-white);
+}
+
+.price-card.dark .price-label,
+.price-card.dark .price-desc,
+.price-card.dark .price-list li {
+  color: rgba(255,255,255,0.7);
+}
+
+.price-card.dark .price-title,
+.price-card.dark .price-amount {
+  color: var(--signal-white);
+}
+
+.price-card.dark .price-list .check {
+  color: var(--signal-white);
+}
+
+.price-card.dark .price-list li {
+  border-color: rgba(255,255,255,0.1);
+}
+
+.price-card.dark .price-cta {
+  background: var(--signal-white);
+  color: var(--void-black);
+}
+
+.price-label {
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: var(--fg-muted);
+}
+
+.price-title {
+  font-size: 1.25rem;
+  font-weight: 500;
+  margin: 8px 0;
+}
+
+.price-amount {
+  font-size: 2.5rem;
+  font-weight: 400;
+  letter-spacing: -0.02em;
+  margin: 16px 0;
+}
+
+.price-amount span {
+  font-size: 1rem;
+  color: var(--fg-muted);
+}
+
+.price-card.dark .price-amount span {
+  color: rgba(255,255,255,0.6);
+}
+
+.price-desc {
+  font-size: 14px;
+  margin-bottom: 24px;
+  color: var(--fg-muted);
+}
+
+.price-list {
+  list-style: none;
+  margin-bottom: 32px;
+}
+
+.price-list li {
+  padding: 10px 0;
+  font-size: 14px;
+  color: var(--fg-muted);
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  border-bottom: 1px solid rgba(0,0,0,0.05);
+}
+
+.price-list li:last-child { border-bottom: none; }
+
+.price-list .check {
+  color: var(--void-black);
+  font-weight: 600;
+}
+
+.price-cta {
+  display: block;
+  width: 100%;
+  padding: 14px 24px;
+  background: var(--accent-blue);
+  color: var(--signal-white);
+  text-decoration: none;
+  text-align: center;
+  font-size: 14px;
+  font-weight: 500;
+  border-radius: 32px;
+  transition: opacity 0.2s;
+}
+
+.price-cta:hover { opacity: 0.9; }
+
+.price-note {
+  text-align: center;
+  margin-top: 24px;
+  font-size: 14px;
+  color: var(--fg-muted);
+}
+
+/* === DFW OFFER === */
+.dfw-offer {
+  background: var(--surface);
+  border: 2px solid var(--accent-orange);
+  border-radius: var(--radius-lg);
+  padding: 32px 40px;
+  margin-top: 32px;
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 32px;
+}
+
+.dfw-badge {
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: var(--signal-white);
+  background: var(--accent-orange);
+  padding: 4px 10px;
+  border-radius: 4px;
+  margin-bottom: 8px;
+  display: inline-block;
+}
+
+.dfw-offer h3 { margin-bottom: 4px; }
+.dfw-offer > div > p { font-size: 14px; color: var(--fg-muted); }
+
+.dfw-price {
+  font-size: 2rem;
+  font-weight: 400;
+  white-space: nowrap;
+}
+
+.dfw-cta {
+  padding: 14px 28px;
+  background: var(--accent-orange);
+  color: var(--signal-white);
+  text-decoration: none;
+  font-size: 14px;
+  font-weight: 500;
+  border-radius: 32px;
+  white-space: nowrap;
+  transition: opacity 0.2s;
+}
+
+.dfw-cta:hover { opacity: 0.9; }
+
+/* === FAQ ACCORDION === */
+.faq-list {
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+.faq-item {
+  border-bottom: 1px solid rgba(0,0,0,0.08);
+}
+
+.faq-item:last-child { border-bottom: none; }
+
+.faq-question {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 24px 0;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  text-align: left;
+  font-family: var(--font);
+  font-size: 16px;
+  font-weight: 500;
+  color: var(--fg);
+}
+
+.faq-question:hover { color: var(--fg-muted); }
+
+.faq-icon {
+  width: 24px;
+  height: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 20px;
+  color: var(--fg-muted);
+  transition: transform 0.2s;
+}
+
+.faq-item.open .faq-icon { transform: rotate(45deg); }
+
+.faq-answer {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.3s ease, padding 0.3s ease;
+}
+
+.faq-item.open .faq-answer {
+  max-height: 300px;
+  padding-bottom: 24px;
+}
+
+.faq-answer p {
+  font-size: 15px;
+  line-height: 1.7;
+}
+
+/* === FINAL CTA === */
+.final-cta {
+  text-align: center;
+  padding: 100px 24px;
+}
+
+.final-cta h2 { margin-bottom: 16px; }
+
+.final-cta > p {
+  font-size: 1.125rem;
+  margin-bottom: 32px;
+  max-width: 550px;
+  margin-left: auto;
+  margin-right: auto;
+  color: var(--fg-muted);
+}
+
+/* === MEETUP === */
+.meetup {
+  background: var(--void-black);
+  color: var(--signal-white);
+  padding: 80px 24px;
+  text-align: center;
+}
+
+.meetup .section-label { color: var(--field-gray); }
+
+.meetup h2 {
+  color: var(--signal-white);
+  margin-bottom: 16px;
+}
+
+.meetup > p {
+  color: rgba(255,255,255,0.7);
+  max-width: 500px;
+  margin: 0 auto 32px;
+}
+
+.meetup-details {
+  display: flex;
+  justify-content: center;
+  gap: 32px;
+  margin-bottom: 32px;
+  font-size: 14px;
+  color: rgba(255,255,255,0.7);
+}
+
+.meetup-form {
+  display: flex;
+  gap: 12px;
+  justify-content: center;
+  max-width: 400px;
+  margin: 0 auto;
+}
+
+.meetup-form input {
+  flex: 1;
+  padding: 14px 18px;
+  border: none;
+  border-radius: 32px;
+  font-size: 14px;
+  font-family: var(--font);
+}
+
+.meetup-form button {
+  padding: 14px 24px;
+  background: var(--accent-blue);
+  color: var(--signal-white);
+  border: none;
+  border-radius: 32px;
+  font-size: 14px;
+  font-weight: 500;
+  font-family: var(--font);
+  cursor: pointer;
+  transition: opacity 0.2s;
+}
+
+.meetup-form button:hover { opacity: 0.9; }
+
+/* === FOOTER === */
+footer {
+  padding: 40px 24px;
+  text-align: center;
+}
+
+.footer-logo {
+  font-size: 4rem;
+  font-weight: 200;
+  letter-spacing: 0.1em;
+  color: rgba(0,0,0,0.08);
+  margin-bottom: 24px;
+}
+
+.footer-links {
+  font-size: 13px;
+  color: var(--fg-muted);
+}
+
+.footer-links a {
+  color: var(--fg-muted);
+  text-decoration: none;
+}
+
+.footer-links a:hover { color: var(--fg); }
+
+/* === RESPONSIVE === */
+@media (max-width: 900px) {
+  .features-grid { grid-template-columns: 1fr; }
+  .process-grid { grid-template-columns: 1fr; gap: 12px; }
+  .pricing-grid { grid-template-columns: 1fr; }
+  .trust-stats { flex-wrap: wrap; gap: 32px; }
+  .dfw-offer { flex-direction: column; text-align: center; }
+  .nav-links { display: none; }
+  .nav-cta { display: none; }
+  .hamburger { display: flex; }
+}
+
+@media (max-width: 600px) {
+  .container { padding: 60px 20px; }
+  .hero { padding-top: 100px; min-height: auto; padding-bottom: 60px; }
+  .hero-ctas { flex-direction: column; }
+  .btn-primary, .btn-secondary { width: 100%; justify-content: center; }
+  .trust-section { padding: 32px 24px; }
+  .problem-section { padding: 48px 24px; }
+  .meetup-form { flex-direction: column; }
+  .meetup-details { flex-direction: column; gap: 8px; }
+}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <div class="nav-inner">
+    <a href="#" class="logo">
+      <svg class="logo-icon" viewBox="0 0 100 100" fill="none">
+        <rect x="10" y="15" width="80" height="14" fill="black"/>
+        <rect x="10" y="38" width="80" height="14" fill="black"/>
+        <rect x="38" y="62" width="24" height="24" fill="black"/>
+      </svg>
+      <span class="logo-text">tend</span>
+      <span class="nav-tag">AI OPS</span>
+    </a>
+    <ul class="nav-links">
+      <li><a href="#features">Features</a></li>
+      <li><a href="#how">How it works</a></li>
+      <li><a href="#pricing">Pricing</a></li>
+      <li><a href="#meetup">DFW Meetup</a></li>
+    </ul>
+    <a href="https://cal.com/clawdbotdfw/15min" class="nav-cta">Book a Discovery Call</a>
+    <button class="hamburger" onclick="openMobileMenu()">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+  </div>
+  <!-- Mobile Menu -->
+  <div class="mobile-menu" id="mobileMenu">
+    <a href="#features" onclick="closeMobileMenu()">Features</a>
+    <a href="#how" onclick="closeMobileMenu()">How it works</a>
+    <a href="#pricing" onclick="closeMobileMenu()">Pricing</a>
+    <a href="#meetup" onclick="closeMobileMenu()">DFW Meetup</a>
+    <a href="https://cal.com/clawdbotdfw/15min" class="mobile-cta">Book a Discovery Call</a>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="container hero">
+  <div class="hero-content">
+    <span class="hero-badge"><span class="dot"></span> Now accepting clients</span>
+    <h1>AI that actually works. Managed so it keeps working.</h1>
+    <p>We deploy AI operators into your real workflows — lead follow-up, scheduling, customer comms — and run them for you.</p>
+    <div class="hero-ctas">
+      <a href="https://cal.com/clawdbotdfw/15min" class="btn-primary">Book a Discovery Call</a>
+      <a href="#how" class="btn-secondary">See how it works</a>
+    </div>
+  </div>
+</section>
+
+<!-- DFW CALLOUT -->
+<div class="dfw-callout">
+  <a href="#pricing">📍 <strong>DFW Local?</strong> Same-day hardware install available. <span class="arrow">→</span></a>
+</div>
+
+<!-- PROBLEM -->
+<section class="container" style="padding-top: 40px;">
+  <div class="problem-section">
+    <h2>You've tried AI tools. They didn't stick.</h2>
+    <p>The problem isn't the tech — it's implementation. Scoping the right workflow, connecting your tools, keeping it running. That's where most teams stall. That's what we do.</p>
+  </div>
+</section>
+
+<!-- ACTIVITY FEED -->
+<section class="container activity-section">
+  <div class="activity-feed">
+    <div class="header">
+      <span class="window-dot red"></span>
+      <span class="window-dot yellow"></span>
+      <span class="window-dot green"></span>
+    </div>
+    <div class="activity-line"><span class="activity-time">09:01 AM</span><span class="activity-text">New lead from Google Ads — auto-replied in 12s</span></div>
+    <div class="activity-line"><span class="activity-time">09:14 AM</span><span class="activity-text">Invoice #1087 sent to Martinez Roofing — paid</span></div>
+    <div class="activity-line"><span class="activity-time">09:22 AM</span><span class="activity-text">Rescheduled Johnson consult → Tue 2:30 PM</span></div>
+    <div class="activity-line"><span class="activity-time">10:01 AM</span><span class="activity-text">Weekly report compiled — revenue up 18% WoW</span></div>
+    <div class="activity-line"><span class="activity-time">10:45 AM</span><span class="activity-text">Follow-up sent to 6 cold leads from last Thursday</span></div>
+    <div class="activity-line"><span class="activity-time">11:30 AM</span><span class="activity-text">Appointment confirmed: Davis Electric, Wed 10 AM</span></div>
+    <div class="activity-line"><span class="activity-time">12:00 PM</span><span class="activity-text">✓ All tasks running   0 issues   47 actions today</span></div>
+  </div>
+</section>
+
+<!-- TRUST -->
+<section class="container">
+  <div class="trust-section">
+    <div class="trust-quote">
+      <blockquote>"Our COO is an AI agent named Alfred. He tracks our pipeline, monitors our ads, preps meeting briefs, and sends us a morning update every day. We don't sell anything we don't use ourselves."</blockquote>
+      <cite>— The Tend Team</cite>
+    </div>
+    <div class="trust-stats">
+      <div class="stat">
+        <div class="stat-value">24/7</div>
+        <div class="stat-label">Always running</div>
+      </div>
+      <div class="stat">
+        <div class="stat-value">2 weeks</div>
+        <div class="stat-label">To running</div>
+      </div>
+      <div class="stat">
+        <div class="stat-value">$0</div>
+        <div class="stat-label">Per-user fees</div>
+      </div>
+      <div class="stat">
+        <div class="stat-value">Local</div>
+        <div class="stat-label">Managed service</div>
+      </div>
+    </div>
+    
+    <div class="trust-tools">
+      <div class="trust-tools-label">Connects to tools you already use</div>
+      <div class="trust-logos">
+        <!-- Gmail -->
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M24 5.457v13.909c0 .904-.732 1.636-1.636 1.636h-3.819V11.73L12 16.64l-6.545-4.91v9.273H1.636A1.636 1.636 0 0 1 0 19.366V5.457c0-2.023 2.309-3.178 3.927-1.964L5.455 4.64 12 9.548l6.545-4.91 1.528-1.145C21.69 2.28 24 3.434 24 5.457z"/></svg>
+        <!-- Google Calendar -->
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M18.316 5.684H24v12.632h-5.684V5.684zM5.684 24h12.632v-5.684H5.684V24zM18.316 5.684V0H1.895A1.894 1.894 0 0 0 0 1.895v16.421h5.684V5.684h12.632zm-7.207 6.25v-.065c.272-.144.5-.349.687-.617s.279-.595.279-.982c0-.379-.099-.72-.3-1.025a2.05 2.05 0 0 0-.832-.714 2.703 2.703 0 0 0-1.197-.257c-.6 0-1.094.156-1.481.467-.386.311-.587.72-.587 1.23h1.281c0-.236.082-.434.248-.593.167-.159.388-.238.665-.238.282 0 .502.078.656.238.156.156.234.359.234.607 0 .259-.083.469-.248.629a.903.903 0 0 1-.678.243h-.539v.986h.557c.3 0 .54.089.717.266.177.177.266.416.266.717 0 .27-.086.491-.26.665a.936.936 0 0 1-.686.26c-.282 0-.507-.086-.672-.256-.166-.17-.249-.395-.249-.673h-1.282c.003.617.198 1.101.585 1.452.39.35.907.526 1.553.526.449 0 .847-.088 1.193-.264.346-.176.614-.42.805-.731.191-.311.286-.661.286-1.052 0-.399-.105-.738-.314-1.016a1.872 1.872 0 0 0-.833-.625zM22.105 0h-3.789v5.684H24V1.895A1.894 1.894 0 0 0 22.105 0z"/></svg>
+        <!-- Slack -->
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M5.042 15.165a2.528 2.528 0 0 1-2.52 2.523A2.528 2.528 0 0 1 0 15.165a2.527 2.527 0 0 1 2.522-2.52h2.52v2.52zM6.313 15.165a2.527 2.527 0 0 1 2.521-2.52 2.527 2.527 0 0 1 2.521 2.52v6.313A2.528 2.528 0 0 1 8.834 24a2.528 2.528 0 0 1-2.521-2.522v-6.313zM8.834 5.042a2.528 2.528 0 0 1-2.521-2.52A2.528 2.528 0 0 1 8.834 0a2.528 2.528 0 0 1 2.521 2.522v2.52H8.834zM8.834 6.313a2.528 2.528 0 0 1 2.521 2.521 2.528 2.528 0 0 1-2.521 2.521H2.522A2.528 2.528 0 0 1 0 8.834a2.528 2.528 0 0 1 2.522-2.521h6.312zM18.956 8.834a2.528 2.528 0 0 1 2.522-2.521A2.528 2.528 0 0 1 24 8.834a2.528 2.528 0 0 1-2.522 2.521h-2.522V8.834zM17.688 8.834a2.528 2.528 0 0 1-2.523 2.521 2.527 2.527 0 0 1-2.52-2.521V2.522A2.527 2.527 0 0 1 15.165 0a2.528 2.528 0 0 1 2.523 2.522v6.312zM15.165 18.956a2.528 2.528 0 0 1 2.523 2.522A2.528 2.528 0 0 1 15.165 24a2.527 2.527 0 0 1-2.52-2.522v-2.522h2.52zM15.165 17.688a2.527 2.527 0 0 1-2.52-2.523 2.526 2.526 0 0 1 2.52-2.52h6.313A2.527 2.527 0 0 1 24 15.165a2.528 2.528 0 0 1-2.522 2.523h-6.313z"/></svg>
+        <!-- HubSpot -->
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M18.164 7.93V5.084a2.198 2.198 0 0 0 1.267-1.984v-.066A2.2 2.2 0 0 0 17.238.84h-.067a2.2 2.2 0 0 0-2.193 2.193v.067a2.196 2.196 0 0 0 1.252 1.973v2.86a6.153 6.153 0 0 0-2.81 1.593l-7.4-5.756a2.636 2.636 0 0 0 .107-.725 2.669 2.669 0 1 0-2.669 2.669c.434 0 .842-.112 1.204-.298l7.281 5.664a6.105 6.105 0 0 0-.376 2.122c0 .752.14 1.47.387 2.136l-2.286 1.588a2.2 2.2 0 0 0-1.325-.458 2.222 2.222 0 1 0 2.222 2.222c0-.152-.017-.3-.046-.445l2.376-1.65a6.197 6.197 0 1 0 4.838-10.146z"/></svg>
+        <!-- Notion -->
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M4.459 4.208c.746.606 1.026.56 2.428.466l13.215-.793c.28 0 .047-.28-.046-.326L17.86 1.968c-.42-.326-.981-.7-2.055-.607L3.01 2.295c-.466.046-.56.28-.374.466zm.793 3.08v13.904c0 .747.373 1.027 1.214.98l14.523-.84c.841-.046.935-.56.935-1.167V6.354c0-.606-.233-.933-.748-.887l-15.177.887c-.56.047-.747.327-.747.933zm14.337.745c.093.42 0 .84-.42.888l-.7.14v10.264c-.608.327-1.168.514-1.635.514-.748 0-.935-.234-1.495-.933l-4.577-7.186v6.952l1.448.327s0 .84-1.168.84l-3.22.186c-.094-.186 0-.653.327-.746l.84-.233V9.854L7.822 9.76c-.094-.42.14-1.026.793-1.073l3.456-.233 4.764 7.279v-6.44l-1.215-.14c-.093-.514.28-.887.747-.933zM1.936 1.035l13.31-.98c1.634-.14 2.055-.047 3.082.7l4.249 2.986c.7.513.934.653.934 1.213v16.378c0 1.026-.373 1.634-1.68 1.726l-15.458.934c-.98.047-1.448-.093-1.962-.747l-3.129-4.06c-.56-.747-.793-1.306-.793-1.96V2.667c0-.839.374-1.54 1.447-1.632z"/></svg>
+        <!-- Zapier -->
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M15.633 1.927l-3.186 6.559-3.187-6.559a10.79 10.79 0 0 0-2.413.732l2.64 8.108H5.115a10.717 10.717 0 0 0 0 2.466h4.372l-2.64 8.108a10.79 10.79 0 0 0 2.413.732l3.187-6.559 3.186 6.559a10.79 10.79 0 0 0 2.413-.732l-2.64-8.108h4.372a10.717 10.717 0 0 0 0-2.466h-4.372l2.64-8.108a10.79 10.79 0 0 0-2.413-.732z"/></svg>
+      </div>
+    </div>
+    
+    <p class="trust-credibility">Built by the team at <strong>Kyros</strong> — 10+ years building AI, crypto, and business systems.</p>
+  </div>
+</section>
+
+<!-- FEATURES -->
+<section class="container" id="features">
+  <div class="section-header">
+    <div class="section-label">What We Do</div>
+    <h2>Built different than the rest.</h2>
+    <p>Not a chatbot shop. Not an enterprise consulting firm. A managed AI operator service that actually runs.</p>
+  </div>
+  
+  <div class="features-grid">
+    <div class="feature-card">
+      <div class="feature-icon">◎</div>
+      <h3>One workflow, proven first</h3>
+      <p>We start narrow. One pain point, one operator, clear ROI. Expand after proof.</p>
+    </div>
+    <div class="feature-card">
+      <div class="feature-icon">⬢</div>
+      <h3>Real tools, real permissions</h3>
+      <p>Your email, calendar, CRM — connected with scoped access. Not a sandbox demo.</p>
+    </div>
+    <div class="feature-card">
+      <div class="feature-icon">◈</div>
+      <h3>Human oversight built in</h3>
+      <p>Approval gates on high-stakes actions. You stay in control.</p>
+    </div>
+    <div class="feature-card">
+      <div class="feature-icon">◇</div>
+      <h3>Deployed in days, not months</h3>
+      <p>No 6-month implementation. No procurement theater. Running within 1-2 weeks.</p>
+    </div>
+    <div class="feature-card">
+      <div class="feature-icon">⬡</div>
+      <h3>Managed, not abandoned</h3>
+      <p>We don't build and walk away. Monitoring, tuning, support — that's the business model.</p>
+    </div>
+    <div class="feature-card">
+      <div class="feature-icon">⊞</div>
+      <h3>Expand when ready</h3>
+      <p>Multi-agent systems, orchestration, broader automation — earned after the first win.</p>
+    </div>
+  </div>
+</section>
+
+<!-- PROCESS -->
+<section class="container" id="how">
+  <div class="section-header">
+    <div class="section-label">How It Works</div>
+    <h2>From call to running in two weeks.</h2>
+    <p>No endless meetings. No 6-month implementation. We move fast.</p>
+  </div>
+  
+  <div class="process-grid">
+    <div class="step">
+      <div class="step-num">01</div>
+      <h3>Discovery</h3>
+      <p>30 minutes. We find the workflow that's costing you the most time.</p>
+    </div>
+    <div class="step">
+      <div class="step-num">02</div>
+      <h3>Scope</h3>
+      <p>We map what the operator does, what it doesn't, and what needs your approval.</p>
+    </div>
+    <div class="step">
+      <div class="step-num">03</div>
+      <h3>Build</h3>
+      <p>1-2 weeks. We connect your tools, set permissions, test with real data.</p>
+    </div>
+    <div class="step">
+      <div class="step-num">04</div>
+      <h3>Run</h3>
+      <p>We monitor, tune, and handle exceptions. Monthly reviews with you.</p>
+    </div>
+    <div class="step">
+      <div class="step-num">05</div>
+      <h3>Expand</h3>
+      <p>Once it's proven, we add more operators and broader automation.</p>
+    </div>
+  </div>
+</section>
+
+<!-- PRICING -->
+<section class="container" id="pricing">
+  <div class="section-header">
+    <div class="section-label">Pricing</div>
+    <h2>Simple. Transparent.</h2>
+    <p>One setup fee. One monthly cost. Less than a part-time hire that still makes mistakes.</p>
+  </div>
+  
+  <div class="pricing-grid">
+    <div class="price-card dark">
+      <div class="price-label">One-time</div>
+      <div class="price-title">Setup</div>
+      <div class="price-amount">$5,000<span> minimum</span></div>
+      <p class="price-desc">The intensive first week: discovery, workflow mapping, permissions, integrations, testing, and launch.</p>
+      <ul class="price-list">
+        <li><span class="check">✓</span> Discovery call</li>
+        <li><span class="check">✓</span> Workflow scoping</li>
+        <li><span class="check">✓</span> Operator build</li>
+        <li><span class="check">✓</span> Tool integrations</li>
+        <li><span class="check">✓</span> Launch + handoff</li>
+      </ul>
+      <a href="https://cal.com/clawdbotdfw/15min" class="price-cta">Book a Discovery Call</a>
+    </div>
+    
+    <div class="price-card">
+      <div class="price-label">Monthly</div>
+      <div class="price-title">Managed Service</div>
+      <div class="price-amount">$2,000<span>/month</span></div>
+      <p class="price-desc">Ongoing operation — not abandoned after launch.</p>
+      <ul class="price-list">
+        <li><span class="check">✓</span> Monitoring & tuning</li>
+        <li><span class="check">✓</span> Exception handling</li>
+        <li><span class="check">✓</span> Monthly reviews</li>
+        <li><span class="check">✓</span> Support</li>
+        <li><span class="check">✓</span> 3-month minimum</li>
+      </ul>
+      <a href="https://cal.com/clawdbotdfw/15min" class="price-cta">Book a Discovery Call</a>
+    </div>
+  </div>
+  
+  <p class="price-note">Day one: $7,000 (setup + first month). Minimum engagement: $11,000 over 3 months.</p>
+  
+  <div class="dfw-offer">
+    <div>
+      <span class="dfw-badge">DFW Local — Limited</span>
+      <h3>On-Site Hardware Install</h3>
+      <p>Physical Mac Mini system installed at your Dallas-Fort Worth location. Hardware you own, configured and operational same-day.</p>
+    </div>
+    <div class="dfw-price">$3,000</div>
+    <a href="https://cal.com/clawdbotdfw/15min" class="dfw-cta">Claim DFW Spot</a>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="container" id="faq">
+  <div class="section-header">
+    <div class="section-label">FAQ</div>
+    <h2>Common questions</h2>
+  </div>
+  
+  <div class="faq-list">
+    <div class="faq-item">
+      <button class="faq-question">
+        What exactly does Tend do?
+        <span class="faq-icon">+</span>
+      </button>
+      <div class="faq-answer">
+        <p>We build and run AI operators for your workflows — lead follow-up, scheduling, invoicing, support triage. Not chatbots. Controlled systems that do real work with human oversight.</p>
+      </div>
+    </div>
+    
+    <div class="faq-item">
+      <button class="faq-question">
+        How is this different from ChatGPT?
+        <span class="faq-icon">+</span>
+      </button>
+      <div class="faq-answer">
+        <p>ChatGPT is a chat window you use manually. We deploy always-on operators that act on their own — with scoped access, approval gates, and monitoring. It's the difference between a search engine and an employee.</p>
+      </div>
+    </div>
+    
+    <div class="faq-item">
+      <button class="faq-question">
+        Do I need technical knowledge?
+        <span class="faq-icon">+</span>
+      </button>
+      <div class="faq-answer">
+        <p>No. We handle discovery, build, integration, and ongoing support. You keep running your business.</p>
+      </div>
+    </div>
+    
+    <div class="faq-item">
+      <button class="faq-question">
+        What does "managed" mean?
+        <span class="faq-icon">+</span>
+      </button>
+      <div class="faq-answer">
+        <p>We don't build and walk away. Monitoring, tuning, exception handling, monthly reviews — that's the service. Ongoing operation is the business model.</p>
+      </div>
+    </div>
+    
+    <div class="faq-item">
+      <button class="faq-question">
+        What's the minimum commitment?
+        <span class="faq-icon">+</span>
+      </button>
+      <div class="faq-answer">
+        <p>3 months. Day one payment is $7,000 (setup + first month). Minimum total engagement is $11,000.</p>
+      </div>
+    </div>
+    
+    <div class="faq-item">
+      <button class="faq-question">
+        What if I want to cancel?
+        <span class="faq-icon">+</span>
+      </button>
+      <div class="faq-answer">
+        <p>After 3 months, cancel anytime. We never shut down your operator — you own what you paid for.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FINAL CTA -->
+<section class="final-cta">
+  <h2>Let's find your first automation.</h2>
+  <p>30 minutes. No pitch deck. We'll map the workflow that's eating your time — whether you hire us or not.</p>
+  <a href="https://cal.com/clawdbotdfw/15min" class="btn-primary">Book a Discovery Call →</a>
+</section>
+
+<!-- MEETUP -->
+<section class="meetup" id="meetup">
+  <div class="section-label">Upcoming Event</div>
+  <h2>DFW AI Meetup</h2>
+  <p>For Small Business Owners & Entrepreneurs</p>
+  <p>Learn how local businesses are using AI to respond faster, work less, and grow revenue. Live demos. Real case studies. No fluff.</p>
+  <div class="meetup-details">
+    <span>📍 Dallas-Fort Worth</span>
+    <span>📅 March 2026</span>
+    <span>👥 Limited Spots</span>
+  </div>
+  <form class="meetup-form" onsubmit="handleMeetupSignup(event)">
+    <input type="email" placeholder="Enter your email" required>
+    <button type="submit">Register Free</button>
+  </form>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-logo">tend</div>
+  <div class="footer-links">
+    © 2026 Tend · <a href="mailto:hello@tend.team">hello@tend.team</a>
+  </div>
+</footer>
+
+<script>
+// FAQ Accordion
+document.querySelectorAll('.faq-question').forEach(button => {
+  button.addEventListener('click', () => {
+    const item = button.parentElement;
+    const isOpen = item.classList.contains('open');
+    
+    // Close all others
+    document.querySelectorAll('.faq-item').forEach(i => i.classList.remove('open'));
+    
+    // Toggle current
+    if (!isOpen) item.classList.add('open');
+  });
+});
+
+// Mobile Menu
+function openMobileMenu() {
+  document.getElementById('mobileMenu').classList.toggle('open');
+}
+
+function closeMobileMenu() {
+  document.getElementById('mobileMenu').classList.remove('open');
+}
+
+// Meetup Signup
+function handleMeetupSignup(e) {
+  e.preventDefault();
+  const email = e.target.querySelector('input').value;
+  const btn = e.target.querySelector('button');
+  btn.textContent = 'Registering...';
+  
+  fetch('https://script.google.com/macros/s/AKfycbweViAOIN6H0KwBzlMYlpXWqjP6Yl3-YCicopr9webBkUyNNzcFBaDOpU6RhNjWRq0B/exec', {
+    method: 'POST',
+    mode: 'no-cors',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify({ email: email, source: 'tend-dfw-meetup', type: 'meetup-registration' })
+  }).then(() => {
+    btn.textContent = "You're In!";
+    e.target.reset();
+    setTimeout(() => { btn.textContent = 'Register Free'; }, 2000);
+  }).catch(() => {
+    btn.textContent = 'Register Free';
+    alert('Something went wrong. Try again.');
+  });
+}
+</script>
+
+</body>
+</html>
