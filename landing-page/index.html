@@ -59,7 +59,7 @@ fbq('track', 'PageView');
   --canvas-white: #F2F2F2;
   --signal-white: #FFFFFF;
   --accent-blue: #3B82F6;
-  --accent-orange: #F59E0B;
+  --accent-orange: #2563EB; /* Changed from orange to blue */
   
   --bg: var(--canvas-white);
   --surface: var(--signal-white);
@@ -599,9 +599,9 @@ nav {
 /* === PRICING === */
 .pricing-grid {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
+  grid-template-columns: repeat(3, 1fr);
   gap: 24px;
-  max-width: 800px;
+  max-width: 1000px;
   margin: 0 auto;
 }
 
@@ -942,6 +942,7 @@ footer {
   .features-grid { grid-template-columns: 1fr; }
   .process-grid { grid-template-columns: 1fr; gap: 12px; }
   .pricing-grid { grid-template-columns: 1fr; }
+  .pricing-grid .price-card { margin-bottom: 16px; }
   .trust-stats { flex-wrap: wrap; gap: 32px; }
   .dfw-offer { flex-direction: column; text-align: center; }
   .nav-links { display: none; }
@@ -973,7 +974,7 @@ footer {
         <rect x="38" y="62" width="24" height="24" fill="black"/>
       </svg>
       <span class="logo-text">tend</span>
-      <span class="nav-tag">AI OPS</span>
+      
     </a>
     <ul class="nav-links">
       <li><a href="#features">Features</a></li>
@@ -1207,19 +1208,24 @@ footer {
       </ul>
       <a href="https://cal.com/clawdbotdfw/15min" class="price-cta">Book a Discovery Call</a>
     </div>
+    
+    <div class="price-card">
+      <div class="price-label">DFW Local — Limited</div>
+      <div class="price-title">Hardware Install</div>
+      <div class="price-amount">$3,000<span> one-time</span></div>
+      <p class="price-desc">Physical Mac Mini system installed at your Dallas-Fort Worth location. Hardware you own, same-day setup.</p>
+      <ul class="price-list">
+        <li><span class="check">✓</span> On-site installation</li>
+        <li><span class="check">✓</span> Hardware included</li>
+        <li><span class="check">✓</span> Same-day operational</li>
+        <li><span class="check">✓</span> You own it</li>
+        <li><span class="check">✓</span> Local support</li>
+      </ul>
+      <a href="https://cal.com/clawdbotdfw/15min" class="price-cta">Book a Discovery Call</a>
+    </div>
   </div>
   
   <p class="price-note">Day one: $7,000 (setup + first month). Minimum engagement: $11,000 over 3 months.</p>
-  
-  <div class="dfw-offer">
-    <div>
-      <span class="dfw-badge">DFW Local — Limited</span>
-      <h3>On-Site Hardware Install</h3>
-      <p>Physical Mac Mini system installed at your Dallas-Fort Worth location. Hardware you own, configured and operational same-day.</p>
-    </div>
-    <div class="dfw-price">$3,000</div>
-    <a href="https://cal.com/clawdbotdfw/15min" class="dfw-cta">Claim DFW Spot</a>
-  </div>
 </section>
 
 <!-- FAQ -->
