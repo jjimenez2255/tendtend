@@ -189,6 +189,65 @@ nav {
 
 .nav-links a:hover { color: var(--fg); }
 
+.hamburger {
+  display: none;
+  width: 32px;
+  height: 32px;
+  flex-direction: column;
+  justify-content: center;
+  gap: 5px;
+  cursor: pointer;
+  background: none;
+  border: none;
+  padding: 0;
+}
+
+.hamburger span {
+  width: 24px;
+  height: 2px;
+  background: var(--fg);
+  border-radius: 2px;
+  transition: all 0.3s;
+}
+
+.mobile-menu {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 16px;
+  right: 16px;
+  background: var(--signal-white);
+  border-radius: 12px;
+  padding: 16px;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+  z-index: 200;
+}
+
+.mobile-menu.open { display: block; }
+
+.mobile-menu a {
+  display: block;
+  padding: 14px 0;
+  color: var(--fg-muted);
+  text-decoration: none;
+  font-size: 15px;
+  border-bottom: 1px solid #eee;
+}
+
+.mobile-menu a:last-of-type { border-bottom: none; }
+
+.mobile-menu .mobile-cta {
+  display: block;
+  margin-top: 16px;
+  padding: 14px;
+  background: var(--accent-blue);
+  color: var(--signal-white);
+  text-align: center;
+  border-radius: 32px;
+  font-weight: 500;
+  border-bottom: none;
+}
+
 .nav-cta {
   padding: 10px 20px;
   background: var(--void-black);
@@ -286,6 +345,35 @@ nav {
   color: var(--fg);
 }
 
+/* === DFW CALLOUT === */
+.dfw-callout {
+  background: var(--void-black);
+  color: var(--signal-white);
+  padding: 14px 24px;
+  text-align: center;
+  font-size: 14px;
+}
+
+.dfw-callout a {
+  color: var(--signal-white);
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.dfw-callout a:hover {
+  text-decoration: underline;
+}
+
+.dfw-callout .arrow {
+  transition: transform 0.2s;
+}
+
+.dfw-callout a:hover .arrow {
+  transform: translateX(3px);
+}
+
 /* === PROBLEM SECTION === */
 .problem-section {
   background: var(--surface);
@@ -358,6 +446,49 @@ nav {
   background: var(--surface);
   border-radius: var(--radius-lg);
   padding: 48px;
+}
+
+.trust-tools {
+  margin-top: 40px;
+  padding-top: 32px;
+  border-top: 1px solid rgba(0,0,0,0.08);
+  text-align: center;
+}
+
+.trust-tools-label {
+  font-size: 12px;
+  font-weight: 500;
+  color: var(--fg-muted);
+  margin-bottom: 20px;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.trust-logos {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 32px;
+  flex-wrap: wrap;
+  opacity: 0.6;
+}
+
+.trust-logos svg {
+  height: 24px;
+  width: auto;
+}
+
+.trust-logos img {
+  height: 24px;
+  width: auto;
+  filter: grayscale(100%);
+}
+
+.trust-credibility {
+  margin-top: 32px;
+  font-size: 14px;
+  color: var(--fg-muted);
+  text-align: center;
 }
 
 .trust-quote {
@@ -814,6 +945,8 @@ footer {
   .trust-stats { flex-wrap: wrap; gap: 32px; }
   .dfw-offer { flex-direction: column; text-align: center; }
   .nav-links { display: none; }
+  .nav-cta { display: none; }
+  .hamburger { display: flex; }
 }
 
 @media (max-width: 600px) {
@@ -849,6 +982,19 @@ footer {
       <li><a href="#meetup">DFW Meetup</a></li>
     </ul>
     <a href="https://cal.com/clawdbotdfw/15min" class="nav-cta">Book a Discovery Call</a>
+    <button class="hamburger" onclick="openMobileMenu()">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+  </div>
+  <!-- Mobile Menu -->
+  <div class="mobile-menu" id="mobileMenu">
+    <a href="#features" onclick="closeMobileMenu()">Features</a>
+    <a href="#how" onclick="closeMobileMenu()">How it works</a>
+    <a href="#pricing" onclick="closeMobileMenu()">Pricing</a>
+    <a href="#meetup" onclick="closeMobileMenu()">DFW Meetup</a>
+    <a href="https://cal.com/clawdbotdfw/15min" class="mobile-cta">Book a Discovery Call</a>
   </div>
 </nav>
 
@@ -865,8 +1011,13 @@ footer {
   </div>
 </section>
 
+<!-- DFW CALLOUT -->
+<div class="dfw-callout">
+  <a href="#pricing">📍 <strong>DFW Local?</strong> Same-day hardware install available. <span class="arrow">→</span></a>
+</div>
+
 <!-- PROBLEM -->
-<section class="container" style="padding-top: 0;">
+<section class="container" style="padding-top: 40px;">
   <div class="problem-section">
     <h2>You've tried AI tools. They didn't stick.</h2>
     <p>The problem isn't the tech — it's implementation. Scoping the right workflow, connecting your tools, keeping it running. That's where most teams stall. That's what we do.</p>
@@ -904,8 +1055,8 @@ footer {
         <div class="stat-label">Always running</div>
       </div>
       <div class="stat">
-        <div class="stat-value">&lt;2 hrs</div>
-        <div class="stat-label">Deploy time</div>
+        <div class="stat-value">2 weeks</div>
+        <div class="stat-label">To running</div>
       </div>
       <div class="stat">
         <div class="stat-value">$0</div>
@@ -916,6 +1067,26 @@ footer {
         <div class="stat-label">Managed service</div>
       </div>
     </div>
+    
+    <div class="trust-tools">
+      <div class="trust-tools-label">Connects to tools you already use</div>
+      <div class="trust-logos">
+        <!-- Gmail -->
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M24 5.457v13.909c0 .904-.732 1.636-1.636 1.636h-3.819V11.73L12 16.64l-6.545-4.91v9.273H1.636A1.636 1.636 0 0 1 0 19.366V5.457c0-2.023 2.309-3.178 3.927-1.964L5.455 4.64 12 9.548l6.545-4.91 1.528-1.145C21.69 2.28 24 3.434 24 5.457z"/></svg>
+        <!-- Google Calendar -->
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M18.316 5.684H24v12.632h-5.684V5.684zM5.684 24h12.632v-5.684H5.684V24zM18.316 5.684V0H1.895A1.894 1.894 0 0 0 0 1.895v16.421h5.684V5.684h12.632zm-7.207 6.25v-.065c.272-.144.5-.349.687-.617s.279-.595.279-.982c0-.379-.099-.72-.3-1.025a2.05 2.05 0 0 0-.832-.714 2.703 2.703 0 0 0-1.197-.257c-.6 0-1.094.156-1.481.467-.386.311-.587.72-.587 1.23h1.281c0-.236.082-.434.248-.593.167-.159.388-.238.665-.238.282 0 .502.078.656.238.156.156.234.359.234.607 0 .259-.083.469-.248.629a.903.903 0 0 1-.678.243h-.539v.986h.557c.3 0 .54.089.717.266.177.177.266.416.266.717 0 .27-.086.491-.26.665a.936.936 0 0 1-.686.26c-.282 0-.507-.086-.672-.256-.166-.17-.249-.395-.249-.673h-1.282c.003.617.198 1.101.585 1.452.39.35.907.526 1.553.526.449 0 .847-.088 1.193-.264.346-.176.614-.42.805-.731.191-.311.286-.661.286-1.052 0-.399-.105-.738-.314-1.016a1.872 1.872 0 0 0-.833-.625zM22.105 0h-3.789v5.684H24V1.895A1.894 1.894 0 0 0 22.105 0z"/></svg>
+        <!-- Slack -->
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M5.042 15.165a2.528 2.528 0 0 1-2.52 2.523A2.528 2.528 0 0 1 0 15.165a2.527 2.527 0 0 1 2.522-2.52h2.52v2.52zM6.313 15.165a2.527 2.527 0 0 1 2.521-2.52 2.527 2.527 0 0 1 2.521 2.52v6.313A2.528 2.528 0 0 1 8.834 24a2.528 2.528 0 0 1-2.521-2.522v-6.313zM8.834 5.042a2.528 2.528 0 0 1-2.521-2.52A2.528 2.528 0 0 1 8.834 0a2.528 2.528 0 0 1 2.521 2.522v2.52H8.834zM8.834 6.313a2.528 2.528 0 0 1 2.521 2.521 2.528 2.528 0 0 1-2.521 2.521H2.522A2.528 2.528 0 0 1 0 8.834a2.528 2.528 0 0 1 2.522-2.521h6.312zM18.956 8.834a2.528 2.528 0 0 1 2.522-2.521A2.528 2.528 0 0 1 24 8.834a2.528 2.528 0 0 1-2.522 2.521h-2.522V8.834zM17.688 8.834a2.528 2.528 0 0 1-2.523 2.521 2.527 2.527 0 0 1-2.52-2.521V2.522A2.527 2.527 0 0 1 15.165 0a2.528 2.528 0 0 1 2.523 2.522v6.312zM15.165 18.956a2.528 2.528 0 0 1 2.523 2.522A2.528 2.528 0 0 1 15.165 24a2.527 2.527 0 0 1-2.52-2.522v-2.522h2.52zM15.165 17.688a2.527 2.527 0 0 1-2.52-2.523 2.526 2.526 0 0 1 2.52-2.52h6.313A2.527 2.527 0 0 1 24 15.165a2.528 2.528 0 0 1-2.522 2.523h-6.313z"/></svg>
+        <!-- HubSpot -->
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M18.164 7.93V5.084a2.198 2.198 0 0 0 1.267-1.984v-.066A2.2 2.2 0 0 0 17.238.84h-.067a2.2 2.2 0 0 0-2.193 2.193v.067a2.196 2.196 0 0 0 1.252 1.973v2.86a6.153 6.153 0 0 0-2.81 1.593l-7.4-5.756a2.636 2.636 0 0 0 .107-.725 2.669 2.669 0 1 0-2.669 2.669c.434 0 .842-.112 1.204-.298l7.281 5.664a6.105 6.105 0 0 0-.376 2.122c0 .752.14 1.47.387 2.136l-2.286 1.588a2.2 2.2 0 0 0-1.325-.458 2.222 2.222 0 1 0 2.222 2.222c0-.152-.017-.3-.046-.445l2.376-1.65a6.197 6.197 0 1 0 4.838-10.146z"/></svg>
+        <!-- Notion -->
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M4.459 4.208c.746.606 1.026.56 2.428.466l13.215-.793c.28 0 .047-.28-.046-.326L17.86 1.968c-.42-.326-.981-.7-2.055-.607L3.01 2.295c-.466.046-.56.28-.374.466zm.793 3.08v13.904c0 .747.373 1.027 1.214.98l14.523-.84c.841-.046.935-.56.935-1.167V6.354c0-.606-.233-.933-.748-.887l-15.177.887c-.56.047-.747.327-.747.933zm14.337.745c.093.42 0 .84-.42.888l-.7.14v10.264c-.608.327-1.168.514-1.635.514-.748 0-.935-.234-1.495-.933l-4.577-7.186v6.952l1.448.327s0 .84-1.168.84l-3.22.186c-.094-.186 0-.653.327-.746l.84-.233V9.854L7.822 9.76c-.094-.42.14-1.026.793-1.073l3.456-.233 4.764 7.279v-6.44l-1.215-.14c-.093-.514.28-.887.747-.933zM1.936 1.035l13.31-.98c1.634-.14 2.055-.047 3.082.7l4.249 2.986c.7.513.934.653.934 1.213v16.378c0 1.026-.373 1.634-1.68 1.726l-15.458.934c-.98.047-1.448-.093-1.962-.747l-3.129-4.06c-.56-.747-.793-1.306-.793-1.96V2.667c0-.839.374-1.54 1.447-1.632z"/></svg>
+        <!-- Zapier -->
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M15.633 1.927l-3.186 6.559-3.187-6.559a10.79 10.79 0 0 0-2.413.732l2.64 8.108H5.115a10.717 10.717 0 0 0 0 2.466h4.372l-2.64 8.108a10.79 10.79 0 0 0 2.413.732l3.187-6.559 3.186 6.559a10.79 10.79 0 0 0 2.413-.732l-2.64-8.108h4.372a10.717 10.717 0 0 0 0-2.466h-4.372l2.64-8.108a10.79 10.79 0 0 0-2.413-.732z"/></svg>
+      </div>
+    </div>
+    
+    <p class="trust-credibility">Built by the team at <strong>Kyros</strong> — 10+ years building AI, crypto, and business systems.</p>
   </div>
 </section>
 
@@ -1139,8 +1310,8 @@ footer {
     <span>📅 March 2026</span>
     <span>👥 Limited Spots</span>
   </div>
-  <form class="meetup-form">
-    <input type="email" placeholder="Enter your email">
+  <form class="meetup-form" onsubmit="handleMeetupSignup(event)">
+    <input type="email" placeholder="Enter your email" required>
     <button type="submit">Register Free</button>
   </form>
 </section>
@@ -1167,6 +1338,37 @@ document.querySelectorAll('.faq-question').forEach(button => {
     if (!isOpen) item.classList.add('open');
   });
 });
+
+// Mobile Menu
+function openMobileMenu() {
+  document.getElementById('mobileMenu').classList.toggle('open');
+}
+
+function closeMobileMenu() {
+  document.getElementById('mobileMenu').classList.remove('open');
+}
+
+// Meetup Signup
+function handleMeetupSignup(e) {
+  e.preventDefault();
+  const email = e.target.querySelector('input').value;
+  const btn = e.target.querySelector('button');
+  btn.textContent = 'Registering...';
+  
+  fetch('https://script.google.com/macros/s/AKfycbweViAOIN6H0KwBzlMYlpXWqjP6Yl3-YCicopr9webBkUyNNzcFBaDOpU6RhNjWRq0B/exec', {
+    method: 'POST',
+    mode: 'no-cors',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify({ email: email, source: 'tend-dfw-meetup', type: 'meetup-registration' })
+  }).then(() => {
+    btn.textContent = "You're In!";
+    e.target.reset();
+    setTimeout(() => { btn.textContent = 'Register Free'; }, 2000);
+  }).catch(() => {
+    btn.textContent = 'Register Free';
+    alert('Something went wrong. Try again.');
+  });
+}
 </script>
 
 </body>
