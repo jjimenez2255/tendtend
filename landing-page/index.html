@@ -609,6 +609,12 @@ nav {
   background: var(--surface);
   border-radius: var(--radius-lg);
   padding: 40px;
+  display: flex;
+  flex-direction: column;
+}
+
+.price-card .price-cta {
+  margin-top: auto;
 }
 
 .price-card.dark {
@@ -1180,6 +1186,21 @@ footer {
   
   <div class="pricing-grid">
     <div class="price-card dark">
+      <div class="price-label">DFW Only • March Exclusive</div>
+      <div class="price-title">Hardware Install</div>
+      <div class="price-amount">$3,000<span> one-time</span></div>
+      <p class="price-desc">Physical Mac Mini system installed at your Dallas-Fort Worth location. Hardware you own, same-day setup.</p>
+      <ul class="price-list">
+        <li><span class="check">✓</span> On-site installation</li>
+        <li><span class="check">✓</span> Hardware included</li>
+        <li><span class="check">✓</span> Same-day operational</li>
+        <li><span class="check">✓</span> You own it</li>
+        <li><span class="check">✓</span> Local support</li>
+      </ul>
+      <a href="https://cal.com/clawdbotdfw/15min" class="price-cta">Book a Discovery Call</a>
+    </div>
+    
+    <div class="price-card">
       <div class="price-label">One-time</div>
       <div class="price-title">Setup</div>
       <div class="price-amount">$5,000<span> minimum</span></div>
@@ -1205,21 +1226,6 @@ footer {
         <li><span class="check">✓</span> Monthly reviews</li>
         <li><span class="check">✓</span> Support</li>
         <li><span class="check">✓</span> 3-month minimum</li>
-      </ul>
-      <a href="https://cal.com/clawdbotdfw/15min" class="price-cta">Book a Discovery Call</a>
-    </div>
-    
-    <div class="price-card">
-      <div class="price-label">DFW Local — Limited</div>
-      <div class="price-title">Hardware Install</div>
-      <div class="price-amount">$3,000<span> one-time</span></div>
-      <p class="price-desc">Physical Mac Mini system installed at your Dallas-Fort Worth location. Hardware you own, same-day setup.</p>
-      <ul class="price-list">
-        <li><span class="check">✓</span> On-site installation</li>
-        <li><span class="check">✓</span> Hardware included</li>
-        <li><span class="check">✓</span> Same-day operational</li>
-        <li><span class="check">✓</span> You own it</li>
-        <li><span class="check">✓</span> Local support</li>
       </ul>
       <a href="https://cal.com/clawdbotdfw/15min" class="price-cta">Book a Discovery Call</a>
     </div>
