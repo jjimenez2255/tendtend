@@ -48,7 +48,7 @@ fbq('track', 'PageView');
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:wght@400;500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Source+Serif+4:ital,wght@0,300;0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
 
 <style>
 /* === BRAND KIT === */
@@ -67,7 +67,7 @@ fbq('track', 'PageView');
   --fg-muted: #9A9A94;
 
   --font: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
-  --font-serif: 'Playfair Display', Georgia, 'Times New Roman', serif;
+  --font-serif: 'Source Serif 4', Georgia, 'Times New Roman', serif;
   --radius: 8px;
   --radius-lg: 16px;
 }
@@ -93,16 +93,23 @@ h1, h2 {
 }
 
 h3 {
-  font-weight: 500;
+  font-family: var(--font-serif);
+  font-weight: 400;
   letter-spacing: -0.01em;
   line-height: 1.3;
+  color: var(--fg);
 }
 
 h1 { font-size: clamp(2.5rem, 6vw, 3.75rem); }
 h2 { font-size: clamp(1.75rem, 4vw, 2.75rem); }
 h3 { font-size: 1.125rem; }
 
-p { color: var(--fg-muted); }
+p {
+  font-family: var(--font-serif);
+  color: var(--fg-muted);
+  font-weight: 300;
+  line-height: 1.7;
+}
 
 a { color: var(--fg); }
 
@@ -114,6 +121,7 @@ a { color: var(--fg); }
 }
 
 .section-label {
+  font-family: var(--font);
   font-size: 11px;
   font-weight: 600;
   letter-spacing: 0.1em;
@@ -294,13 +302,12 @@ nav {
 }
 
 .hero-content > p {
-  font-size: 1.15rem;
+  font-size: 1.25rem;
   margin-bottom: 48px;
-  line-height: 1.7;
-  max-width: 600px;
+  line-height: 1.75;
+  max-width: 620px;
   margin-left: auto;
   margin-right: auto;
-  font-weight: 300;
 }
 
 .hero-ctas {
@@ -367,10 +374,10 @@ nav {
 }
 
 .problem-section > p {
-  max-width: 600px;
+  max-width: 640px;
   margin: 0 auto;
-  font-size: 1.125rem;
-  line-height: 1.7;
+  font-size: 1.2rem;
+  line-height: 1.75;
 }
 
 /* === ACTIVITY FEED === */
@@ -502,12 +509,14 @@ nav {
 .stat { text-align: center; }
 
 .stat-value {
+  font-family: var(--font-serif);
   font-size: 2rem;
   font-weight: 400;
   letter-spacing: -0.02em;
 }
 
 .stat-label {
+  font-family: var(--font);
   font-size: 13px;
   color: var(--fg-muted);
   margin-top: 4px;
@@ -538,11 +547,16 @@ nav {
   font-size: 18px;
 }
 
-.feature-card h3 { margin-bottom: 12px; }
+.feature-card h3 {
+  font-family: var(--font-serif);
+  font-weight: 400;
+  color: var(--fg-muted);
+  margin-bottom: 12px;
+}
 
 .feature-card p {
-  font-size: 14px;
-  line-height: 1.7;
+  font-size: 1rem;
+  line-height: 1.75;
 }
 
 /* === PROCESS === */
