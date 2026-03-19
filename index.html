@@ -86,8 +86,8 @@ body {
   color: var(--fg);
   -webkit-font-smoothing: antialiased;
   line-height: 1.6;
-  background-image: radial-gradient(circle, rgba(0,0,0,0.06) 1px, transparent 1px);
-  background-size: 24px 24px;
+  background-image: radial-gradient(circle, rgba(0,0,0,0.12) 1.5px, transparent 1.5px);
+  background-size: 20px 20px;
 }
 
 h1, h2, h3 {
@@ -928,12 +928,27 @@ footer {
   .hero { padding-top: 100px; min-height: auto; padding-bottom: 60px; }
   .hero-ctas { flex-direction: column; }
   .btn-primary, .btn-secondary { width: 100%; justify-content: center; }
-  .trust-section { padding: 32px 24px; overflow: hidden; }
+  .trust-section { padding: 32px 24px; }
   .problem-section { padding: 32px 24px; }
-  .final-cta { margin: 0 16px; padding: 60px 24px; overflow: hidden; }
+  .final-cta { margin: 0 16px; padding: 60px 24px; }
   
-  .float-card { display: none !important; }
-  .activity-stack { padding-top: 0; }
+  .float-card { 
+    padding: 10px 14px !important;
+    font-size: 11px !important;
+    transform: rotate(0deg) !important;
+  }
+  .float-card .icon {
+    width: 26px !important;
+    height: 26px !important;
+    font-size: 12px !important;
+  }
+  .float-card .text { font-size: 12px !important; }
+  .float-card .sub { font-size: 10px !important; }
+  
+  .float-card-1 { right: 5px !important; top: -15px !important; }
+  .float-card-2 { left: 5px !important; bottom: -20px !important; }
+  
+  .activity-stack { padding-top: 30px; }
 }
 </style>
 </head>
