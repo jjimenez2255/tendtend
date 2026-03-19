@@ -48,18 +48,16 @@ fbq('track', 'PageView');
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
 <style>
-/* === BRAND KIT === */
 :root {
   --void-black: #000000;
   --engine-charcoal: #141414;
   --field-gray: #737373;
   --canvas-white: #F2F2F2;
   --signal-white: #FFFFFF;
-  --accent-blue: #3B82F6;
-  --accent-orange: #2563EB;
+  --accent-blue: #2563EB;
   
   --bg: var(--canvas-white);
   --surface: var(--signal-white);
@@ -82,7 +80,6 @@ body {
   line-height: 1.6;
 }
 
-/* === TYPOGRAPHY === */
 h1, h2, h3 {
   font-weight: 400;
   letter-spacing: -0.02em;
@@ -94,10 +91,8 @@ h2 { font-size: clamp(1.5rem, 3vw, 2.25rem); }
 h3 { font-size: 1.125rem; font-weight: 500; }
 
 p { color: var(--fg-muted); }
-
 a { color: var(--fg); }
 
-/* === LAYOUT === */
 .container {
   max-width: 1000px;
   margin: 0 auto;
@@ -125,7 +120,7 @@ a { color: var(--fg); }
   margin-right: auto;
 }
 
-/* === NAV === */
+/* NAV */
 nav {
   position: fixed;
   top: 0;
@@ -160,17 +155,6 @@ nav {
   font-size: 18px;
   font-weight: 400;
   letter-spacing: 0.05em;
-}
-
-.nav-tag {
-  font-size: 10px;
-  font-weight: 600;
-  letter-spacing: 0.05em;
-  padding: 4px 8px;
-  background: var(--void-black);
-  color: var(--signal-white);
-  border-radius: 4px;
-  margin-left: 8px;
 }
 
 .nav-links {
@@ -240,7 +224,7 @@ nav {
   display: block;
   margin-top: 16px;
   padding: 14px;
-  background: var(--accent-blue);
+  background: var(--void-black);
   color: var(--signal-white);
   text-align: center;
   border-radius: 32px;
@@ -256,12 +240,12 @@ nav {
   font-size: 14px;
   font-weight: 500;
   border-radius: var(--radius);
-  transition: opacity 0.2s;
+  transition: all 0.2s;
 }
 
-.nav-cta:hover { opacity: 0.85; }
+.nav-cta:hover { background: var(--engine-charcoal); }
 
-/* === HERO === */
+/* HERO */
 .hero {
   min-height: 100vh;
   display: flex;
@@ -302,6 +286,12 @@ nav {
   height: 8px;
   background: #22C55E;
   border-radius: 50%;
+  animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.5; }
 }
 
 .hero-ctas {
@@ -310,27 +300,33 @@ nav {
   justify-content: center;
 }
 
+/* BUTTONS - stronger CTA */
 .btn-primary {
   display: inline-flex;
   align-items: center;
   gap: 8px;
-  padding: 16px 32px;
-  background: var(--accent-blue);
+  padding: 18px 36px;
+  background: var(--void-black);
   color: var(--signal-white);
   text-decoration: none;
   font-size: 16px;
-  font-weight: 500;
+  font-weight: 600;
   border-radius: 32px;
-  transition: opacity 0.2s;
+  transition: all 0.2s;
+  box-shadow: 0 4px 14px rgba(0,0,0,0.2);
 }
 
-.btn-primary:hover { opacity: 0.9; }
+.btn-primary:hover { 
+  background: var(--engine-charcoal);
+  transform: translateY(-1px);
+  box-shadow: 0 6px 20px rgba(0,0,0,0.25);
+}
 
 .btn-secondary {
   display: inline-flex;
   align-items: center;
   gap: 8px;
-  padding: 16px 32px;
+  padding: 18px 36px;
   background: var(--surface);
   color: var(--fg-muted);
   text-decoration: none;
@@ -345,7 +341,7 @@ nav {
   color: var(--fg);
 }
 
-/* === PROBLEM SECTION === */
+/* PROBLEM SECTION */
 .problem-section {
   background: var(--surface);
   border-radius: var(--radius-lg);
@@ -364,7 +360,7 @@ nav {
   line-height: 1.7;
 }
 
-/* === ACTIVITY FEED === */
+/* ACTIVITY FEED */
 .activity-section {
   padding-top: 0;
 }
@@ -412,7 +408,7 @@ nav {
 
 .activity-text { color: rgba(255,255,255,0.85); }
 
-/* === TRUST STATS === */
+/* TRUST STATS */
 .trust-section {
   background: var(--surface);
   border-radius: var(--radius-lg);
@@ -447,12 +443,6 @@ nav {
 .trust-logos svg {
   height: 24px;
   width: auto;
-}
-
-.trust-logos img {
-  height: 24px;
-  width: auto;
-  filter: grayscale(100%);
 }
 
 .trust-credibility {
@@ -494,7 +484,7 @@ nav {
 
 .stat-value {
   font-size: 2rem;
-  font-weight: 400;
+  font-weight: 500;
   letter-spacing: -0.02em;
 }
 
@@ -504,7 +494,7 @@ nav {
   margin-top: 4px;
 }
 
-/* === FEATURES === */
+/* FEATURES - scannable */
 .features-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -518,25 +508,34 @@ nav {
 }
 
 .feature-icon {
-  width: 40px;
-  height: 40px;
+  width: 48px;
+  height: 48px;
   display: flex;
   align-items: center;
   justify-content: center;
-  background: var(--canvas-white);
-  border-radius: 10px;
+  background: var(--void-black);
+  color: var(--signal-white);
+  border-radius: 12px;
   margin-bottom: 20px;
-  font-size: 18px;
+  font-size: 20px;
 }
 
-.feature-card h3 { margin-bottom: 12px; }
+.feature-card h3 { 
+  margin-bottom: 12px;
+  font-weight: 600;
+}
 
 .feature-card p {
   font-size: 14px;
   line-height: 1.7;
 }
 
-/* === PROCESS === */
+.feature-card strong {
+  color: var(--fg);
+  font-weight: 500;
+}
+
+/* PROCESS - bigger steps */
 .process-grid {
   display: grid;
   grid-template-columns: repeat(5, 1fr);
@@ -546,20 +545,29 @@ nav {
 .step {
   background: var(--surface);
   border-radius: var(--radius-lg);
-  padding: 28px 20px;
+  padding: 32px 24px;
   text-align: center;
+  position: relative;
 }
 
 .step-num {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  background: var(--void-black);
+  color: var(--signal-white);
+  border-radius: 50%;
   font-size: 12px;
   font-weight: 600;
-  color: var(--fg-muted);
   margin-bottom: 16px;
 }
 
 .step h3 {
   font-size: 1rem;
   margin-bottom: 12px;
+  font-weight: 600;
 }
 
 .step p {
@@ -567,7 +575,7 @@ nav {
   line-height: 1.6;
 }
 
-/* === PRICING === */
+/* PRICING */
 .pricing-grid {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
@@ -588,35 +596,6 @@ nav {
   margin-top: auto;
 }
 
-.price-card.dark {
-  background: var(--void-black);
-  color: var(--signal-white);
-}
-
-.price-card.dark .price-label,
-.price-card.dark .price-desc,
-.price-card.dark .price-list li {
-  color: rgba(255,255,255,0.7);
-}
-
-.price-card.dark .price-title,
-.price-card.dark .price-amount {
-  color: var(--signal-white);
-}
-
-.price-card.dark .price-list .check {
-  color: var(--signal-white);
-}
-
-.price-card.dark .price-list li {
-  border-color: rgba(255,255,255,0.1);
-}
-
-.price-card.dark .price-cta {
-  background: var(--signal-white);
-  color: var(--void-black);
-}
-
 .price-label {
   font-size: 11px;
   font-weight: 600;
@@ -627,13 +606,13 @@ nav {
 
 .price-title {
   font-size: 1.25rem;
-  font-weight: 500;
+  font-weight: 600;
   margin: 8px 0;
 }
 
 .price-amount {
   font-size: 2.5rem;
-  font-weight: 400;
+  font-weight: 500;
   letter-spacing: -0.02em;
   margin: 16px 0;
 }
@@ -641,10 +620,6 @@ nav {
 .price-amount span {
   font-size: 1rem;
   color: var(--fg-muted);
-}
-
-.price-card.dark .price-amount span {
-  color: rgba(255,255,255,0.6);
 }
 
 .price-desc {
@@ -671,48 +646,40 @@ nav {
 .price-list li:last-child { border-bottom: none; }
 
 .price-list .check {
-  color: var(--void-black);
+  color: #22C55E;
   font-weight: 600;
 }
 
 .price-cta {
   display: block;
   width: 100%;
-  padding: 14px 24px;
-  background: var(--accent-blue);
+  padding: 16px 24px;
+  background: var(--void-black);
   color: var(--signal-white);
   text-decoration: none;
   text-align: center;
   font-size: 14px;
-  font-weight: 500;
+  font-weight: 600;
   border-radius: 32px;
-  transition: opacity 0.2s;
+  transition: all 0.2s;
 }
 
-.price-cta:hover { opacity: 0.9; }
-
-.price-cta.secondary {
-  background: transparent;
-  color: var(--fg-muted);
-  border: 1px solid var(--fg-muted);
-}
-
-.price-cta.secondary:hover {
-  color: var(--fg);
-  border-color: var(--fg);
+.price-cta:hover { 
+  background: var(--engine-charcoal);
 }
 
 .price-note {
   text-align: center;
-  margin-top: 24px;
+  margin-top: 32px;
   font-size: 14px;
   color: var(--fg-muted);
   max-width: 600px;
   margin-left: auto;
   margin-right: auto;
+  line-height: 1.7;
 }
 
-/* === FAQ ACCORDION === */
+/* FAQ - scannable answers */
 .faq-list {
   max-width: 700px;
   margin: 0 auto;
@@ -771,35 +738,65 @@ nav {
   line-height: 1.7;
 }
 
-/* === FINAL CTA === */
+.faq-answer strong {
+  color: var(--fg);
+  font-weight: 500;
+}
+
+/* FINAL CTA - stronger visual */
 .final-cta {
   text-align: center;
   padding: 100px 24px;
+  background: var(--surface);
+  border-radius: var(--radius-lg);
+  margin: 0 24px;
+  max-width: 1000px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
-.final-cta h2 { margin-bottom: 16px; }
+.final-cta h2 { 
+  margin-bottom: 16px;
+  font-weight: 500;
+}
 
 .final-cta > p {
   font-size: 1.125rem;
   margin-bottom: 32px;
-  max-width: 550px;
+  max-width: 500px;
   margin-left: auto;
   margin-right: auto;
   color: var(--fg-muted);
 }
 
-/* === FOOTER === */
+/* FOOTER - with nav */
 footer {
-  padding: 40px 24px;
+  padding: 60px 24px 40px;
   text-align: center;
 }
 
+.footer-nav {
+  display: flex;
+  justify-content: center;
+  gap: 32px;
+  margin-bottom: 32px;
+}
+
+.footer-nav a {
+  font-size: 14px;
+  color: var(--fg-muted);
+  text-decoration: none;
+  transition: color 0.2s;
+}
+
+.footer-nav a:hover { color: var(--fg); }
+
 .footer-logo {
-  font-size: 4rem;
+  font-size: 3rem;
   font-weight: 200;
   letter-spacing: 0.1em;
   color: rgba(0,0,0,0.08);
-  margin-bottom: 24px;
+  margin-bottom: 16px;
 }
 
 .footer-tagline {
@@ -820,16 +817,21 @@ footer {
 
 .footer-links a:hover { color: var(--fg); }
 
-/* === RESPONSIVE === */
+/* RESPONSIVE */
 @media (max-width: 900px) {
   .features-grid { grid-template-columns: 1fr; }
-  .process-grid { grid-template-columns: 1fr; gap: 12px; }
+  .process-grid { 
+    grid-template-columns: 1fr; 
+    gap: 16px;
+    max-width: 400px;
+    margin: 0 auto;
+  }
   .pricing-grid { grid-template-columns: 1fr; }
-  .pricing-grid .price-card { margin-bottom: 16px; }
   .trust-stats { flex-wrap: wrap; gap: 32px; }
   .nav-links { display: none; }
   .nav-cta { display: none; }
   .hamburger { display: flex; }
+  .footer-nav { flex-wrap: wrap; gap: 16px; }
 }
 
 @media (max-width: 600px) {
@@ -839,6 +841,7 @@ footer {
   .btn-primary, .btn-secondary { width: 100%; justify-content: center; }
   .trust-section { padding: 32px 24px; }
   .problem-section { padding: 48px 24px; }
+  .final-cta { margin: 0 16px; padding: 60px 24px; }
 }
 </style>
 </head>
@@ -859,19 +862,20 @@ footer {
       <li><a href="#features">Features</a></li>
       <li><a href="#how">How it works</a></li>
       <li><a href="#pricing">Pricing</a></li>
+      <li><a href="#faq">FAQ</a></li>
     </ul>
-    <a href="https://cal.com/clawdbotdfw/15min" class="nav-cta">Book a Discovery Call</a>
+    <a href="https://cal.com/clawdbotdfw/15min" class="nav-cta">Book a Call</a>
     <button class="hamburger" onclick="openMobileMenu()">
       <span></span>
       <span></span>
       <span></span>
     </button>
   </div>
-  <!-- Mobile Menu -->
   <div class="mobile-menu" id="mobileMenu">
     <a href="#features" onclick="closeMobileMenu()">Features</a>
     <a href="#how" onclick="closeMobileMenu()">How it works</a>
     <a href="#pricing" onclick="closeMobileMenu()">Pricing</a>
+    <a href="#faq" onclick="closeMobileMenu()">FAQ</a>
     <a href="https://cal.com/clawdbotdfw/15min" class="mobile-cta">Book a Discovery Call</a>
   </div>
 </nav>
@@ -883,7 +887,7 @@ footer {
     <h1>We integrate AI into the workflows that run your business.</h1>
     <p>Not a chatbot. Not a tool you configure once and forget. Tend maps your existing workflows, builds the AI integrations that make them faster and more reliable, and manages them as your business evolves.</p>
     <div class="hero-ctas">
-      <a href="https://cal.com/clawdbotdfw/15min" class="btn-primary">Book a Discovery Call</a>
+      <a href="https://cal.com/clawdbotdfw/15min" class="btn-primary">Book a Discovery Call →</a>
       <a href="#how" class="btn-secondary">See how it works</a>
     </div>
   </div>
@@ -929,32 +933,26 @@ footer {
       </div>
       <div class="stat">
         <div class="stat-value">2 weeks</div>
-        <div class="stat-label">To running</div>
+        <div class="stat-label">To live</div>
       </div>
       <div class="stat">
         <div class="stat-value">$0</div>
         <div class="stat-label">Per-user fees</div>
       </div>
       <div class="stat">
-        <div class="stat-value">Local</div>
-        <div class="stat-label">Managed service</div>
+        <div class="stat-value">100%</div>
+        <div class="stat-label">Managed</div>
       </div>
     </div>
     
     <div class="trust-tools">
       <div class="trust-tools-label">Connects to tools you already use</div>
       <div class="trust-logos">
-        <!-- Gmail -->
         <svg viewBox="0 0 24 24" fill="currentColor"><path d="M24 5.457v13.909c0 .904-.732 1.636-1.636 1.636h-3.819V11.73L12 16.64l-6.545-4.91v9.273H1.636A1.636 1.636 0 0 1 0 19.366V5.457c0-2.023 2.309-3.178 3.927-1.964L5.455 4.64 12 9.548l6.545-4.91 1.528-1.145C21.69 2.28 24 3.434 24 5.457z"/></svg>
-        <!-- Google Calendar -->
-        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M18.316 5.684H24v12.632h-5.684V5.684zM5.684 24h12.632v-5.684H5.684V24zM18.316 5.684V0H1.895A1.894 1.894 0 0 0 0 1.895v16.421h5.684V5.684h12.632zm-7.207 6.25v-.065c.272-.144.5-.349.687-.617s.279-.595.279-.982c0-.379-.099-.72-.3-1.025a2.05 2.05 0 0 0-.832-.714 2.703 2.703 0 0 0-1.197-.257c-.6 0-1.094.156-1.481.467-.386.311-.587.72-.587 1.23h1.281c0-.236.082-.434.248-.593.167-.159.388-.238.665-.238.282 0 .502.078.656.238.156.156.234.359.234.607 0 .259-.083.469-.248.629a.903.903 0 0 1-.678.243h-.539v.986h.557c.3 0 .54.089.717.266.177.177.266.416.266.717 0 .27-.086.491-.26.665a.936.936 0 0 1-.686.26c-.282 0-.507-.086-.672-.256-.166-.17-.249-.395-.249-.673h-1.282c.003.617.198 1.101.585 1.452.39.35.907.526 1.553.526.449 0 .847-.088 1.193-.264.346-.176.614-.42.805-.731.191-.311.286-.661.286-1.052 0-.399-.105-.738-.314-1.016a1.872 1.872 0 0 0-.833-.625zM22.105 0h-3.789v5.684H24V1.895A1.894 1.894 0 0 0 22.105 0z"/></svg>
-        <!-- Slack -->
-        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M5.042 15.165a2.528 2.528 0 0 1-2.52 2.523A2.528 2.528 0 0 1 0 15.165a2.527 2.527 0 0 1 2.522-2.52h2.52v2.52zM6.313 15.165a2.527 2.527 0 0 1 2.521-2.52 2.527 2.527 0 0 1 2.521 2.52v6.313A2.528 2.528 0 0 1 8.834 24a2.528 2.528 0 0 1-2.521-2.522v-6.313zM8.834 5.042a2.528 2.528 0 0 1-2.521-2.52A2.528 2.528 0 0 1 8.834 0a2.528 2.528 0 0 1 2.521 2.522v2.52H8.834zM8.834 6.313a2.528 2.528 0 0 1 2.521 2.521 2.528 2.528 0 0 1-2.521 2.521H2.522A2.528 2.528 0 0 1 0 8.834a2.528 2.528 0 0 1 2.522-2.521h6.312zM18.956 8.834a2.528 2.528 0 0 1 2.522-2.521A2.528 2.528 0 0 1 24 8.834a2.528 2.528 0 0 1-2.522 2.521h-2.522V8.834zM17.688 8.834a2.528 2.528 0 0 1-2.523 2.521 2.527 2.527 0 0 1-2.52-2.521V2.522A2.527 2.527 0 0 1 15.165 0a2.528 2.528 0 0 1 2.523 2.522v6.312zM15.165 18.956a2.528 2.528 0 0 1 2.523 2.522A2.528 2.528 0 0 1 15.165 24a2.527 2.527 0 0 1-2.52-2.522v-2.522h2.52zM15.165 17.688a2.527 2.527 0 0 1-2.52-2.523 2.526 2.526 0 0 1 2.52-2.52h6.313A2.527 2.527 0 0 1 24 15.165a2.528 2.528 0 0 1-2.522 2.523h-6.313z"/></svg>
-        <!-- HubSpot -->
-        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M18.164 7.93V5.084a2.198 2.198 0 0 0 1.267-1.984v-.066A2.2 2.2 0 0 0 17.238.84h-.067a2.2 2.2 0 0 0-2.193 2.193v.067a2.196 2.196 0 0 0 1.252 1.973v2.86a6.153 6.153 0 0 0-2.81 1.593l-7.4-5.756a2.636 2.636 0 0 0 .107-.725 2.669 2.669 0 1 0-2.669 2.669c.434 0 .842-.112 1.204-.298l7.281 5.664a6.105 6.105 0 0 0-.376 2.122c0 .752.14 1.47.387 2.136l-2.286 1.588a2.2 2.2 0 0 0-1.325-.458 2.222 2.222 0 1 0 2.222 2.222c0-.152-.017-.3-.046-.445l2.376-1.65a6.197 6.197 0 1 0 4.838-10.146z"/></svg>
-        <!-- Notion -->
-        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M4.459 4.208c.746.606 1.026.56 2.428.466l13.215-.793c.28 0 .047-.28-.046-.326L17.86 1.968c-.42-.326-.981-.7-2.055-.607L3.01 2.295c-.466.046-.56.28-.374.466zm.793 3.08v13.904c0 .747.373 1.027 1.214.98l14.523-.84c.841-.046.935-.56.935-1.167V6.354c0-.606-.233-.933-.748-.887l-15.177.887c-.56.047-.747.327-.747.933zm14.337.745c.093.42 0 .84-.42.888l-.7.14v10.264c-.608.327-1.168.514-1.635.514-.748 0-.935-.234-1.495-.933l-4.577-7.186v6.952l1.448.327s0 .84-1.168.84l-3.22.186c-.094-.186 0-.653.327-.746l.84-.233V9.854L7.822 9.76c-.094-.42.14-1.026.793-1.073l3.456-.233 4.764 7.279v-6.44l-1.215-.14c-.093-.514.28-.887.747-.933zM1.936 1.035l13.31-.98c1.634-.14 2.055-.047 3.082.7l4.249 2.986c.7.513.934.653.934 1.213v16.378c0 1.026-.373 1.634-1.68 1.726l-15.458.934c-.98.047-1.448-.093-1.962-.747l-3.129-4.06c-.56-.747-.793-1.306-.793-1.96V2.667c0-.839.374-1.54 1.447-1.632z"/></svg>
-        <!-- Zapier -->
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M18.316 5.684H24v12.632h-5.684V5.684zM5.684 24h12.632v-5.684H5.684V24zM18.316 5.684V0H1.895A1.894 1.894 0 0 0 0 1.895v16.421h5.684V5.684h12.632z"/></svg>
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M5.042 15.165a2.528 2.528 0 0 1-2.52 2.523A2.528 2.528 0 0 1 0 15.165a2.527 2.527 0 0 1 2.522-2.52h2.52v2.52zM6.313 15.165a2.527 2.527 0 0 1 2.521-2.52 2.527 2.527 0 0 1 2.521 2.52v6.313A2.528 2.528 0 0 1 8.834 24a2.528 2.528 0 0 1-2.521-2.522v-6.313z"/></svg>
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M18.164 7.93V5.084a2.198 2.198 0 0 0 1.267-1.984v-.066A2.2 2.2 0 0 0 17.238.84h-.067a2.2 2.2 0 0 0-2.193 2.193v.067c0 .843.476 1.576 1.252 1.973v2.86a6.153 6.153 0 0 0-2.81 1.593l-7.4-5.756a2.636 2.636 0 0 0 .107-.725 2.669 2.669 0 1 0-2.669 2.669c.434 0 .842-.112 1.204-.298l7.281 5.664a6.197 6.197 0 1 0 4.838-10.146z"/></svg>
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M4.459 4.208c.746.606 1.026.56 2.428.466l13.215-.793c.28 0 .047-.28-.046-.326L17.86 1.968c-.42-.326-.981-.7-2.055-.607L3.01 2.295c-.466.046-.56.28-.374.466z"/></svg>
         <svg viewBox="0 0 24 24" fill="currentColor"><path d="M15.633 1.927l-3.186 6.559-3.187-6.559a10.79 10.79 0 0 0-2.413.732l2.64 8.108H5.115a10.717 10.717 0 0 0 0 2.466h4.372l-2.64 8.108a10.79 10.79 0 0 0 2.413.732l3.187-6.559 3.186 6.559a10.79 10.79 0 0 0 2.413-.732l-2.64-8.108h4.372a10.717 10.717 0 0 0 0-2.466h-4.372l2.64-8.108a10.79 10.79 0 0 0-2.413-.732z"/></svg>
       </div>
     </div>
@@ -975,32 +973,32 @@ footer {
     <div class="feature-card">
       <div class="feature-icon">◎</div>
       <h3>One workflow, proven first</h3>
-      <p>We don't try to automate everything. We identify the workflow with the highest ROI — lead response, scheduling, client follow-up — and build the integration that makes it reliable. Expand after proof.</p>
+      <p><strong>We start with your highest-ROI workflow</strong> — lead response, scheduling, client follow-up — and build an integration that's reliable before we expand.</p>
     </div>
     <div class="feature-card">
       <div class="feature-icon">⬢</div>
       <h3>Connected to your actual tools</h3>
-      <p>Email, calendar, CRM, Slack — connected with scoped API access. Not a sandbox environment or a demo. Real integrations that touch your live systems, tested before anything goes into production.</p>
+      <p><strong>Your email, calendar, CRM, Slack</strong> — connected with scoped API access. Real integrations touching live systems, tested before production.</p>
     </div>
     <div class="feature-card">
       <div class="feature-icon">◈</div>
       <h3>Human oversight built in</h3>
-      <p>Every integration has defined escalation points. Actions with real business consequences require your approval until you've established trust with the system. You stay in control of what matters.</p>
+      <p><strong>Approval gates on high-stakes actions.</strong> Every integration has defined escalation points. You stay in control of what matters.</p>
     </div>
     <div class="feature-card">
       <div class="feature-icon">◇</div>
       <h3>Live in days, not months</h3>
-      <p>No six-month implementation cycle. We scope the integration, build it, and have it running in your actual workflows within one to two weeks.</p>
+      <p><strong>No six-month implementation cycle.</strong> We scope, build, and deploy within one to two weeks. Running in your actual workflows.</p>
     </div>
     <div class="feature-card">
       <div class="feature-icon">⬡</div>
       <h3>Maintained, not handed off</h3>
-      <p>The integration is only as good as the team behind it. We monitor, recalibrate, and update what we build as your workflows change — that's the ongoing service.</p>
+      <p><strong>We don't build and walk away.</strong> Monitoring, recalibration, updates as your workflows change — that's the ongoing service.</p>
     </div>
     <div class="feature-card">
       <div class="feature-icon">⊞</div>
       <h3>Expand when ready</h3>
-      <p>Once the first integration is proven, we add more. Broader workflow coverage, multi-system orchestration, deeper automation — built incrementally on a foundation that actually works.</p>
+      <p><strong>After the first integration proves itself,</strong> we add more. Broader automation, multi-system orchestration — built on a foundation that works.</p>
     </div>
   </div>
 </section>
@@ -1017,27 +1015,27 @@ footer {
     <div class="step">
       <div class="step-num">01</div>
       <h3>Discovery</h3>
-      <p>Thirty minutes to map the workflow that's costing you the most. We understand your tools, your team, and where the real friction is before we write a line of integration logic.</p>
+      <p>30 minutes to map your most expensive workflow. We understand your tools, team, and friction points.</p>
     </div>
     <div class="step">
       <div class="step-num">02</div>
       <h3>Scope</h3>
-      <p>We define exactly what the integration does, what it escalates, and what requires your sign-off. You review and approve the scope before any build work starts.</p>
+      <p>We define exactly what the integration does, what it escalates, and what needs your approval.</p>
     </div>
     <div class="step">
       <div class="step-num">03</div>
       <h3>Build</h3>
-      <p>One to two weeks. We connect your tools, configure permissions, implement the integration logic, and test against real data before anything goes live.</p>
+      <p>1-2 weeks. Connect tools, configure permissions, test against real data before going live.</p>
     </div>
     <div class="step">
       <div class="step-num">04</div>
       <h3>Run</h3>
-      <p>Continuous monitoring, performance reviews, and exception handling. When something falls outside expected behavior, we handle it — not you.</p>
+      <p>Continuous monitoring and exception handling. When something breaks, we fix it — not you.</p>
     </div>
     <div class="step">
       <div class="step-num">05</div>
       <h3>Expand</h3>
-      <p>Once the first integration is delivering results, we scope the next one. Each addition builds on a foundation that's already proven in your environment.</p>
+      <p>First integration working? We scope the next one. Each builds on proven foundation.</p>
     </div>
   </div>
 </section>
@@ -1054,8 +1052,8 @@ footer {
     <div class="price-card">
       <div class="price-label">One-time</div>
       <div class="price-title">Setup</div>
-      <div class="price-amount">$5,000<span> minimum</span></div>
-      <p class="price-desc">Discovery, workflow scoping, integration build, tool connections, and go-live. Complex or multi-system workflows are scoped and priced based on requirements.</p>
+      <div class="price-amount">$5,000<span> min</span></div>
+      <p class="price-desc">Discovery, workflow scoping, integration build, tool connections, and go-live.</p>
       <ul class="price-list">
         <li><span class="check">✓</span> Discovery call</li>
         <li><span class="check">✓</span> Workflow scoping</li>
@@ -1069,20 +1067,20 @@ footer {
     <div class="price-card">
       <div class="price-label">Monthly</div>
       <div class="price-title">Managed Service</div>
-      <div class="price-amount">$2,000<span>/month minimum</span></div>
-      <p class="price-desc">Ongoing monitoring, recalibration, exception handling, and monthly performance reviews. The work that keeps the integration reliable as your business changes.</p>
+      <div class="price-amount">$2,000<span>/mo min</span></div>
+      <p class="price-desc">Ongoing monitoring, recalibration, exception handling, and monthly reviews.</p>
       <ul class="price-list">
         <li><span class="check">✓</span> Monitoring & tuning</li>
         <li><span class="check">✓</span> Exception handling</li>
         <li><span class="check">✓</span> Monthly reviews</li>
-        <li><span class="check">✓</span> Support</li>
+        <li><span class="check">✓</span> Priority support</li>
         <li><span class="check">✓</span> 3-month minimum</li>
       </ul>
-      <a href="#faq" class="price-cta secondary">Learn More</a>
+      <a href="https://cal.com/clawdbotdfw/15min" class="price-cta">Book a Discovery Call</a>
     </div>
   </div>
   
-  <p class="price-note">Day-one payment is $7,000 — setup plus first month. Minimum engagement is three months, totaling $11,000. After that, cancel with 30 days notice. The integration keeps running — you own what you paid for.</p>
+  <p class="price-note"><strong>Day one: $7,000</strong> (setup + first month). <strong>Minimum engagement: $11,000</strong> over 3 months. After that, cancel with 30 days notice. The integration keeps running — you own what you paid for.</p>
 </section>
 
 <!-- FAQ -->
@@ -1099,7 +1097,7 @@ footer {
         <span class="faq-icon">+</span>
       </button>
       <div class="faq-answer">
-        <p>General-purpose AI tools are interfaces you use manually. What we build is an active integration layer — connected to your real tools, running continuously, with defined behavior and escalation logic. You don't use it like a chat window. It runs as part of your workflow.</p>
+        <p><strong>Those are tools you use manually.</strong> We build active integrations — connected to your real tools, running continuously, with defined behavior and escalation logic. It runs as part of your workflow, not as a chat window.</p>
       </div>
     </div>
     
@@ -1109,7 +1107,7 @@ footer {
         <span class="faq-icon">+</span>
       </button>
       <div class="faq-answer">
-        <p>No. You describe how your business works. We handle the integration architecture, the tool connections, and the ongoing maintenance. You interact with the output — faster workflows, handled follow-ups, fewer things falling through the cracks.</p>
+        <p><strong>No.</strong> You describe how your business works. We handle the architecture, tool connections, and ongoing maintenance. You interact with the output — faster workflows, fewer dropped balls.</p>
       </div>
     </div>
     
@@ -1119,7 +1117,7 @@ footer {
         <span class="faq-icon">+</span>
       </button>
       <div class="faq-answer">
-        <p>The first integration is live in one to two weeks. The first month is where it tightens — we calibrate behavior against real usage and handle edge cases as they surface. Most clients see reliable, stable operation by end of month one.</p>
+        <p><strong>Live in 1-2 weeks.</strong> The first month is calibration — we tune behavior against real usage. Most clients see stable, reliable operation by end of month one.</p>
       </div>
     </div>
     
@@ -1129,7 +1127,7 @@ footer {
         <span class="faq-icon">+</span>
       </button>
       <div class="faq-answer">
-        <p>We catch most issues before you see them. When something outside the expected parameters surfaces, it escalates to you rather than failing silently. Infrastructure issues are resolved the same business day.</p>
+        <p><strong>We catch most issues before you see them.</strong> When something unexpected happens, it escalates to you rather than failing silently. Infrastructure issues resolved same business day.</p>
       </div>
     </div>
     
@@ -1139,7 +1137,7 @@ footer {
         <span class="faq-icon">+</span>
       </button>
       <div class="faq-answer">
-        <p>Integrations run with scoped permissions — minimum access for the defined workflow. Every external action is logged. We don't use your data for model training. Your environment is fully isolated.</p>
+        <p><strong>Yes.</strong> Scoped permissions — minimum access for the workflow. Every action logged. We don't train on your data. Your environment is fully isolated.</p>
       </div>
     </div>
     
@@ -1149,21 +1147,30 @@ footer {
         <span class="faq-icon">+</span>
       </button>
       <div class="faq-answer">
-        <p>After the three-month minimum, cancel with 30 days notice. The integration keeps running. You retain ownership of everything we built.</p>
+        <p><strong>After 3 months, cancel anytime</strong> with 30 days notice. The integration keeps running. You own everything we built.</p>
       </div>
     </div>
   </div>
 </section>
 
 <!-- FINAL CTA -->
-<section class="final-cta">
-  <h2>Your first AI integration is two weeks away.</h2>
-  <p>Thirty minutes to map the workflow — then we build it, connect it, and run it for you.</p>
-  <a href="https://cal.com/clawdbotdfw/15min" class="btn-primary">Book a Discovery Call →</a>
+<section class="container" style="padding-bottom: 40px;">
+  <div class="final-cta">
+    <h2>Your first AI integration is two weeks away.</h2>
+    <p>30 minutes to map the workflow — then we build it, connect it, and run it for you.</p>
+    <a href="https://cal.com/clawdbotdfw/15min" class="btn-primary">Book a Discovery Call →</a>
+  </div>
 </section>
 
 <!-- FOOTER -->
 <footer>
+  <nav class="footer-nav">
+    <a href="#features">Features</a>
+    <a href="#how">How it works</a>
+    <a href="#pricing">Pricing</a>
+    <a href="#faq">FAQ</a>
+    <a href="mailto:hello@tend.team">Contact</a>
+  </nav>
   <div class="footer-logo">tend</div>
   <div class="footer-tagline">AI integration for business workflows.</div>
   <div class="footer-links">
@@ -1172,21 +1179,15 @@ footer {
 </footer>
 
 <script>
-// FAQ Accordion
 document.querySelectorAll('.faq-question').forEach(button => {
   button.addEventListener('click', () => {
     const item = button.parentElement;
     const isOpen = item.classList.contains('open');
-    
-    // Close all others
     document.querySelectorAll('.faq-item').forEach(i => i.classList.remove('open'));
-    
-    // Toggle current
     if (!isOpen) item.classList.add('open');
   });
 });
 
-// Mobile Menu
 function openMobileMenu() {
   document.getElementById('mobileMenu').classList.toggle('open');
 }
