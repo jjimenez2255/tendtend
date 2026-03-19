@@ -824,11 +824,12 @@ footer {
 }
 
 .footer-logo {
-  font-size: 4rem;
+  font-family: var(--font);
+  font-size: clamp(6rem, 15vw, 12rem);
   font-weight: 200;
-  letter-spacing: 0.1em;
-  color: rgba(0,0,0,0.08);
-  margin-bottom: 24px;
+  letter-spacing: 0.15em;
+  color: rgba(0,0,0,0.06);
+  margin-bottom: 32px;
 }
 
 .footer-locations {
@@ -851,11 +852,10 @@ footer {
 }
 
 .footer-locations-list span {
-  font-family: var(--font-serif);
-  font-size: 1.75rem;
+  font-family: var(--font);
+  font-size: 14px;
   font-weight: 400;
-  color: var(--fg);
-  letter-spacing: -0.01em;
+  color: var(--fg-muted);
 }
 
 .footer-divider {
