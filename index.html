@@ -36,15 +36,15 @@ fbq('track', 'PageView');
 
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Tend — AI That Actually Works</title>
-<meta name="description" content="We deploy AI operators into your real workflows — lead follow-up, scheduling, customer comms — and run them for you. Managed so it keeps working.">
+<title>Tend — AI Integration for Business Workflows</title>
+<meta name="description" content="We integrate AI into the workflows that run your business. Not a chatbot. Mapped to your tools, managed as you evolve.">
 
 <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect x='10' y='15' width='80' height='14' fill='black'/><rect x='10' y='38' width='80' height='14' fill='black'/><rect x='38' y='62' width='24' height='24' fill='black'/></svg>">
 
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://tend.team">
-<meta property="og:title" content="Tend — AI That Actually Works">
-<meta property="og:description" content="We deploy AI operators into your real workflows and run them for you. Managed so it keeps working.">
+<meta property="og:title" content="Tend — AI Integration for Business Workflows">
+<meta property="og:description" content="We integrate AI into the workflows that run your business. Mapped to your tools, managed as you evolve.">
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -59,7 +59,7 @@ fbq('track', 'PageView');
   --canvas-white: #F2F2F2;
   --signal-white: #FFFFFF;
   --accent-blue: #3B82F6;
-  --accent-orange: #F59E0B;
+  --accent-orange: #2563EB;
   
   --bg: var(--canvas-white);
   --surface: var(--signal-white);
@@ -345,35 +345,6 @@ nav {
   color: var(--fg);
 }
 
-/* === DFW CALLOUT === */
-.dfw-callout {
-  background: var(--void-black);
-  color: var(--signal-white);
-  padding: 14px 24px;
-  text-align: center;
-  font-size: 14px;
-}
-
-.dfw-callout a {
-  color: var(--signal-white);
-  text-decoration: none;
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-}
-
-.dfw-callout a:hover {
-  text-decoration: underline;
-}
-
-.dfw-callout .arrow {
-  transition: transform 0.2s;
-}
-
-.dfw-callout a:hover .arrow {
-  transform: translateX(3px);
-}
-
 /* === PROBLEM SECTION === */
 .problem-section {
   background: var(--surface);
@@ -609,6 +580,12 @@ nav {
   background: var(--surface);
   border-radius: var(--radius-lg);
   padding: 40px;
+  display: flex;
+  flex-direction: column;
+}
+
+.price-card .price-cta {
+  margin-top: auto;
 }
 
 .price-card.dark {
@@ -714,64 +691,26 @@ nav {
 
 .price-cta:hover { opacity: 0.9; }
 
+.price-cta.secondary {
+  background: transparent;
+  color: var(--fg-muted);
+  border: 1px solid var(--fg-muted);
+}
+
+.price-cta.secondary:hover {
+  color: var(--fg);
+  border-color: var(--fg);
+}
+
 .price-note {
   text-align: center;
   margin-top: 24px;
   font-size: 14px;
   color: var(--fg-muted);
-}
-
-/* === DFW OFFER === */
-.dfw-offer {
-  background: var(--surface);
-  border: 2px solid var(--accent-orange);
-  border-radius: var(--radius-lg);
-  padding: 32px 40px;
-  margin-top: 32px;
-  max-width: 800px;
+  max-width: 600px;
   margin-left: auto;
   margin-right: auto;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 32px;
 }
-
-.dfw-badge {
-  font-size: 10px;
-  font-weight: 600;
-  letter-spacing: 0.05em;
-  text-transform: uppercase;
-  color: var(--signal-white);
-  background: var(--accent-orange);
-  padding: 4px 10px;
-  border-radius: 4px;
-  margin-bottom: 8px;
-  display: inline-block;
-}
-
-.dfw-offer h3 { margin-bottom: 4px; }
-.dfw-offer > div > p { font-size: 14px; color: var(--fg-muted); }
-
-.dfw-price {
-  font-size: 2rem;
-  font-weight: 400;
-  white-space: nowrap;
-}
-
-.dfw-cta {
-  padding: 14px 28px;
-  background: var(--accent-orange);
-  color: var(--signal-white);
-  text-decoration: none;
-  font-size: 14px;
-  font-weight: 500;
-  border-radius: 32px;
-  white-space: nowrap;
-  transition: opacity 0.2s;
-}
-
-.dfw-cta:hover { opacity: 0.9; }
 
 /* === FAQ ACCORDION === */
 .faq-list {
@@ -849,68 +788,6 @@ nav {
   color: var(--fg-muted);
 }
 
-/* === MEETUP === */
-.meetup {
-  background: var(--void-black);
-  color: var(--signal-white);
-  padding: 80px 24px;
-  text-align: center;
-}
-
-.meetup .section-label { color: var(--field-gray); }
-
-.meetup h2 {
-  color: var(--signal-white);
-  margin-bottom: 16px;
-}
-
-.meetup > p {
-  color: rgba(255,255,255,0.7);
-  max-width: 500px;
-  margin: 0 auto 32px;
-}
-
-.meetup-details {
-  display: flex;
-  justify-content: center;
-  gap: 32px;
-  margin-bottom: 32px;
-  font-size: 14px;
-  color: rgba(255,255,255,0.7);
-}
-
-.meetup-form {
-  display: flex;
-  gap: 12px;
-  justify-content: center;
-  max-width: 400px;
-  margin: 0 auto;
-}
-
-.meetup-form input {
-  flex: 1;
-  padding: 14px 18px;
-  border: none;
-  border-radius: 32px;
-  font-size: 14px;
-  font-family: var(--font);
-}
-
-.meetup-form button {
-  padding: 14px 24px;
-  background: var(--accent-blue);
-  color: var(--signal-white);
-  border: none;
-  border-radius: 32px;
-  font-size: 14px;
-  font-weight: 500;
-  font-family: var(--font);
-  cursor: pointer;
-  transition: opacity 0.2s;
-}
-
-.meetup-form button:hover { opacity: 0.9; }
-
 /* === FOOTER === */
 footer {
   padding: 40px 24px;
@@ -923,6 +800,12 @@ footer {
   letter-spacing: 0.1em;
   color: rgba(0,0,0,0.08);
   margin-bottom: 24px;
+}
+
+.footer-tagline {
+  font-size: 14px;
+  color: var(--fg-muted);
+  margin-bottom: 16px;
 }
 
 .footer-links {
@@ -942,8 +825,8 @@ footer {
   .features-grid { grid-template-columns: 1fr; }
   .process-grid { grid-template-columns: 1fr; gap: 12px; }
   .pricing-grid { grid-template-columns: 1fr; }
+  .pricing-grid .price-card { margin-bottom: 16px; }
   .trust-stats { flex-wrap: wrap; gap: 32px; }
-  .dfw-offer { flex-direction: column; text-align: center; }
   .nav-links { display: none; }
   .nav-cta { display: none; }
   .hamburger { display: flex; }
@@ -956,8 +839,6 @@ footer {
   .btn-primary, .btn-secondary { width: 100%; justify-content: center; }
   .trust-section { padding: 32px 24px; }
   .problem-section { padding: 48px 24px; }
-  .meetup-form { flex-direction: column; }
-  .meetup-details { flex-direction: column; gap: 8px; }
 }
 </style>
 </head>
@@ -973,13 +854,11 @@ footer {
         <rect x="38" y="62" width="24" height="24" fill="black"/>
       </svg>
       <span class="logo-text">tend</span>
-      <span class="nav-tag">AI OPS</span>
     </a>
     <ul class="nav-links">
       <li><a href="#features">Features</a></li>
       <li><a href="#how">How it works</a></li>
       <li><a href="#pricing">Pricing</a></li>
-      <li><a href="#meetup">DFW Meetup</a></li>
     </ul>
     <a href="https://cal.com/clawdbotdfw/15min" class="nav-cta">Book a Discovery Call</a>
     <button class="hamburger" onclick="openMobileMenu()">
@@ -993,7 +872,6 @@ footer {
     <a href="#features" onclick="closeMobileMenu()">Features</a>
     <a href="#how" onclick="closeMobileMenu()">How it works</a>
     <a href="#pricing" onclick="closeMobileMenu()">Pricing</a>
-    <a href="#meetup" onclick="closeMobileMenu()">DFW Meetup</a>
     <a href="https://cal.com/clawdbotdfw/15min" class="mobile-cta">Book a Discovery Call</a>
   </div>
 </nav>
@@ -1002,8 +880,8 @@ footer {
 <section class="container hero">
   <div class="hero-content">
     <span class="hero-badge"><span class="dot"></span> Now accepting clients</span>
-    <h1>AI that actually works. Managed so it keeps working.</h1>
-    <p>We deploy AI operators into your real workflows — lead follow-up, scheduling, customer comms — and run them for you.</p>
+    <h1>We integrate AI into the workflows that run your business.</h1>
+    <p>Not a chatbot. Not a tool you configure once and forget. Tend maps your existing workflows, builds the AI integrations that make them faster and more reliable, and manages them as your business evolves.</p>
     <div class="hero-ctas">
       <a href="https://cal.com/clawdbotdfw/15min" class="btn-primary">Book a Discovery Call</a>
       <a href="#how" class="btn-secondary">See how it works</a>
@@ -1011,16 +889,11 @@ footer {
   </div>
 </section>
 
-<!-- DFW CALLOUT -->
-<div class="dfw-callout">
-  <a href="#pricing">📍 <strong>DFW Local?</strong> Same-day hardware install available. <span class="arrow">→</span></a>
-</div>
-
 <!-- PROBLEM -->
 <section class="container" style="padding-top: 40px;">
   <div class="problem-section">
-    <h2>You've tried AI tools. They didn't stick.</h2>
-    <p>The problem isn't the tech — it's implementation. Scoping the right workflow, connecting your tools, keeping it running. That's where most teams stall. That's what we do.</p>
+    <h2>The technology is ready. The integration work is where most teams stall.</h2>
+    <p>Identifying the right workflow, connecting your real tools, handling exceptions, maintaining reliability over time — that's the hard part. Most businesses know AI could help. Few have the infrastructure and expertise to make it run without breaking. That's what Tend does.</p>
   </div>
 </section>
 
@@ -1095,39 +968,39 @@ footer {
   <div class="section-header">
     <div class="section-label">What We Do</div>
     <h2>Built different than the rest.</h2>
-    <p>Not a chatbot shop. Not an enterprise consulting firm. A managed AI operator service that actually runs.</p>
+    <p>Not a chatbot shop. Not an enterprise consulting firm. A managed AI integration service that actually runs.</p>
   </div>
   
   <div class="features-grid">
     <div class="feature-card">
       <div class="feature-icon">◎</div>
       <h3>One workflow, proven first</h3>
-      <p>We start narrow. One pain point, one operator, clear ROI. Expand after proof.</p>
+      <p>We don't try to automate everything. We identify the workflow with the highest ROI — lead response, scheduling, client follow-up — and build the integration that makes it reliable. Expand after proof.</p>
     </div>
     <div class="feature-card">
       <div class="feature-icon">⬢</div>
-      <h3>Real tools, real permissions</h3>
-      <p>Your email, calendar, CRM — connected with scoped access. Not a sandbox demo.</p>
+      <h3>Connected to your actual tools</h3>
+      <p>Email, calendar, CRM, Slack — connected with scoped API access. Not a sandbox environment or a demo. Real integrations that touch your live systems, tested before anything goes into production.</p>
     </div>
     <div class="feature-card">
       <div class="feature-icon">◈</div>
       <h3>Human oversight built in</h3>
-      <p>Approval gates on high-stakes actions. You stay in control.</p>
+      <p>Every integration has defined escalation points. Actions with real business consequences require your approval until you've established trust with the system. You stay in control of what matters.</p>
     </div>
     <div class="feature-card">
       <div class="feature-icon">◇</div>
-      <h3>Deployed in days, not months</h3>
-      <p>No 6-month implementation. No procurement theater. Running within 1-2 weeks.</p>
+      <h3>Live in days, not months</h3>
+      <p>No six-month implementation cycle. We scope the integration, build it, and have it running in your actual workflows within one to two weeks.</p>
     </div>
     <div class="feature-card">
       <div class="feature-icon">⬡</div>
-      <h3>Managed, not abandoned</h3>
-      <p>We don't build and walk away. Monitoring, tuning, support — that's the business model.</p>
+      <h3>Maintained, not handed off</h3>
+      <p>The integration is only as good as the team behind it. We monitor, recalibrate, and update what we build as your workflows change — that's the ongoing service.</p>
     </div>
     <div class="feature-card">
       <div class="feature-icon">⊞</div>
       <h3>Expand when ready</h3>
-      <p>Multi-agent systems, orchestration, broader automation — earned after the first win.</p>
+      <p>Once the first integration is proven, we add more. Broader workflow coverage, multi-system orchestration, deeper automation — built incrementally on a foundation that actually works.</p>
     </div>
   </div>
 </section>
@@ -1137,34 +1010,34 @@ footer {
   <div class="section-header">
     <div class="section-label">How It Works</div>
     <h2>From call to running in two weeks.</h2>
-    <p>No endless meetings. No 6-month implementation. We move fast.</p>
+    <p>No endless meetings. No six-month implementations. We move fast.</p>
   </div>
   
   <div class="process-grid">
     <div class="step">
       <div class="step-num">01</div>
       <h3>Discovery</h3>
-      <p>30 minutes. We find the workflow that's costing you the most time.</p>
+      <p>Thirty minutes to map the workflow that's costing you the most. We understand your tools, your team, and where the real friction is before we write a line of integration logic.</p>
     </div>
     <div class="step">
       <div class="step-num">02</div>
       <h3>Scope</h3>
-      <p>We map what the operator does, what it doesn't, and what needs your approval.</p>
+      <p>We define exactly what the integration does, what it escalates, and what requires your sign-off. You review and approve the scope before any build work starts.</p>
     </div>
     <div class="step">
       <div class="step-num">03</div>
       <h3>Build</h3>
-      <p>1-2 weeks. We connect your tools, set permissions, test with real data.</p>
+      <p>One to two weeks. We connect your tools, configure permissions, implement the integration logic, and test against real data before anything goes live.</p>
     </div>
     <div class="step">
       <div class="step-num">04</div>
       <h3>Run</h3>
-      <p>We monitor, tune, and handle exceptions. Monthly reviews with you.</p>
+      <p>Continuous monitoring, performance reviews, and exception handling. When something falls outside expected behavior, we handle it — not you.</p>
     </div>
     <div class="step">
       <div class="step-num">05</div>
       <h3>Expand</h3>
-      <p>Once it's proven, we add more operators and broader automation.</p>
+      <p>Once the first integration is delivering results, we scope the next one. Each addition builds on a foundation that's already proven in your environment.</p>
     </div>
   </div>
 </section>
@@ -1178,16 +1051,16 @@ footer {
   </div>
   
   <div class="pricing-grid">
-    <div class="price-card dark">
+    <div class="price-card">
       <div class="price-label">One-time</div>
       <div class="price-title">Setup</div>
       <div class="price-amount">$5,000<span> minimum</span></div>
-      <p class="price-desc">The intensive first week: discovery, workflow mapping, permissions, integrations, testing, and launch.</p>
+      <p class="price-desc">Discovery, workflow scoping, integration build, tool connections, and go-live. Complex or multi-system workflows are scoped and priced based on requirements.</p>
       <ul class="price-list">
         <li><span class="check">✓</span> Discovery call</li>
         <li><span class="check">✓</span> Workflow scoping</li>
-        <li><span class="check">✓</span> Operator build</li>
-        <li><span class="check">✓</span> Tool integrations</li>
+        <li><span class="check">✓</span> Integration build</li>
+        <li><span class="check">✓</span> Tool connections</li>
         <li><span class="check">✓</span> Launch + handoff</li>
       </ul>
       <a href="https://cal.com/clawdbotdfw/15min" class="price-cta">Book a Discovery Call</a>
@@ -1196,8 +1069,8 @@ footer {
     <div class="price-card">
       <div class="price-label">Monthly</div>
       <div class="price-title">Managed Service</div>
-      <div class="price-amount">$2,000<span>/month</span></div>
-      <p class="price-desc">Ongoing operation — not abandoned after launch.</p>
+      <div class="price-amount">$2,000<span>/month minimum</span></div>
+      <p class="price-desc">Ongoing monitoring, recalibration, exception handling, and monthly performance reviews. The work that keeps the integration reliable as your business changes.</p>
       <ul class="price-list">
         <li><span class="check">✓</span> Monitoring & tuning</li>
         <li><span class="check">✓</span> Exception handling</li>
@@ -1205,21 +1078,11 @@ footer {
         <li><span class="check">✓</span> Support</li>
         <li><span class="check">✓</span> 3-month minimum</li>
       </ul>
-      <a href="https://cal.com/clawdbotdfw/15min" class="price-cta">Book a Discovery Call</a>
+      <a href="#faq" class="price-cta secondary">Learn More</a>
     </div>
   </div>
   
-  <p class="price-note">Day one: $7,000 (setup + first month). Minimum engagement: $11,000 over 3 months.</p>
-  
-  <div class="dfw-offer">
-    <div>
-      <span class="dfw-badge">DFW Local — Limited</span>
-      <h3>On-Site Hardware Install</h3>
-      <p>Physical Mac Mini system installed at your Dallas-Fort Worth location. Hardware you own, configured and operational same-day.</p>
-    </div>
-    <div class="dfw-price">$3,000</div>
-    <a href="https://cal.com/clawdbotdfw/15min" class="dfw-cta">Claim DFW Spot</a>
-  </div>
+  <p class="price-note">Day-one payment is $7,000 — setup plus first month. Minimum engagement is three months, totaling $11,000. After that, cancel with 30 days notice. The integration keeps running — you own what you paid for.</p>
 </section>
 
 <!-- FAQ -->
@@ -1232,51 +1095,51 @@ footer {
   <div class="faq-list">
     <div class="faq-item">
       <button class="faq-question">
-        What exactly does Tend do?
+        How is this different from ChatGPT or Copilot?
         <span class="faq-icon">+</span>
       </button>
       <div class="faq-answer">
-        <p>We build and run AI operators for your workflows — lead follow-up, scheduling, invoicing, support triage. Not chatbots. Controlled systems that do real work with human oversight.</p>
+        <p>General-purpose AI tools are interfaces you use manually. What we build is an active integration layer — connected to your real tools, running continuously, with defined behavior and escalation logic. You don't use it like a chat window. It runs as part of your workflow.</p>
       </div>
     </div>
     
     <div class="faq-item">
       <button class="faq-question">
-        How is this different from ChatGPT?
+        Do I need to be technical?
         <span class="faq-icon">+</span>
       </button>
       <div class="faq-answer">
-        <p>ChatGPT is a chat window you use manually. We deploy always-on operators that act on their own — with scoped access, approval gates, and monitoring. It's the difference between a search engine and an employee.</p>
+        <p>No. You describe how your business works. We handle the integration architecture, the tool connections, and the ongoing maintenance. You interact with the output — faster workflows, handled follow-ups, fewer things falling through the cracks.</p>
       </div>
     </div>
     
     <div class="faq-item">
       <button class="faq-question">
-        Do I need technical knowledge?
+        How fast does it get useful?
         <span class="faq-icon">+</span>
       </button>
       <div class="faq-answer">
-        <p>No. We handle discovery, build, integration, and ongoing support. You keep running your business.</p>
+        <p>The first integration is live in one to two weeks. The first month is where it tightens — we calibrate behavior against real usage and handle edge cases as they surface. Most clients see reliable, stable operation by end of month one.</p>
       </div>
     </div>
     
     <div class="faq-item">
       <button class="faq-question">
-        What does "managed" mean?
+        What happens when something breaks?
         <span class="faq-icon">+</span>
       </button>
       <div class="faq-answer">
-        <p>We don't build and walk away. Monitoring, tuning, exception handling, monthly reviews — that's the service. Ongoing operation is the business model.</p>
+        <p>We catch most issues before you see them. When something outside the expected parameters surfaces, it escalates to you rather than failing silently. Infrastructure issues are resolved the same business day.</p>
       </div>
     </div>
     
     <div class="faq-item">
       <button class="faq-question">
-        What's the minimum commitment?
+        Is my data safe?
         <span class="faq-icon">+</span>
       </button>
       <div class="faq-answer">
-        <p>3 months. Day one payment is $7,000 (setup + first month). Minimum total engagement is $11,000.</p>
+        <p>Integrations run with scoped permissions — minimum access for the defined workflow. Every external action is logged. We don't use your data for model training. Your environment is fully isolated.</p>
       </div>
     </div>
     
@@ -1286,7 +1149,7 @@ footer {
         <span class="faq-icon">+</span>
       </button>
       <div class="faq-answer">
-        <p>After 3 months, cancel anytime. We never shut down your operator — you own what you paid for.</p>
+        <p>After the three-month minimum, cancel with 30 days notice. The integration keeps running. You retain ownership of everything we built.</p>
       </div>
     </div>
   </div>
@@ -1294,31 +1157,15 @@ footer {
 
 <!-- FINAL CTA -->
 <section class="final-cta">
-  <h2>Let's find your first automation.</h2>
-  <p>30 minutes. No pitch deck. We'll map the workflow that's eating your time — whether you hire us or not.</p>
+  <h2>Your first AI integration is two weeks away.</h2>
+  <p>Thirty minutes to map the workflow — then we build it, connect it, and run it for you.</p>
   <a href="https://cal.com/clawdbotdfw/15min" class="btn-primary">Book a Discovery Call →</a>
-</section>
-
-<!-- MEETUP -->
-<section class="meetup" id="meetup">
-  <div class="section-label">Upcoming Event</div>
-  <h2>DFW AI Meetup</h2>
-  <p>For Small Business Owners & Entrepreneurs</p>
-  <p>Learn how local businesses are using AI to respond faster, work less, and grow revenue. Live demos. Real case studies. No fluff.</p>
-  <div class="meetup-details">
-    <span>📍 Dallas-Fort Worth</span>
-    <span>📅 March 2026</span>
-    <span>👥 Limited Spots</span>
-  </div>
-  <form class="meetup-form" onsubmit="handleMeetupSignup(event)">
-    <input type="email" placeholder="Enter your email" required>
-    <button type="submit">Register Free</button>
-  </form>
 </section>
 
 <!-- FOOTER -->
 <footer>
   <div class="footer-logo">tend</div>
+  <div class="footer-tagline">AI integration for business workflows.</div>
   <div class="footer-links">
     © 2026 Tend · <a href="mailto:hello@tend.team">hello@tend.team</a>
   </div>
@@ -1346,28 +1193,6 @@ function openMobileMenu() {
 
 function closeMobileMenu() {
   document.getElementById('mobileMenu').classList.remove('open');
-}
-
-// Meetup Signup
-function handleMeetupSignup(e) {
-  e.preventDefault();
-  const email = e.target.querySelector('input').value;
-  const btn = e.target.querySelector('button');
-  btn.textContent = 'Registering...';
-  
-  fetch('https://script.google.com/macros/s/AKfycbweViAOIN6H0KwBzlMYlpXWqjP6Yl3-YCicopr9webBkUyNNzcFBaDOpU6RhNjWRq0B/exec', {
-    method: 'POST',
-    mode: 'no-cors',
-    headers: { 'Content-Type': 'application/json' },
-    body: JSON.stringify({ email: email, source: 'tend-dfw-meetup', type: 'meetup-registration' })
-  }).then(() => {
-    btn.textContent = "You're In!";
-    e.target.reset();
-    setTimeout(() => { btn.textContent = 'Register Free'; }, 2000);
-  }).catch(() => {
-    btn.textContent = 'Register Free';
-    alert('Something went wrong. Try again.');
-  });
 }
 </script>
 
