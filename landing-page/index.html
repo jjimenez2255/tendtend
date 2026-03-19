@@ -310,24 +310,23 @@ nav {
   margin-right: auto;
 }
 
-.sub-hero-badge {
+.nav-badge {
   display: inline-flex;
   align-items: center;
-  gap: 10px;
-  padding: 14px 28px;
+  gap: 8px;
+  padding: 8px 18px;
   background: var(--signal-white);
   border-radius: 40px;
   font-family: var(--font);
-  font-size: 16px;
+  font-size: 13px;
   font-weight: 400;
   color: var(--fg);
-  box-shadow: 0 2px 12px rgba(0,0,0,0.06);
-  animation: fadeInUp 0.9s ease-out 0.4s both;
+  box-shadow: 0 1px 8px rgba(0,0,0,0.06);
 }
 
-.sub-hero-dot {
-  width: 10px;
-  height: 10px;
+.nav-badge-dot {
+  width: 8px;
+  height: 8px;
   background: #6ECF72;
   border-radius: 50%;
   flex-shrink: 0;
@@ -1236,6 +1235,7 @@ footer {
   .trust-stats { flex-wrap: wrap; gap: 32px; }
   .nav-links { display: none; }
   .nav-cta { display: none; }
+  .nav-badge { display: none; }
   .hamburger { display: flex; }
   .final-cta { margin: 0; }
   .cta-cards { grid-template-columns: 1fr; }
@@ -1318,6 +1318,10 @@ footer {
       <li><a href="#how">How it works</a></li>
       <li><a href="#faq">FAQ</a></li>
     </ul>
+    <div class="nav-badge">
+      <span class="nav-badge-dot"></span>
+      Now accepting clients
+    </div>
     <a href="https://cal.com/clawdbotdfw/15min" class="nav-cta">Book a Discovery Call</a>
     <button class="hamburger" onclick="openMobileMenu()">
       <span></span>
@@ -1338,10 +1342,7 @@ footer {
 <section class="container hero">
   <div class="hero-content">
     <h1>Tend installs AI to run your company. The right&nbsp;way.</h1>
-    <div class="sub-hero-badge">
-      <span class="sub-hero-dot"></span>
-      Now accepting clients
-    </div>
+    <p>We integrate AI into the workflows that run your business. Not a chatbot. Mapped to your tools, managed as you evolve.</p>
     <div class="hero-ctas">
       <a href="https://cal.com/clawdbotdfw/15min" class="btn-primary"><span class="dot"></span> Book Discovery Call</a>
     </div>
