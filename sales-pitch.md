@@ -102,7 +102,7 @@
 
 ---
 
-## Objection Handling
+## Objection Handling — General
 
 ### "Why can't I just use ChatGPT?"
 > "You can. But having a tool isn't the same as having a system. ChatGPT doesn't connect to your CRM, respond to leads at 2am, or know your escalation rules. We build the system that does."
@@ -124,6 +124,97 @@
 
 ### "I've tried AI tools before and they didn't work."
 > "Most AI tools are self-serve — you're on your own to figure it out. We're the opposite. We build it, we run it, we fix it. You just see the results."
+
+---
+
+## Industry-Specific Objections
+
+### 🏠 Real Estate
+
+**"My leads need a personal touch — AI will feel cold."**
+> "We're not replacing your relationship-building. We're making sure no lead goes cold while you're at a showing. The AI responds instantly, qualifies interest, and books a call with you. By the time you talk to them, they're already warm. You bring the personal touch — we make sure you get the chance to."
+
+**"I already have a CRM that does follow-ups."**
+> "CRMs send automated emails. Ours actually reads responses, answers questions, and knows when to escalate to you. It's the difference between a drip campaign and a conversation. Which one would you respond to?"
+
+**"What about my IDX listings and showing schedules?"**
+> "We integrate directly. When a lead asks about a property, it pulls live listing data. When they want a showing, it checks your calendar and books it. No copy-paste, no double-booking."
+
+**"My brokerage has compliance rules about communication."**
+> "We build in approval gates. Anything that needs broker sign-off gets flagged before it sends. All communications are logged and auditable. Your compliance officer will love the paper trail."
+
+---
+
+### 🏢 Office / Professional Services
+
+**"We have complex services — AI can't explain what we do."**
+> "You're right that your services are nuanced. But most inbound leads ask the same 10 questions. We train the AI on your specific answers, your tone, your language. Complex questions get escalated to your team — but the routine ones get handled instantly."
+
+**"Our clients expect to talk to a human."**
+> "They will. The AI handles the first response, qualifies the inquiry, and books the call. By the time they're on the phone with you, they've already been taken care of. Most clients don't know — they just know they got a fast, helpful response."
+
+**"We bill by the hour — how does this save us money?"**
+> "How many hours does your team spend on scheduling, intake forms, and follow-up emails? That's billable time going to admin work. Free that up, and your team can bill more hours on actual client work."
+
+**"What about confidential client information?"**
+> "Scoped access. The AI only sees what it needs to do its job. Nothing gets stored outside your existing systems. We're SOC 2 aware in our practices and can walk through our security approach with your IT."
+
+---
+
+### 🦷 Dental
+
+**"Patient trust is everything — I can't automate that."**
+> "We're not automating patient care. We're automating the 47 reminder calls your front desk makes every day. We're making sure new patient inquiries get a response in 60 seconds instead of 6 hours. Your team does the care — we handle the coordination."
+
+**"What about HIPAA?"**
+> "Everything we build is HIPAA-aware. We don't store PHI outside your existing systems. Communications are logged in your practice management software. We can walk through the technical controls with your compliance officer."
+
+**"My front desk handles this fine."**
+> "How many hours a day? Most dental offices spend 3-4 hours just on confirmations, rescheduling, and follow-ups. What if your front desk could spend that time on patient experience instead? That's the trade-off."
+
+**"What if it books the wrong appointment type?"**
+> "We build your booking rules into the system. New patient vs. cleaning vs. emergency — different availability, different prep. And anything unclear gets flagged for your team instead of auto-booked. You stay in control."
+
+**"We already use [Dentrix/Eaglesoft/Open Dental]."**
+> "We integrate with your existing system. We're not replacing your PMS — we're adding an intelligent layer on top that handles the communication your staff doesn't have time for."
+
+---
+
+### 🦷 Orthodontist
+
+**"Our treatment plans are long-term — AI can't manage that relationship."**
+> "Exactly why you need this. A 24-month treatment plan means 24 months of appointment reminders, retainer check-ins, and payment follow-ups. That's thousands of touchpoints per patient. We automate the routine ones so your team can focus on the in-office experience."
+
+**"Parents are the decision-makers, not the patients."**
+> "We know. The AI communicates with whoever is the primary contact — usually mom or dad. Different tone, different concerns. We tailor the messaging for parent communication: treatment progress, appointment reminders, payment plans."
+
+**"What about treatment progress updates?"**
+> "We can pull from your imaging software and send milestone updates: 'Here's where we started, here's where we are.' Parents love seeing progress. It reduces 'is this working?' calls and builds confidence in the treatment."
+
+**"Ortho is competitive in our area — I need to stand out."**
+> "Speed is a differentiator. When a parent inquires about braces, they're usually contacting 3-4 offices. The one that responds fastest and most helpfully wins. We make sure that's you — every time."
+
+---
+
+### ⚖️ Compliance / Regulated Industries
+
+**"We're in a highly regulated industry — AI is risky."**
+> "That's why you need managed AI, not DIY tools. We build in approval gates, audit trails, and human checkpoints. Nothing goes out without proper oversight. You get the efficiency of AI with the control your regulators expect."
+
+**"Our legal team will never approve this."**
+> "We've worked with legal teams before. Everything is logged, every action is auditable, data stays in your systems. We'll provide documentation for your legal review and adjust controls to meet their requirements. Most legal teams are surprised how buttoned-up it is."
+
+**"What about record retention requirements?"**
+> "All communications are logged in your existing systems of record. We don't create shadow databases. Your retention policies stay intact — we just make the work happen faster."
+
+**"We have specific disclosure requirements in our communications."**
+> "We build those in. Required disclosures, compliance language, industry-specific disclaimers — they're part of the system from day one. We review them with your compliance team before go-live."
+
+**"If something goes wrong, who's liable?"**
+> "You maintain control over approvals and final sign-off on any high-stakes communication. We provide the system, monitoring, and support — but we're not making decisions that require your professional judgment. The AI handles the operational work; your licensed professionals handle the regulated decisions."
+
+**"How do we explain this to auditors?"**
+> "Clear documentation: what the AI does, what it doesn't, where human oversight happens, and full audit logs of every action. Auditors actually like this — it's more consistent and better documented than manual processes."
 
 ---
 
