@@ -349,28 +349,58 @@ nav {
   color: var(--fg);
 }
 
-/* PROBLEM SECTION */
+/* LAYERED SHOWCASE */
+.layered-showcase {
+  position: relative;
+  padding: 60px 0;
+}
+
+.showcase-wrapper {
+  position: relative;
+  max-width: 900px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 40px;
+  align-items: start;
+}
+
+/* Problem card */
 .problem-section {
   background: var(--surface);
   border-radius: var(--radius-lg);
-  padding: 64px 48px;
-  text-align: center;
+  padding: 48px 40px;
+  box-shadow: 0 4px 40px rgba(0,0,0,0.06);
+  position: relative;
+  z-index: 2;
+}
+
+.problem-section::before {
+  content: '';
+  position: absolute;
+  top: 12px;
+  left: 12px;
+  right: -12px;
+  bottom: -12px;
+  background: rgba(0,0,0,0.03);
+  border-radius: var(--radius-lg);
+  z-index: -1;
 }
 
 .problem-section h2 {
   margin-bottom: 16px;
+  font-size: 1.5rem;
 }
 
 .problem-section > p {
-  max-width: 600px;
-  margin: 0 auto;
-  font-size: 1.125rem;
+  font-size: 1rem;
   line-height: 1.7;
 }
 
-/* ACTIVITY FEED */
-.activity-section {
-  padding-top: 0;
+/* Activity feed stack */
+.activity-stack {
+  position: relative;
+  padding-top: 20px;
 }
 
 .activity-feed {
@@ -380,8 +410,21 @@ nav {
   color: var(--signal-white);
   font-size: 13px;
   font-family: 'SF Mono', 'Monaco', 'Consolas', monospace;
-  max-width: 600px;
-  margin: 0 auto;
+  position: relative;
+  z-index: 3;
+  box-shadow: 0 20px 60px rgba(0,0,0,0.2);
+}
+
+.activity-feed::before {
+  content: '';
+  position: absolute;
+  top: 8px;
+  left: 8px;
+  right: -8px;
+  bottom: -8px;
+  background: rgba(0,0,0,0.15);
+  border-radius: var(--radius-lg);
+  z-index: -1;
 }
 
 .activity-feed .header {
@@ -415,6 +458,56 @@ nav {
 }
 
 .activity-text { color: rgba(255,255,255,0.85); }
+
+/* Floating notification cards */
+.float-card {
+  position: absolute;
+  background: var(--surface);
+  border-radius: 12px;
+  padding: 16px 20px;
+  box-shadow: 0 8px 30px rgba(0,0,0,0.12);
+  font-size: 13px;
+  z-index: 4;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.float-card .icon {
+  width: 32px;
+  height: 32px;
+  background: #22C55E;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-size: 14px;
+}
+
+.float-card .icon.blue { background: var(--accent-blue); }
+.float-card .icon.orange { background: #F59E0B; }
+
+.float-card .text { color: var(--fg); font-weight: 500; }
+.float-card .sub { color: var(--fg-muted); font-size: 12px; }
+
+.float-card-1 {
+  top: -20px;
+  right: -30px;
+  transform: rotate(3deg);
+}
+
+.float-card-2 {
+  bottom: 40px;
+  left: -40px;
+  transform: rotate(-2deg);
+}
+
+.float-card-3 {
+  bottom: -30px;
+  right: 60px;
+  transform: rotate(1deg);
+}
 
 /* TRUST STATS */
 .trust-section {
@@ -817,6 +910,13 @@ footer {
   .nav-links { display: none; }
   .nav-cta { display: none; }
   .hamburger { display: flex; }
+  
+  .showcase-wrapper {
+    grid-template-columns: 1fr;
+    gap: 60px;
+  }
+  .float-card-1 { right: 10px; top: -10px; }
+  .float-card-2 { left: 10px; bottom: 60px; }
 }
 
 @media (max-width: 600px) {
@@ -825,8 +925,11 @@ footer {
   .hero-ctas { flex-direction: column; }
   .btn-primary, .btn-secondary { width: 100%; justify-content: center; }
   .trust-section { padding: 32px 24px; }
-  .problem-section { padding: 48px 24px; }
+  .problem-section { padding: 32px 24px; }
   .final-cta { margin: 0 16px; padding: 60px 24px; }
+  
+  .float-card { display: none; }
+  .activity-stack { padding-top: 0; }
 }
 </style>
 </head>
@@ -878,29 +981,50 @@ footer {
   </div>
 </section>
 
-<!-- PROBLEM -->
-<section class="container" style="padding-top: 40px;">
-  <div class="problem-section">
-    <h2>The technology is ready. The integration work is where most teams stall.</h2>
-    <p>Identifying the right workflow, connecting your real tools, handling exceptions, maintaining reliability over time — that's the hard part. Most businesses know AI could help. Few have the infrastructure and expertise to make it run without breaking. That's what Tend does.</p>
-  </div>
-</section>
-
-<!-- ACTIVITY FEED -->
-<section class="container activity-section">
-  <div class="activity-feed">
-    <div class="header">
-      <span class="window-dot red"></span>
-      <span class="window-dot yellow"></span>
-      <span class="window-dot green"></span>
+<!-- LAYERED SHOWCASE -->
+<section class="container layered-showcase">
+  <div class="showcase-wrapper">
+    
+    <!-- Problem Card -->
+    <div class="problem-section">
+      <h2>The technology is ready. The integration work is where most teams stall.</h2>
+      <p>Identifying the right workflow, connecting your real tools, handling exceptions, maintaining reliability over time — that's the hard part. Most businesses know AI could help. Few have the infrastructure and expertise to make it run without breaking. That's what Tend does.</p>
     </div>
-    <div class="activity-line"><span class="activity-time">09:01 AM</span><span class="activity-text">New lead from Google Ads — auto-replied in 12s</span></div>
-    <div class="activity-line"><span class="activity-time">09:14 AM</span><span class="activity-text">Invoice #1087 sent to Martinez Roofing — paid</span></div>
-    <div class="activity-line"><span class="activity-time">09:22 AM</span><span class="activity-text">Rescheduled Johnson consult → Tue 2:30 PM</span></div>
-    <div class="activity-line"><span class="activity-time">10:01 AM</span><span class="activity-text">Weekly report compiled — revenue up 18% WoW</span></div>
-    <div class="activity-line"><span class="activity-time">10:45 AM</span><span class="activity-text">Follow-up sent to 6 cold leads from last Thursday</span></div>
-    <div class="activity-line"><span class="activity-time">11:30 AM</span><span class="activity-text">Appointment confirmed: Davis Electric, Wed 10 AM</span></div>
-    <div class="activity-line"><span class="activity-time">12:00 PM</span><span class="activity-text">✓ All tasks running   0 issues   47 actions today</span></div>
+    
+    <!-- Activity Feed Stack -->
+    <div class="activity-stack">
+      <div class="activity-feed">
+        <div class="header">
+          <span class="window-dot red"></span>
+          <span class="window-dot yellow"></span>
+          <span class="window-dot green"></span>
+        </div>
+        <div class="activity-line"><span class="activity-time">09:01</span><span class="activity-text">New lead — auto-replied in 12s</span></div>
+        <div class="activity-line"><span class="activity-time">09:14</span><span class="activity-text">Invoice #1087 sent — paid</span></div>
+        <div class="activity-line"><span class="activity-time">09:22</span><span class="activity-text">Rescheduled → Tue 2:30 PM</span></div>
+        <div class="activity-line"><span class="activity-time">10:01</span><span class="activity-text">Weekly report — revenue +18%</span></div>
+        <div class="activity-line"><span class="activity-time">10:45</span><span class="activity-text">Follow-up sent to 6 leads</span></div>
+        <div class="activity-line"><span class="activity-time">12:00</span><span class="activity-text">✓ 47 actions today</span></div>
+      </div>
+      
+      <!-- Floating cards -->
+      <div class="float-card float-card-1">
+        <div class="icon">✓</div>
+        <div>
+          <div class="text">Lead converted</div>
+          <div class="sub">Martinez Roofing</div>
+        </div>
+      </div>
+      
+      <div class="float-card float-card-2">
+        <div class="icon blue">↗</div>
+        <div>
+          <div class="text">+18% revenue</div>
+          <div class="sub">Week over week</div>
+        </div>
+      </div>
+    </div>
+    
   </div>
 </section>
 
