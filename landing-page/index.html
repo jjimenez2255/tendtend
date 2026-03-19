@@ -594,6 +594,8 @@ nav {
   background: #2A2A2A;
   padding-top: 80px;
   padding-bottom: 80px;
+  margin-top: 80px;
+  margin-bottom: 80px;
   border-radius: var(--radius-lg);
 }
 
@@ -622,12 +624,18 @@ nav {
 }
 
 .step {
-  background: rgba(255,255,255,0.08);
+  background: rgba(255,255,255,0.06);
   border-radius: var(--radius-lg);
   padding: 32px 28px;
   position: relative;
   display: flex;
   flex-direction: column;
+  transition: background 0.5s ease, box-shadow 0.5s ease;
+}
+
+.step.active {
+  background: rgba(255,255,255,0.14);
+  box-shadow: 0 0 0 1px rgba(255,255,255,0.12);
 }
 
 /* First step spans 2 rows */
@@ -1947,6 +1955,7 @@ const timelineObserver = new IntersectionObserver((entries) => {
       const progress = document.getElementById('timelineProgress');
       const dots = document.querySelectorAll('.timeline-dot');
       const labels = document.querySelectorAll('.timeline-label');
+      const cards = document.querySelectorAll('.process-grid .step');
       const steps = [0, 25, 50, 75, 100];
 
       dots.forEach((dot, i) => {
@@ -1954,13 +1963,14 @@ const timelineObserver = new IntersectionObserver((entries) => {
           progress.style.width = steps[i] + '%';
           dot.classList.add('active');
           labels[i].classList.add('active');
+          if (cards[i]) cards[i].classList.add('active');
         }, 400 + i * 350);
       });
 
       timelineObserver.unobserve(entry.target);
     }
   });
-}, { threshold: 0.5 });
+}, { threshold: 0.3 });
 
 const timeline = document.getElementById('processTimeline');
 if (timeline) timelineObserver.observe(timeline);
