@@ -819,17 +819,20 @@ nav {
 
 /* === FOOTER === */
 footer {
-  padding: 40px 24px;
+  padding: 60px 24px 40px;
   text-align: center;
+  overflow: hidden;
 }
 
 .footer-logo {
   font-family: var(--font);
-  font-size: clamp(8rem, 20vw, 18rem);
+  font-size: clamp(12rem, 28vw, 28rem);
   font-weight: 200;
-  letter-spacing: 0.15em;
-  color: rgba(0,0,0,0.06);
-  margin-bottom: 32px;
+  letter-spacing: 0.12em;
+  color: rgba(0,0,0,0.05);
+  margin-bottom: 24px;
+  line-height: 0.85;
+  white-space: nowrap;
 }
 
 .footer-locations {
@@ -1036,23 +1039,43 @@ footer {
 /* === RESPONSIVE === */
 @media (max-width: 900px) {
   .features-grid { grid-template-columns: 1fr; }
-  .process-grid { grid-template-columns: 1fr; gap: 12px; }
+  .process-grid { grid-template-columns: repeat(2, 1fr); gap: 12px; }
   .pricing-grid { grid-template-columns: 1fr; }
   .pricing-grid .price-card { margin-bottom: 16px; }
   .trust-stats { flex-wrap: wrap; gap: 32px; }
   .nav-links { display: none; }
   .nav-cta { display: none; }
   .hamburger { display: flex; }
+  .final-cta { margin: 0 20px; }
 }
 
 @media (max-width: 600px) {
-  .container { padding: 60px 20px; }
-  .hero { padding-top: 100px; min-height: auto; padding-bottom: 40px; }
+  .container { padding: 48px 16px; }
+  .hero { padding-top: 100px; min-height: auto; padding-bottom: 32px; }
+  .hero-content { max-width: 100%; }
+  h1 { font-size: 2rem; }
+  h2 { font-size: 1.5rem; }
+  .hero-content > p { font-size: 1.05rem; }
   .hero-ctas { flex-direction: column; }
   .btn-primary, .btn-secondary { width: 100%; justify-content: center; }
-  .trust-section { padding: 32px 24px; }
-  .problem-section { padding: 48px 24px; }
-  .hero-illustration { padding: 0 16px 48px; }
+  .trust-section { padding: 28px 20px; }
+  .trust-stats { gap: 24px; }
+  .trust-quote blockquote { font-size: 1rem; }
+  .problem-section { padding: 40px 20px; }
+  .problem-section > p { font-size: 1rem; }
+  .hero-illustration { padding: 0 8px 40px; }
+  .process-grid { grid-template-columns: 1fr; }
+  .step { padding: 24px 16px; }
+  .feature-card { padding: 24px 20px; }
+  .feature-card p { font-size: 0.9rem; }
+  .price-card { padding: 32px 24px; }
+  .final-cta { padding: 64px 20px; margin: 0 16px; border-radius: 12px; }
+  footer { padding: 40px 16px 32px; }
+  .footer-logo { letter-spacing: 0.06em; }
+  .footer-locations { margin-top: 32px; }
+  .activity-feed { padding: 16px; font-size: 12px; }
+  .activity-line { gap: 10px; }
+  .section-header p { font-size: 0.95rem; }
 }
 
 /* Reduce motion for accessibility */
