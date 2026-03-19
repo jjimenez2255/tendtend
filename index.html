@@ -777,39 +777,17 @@ nav {
   color: var(--fg-muted);
 }
 
-/* FOOTER - with nav */
+/* FOOTER */
 footer {
   padding: 60px 24px 40px;
   text-align: center;
 }
-
-.footer-nav {
-  display: flex;
-  justify-content: center;
-  gap: 32px;
-  margin-bottom: 32px;
-}
-
-.footer-nav a {
-  font-size: 14px;
-  color: var(--fg-muted);
-  text-decoration: none;
-  transition: color 0.2s;
-}
-
-.footer-nav a:hover { color: var(--fg); }
 
 .footer-logo {
   font-size: 3rem;
   font-weight: 200;
   letter-spacing: 0.1em;
   color: rgba(0,0,0,0.08);
-  margin-bottom: 16px;
-}
-
-.footer-tagline {
-  font-size: 14px;
-  color: var(--fg-muted);
   margin-bottom: 16px;
 }
 
@@ -839,7 +817,6 @@ footer {
   .nav-links { display: none; }
   .nav-cta { display: none; }
   .hamburger { display: flex; }
-  .footer-nav { flex-wrap: wrap; gap: 16px; }
 }
 
 @media (max-width: 600px) {
@@ -1172,15 +1149,7 @@ footer {
 
 <!-- FOOTER -->
 <footer>
-  <nav class="footer-nav">
-    <a href="#features">Features</a>
-    <a href="#how">How it works</a>
-    <a href="#pricing">Pricing</a>
-    <a href="#faq">FAQ</a>
-    <a href="mailto:hello@tend.team">Contact</a>
-  </nav>
   <div class="footer-logo">tend</div>
-  <div class="footer-tagline">AI integration for business workflows.</div>
   <div class="footer-links">
     © 2026 Tend · <a href="mailto:hello@tend.team">hello@tend.team</a>
   </div>
