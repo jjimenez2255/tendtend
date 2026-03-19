@@ -235,10 +235,10 @@ li strong { color: var(--fg); }
     <div class="quick-link-title">Book Discovery</div>
     <div class="quick-link-desc">Cal.com Intake</div>
   </a>
-  <a href="https://clarity.microsoft.com/projects/view/vww1t6yauz/dashboard" target="_blank" class="quick-link">
+  <a href="#analytics" class="quick-link">
     <div class="quick-link-icon">📊</div>
     <div class="quick-link-title">Analytics</div>
-    <div class="quick-link-desc">Clarity Dashboard</div>
+    <div class="quick-link-desc">Google • Meta • Heatmaps</div>
   </a>
 </div>
 
@@ -447,14 +447,57 @@ li strong { color: var(--fg); }
   </div>
 </div>
 
-<h3>Performance (Last 30 Days)</h3>
+<!-- ANALYTICS -->
+<h2 id="analytics">Analytics & Performance</h2>
+
+<h3>Quick Access</h3>
+<div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; margin-bottom: 24px;">
+  <a href="https://ads.google.com/aw/overview?ocid=1727465638" target="_blank" class="card" style="text-decoration: none; text-align: center; padding: 20px;">
+    <div style="font-size: 28px; margin-bottom: 8px;">🔵</div>
+    <div style="font-weight: 600; color: var(--fg);">Google Ads</div>
+    <div style="font-size: 12px; color: var(--fg-muted);">Account 771-499-1217</div>
+  </a>
+  <a href="https://adsmanager.facebook.com" target="_blank" class="card" style="text-decoration: none; text-align: center; padding: 20px;">
+    <div style="font-size: 28px; margin-bottom: 8px;">🟣</div>
+    <div style="font-weight: 600; color: var(--fg);">Meta Ads</div>
+    <div style="font-size: 12px; color: var(--fg-muted);">Facebook & Instagram</div>
+  </a>
+  <a href="https://clarity.microsoft.com/projects/view/vww1t6yauz/dashboard" target="_blank" class="card" style="text-decoration: none; text-align: center; padding: 20px;">
+    <div style="font-size: 28px; margin-bottom: 8px;">🟢</div>
+    <div style="font-weight: 600; color: var(--fg);">Clarity</div>
+    <div style="font-size: 12px; color: var(--fg-muted);">Heatmaps & Recordings</div>
+  </a>
+</div>
+
+<h3>Google Ads (Mar 8-19, 2026)</h3>
 <div class="card">
   <ul class="list">
-    <li><span class="list-label">Ad spend</span><span class="list-value">~$214</span></li>
-    <li><span class="list-label">Clicks</span><span class="list-value">700+</span></li>
-    <li><span class="list-label">Site visitors</span><span class="list-value">73 sessions / 48 unique</span></li>
-    <li><span class="list-label">Outbound clicks to booking</span><span class="list-value">7</span></li>
-    <li><span class="list-label">Discovery calls booked</span><span class="list-value">0</span></li>
+    <li><span class="list-label">Total spend</span><span class="list-value">$214</span></li>
+    <li><span class="list-label">Clicks</span><span class="list-value">700</span></li>
+    <li><span class="list-label">Impressions</span><span class="list-value">22,900</span></li>
+    <li><span class="list-label">CTR</span><span class="list-value">3.05%</span></li>
+    <li><span class="list-label">Avg CPC</span><span class="list-value">$0.31</span></li>
+  </ul>
+</div>
+
+<h3>Heatmap Insights (Clarity)</h3>
+<div class="card">
+  <ul class="list">
+    <li><span class="list-label">Sessions</span><span class="list-value">73</span></li>
+    <li><span class="list-label">Unique users</span><span class="list-value">48</span></li>
+    <li><span class="list-label">Avg scroll depth</span><span class="list-value">41%</span></li>
+    <li><span class="list-label">Avg time on page</span><span class="list-value">2.9 min</span></li>
+    <li><span class="list-label">Dead clicks (friction)</span><span class="list-value" style="color: var(--orange);">27%</span></li>
+  </ul>
+</div>
+
+<h3>Conversion Funnel</h3>
+<div class="card">
+  <ul class="list">
+    <li><span class="list-label">Site visitors</span><span class="list-value">73</span></li>
+    <li><span class="list-label">Clicked booking link</span><span class="list-value">7 (9.6%)</span></li>
+    <li><span class="list-label">Discovery calls booked</span><span class="list-value" style="color: var(--orange);">0</span></li>
+    <li><span class="list-label">Cost per visitor</span><span class="list-value">$2.93</span></li>
   </ul>
 </div>
 
