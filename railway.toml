@@ -1,6 +1,5 @@
 [build]
-dockerfilePath = "landing-page/Dockerfile"
-buildContext = "landing-page"
+dockerfilePath = "Dockerfile"
 
 [deploy]
 healthcheckPath = "/"
