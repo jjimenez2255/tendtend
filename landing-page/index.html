@@ -54,17 +54,17 @@ fbq('track', 'PageView');
 /* === BRAND KIT === */
 :root {
   --void-black: #000000;
-  --engine-charcoal: #1a1a1a;
-  --field-gray: #737373;
-  --canvas-white: #F5F4F0;
+  --engine-charcoal: #1E2D35;
+  --field-gray: #6B8A99;
+  --canvas-white: #F4F5F6;
   --signal-white: #FFFFFF;
-  --surface-warm: #ECEAE4;
-  --accent-olive: #B0AD78;
+  --surface-warm: #E8ECEE;
+  --accent-slate: #5E8999;
 
   --bg: var(--canvas-white);
   --surface: var(--signal-white);
   --fg: var(--engine-charcoal);
-  --fg-muted: #9A9A94;
+  --fg-muted: #7E949E;
 
   --font: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
   --font-serif: 'Source Serif 4', Georgia, 'Times New Roman', serif;
@@ -150,7 +150,7 @@ nav {
   right: 0;
   z-index: 100;
   padding: 16px 24px;
-  background: rgba(245, 244, 240, 0.92);
+  background: rgba(244, 245, 246, 0.92);
   backdrop-filter: blur(20px);
   border-bottom: 1px solid rgba(0,0,0,0.04);
 }
@@ -257,8 +257,8 @@ nav {
   display: block;
   margin-top: 16px;
   padding: 14px;
-  background: var(--accent-olive);
-  color: var(--engine-charcoal);
+  background: var(--accent-slate);
+  color: var(--signal-white);
   text-align: center;
   border-radius: 32px;
   font-weight: 500;
@@ -270,8 +270,8 @@ nav {
 
 .nav-cta {
   padding: 10px 20px;
-  background: var(--accent-olive);
-  color: var(--engine-charcoal);
+  background: var(--accent-slate);
+  color: var(--signal-white);
   text-decoration: none;
   font-size: 13px;
   font-weight: 500;
@@ -281,7 +281,7 @@ nav {
   transition: background 0.2s;
 }
 
-.nav-cta:hover { background: #A3A06D; }
+.nav-cta:hover { background: #4E7A8A; }
 
 /* === HERO === */
 .hero {
@@ -321,8 +321,8 @@ nav {
   align-items: center;
   gap: 10px;
   padding: 16px 36px;
-  background: var(--accent-olive);
-  color: var(--engine-charcoal);
+  background: var(--accent-slate);
+  color: var(--signal-white);
   text-decoration: none;
   font-size: 13px;
   font-weight: 500;
@@ -335,11 +335,11 @@ nav {
 .btn-primary .dot {
   width: 8px;
   height: 8px;
-  background: var(--engine-charcoal);
+  background: var(--signal-white);
   border-radius: 50%;
 }
 
-.btn-primary:hover { background: #A3A06D; }
+.btn-primary:hover { background: #4E7A8A; }
 
 .btn-secondary {
   display: inline-flex;
@@ -522,41 +522,71 @@ nav {
   margin-top: 4px;
 }
 
-/* === FEATURES === */
+/* === FEATURES (BENTO) === */
 .features-grid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 24px;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: auto auto;
+  gap: 16px;
 }
 
 .feature-card {
-  background: var(--surface);
+  background: var(--surface-warm);
   border-radius: var(--radius-lg);
   padding: 32px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  position: relative;
+  min-height: 180px;
+}
+
+.feature-card:first-child {
+  grid-row: 1 / 3;
+  background: var(--accent-slate);
+  color: var(--signal-white);
+  min-height: 380px;
+}
+
+.feature-card:first-child h3 {
+  color: rgba(255,255,255,0.8);
+  font-size: 1.5rem;
+}
+
+.feature-card:first-child p {
+  color: rgba(255,255,255,0.7);
+}
+
+.feature-card .feature-tag {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  font-family: var(--font);
+  font-size: 11px;
+  font-weight: 600;
+  color: var(--fg-muted);
+  opacity: 0.5;
+}
+
+.feature-card:first-child .feature-tag {
+  color: rgba(255,255,255,0.4);
 }
 
 .feature-icon {
-  width: 40px;
-  height: 40px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background: var(--accent-olive);
-  border-radius: 10px;
-  margin-bottom: 20px;
-  font-size: 18px;
+  display: none;
 }
 
 .feature-card h3 {
   font-family: var(--font-serif);
+  font-size: 1.25rem;
   font-weight: 400;
-  color: var(--fg-muted);
+  color: var(--fg);
   margin-bottom: 12px;
 }
 
 .feature-card p {
-  font-size: 1rem;
-  line-height: 1.75;
+  font-size: 0.9rem;
+  line-height: 1.7;
 }
 
 /* === PROCESS === */
@@ -636,7 +666,7 @@ nav {
 }
 
 .price-card.dark .price-cta {
-  background: var(--accent-olive);
+  background: var(--signal-white);
   color: var(--engine-charcoal);
 }
 
@@ -702,8 +732,8 @@ nav {
   display: block;
   width: 100%;
   padding: 14px 24px;
-  background: var(--accent-olive);
-  color: var(--engine-charcoal);
+  background: var(--accent-slate);
+  color: var(--signal-white);
   text-decoration: none;
   text-align: center;
   font-size: 13px;
@@ -714,7 +744,7 @@ nav {
   transition: background 0.2s;
 }
 
-.price-cta:hover { background: #A3A06D; }
+.price-cta:hover { background: #4E7A8A; }
 
 .price-cta.secondary {
   background: transparent;
@@ -799,22 +829,108 @@ nav {
 /* === FINAL CTA === */
 .final-cta {
   text-align: center;
-  padding: 100px 24px;
-  background: var(--surface-warm);
-  border-radius: var(--radius-lg);
   max-width: 1000px;
   margin: 0 auto;
+  padding: 80px 24px 0;
 }
 
-.final-cta h2 { margin-bottom: 16px; }
+.final-cta h2 { margin-bottom: 40px; }
 
-.final-cta > p {
-  font-size: 1.125rem;
-  margin-bottom: 32px;
-  max-width: 550px;
-  margin-left: auto;
-  margin-right: auto;
+.cta-cards {
+  display: grid;
+  grid-template-columns: 1.2fr 1fr;
+  gap: 16px;
+  text-align: left;
+}
+
+.cta-card {
+  border-radius: var(--radius-lg);
+  padding: 36px;
+  display: flex;
+  flex-direction: column;
+  min-height: 320px;
+}
+
+.cta-card.dark {
+  background: var(--accent-slate);
+  color: var(--signal-white);
+}
+
+.cta-card.light {
+  background: var(--signal-white);
+  color: var(--fg);
+}
+
+.cta-card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: auto;
+}
+
+.cta-card-header h3 {
+  font-size: 1.5rem;
+  line-height: 1.25;
+  max-width: 200px;
+}
+
+.cta-card.dark .cta-card-header h3 {
+  color: var(--signal-white);
+}
+
+.cta-card-arrow {
+  font-size: 20px;
+  opacity: 0.6;
+  transition: opacity 0.2s, transform 0.2s;
+}
+
+.cta-card:hover .cta-card-arrow {
+  opacity: 1;
+  transform: translateX(4px);
+}
+
+.cta-card-steps {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  margin-top: 32px;
+}
+
+.cta-card-steps li {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-family: var(--font);
+  font-size: 14px;
+  font-weight: 400;
+}
+
+.cta-card.dark .cta-card-steps li {
+  color: rgba(255,255,255,0.8);
+}
+
+.cta-card.light .cta-card-steps li {
   color: var(--fg-muted);
+}
+
+.cta-step-icon {
+  width: 32px;
+  height: 32px;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 14px;
+  flex-shrink: 0;
+}
+
+.cta-card.dark .cta-step-icon {
+  background: rgba(255,255,255,0.15);
+}
+
+.cta-card.light .cta-step-icon {
+  background: var(--surface-warm);
 }
 
 /* === FOOTER === */
@@ -1038,7 +1154,13 @@ footer {
 
 /* === RESPONSIVE === */
 @media (max-width: 900px) {
-  .features-grid { grid-template-columns: 1fr; }
+  .features-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+  .feature-card:first-child {
+    grid-row: auto;
+    min-height: 220px;
+  }
   .process-grid { grid-template-columns: repeat(2, 1fr); gap: 12px; }
   .pricing-grid { grid-template-columns: 1fr; }
   .pricing-grid .price-card { margin-bottom: 16px; }
@@ -1046,7 +1168,8 @@ footer {
   .nav-links { display: none; }
   .nav-cta { display: none; }
   .hamburger { display: flex; }
-  .final-cta { margin: 0 20px; }
+  .final-cta { margin: 0; }
+  .cta-cards { grid-template-columns: 1fr 1fr; }
 }
 
 @media (max-width: 600px) {
@@ -1066,10 +1189,14 @@ footer {
   .hero-illustration { padding: 0 8px 40px; }
   .process-grid { grid-template-columns: 1fr; }
   .step { padding: 24px 16px; }
-  .feature-card { padding: 24px 20px; }
+  .features-grid { grid-template-columns: 1fr; }
+  .feature-card { padding: 24px 20px; min-height: auto; }
+  .feature-card:first-child { min-height: auto; grid-row: auto; }
   .feature-card p { font-size: 0.9rem; }
   .price-card { padding: 32px 24px; }
-  .final-cta { padding: 64px 20px; margin: 0 16px; border-radius: 12px; }
+  .final-cta { padding: 48px 16px 0; }
+  .cta-cards { grid-template-columns: 1fr; }
+  .cta-card { min-height: 260px; }
   footer { padding: 40px 16px 32px; }
   .footer-logo { letter-spacing: 0.06em; }
   .footer-locations { margin-top: 32px; }
@@ -1260,17 +1387,17 @@ footer {
 
     <!-- Leaning block (left) — falls and leans into place -->
     <g class="illo-leaning" transform-origin="110 320">
-      <rect x="80" y="60" width="60" height="260" rx="2" fill="#2A2A25"/>
+      <rect x="80" y="60" width="60" height="260" rx="2" fill="#3D5F6E"/>
     </g>
     <!-- Large notebook -->
     <g class="illo-piece">
-      <rect x="210" y="20" width="200" height="300" rx="3" fill="#2A2A25"/>
-      <line x1="230" y1="20" x2="230" y2="320" stroke="rgba(245,244,240,0.12)" stroke-width="1.5"/>
+      <rect x="210" y="20" width="200" height="300" rx="3" fill="#3D5F6E"/>
+      <line x1="230" y1="20" x2="230" y2="320" stroke="rgba(244,245,246,0.12)" stroke-width="1.5"/>
     </g>
     <!-- Dot grid panel -->
     <g class="illo-dots">
-      <rect x="430" y="20" width="130" height="300" rx="2" fill="none" stroke="#2A2A25" stroke-width="1"/>
-      <g fill="#2A2A25">
+      <rect x="430" y="20" width="130" height="300" rx="2" fill="none" stroke="#3D5F6E" stroke-width="1"/>
+      <g fill="#3D5F6E">
         <circle cx="452" cy="46" r="2.5"/><circle cx="472" cy="46" r="2.5"/><circle cx="492" cy="46" r="2.5"/><circle cx="512" cy="46" r="2.5"/><circle cx="532" cy="46" r="2.5"/>
         <circle cx="452" cy="66" r="2.5"/><circle cx="472" cy="66" r="2.5"/><circle cx="492" cy="66" r="2.5"/><circle cx="512" cy="66" r="2.5"/><circle cx="532" cy="66" r="2.5"/>
         <circle cx="452" cy="86" r="2.5"/><circle cx="472" cy="86" r="2.5"/><circle cx="492" cy="86" r="2.5"/><circle cx="512" cy="86" r="2.5"/><circle cx="532" cy="86" r="2.5"/>
@@ -1289,14 +1416,14 @@ footer {
     </g>
     <!-- Small blocks (stacked) -->
     <g class="illo-piece">
-      <rect x="580" y="80" width="90" height="240" rx="2" fill="#2A2A25"/>
-      <line x1="580" y1="160" x2="670" y2="160" stroke="rgba(245,244,240,0.12)" stroke-width="1"/>
-      <line x1="580" y1="240" x2="670" y2="240" stroke="rgba(245,244,240,0.12)" stroke-width="1"/>
+      <rect x="580" y="80" width="90" height="240" rx="2" fill="#3D5F6E"/>
+      <line x1="580" y1="160" x2="670" y2="160" stroke="rgba(244,245,246,0.12)" stroke-width="1"/>
+      <line x1="580" y1="240" x2="670" y2="240" stroke="rgba(244,245,246,0.12)" stroke-width="1"/>
     </g>
     <!-- Vertical lines panel -->
     <g class="illo-piece">
       <rect x="690" y="20" width="70" height="300" rx="2" fill="none"/>
-      <g stroke="#2A2A25" stroke-width="1.2" opacity="0.5">
+      <g stroke="#3D5F6E" stroke-width="1.2" opacity="0.5">
         <line x1="700" y1="20" x2="700" y2="320"/>
         <line x1="706" y1="20" x2="706" y2="320"/>
         <line x1="712" y1="20" x2="712" y2="320"/>
@@ -1311,7 +1438,7 @@ footer {
     </g>
     <!-- Thin tall block (far right) -->
     <g class="illo-piece">
-      <rect x="770" y="40" width="40" height="280" rx="2" fill="#2A2A25"/>
+      <rect x="770" y="40" width="40" height="280" rx="2" fill="#3D5F6E"/>
     </g>
   </svg>
 </div>
@@ -1400,34 +1527,29 @@ footer {
 
   <div class="features-grid stagger-children">
     <div class="feature-card">
-      <div class="feature-icon">◎</div>
+      <span class="feature-tag">A</span>
       <h3>One workflow, proven first</h3>
-      <p>We don't try to automate everything. We identify the workflow with the highest ROI — lead response, scheduling, client follow-up — and build the integration that makes it reliable. Expand after proof.</p>
+      <p>We identify the workflow with the highest ROI — lead response, scheduling, client follow-up — and build the integration that makes it reliable. Expand after proof.</p>
     </div>
     <div class="feature-card">
-      <div class="feature-icon">⬢</div>
-      <h3>Connected to your actual tools</h3>
-      <p>Email, calendar, CRM, Slack — connected with scoped API access. Not a sandbox environment or a demo. Real integrations that touch your live systems, tested before anything goes into production.</p>
+      <span class="feature-tag">B</span>
+      <h3>Connected to your tools</h3>
+      <p>Email, calendar, CRM, Slack — connected with scoped API access. Real integrations that touch your live systems.</p>
     </div>
     <div class="feature-card">
-      <div class="feature-icon">◈</div>
+      <span class="feature-tag">D</span>
       <h3>Human oversight built in</h3>
-      <p>Every integration has defined escalation points. Actions with real business consequences require your approval until you've established trust with the system. You stay in control of what matters.</p>
+      <p>Actions with real business consequences require your approval until you trust the system.</p>
     </div>
     <div class="feature-card">
-      <div class="feature-icon">◇</div>
+      <span class="feature-tag">C</span>
       <h3>Live in days, not months</h3>
-      <p>No six-month implementation cycle. We scope the integration, build it, and have it running in your actual workflows within one to two weeks.</p>
+      <p>We scope the integration, build it, and have it running in your actual workflows within two weeks.</p>
     </div>
     <div class="feature-card">
-      <div class="feature-icon">⬡</div>
+      <span class="feature-tag">E</span>
       <h3>Maintained, not handed off</h3>
-      <p>The integration is only as good as the team behind it. We monitor, recalibrate, and update what we build as your workflows change — that's the ongoing service.</p>
-    </div>
-    <div class="feature-card">
-      <div class="feature-icon">⊞</div>
-      <h3>Expand when ready</h3>
-      <p>Once the first integration is proven, we add more. Broader workflow coverage, multi-system orchestration, deeper automation — built incrementally on a foundation that actually works.</p>
+      <p>We monitor, recalibrate, and update what we build as your workflows change.</p>
     </div>
   </div>
 </section>
@@ -1584,9 +1706,31 @@ footer {
 
 <!-- FINAL CTA -->
 <section class="final-cta reveal">
-  <h2>Your first AI integration is two weeks away.</h2>
-  <p>Thirty minutes to map the workflow — then we build it, connect it, and run it for you.</p>
-  <a href="https://cal.com/clawdbotdfw/15min" class="btn-primary"><span class="dot"></span> Book Discovery Call</a>
+  <h2>Ready to get started?</h2>
+  <div class="cta-cards">
+    <a href="https://cal.com/clawdbotdfw/15min" class="cta-card dark" style="text-decoration:none">
+      <div class="cta-card-header">
+        <h3>Book a discovery call</h3>
+        <span class="cta-card-arrow">&rarr;</span>
+      </div>
+      <ul class="cta-card-steps">
+        <li><span class="cta-step-icon">01</span> Map your workflow</li>
+        <li><span class="cta-step-icon">02</span> We scope the integration</li>
+        <li><span class="cta-step-icon">03</span> Live in two weeks</li>
+      </ul>
+    </a>
+    <a href="mailto:hello@tend.team" class="cta-card light" style="text-decoration:none">
+      <div class="cta-card-header">
+        <h3>Send us a message</h3>
+        <span class="cta-card-arrow">&rarr;</span>
+      </div>
+      <ul class="cta-card-steps">
+        <li><span class="cta-step-icon">&#9993;</span> Tell us about your workflow</li>
+        <li><span class="cta-step-icon">&#8634;</span> We'll reply within 24 hours</li>
+        <li><span class="cta-step-icon">&#9889;</span> Get a custom proposal</li>
+      </ul>
+    </a>
+  </div>
 </section>
 
 <!-- FOOTER -->
@@ -1678,10 +1822,10 @@ const nav = document.querySelector('nav');
 window.addEventListener('scroll', () => {
   if (window.scrollY > 60) {
     nav.style.borderBottomColor = 'rgba(0,0,0,0.08)';
-    nav.style.background = 'rgba(245, 244, 240, 0.96)';
+    nav.style.background = 'rgba(244, 245, 246, 0.96)';
   } else {
     nav.style.borderBottomColor = 'rgba(0,0,0,0.04)';
-    nav.style.background = 'rgba(245, 244, 240, 0.92)';
+    nav.style.background = 'rgba(244, 245, 246, 0.92)';
   }
 }, { passive: true });
 </script>
