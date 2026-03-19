@@ -516,6 +516,8 @@ nav {
   background: var(--surface);
   border-radius: var(--radius-lg);
   padding: 48px;
+  position: relative;
+  overflow: visible;
 }
 
 .trust-tools {
@@ -926,11 +928,11 @@ footer {
   .hero { padding-top: 100px; min-height: auto; padding-bottom: 60px; }
   .hero-ctas { flex-direction: column; }
   .btn-primary, .btn-secondary { width: 100%; justify-content: center; }
-  .trust-section { padding: 32px 24px; }
+  .trust-section { padding: 32px 24px; overflow: hidden; }
   .problem-section { padding: 32px 24px; }
-  .final-cta { margin: 0 16px; padding: 60px 24px; }
+  .final-cta { margin: 0 16px; padding: 60px 24px; overflow: hidden; }
   
-  .float-card { display: none; }
+  .float-card { display: none !important; }
   .activity-stack { padding-top: 0; }
 }
 </style>
@@ -1031,8 +1033,24 @@ footer {
 </section>
 
 <!-- TRUST -->
-<section class="container">
+<section class="container" style="position: relative;">
   <div class="trust-section">
+    <!-- Floating cards -->
+    <div class="float-card" style="position: absolute; top: -20px; right: 40px; transform: rotate(2deg); z-index: 10;">
+      <div class="icon">⚡</div>
+      <div>
+        <div class="text">47 actions</div>
+        <div class="sub">Today</div>
+      </div>
+    </div>
+    <div class="float-card" style="position: absolute; bottom: 80px; left: -30px; transform: rotate(-3deg); z-index: 10;">
+      <div class="icon" style="background: #22C55E;">✓</div>
+      <div>
+        <div class="text">0 issues</div>
+        <div class="sub">All systems running</div>
+      </div>
+    </div>
+    
     <div class="trust-quote">
       <blockquote>"Our COO is an AI agent named Alfred. He tracks our pipeline, monitors our ads, preps meeting briefs, and sends us a morning update every day. We don't sell anything we don't use ourselves."</blockquote>
       <cite>— The Tend Team</cite>
@@ -1159,7 +1177,15 @@ footer {
     <p>One setup fee. One monthly cost. Less than a part-time hire that still makes mistakes.</p>
   </div>
   
-  <div class="pricing-grid">
+  <div class="pricing-grid" style="position: relative;">
+    <!-- Floating card -->
+    <div class="float-card" style="position: absolute; top: -25px; left: 50%; transform: translateX(-50%) rotate(-1deg); z-index: 10;">
+      <div class="icon orange">★</div>
+      <div>
+        <div class="text">No per-seat fees</div>
+        <div class="sub">Flat monthly rate</div>
+      </div>
+    </div>
     <div class="price-card">
       <div class="price-label">One-time</div>
       <div class="price-title">Setup</div>
@@ -1266,7 +1292,14 @@ footer {
 
 <!-- FINAL CTA -->
 <section class="container" style="padding-bottom: 40px;">
-  <div class="final-cta">
+  <div class="final-cta" style="position: relative; overflow: visible;">
+    <!-- Floating testimonial -->
+    <div class="float-card" style="position: absolute; top: -30px; right: 60px; transform: rotate(2deg); z-index: 10; max-width: 200px;">
+      <div>
+        <div class="text" style="font-style: italic;">"Best decision we made"</div>
+        <div class="sub">— Early client</div>
+      </div>
+    </div>
     <h2>Your first AI integration is two weeks away.</h2>
     <p>30 minutes to map the workflow — then we build it, connect it, and run it for you.</p>
     <a href="https://cal.com/clawdbotdfw/15min" class="btn-primary">Book a Discovery Call →</a>
