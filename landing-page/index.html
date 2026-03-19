@@ -813,6 +813,40 @@ footer {
   margin-bottom: 24px;
 }
 
+.footer-locations {
+  margin-bottom: 48px;
+}
+
+.footer-locations-label {
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--fg-muted);
+  margin-bottom: 16px;
+}
+
+.footer-locations-list {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.footer-locations-list span {
+  font-family: var(--font-serif);
+  font-size: 1.75rem;
+  font-weight: 400;
+  color: var(--fg);
+  letter-spacing: -0.01em;
+}
+
+.footer-divider {
+  width: 40px;
+  height: 1px;
+  background: rgba(0,0,0,0.12);
+  margin: 0 auto 32px;
+}
+
 .footer-tagline {
   font-size: 14px;
   color: var(--fg-muted);
@@ -1400,6 +1434,14 @@ footer {
 
 <!-- FOOTER -->
 <footer>
+  <div class="footer-locations reveal">
+    <div class="footer-locations-label">Locations</div>
+    <div class="footer-locations-list">
+      <span>Dallas</span>
+      <span>Miami</span>
+    </div>
+  </div>
+  <div class="footer-divider"></div>
   <div class="footer-logo">tend</div>
   <div class="footer-tagline">AI integration for business workflows.</div>
   <div class="footer-links">
