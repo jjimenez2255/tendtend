@@ -746,152 +746,6 @@ nav {
 }
 
 /* === PRICING === */
-.pricing-grid {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 24px;
-  max-width: 800px;
-  margin: 0 auto;
-}
-
-.price-card {
-  background: var(--surface);
-  border-radius: var(--radius-lg);
-  padding: 40px;
-  display: flex;
-  flex-direction: column;
-}
-
-.price-card .price-cta {
-  margin-top: auto;
-}
-
-.price-card.dark {
-  background: var(--void-black);
-  color: var(--signal-white);
-}
-
-.price-card.dark .price-label,
-.price-card.dark .price-desc,
-.price-card.dark .price-list li {
-  color: rgba(255,255,255,0.7);
-}
-
-.price-card.dark .price-title,
-.price-card.dark .price-amount {
-  color: var(--signal-white);
-}
-
-.price-card.dark .price-list .check {
-  color: var(--signal-white);
-}
-
-.price-card.dark .price-list li {
-  border-color: rgba(255,255,255,0.1);
-}
-
-.price-card.dark .price-cta {
-  background: var(--signal-white);
-  color: var(--engine-charcoal);
-}
-
-.price-label {
-  font-size: 11px;
-  font-weight: 600;
-  letter-spacing: 0.05em;
-  text-transform: uppercase;
-  color: var(--fg-muted);
-}
-
-.price-title {
-  font-size: 1.25rem;
-  font-weight: 500;
-  margin: 8px 0;
-}
-
-.price-amount {
-  font-size: 2.5rem;
-  font-weight: 400;
-  letter-spacing: -0.02em;
-  margin: 16px 0;
-}
-
-.price-amount span {
-  font-size: 1rem;
-  color: var(--fg-muted);
-}
-
-.price-card.dark .price-amount span {
-  color: rgba(255,255,255,0.6);
-}
-
-.price-desc {
-  font-size: 14px;
-  margin-bottom: 24px;
-  color: var(--fg-muted);
-}
-
-.price-list {
-  list-style: none;
-  margin-bottom: 32px;
-}
-
-.price-list li {
-  padding: 10px 0;
-  font-size: 14px;
-  color: var(--fg-muted);
-  display: flex;
-  align-items: center;
-  gap: 12px;
-  border-bottom: 1px solid rgba(0,0,0,0.05);
-}
-
-.price-list li:last-child { border-bottom: none; }
-
-.price-list .check {
-  color: var(--void-black);
-  font-weight: 600;
-}
-
-.price-cta {
-  display: block;
-  width: 100%;
-  padding: 14px 24px;
-  background: var(--accent-slate);
-  color: var(--signal-white);
-  text-decoration: none;
-  text-align: center;
-  font-size: 13px;
-  font-weight: 500;
-  letter-spacing: 0.06em;
-  text-transform: uppercase;
-  border-radius: 32px;
-  transition: background 0.2s;
-}
-
-.price-cta:hover { background: #3F3F33; }
-
-.price-cta.secondary {
-  background: transparent;
-  color: var(--fg-muted);
-  border: 1px solid rgba(0,0,0,0.12);
-}
-
-.price-cta.secondary:hover {
-  color: var(--fg);
-  border-color: rgba(0,0,0,0.3);
-}
-
-.price-note {
-  text-align: center;
-  margin-top: 24px;
-  font-size: 14px;
-  color: var(--fg-muted);
-  max-width: 600px;
-  margin-left: auto;
-  margin-right: auto;
-}
-
 /* === FAQ ACCORDION === */
 .faq-list {
   max-width: 700px;
@@ -1355,8 +1209,6 @@ footer {
     gap: 12px;
   }
   .step:first-child { grid-row: auto; }
-  .pricing-grid { grid-template-columns: 1fr; }
-  .pricing-grid .price-card { margin-bottom: 16px; }
   .trust-stats { flex-wrap: wrap; gap: 32px; }
   .nav-links { display: none; }
   .nav-cta { display: none; }
@@ -1440,7 +1292,6 @@ footer {
     <ul class="nav-links">
       <li><a href="#features">Features</a></li>
       <li><a href="#how">How it works</a></li>
-      <li><a href="#pricing">Pricing</a></li>
     </ul>
     <a href="https://cal.com/clawdbotdfw/15min" class="nav-cta">Book a Discovery Call</a>
     <button class="hamburger" onclick="openMobileMenu()">
@@ -1453,7 +1304,6 @@ footer {
   <div class="mobile-menu" id="mobileMenu">
     <a href="#features" onclick="closeMobileMenu()">Features</a>
     <a href="#how" onclick="closeMobileMenu()">How it works</a>
-    <a href="#pricing" onclick="closeMobileMenu()">Pricing</a>
     <a href="https://cal.com/clawdbotdfw/15min" class="mobile-cta">Book a Discovery Call</a>
   </div>
 </nav>
@@ -1787,47 +1637,6 @@ footer {
 </section>
 
 <!-- PRICING -->
-<section class="container" id="pricing">
-  <div class="section-header reveal">
-    <div class="section-label">Pricing</div>
-    <h2>Simple. Transparent.</h2>
-    <p>One setup fee. One monthly cost. Less than a part-time hire that still makes mistakes.</p>
-  </div>
-
-  <div class="pricing-grid stagger-children">
-    <div class="price-card">
-      <div class="price-label">One-time</div>
-      <div class="price-title">Setup</div>
-      <div class="price-amount">$5,000<span> minimum</span></div>
-      <p class="price-desc">Discovery, workflow scoping, integration build, tool connections, and go-live. Complex or multi-system workflows are scoped and priced based on requirements.</p>
-      <ul class="price-list">
-        <li><span class="check">✓</span> Discovery call</li>
-        <li><span class="check">✓</span> Workflow scoping</li>
-        <li><span class="check">✓</span> Integration build</li>
-        <li><span class="check">✓</span> Tool connections</li>
-        <li><span class="check">✓</span> Launch + handoff</li>
-      </ul>
-      <a href="https://cal.com/clawdbotdfw/15min" class="price-cta">Book a Discovery Call</a>
-    </div>
-    
-    <div class="price-card">
-      <div class="price-label">Monthly</div>
-      <div class="price-title">Managed Service</div>
-      <div class="price-amount">$2,000<span>/month minimum</span></div>
-      <p class="price-desc">Ongoing monitoring, recalibration, exception handling, and monthly performance reviews. The work that keeps the integration reliable as your business changes.</p>
-      <ul class="price-list">
-        <li><span class="check">✓</span> Monitoring & tuning</li>
-        <li><span class="check">✓</span> Exception handling</li>
-        <li><span class="check">✓</span> Monthly reviews</li>
-        <li><span class="check">✓</span> Support</li>
-        <li><span class="check">✓</span> 3-month minimum</li>
-      </ul>
-      <a href="#faq" class="price-cta secondary">Learn More</a>
-    </div>
-  </div>
-  
-  <p class="price-note">Day-one payment is $7,000 — setup plus first month. Minimum engagement is three months, totaling $11,000. After that, cancel with 30 days notice. The integration keeps running — you own what you paid for.</p>
-</section>
 
 <!-- FAQ -->
 <section class="container" id="faq">
