@@ -1152,36 +1152,57 @@ footer {
     <style>
       .illo-piece {
         opacity: 0;
-        animation: illoDrop 0.6s cubic-bezier(0.22, 0.61, 0.36, 1) forwards;
+        animation: illoDrop 0.7s cubic-bezier(0.22, 0.61, 0.36, 1) forwards;
       }
-      /* Stagger: center first, then outward */
-      .illo-piece:nth-child(2) { animation-delay: 0.7s; }  /* large notebook */
-      .illo-piece:nth-child(4) { animation-delay: 0.88s; }  /* stacked blocks */
-      .illo-piece:nth-child(5) { animation-delay: 1.06s; }  /* lines panel */
-      .illo-piece:nth-child(6) { animation-delay: 1.24s; }  /* thin block */
+      .illo-piece:nth-child(2) { animation-delay: 0.7s; }
+      .illo-piece:nth-child(4) { animation-delay: 0.88s; }
+      .illo-piece:nth-child(5) { animation-delay: 1.06s; }
+      .illo-piece:nth-child(6) { animation-delay: 1.24s; }
 
       .illo-leaning {
         opacity: 0;
-        animation: illoLean 0.7s cubic-bezier(0.22, 0.61, 0.36, 1) 1.5s forwards;
+        animation: illoLean 0.9s cubic-bezier(0.22, 0.61, 0.36, 1) 1.5s forwards,
+                   leanBreath 5s ease-in-out 3s infinite;
       }
 
       .illo-dots {
         opacity: 0;
-        animation: illoDrop 0.6s cubic-bezier(0.22, 0.61, 0.36, 1) 1s forwards,
-                   dotPulse 3.5s ease-in-out 2.5s infinite;
+        animation: illoDrop 0.7s cubic-bezier(0.22, 0.61, 0.36, 1) 1s forwards,
+                   dotPulse 3s ease-in-out 2.5s infinite;
+      }
+
+      /* Notebook: subtle sway after landing */
+      .illo-piece:nth-child(2) {
+        animation: illoDrop 0.7s cubic-bezier(0.22, 0.61, 0.36, 1) 0.7s forwards,
+                   notebookSway 6s ease-in-out 2.5s infinite;
+      }
+
+      /* Stacked blocks: gentle rise/fall */
+      .illo-piece:nth-child(4) {
+        animation: illoDrop 0.7s cubic-bezier(0.22, 0.61, 0.36, 1) 0.88s forwards,
+                   stackFloat 5s ease-in-out 3.2s infinite;
+      }
+
+      /* Thin block: slight drift */
+      .illo-piece:nth-child(6) {
+        animation: illoDrop 0.7s cubic-bezier(0.22, 0.61, 0.36, 1) 1.24s forwards,
+                   thinDrift 7s ease-in-out 3.5s infinite;
       }
 
       @keyframes illoDrop {
         0% {
           opacity: 0;
-          transform: translateY(-60px) scaleY(0.95);
+          transform: translateY(-80px) scaleY(0.92);
         }
-        60% {
+        55% {
           opacity: 1;
-          transform: translateY(4px) scaleY(1.01);
+          transform: translateY(6px) scaleY(1.02);
         }
-        80% {
-          transform: translateY(-2px) scaleY(1);
+        72% {
+          transform: translateY(-3px) scaleY(0.99);
+        }
+        88% {
+          transform: translateY(1px) scaleY(1);
         }
         100% {
           opacity: 1;
@@ -1192,14 +1213,17 @@ footer {
       @keyframes illoLean {
         0% {
           opacity: 0;
-          transform: rotate(0deg) translateY(-50px);
+          transform: rotate(5deg) translateY(-70px);
         }
-        50% {
+        40% {
           opacity: 1;
-          transform: rotate(-14deg) translateY(3px);
+          transform: rotate(-16deg) translateY(5px);
         }
-        75% {
-          transform: rotate(-11deg) translateY(-1px);
+        65% {
+          transform: rotate(-10deg) translateY(-2px);
+        }
+        82% {
+          transform: rotate(-13deg) translateY(1px);
         }
         100% {
           opacity: 1;
@@ -1207,9 +1231,30 @@ footer {
         }
       }
 
+      /* Continuous ambient animations */
+      @keyframes leanBreath {
+        0%, 100% { transform: rotate(-12deg) translateY(0); }
+        50% { transform: rotate(-11deg) translateY(-4px); }
+      }
+
+      @keyframes notebookSway {
+        0%, 100% { transform: translateY(0); }
+        50% { transform: translateY(-3px); }
+      }
+
+      @keyframes stackFloat {
+        0%, 100% { transform: translateY(0); }
+        50% { transform: translateY(-5px); }
+      }
+
       @keyframes dotPulse {
-        0%, 100% { opacity: 0.5; }
-        50% { opacity: 0.8; }
+        0%, 100% { opacity: 0.45; }
+        50% { opacity: 0.85; }
+      }
+
+      @keyframes thinDrift {
+        0%, 100% { transform: translateY(0); }
+        50% { transform: translateY(-3px); }
       }
     </style>
 
