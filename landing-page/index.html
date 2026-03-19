@@ -963,9 +963,73 @@ nav {
 
 .cta-cards {
   display: grid;
-  grid-template-columns: 1.2fr 1fr;
+  grid-template-columns: 1fr;
   gap: 16px;
   text-align: left;
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+.cta-bar {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  background: #F2EE8C;
+  color: #2A2A2A;
+  border-radius: 16px;
+  padding: 22px 32px;
+  margin-top: 16px;
+  max-width: 700px;
+  margin-left: auto;
+  margin-right: auto;
+  transition: background 0.2s ease, transform 0.2s ease;
+}
+
+.cta-bar:hover {
+  background: #EBE76C;
+  transform: translateY(-2px);
+}
+
+.cta-bar-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: #2A2A2A;
+  flex-shrink: 0;
+}
+
+.cta-bar-text {
+  font-family: var(--font);
+  font-size: 14px;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  flex: 1;
+  position: relative;
+}
+
+.cta-bar-text .cta-bar-label,
+.cta-bar-text .cta-bar-email {
+  transition: opacity 0.25s ease;
+}
+
+.cta-bar-text .cta-bar-email {
+  position: absolute;
+  left: 0;
+  top: 0;
+  opacity: 0;
+}
+
+.cta-bar:hover .cta-bar-text .cta-bar-label {
+  opacity: 0;
+}
+
+.cta-bar:hover .cta-bar-text .cta-bar-email {
+  opacity: 1;
+}
+
+.cta-bar-arrow {
+  font-size: 20px;
+  flex-shrink: 0;
 }
 
 .cta-card {
@@ -1298,7 +1362,7 @@ footer {
   .nav-cta { display: none; }
   .hamburger { display: flex; }
   .final-cta { margin: 0; }
-  .cta-cards { grid-template-columns: 1fr 1fr; }
+  .cta-cards { grid-template-columns: 1fr; }
 }
 
 @media (max-width: 600px) {
@@ -1850,18 +1914,12 @@ footer {
         <li><span class="cta-step-icon">03</span> Live in two weeks</li>
       </ul>
     </a>
-    <a href="mailto:hello@tend.team" class="cta-card light" style="text-decoration:none">
-      <div class="cta-card-header">
-        <h3>Send us a message</h3>
-        <span class="cta-card-arrow">&rarr;</span>
-      </div>
-      <ul class="cta-card-steps">
-        <li><span class="cta-step-icon">&#9993;</span> Tell us about your workflow</li>
-        <li><span class="cta-step-icon">&#8634;</span> We'll reply within 24 hours</li>
-        <li><span class="cta-step-icon">&#9889;</span> Get a custom proposal</li>
-      </ul>
-    </a>
   </div>
+  <a href="mailto:hello@tend.team" class="cta-bar" style="text-decoration:none">
+    <span class="cta-bar-dot"></span>
+    <span class="cta-bar-text"><span class="cta-bar-label">SEND US A MESSAGE</span><span class="cta-bar-email">HELLO@TEND.TEAM</span></span>
+    <span class="cta-bar-arrow">&#8599;</span>
+  </a>
 </section>
 
 <!-- FOOTER -->
