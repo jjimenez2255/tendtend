@@ -590,6 +590,25 @@ nav {
 }
 
 /* === PROCESS (BENTO + TIMELINE) === */
+.process-section {
+  background: var(--engine-charcoal);
+  padding-top: 80px;
+  padding-bottom: 80px;
+  border-radius: var(--radius-lg);
+}
+
+.process-section .section-label {
+  color: var(--field-gray);
+}
+
+.process-section .section-header h2 {
+  color: var(--signal-white);
+}
+
+.process-section .section-header p {
+  color: rgba(255,255,255,0.6);
+}
+
 .process-wrapper {
   position: relative;
 }
@@ -603,13 +622,12 @@ nav {
 }
 
 .step {
-  background: var(--accent-slate);
+  background: rgba(255,255,255,0.08);
   border-radius: var(--radius-lg);
   padding: 32px 28px;
   position: relative;
   display: flex;
   flex-direction: column;
-  color: var(--signal-white);
 }
 
 /* First step spans 2 rows */
@@ -622,7 +640,7 @@ nav {
   font-size: 11px;
   font-weight: 600;
   letter-spacing: 0.05em;
-  color: rgba(255,255,255,0.5);
+  color: rgba(255,255,255,0.4);
   margin-bottom: 16px;
 }
 
@@ -631,14 +649,14 @@ nav {
   font-size: 1.25rem;
   font-weight: 400;
   margin-bottom: 12px;
-  color: var(--signal-white);
+  color: rgba(255,255,255,0.85);
 }
 
 .step p {
   font-size: 0.9rem;
   line-height: 1.7;
   margin-top: auto;
-  color: rgba(255,255,255,0.7);
+  color: rgba(255,255,255,0.5);
 }
 
 /* Animated connecting line */
@@ -655,7 +673,7 @@ nav {
   width: 100%;
   max-width: 800px;
   height: 2px;
-  background: var(--surface-warm);
+  background: rgba(255,255,255,0.15);
   border-radius: 2px;
   position: relative;
   overflow: hidden;
@@ -664,7 +682,7 @@ nav {
 .timeline-progress {
   height: 100%;
   width: 0%;
-  background: var(--accent-slate);
+  background: var(--signal-white);
   border-radius: 2px;
   transition: width 1.5s cubic-bezier(0.22, 0.61, 0.36, 1);
 }
@@ -685,15 +703,15 @@ nav {
   width: 10px;
   height: 10px;
   border-radius: 50%;
-  background: var(--surface-warm);
-  border: 2px solid var(--surface-warm);
+  background: rgba(255,255,255,0.15);
+  border: 2px solid rgba(255,255,255,0.15);
   transition: background 0.4s ease, border-color 0.4s ease;
   z-index: 1;
 }
 
 .timeline-dot.active {
-  background: var(--accent-slate);
-  border-color: var(--accent-slate);
+  background: var(--signal-white);
+  border-color: var(--signal-white);
 }
 
 .timeline-labels {
@@ -709,16 +727,14 @@ nav {
   font-family: var(--font);
   font-size: 11px;
   font-weight: 500;
-  color: var(--fg-muted);
+  color: rgba(255,255,255,0.35);
   text-align: center;
   letter-spacing: 0.03em;
-  opacity: 0.5;
-  transition: opacity 0.4s ease, color 0.4s ease;
+  transition: color 0.4s ease;
 }
 
 .timeline-label.active {
-  opacity: 1;
-  color: var(--fg);
+  color: rgba(255,255,255,0.8);
 }
 
 /* === PRICING === */
@@ -1663,7 +1679,7 @@ footer {
 </section>
 
 <!-- PROCESS -->
-<section class="container" id="how">
+<section class="container process-section" id="how">
   <div class="section-header reveal">
     <div class="section-label">How It Works</div>
     <h2>From call to running in two weeks.</h2>
