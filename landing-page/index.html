@@ -1354,67 +1354,7 @@ footer {
     <style>
       .illo-piece, .illo-leaning, .illo-dots {
         opacity: 1;
-      }
-
-      /* Leaning block — continuous rocking */
-      .illo-leaning {
-        transform-origin: 110px 320px;
-        animation: leanBreath 4s ease-in-out infinite;
-      }
-
-      /* Large notebook — slow float */
-      .illo-piece:nth-child(2) {
-        animation: notebookFloat 5s ease-in-out infinite;
-      }
-
-      /* Dot grid — pulse opacity + gentle lift */
-      .illo-dots {
-        animation: dotFloat 6s ease-in-out infinite;
-      }
-
-      /* Stacked blocks — bob up and down */
-      .illo-piece:nth-child(4) {
-        animation: stackFloat 4.5s ease-in-out infinite;
-      }
-
-      /* Vertical lines — subtle sway */
-      .illo-piece:nth-child(5) {
-        animation: linesSway 7s ease-in-out infinite;
-      }
-
-      /* Thin tall block — drift */
-      .illo-piece:nth-child(6) {
-        animation: thinDrift 5.5s ease-in-out infinite;
-      }
-
-      @keyframes leanBreath {
-        0%, 100% { transform: rotate(-12deg) translateY(0); }
-        50% { transform: rotate(-10deg) translateY(-8px); }
-      }
-
-      @keyframes notebookFloat {
-        0%, 100% { transform: translateY(0); }
-        50% { transform: translateY(-10px); }
-      }
-
-      @keyframes dotFloat {
-        0%, 100% { transform: translateY(0) scale(1); }
-        50% { transform: translateY(-7px) scale(1.01); }
-      }
-
-      @keyframes stackFloat {
-        0%, 100% { transform: translateY(0); }
-        50% { transform: translateY(-12px); }
-      }
-
-      @keyframes linesSway {
-        0%, 100% { transform: translateX(0) translateY(0); }
-        50% { transform: translateX(3px) translateY(-5px); }
-      }
-
-      @keyframes thinDrift {
-        0%, 100% { transform: translateY(0); }
-        50% { transform: translateY(-9px); }
+        transition: transform 0.1s linear;
       }
     </style>
 
@@ -1792,13 +1732,24 @@ const feedObserver = new IntersectionObserver((entries) => {
 
 document.querySelectorAll('.activity-feed').forEach(el => feedObserver.observe(el));
 
-// Smooth parallax on hero illustration
+// Parallax on hero illustration pieces — each moves at a different rate on scroll
 const heroIllustration = document.querySelector('.hero-illustration');
 if (heroIllustration && window.matchMedia('(prefers-reduced-motion: no-preference)').matches) {
+  const illoLeaning = heroIllustration.querySelector('.illo-leaning');
+  const illoNotebook = heroIllustration.querySelectorAll('.illo-piece')[0];
+  const illoDots = heroIllustration.querySelector('.illo-dots');
+  const illoStack = heroIllustration.querySelectorAll('.illo-piece')[1];
+  const illoLines = heroIllustration.querySelectorAll('.illo-piece')[2];
+  const illoThin = heroIllustration.querySelectorAll('.illo-piece')[3];
+
   window.addEventListener('scroll', () => {
     const scrollY = window.scrollY;
-    const rate = scrollY * 0.08;
-    heroIllustration.style.transform = `translateY(${rate}px)`;
+    if (illoLeaning) illoLeaning.style.transform = `rotate(${-12 + scrollY * 0.02}deg) translateY(${scrollY * -0.15}px)`;
+    if (illoNotebook) illoNotebook.style.transform = `translateY(${scrollY * -0.08}px)`;
+    if (illoDots) illoDots.style.transform = `translateY(${scrollY * -0.12}px)`;
+    if (illoStack) illoStack.style.transform = `translateY(${scrollY * -0.18}px)`;
+    if (illoLines) illoLines.style.transform = `translateX(${scrollY * 0.03}px) translateY(${scrollY * -0.06}px)`;
+    if (illoThin) illoThin.style.transform = `translateY(${scrollY * -0.22}px)`;
   }, { passive: true });
 }
 
