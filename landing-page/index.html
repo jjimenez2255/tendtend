@@ -310,6 +310,29 @@ nav {
   margin-right: auto;
 }
 
+.sub-hero-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 14px 28px;
+  background: var(--signal-white);
+  border-radius: 40px;
+  font-family: var(--font);
+  font-size: 16px;
+  font-weight: 400;
+  color: var(--fg);
+  box-shadow: 0 2px 12px rgba(0,0,0,0.06);
+  animation: fadeInUp 0.9s ease-out 0.4s both;
+}
+
+.sub-hero-dot {
+  width: 10px;
+  height: 10px;
+  background: #6ECF72;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
 .hero-ctas {
   display: flex;
   gap: 16px;
@@ -1315,6 +1338,10 @@ footer {
 <section class="container hero">
   <div class="hero-content">
     <h1>Tend installs AI to run your company. The right&nbsp;way.</h1>
+    <div class="sub-hero-badge">
+      <span class="sub-hero-dot"></span>
+      Now accepting clients
+    </div>
     <div class="hero-ctas">
       <a href="https://cal.com/clawdbotdfw/15min" class="btn-primary"><span class="dot"></span> Book Discovery Call</a>
     </div>
