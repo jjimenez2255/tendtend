@@ -589,35 +589,140 @@ nav {
   line-height: 1.7;
 }
 
-/* === PROCESS === */
+/* === PROCESS (BENTO + TIMELINE) === */
+.process-wrapper {
+  position: relative;
+}
+
 .process-grid {
   display: grid;
-  grid-template-columns: repeat(5, 1fr);
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: auto auto;
   gap: 16px;
+  position: relative;
 }
 
 .step {
-  background: var(--surface);
+  background: var(--signal-white);
   border-radius: var(--radius-lg);
-  padding: 28px 20px;
-  text-align: center;
+  padding: 32px 28px;
+  position: relative;
+  display: flex;
+  flex-direction: column;
 }
 
+/* First step spans 2 rows */
+.step:first-child {
+  grid-row: 1 / 3;
+  background: var(--accent-slate);
+  color: var(--signal-white);
+}
+
+.step:first-child .step-num { color: rgba(255,255,255,0.5); }
+.step:first-child h3 { color: var(--signal-white); }
+.step:first-child p { color: rgba(255,255,255,0.7); }
+
 .step-num {
-  font-size: 12px;
+  font-family: var(--font);
+  font-size: 11px;
   font-weight: 600;
+  letter-spacing: 0.05em;
   color: var(--fg-muted);
   margin-bottom: 16px;
 }
 
 .step h3 {
-  font-size: 1rem;
+  font-family: var(--font-serif);
+  font-size: 1.25rem;
+  font-weight: 400;
   margin-bottom: 12px;
+  color: var(--fg);
 }
 
 .step p {
-  font-size: 13px;
-  line-height: 1.6;
+  font-size: 0.9rem;
+  line-height: 1.7;
+  margin-top: auto;
+}
+
+/* Animated connecting line */
+.process-timeline {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 24px 0;
+  position: relative;
+  overflow: hidden;
+}
+
+.timeline-track {
+  width: 100%;
+  max-width: 800px;
+  height: 2px;
+  background: var(--surface-warm);
+  border-radius: 2px;
+  position: relative;
+  overflow: hidden;
+}
+
+.timeline-progress {
+  height: 100%;
+  width: 0%;
+  background: var(--accent-slate);
+  border-radius: 2px;
+  transition: width 1.5s cubic-bezier(0.22, 0.61, 0.36, 1);
+}
+
+.timeline-dots {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 2%;
+}
+
+.timeline-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: var(--surface-warm);
+  border: 2px solid var(--surface-warm);
+  transition: background 0.4s ease, border-color 0.4s ease;
+  z-index: 1;
+}
+
+.timeline-dot.active {
+  background: var(--accent-slate);
+  border-color: var(--accent-slate);
+}
+
+.timeline-labels {
+  display: flex;
+  justify-content: space-between;
+  max-width: 800px;
+  width: 100%;
+  margin: 12px auto 0;
+  padding: 0 2%;
+}
+
+.timeline-label {
+  font-family: var(--font);
+  font-size: 11px;
+  font-weight: 500;
+  color: var(--fg-muted);
+  text-align: center;
+  letter-spacing: 0.03em;
+  opacity: 0.5;
+  transition: opacity 0.4s ease, color 0.4s ease;
+}
+
+.timeline-label.active {
+  opacity: 1;
+  color: var(--fg);
 }
 
 /* === PRICING === */
@@ -1161,7 +1266,11 @@ footer {
     grid-row: auto;
     min-height: 220px;
   }
-  .process-grid { grid-template-columns: repeat(2, 1fr); gap: 12px; }
+  .process-grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+  }
+  .step:first-child { grid-row: auto; }
   .pricing-grid { grid-template-columns: 1fr; }
   .pricing-grid .price-card { margin-bottom: 16px; }
   .trust-stats { flex-wrap: wrap; gap: 32px; }
@@ -1188,6 +1297,9 @@ footer {
   .problem-section > p { font-size: 1rem; }
   .hero-illustration { padding: 0 8px 40px; }
   .process-grid { grid-template-columns: 1fr; }
+  .step:first-child { grid-row: auto; }
+  .timeline-labels { padding: 0; font-size: 9px; }
+  .timeline-label { font-size: 9px; }
   .step { padding: 24px 16px; }
   .features-grid { grid-template-columns: 1fr; }
   .feature-card { padding: 24px 20px; min-height: auto; }
@@ -1562,31 +1674,53 @@ footer {
     <p>No endless meetings. No six-month implementations. We move fast.</p>
   </div>
 
+  <!-- Animated timeline -->
+  <div class="process-timeline reveal" id="processTimeline">
+    <div class="timeline-track">
+      <div class="timeline-progress" id="timelineProgress"></div>
+      <div class="timeline-dots">
+        <span class="timeline-dot" data-step="0"></span>
+        <span class="timeline-dot" data-step="1"></span>
+        <span class="timeline-dot" data-step="2"></span>
+        <span class="timeline-dot" data-step="3"></span>
+        <span class="timeline-dot" data-step="4"></span>
+      </div>
+    </div>
+  </div>
+  <div class="timeline-labels">
+    <span class="timeline-label" data-step="0">Discovery</span>
+    <span class="timeline-label" data-step="1">Scope</span>
+    <span class="timeline-label" data-step="2">Build</span>
+    <span class="timeline-label" data-step="3">Run</span>
+    <span class="timeline-label" data-step="4">Expand</span>
+  </div>
+
+  <!-- Bento grid -->
   <div class="process-grid stagger-children">
     <div class="step">
       <div class="step-num">01</div>
       <h3>Discovery</h3>
-      <p>Thirty minutes to map the workflow that's costing you the most. We understand your tools, your team, and where the real friction is before we write a line of integration logic.</p>
+      <p>Thirty minutes to map the workflow that's costing you the most. We understand your tools, your team, and where the real friction is.</p>
     </div>
     <div class="step">
       <div class="step-num">02</div>
       <h3>Scope</h3>
-      <p>We define exactly what the integration does, what it escalates, and what requires your sign-off. You review and approve the scope before any build work starts.</p>
+      <p>We define exactly what the integration does, what it escalates, and what requires your sign-off before any build work starts.</p>
     </div>
     <div class="step">
       <div class="step-num">03</div>
       <h3>Build</h3>
-      <p>One to two weeks. We connect your tools, configure permissions, implement the integration logic, and test against real data before anything goes live.</p>
+      <p>One to two weeks. We connect your tools, configure permissions, and test against real data before anything goes live.</p>
     </div>
     <div class="step">
       <div class="step-num">04</div>
       <h3>Run</h3>
-      <p>Continuous monitoring, performance reviews, and exception handling. When something falls outside expected behavior, we handle it — not you.</p>
+      <p>Continuous monitoring, performance reviews, and exception handling. We handle it — not you.</p>
     </div>
     <div class="step">
       <div class="step-num">05</div>
       <h3>Expand</h3>
-      <p>Once the first integration is delivering results, we scope the next one. Each addition builds on a foundation that's already proven in your environment.</p>
+      <p>Once the first integration delivers results, we scope the next one. Each addition builds on proven foundations.</p>
     </div>
   </div>
 </section>
@@ -1816,6 +1950,31 @@ if (heroIllustration && window.matchMedia('(prefers-reduced-motion: no-preferenc
     heroIllustration.style.transform = `translateY(${rate}px)`;
   }, { passive: true });
 }
+
+// Timeline animation
+const timelineObserver = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      const progress = document.getElementById('timelineProgress');
+      const dots = document.querySelectorAll('.timeline-dot');
+      const labels = document.querySelectorAll('.timeline-label');
+      const steps = [0, 25, 50, 75, 100];
+
+      dots.forEach((dot, i) => {
+        setTimeout(() => {
+          progress.style.width = steps[i] + '%';
+          dot.classList.add('active');
+          labels[i].classList.add('active');
+        }, 400 + i * 350);
+      });
+
+      timelineObserver.unobserve(entry.target);
+    }
+  });
+}, { threshold: 0.5 });
+
+const timeline = document.getElementById('processTimeline');
+if (timeline) timelineObserver.observe(timeline);
 
 // Nav background transition on scroll
 const nav = document.querySelector('nav');
