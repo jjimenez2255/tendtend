@@ -1008,13 +1008,16 @@ footer {
 
 .footer-logo {
   font-family: var(--font);
-  font-size: clamp(12rem, 28vw, 28rem);
+  font-size: clamp(6rem, 28vw, 28rem);
   font-weight: 200;
   letter-spacing: 0.12em;
   color: rgba(0,0,0,0.05);
   margin-bottom: 24px;
   line-height: 0.85;
   white-space: nowrap;
+  overflow: hidden;
+  text-overflow: clip;
+  max-width: 100%;
 }
 
 .footer-locations {
@@ -1255,7 +1258,7 @@ footer {
   .trust-quote blockquote { font-size: 1rem; }
   .problem-section { padding: 40px 20px; }
   .problem-section > p { font-size: 1rem; }
-  .hero-illustration { padding: 0 8px 40px; }
+  .hero-illustration { padding: 0 0 40px; max-width: 100%; }
   .process-grid { grid-template-columns: 1fr; }
   .step:first-child { grid-row: auto; }
   .timeline-labels { padding: 0; font-size: 9px; }
@@ -1270,7 +1273,7 @@ footer {
   .cta-cards { grid-template-columns: 1fr; }
   .cta-card { min-height: 260px; }
   footer { padding: 40px 16px 32px; }
-  .footer-logo { letter-spacing: 0.06em; }
+  .footer-logo { letter-spacing: 0.06em; font-size: clamp(4rem, 22vw, 12rem); }
   .footer-locations { margin-top: 32px; }
   .activity-feed { padding: 16px; font-size: 12px; }
   .activity-line { gap: 10px; }
@@ -1350,7 +1353,7 @@ footer {
 
 <!-- HERO ILLUSTRATION -->
 <div class="hero-illustration">
-  <svg viewBox="0 0 900 340" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <svg viewBox="50 0 780 340" fill="none" xmlns="http://www.w3.org/2000/svg">
     <style>
       .illo-piece, .illo-leaning, .illo-dots {
         opacity: 1;
