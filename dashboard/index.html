@@ -8,6 +8,21 @@
 * { margin: 0; padding: 0; box-sizing: border-box; }
 
 :root {
+  --bg: #FAFAF8;
+  --surface: #FFFFFF;
+  --border: rgba(0,0,0,0.08);
+  --fg: #1A1A1A;
+  --fg-secondary: #5A5A5A;
+  --fg-muted: #8A8A8A;
+  --accent: #5B8A6C;
+  --accent-soft: rgba(91,138,108,0.08);
+  --green: #1DB954;
+  --orange: #f59e0b;
+  --purple: #8b5cf6;
+  --slate: #4A5C6B;
+}
+
+[data-theme="dark"] {
   --bg: #0D0D0D;
   --surface: #161616;
   --border: rgba(255,255,255,0.08);
@@ -19,8 +34,29 @@
   --green: #1DB954;
   --orange: #f59e0b;
   --purple: #8b5cf6;
-  --slate: #4A5C6B;
+  --slate: #8A9BAA;
 }
+
+.theme-toggle {
+  position: fixed;
+  top: 16px;
+  right: 16px;
+  z-index: 100;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  color: var(--fg);
+  border-radius: 100px;
+  padding: 8px 16px;
+  font-size: 13px;
+  font-weight: 500;
+  cursor: pointer;
+  font-family: inherit;
+  transition: all 0.2s;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+.theme-toggle:hover { border-color: var(--accent); }
 
 body {
   font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
@@ -658,5 +694,40 @@ li strong { color: var(--fg); }
   <p style="margin-top: 8px;">A Kyros project · March 2026</p>
 </div>
 
+
+<button class="theme-toggle" onclick="toggleTheme()" id="themeBtn">
+  <span id="themeIcon">🌙</span>
+  <span id="themeLabel">Dark</span>
+</button>
+
+<script>
+  const html = document.documentElement;
+  const btn = document.getElementById('themeBtn');
+  const icon = document.getElementById('themeIcon');
+  const label = document.getElementById('themeLabel');
+
+  // Load saved preference
+  const saved = localStorage.getItem('tend-theme');
+  if (saved === 'dark') {
+    html.setAttribute('data-theme', 'dark');
+    icon.textContent = '☀️';
+    label.textContent = 'Light';
+  }
+
+  function toggleTheme() {
+    const isDark = html.getAttribute('data-theme') === 'dark';
+    if (isDark) {
+      html.removeAttribute('data-theme');
+      icon.textContent = '🌙';
+      label.textContent = 'Dark';
+      localStorage.setItem('tend-theme', 'light');
+    } else {
+      html.setAttribute('data-theme', 'dark');
+      icon.textContent = '☀️';
+      label.textContent = 'Light';
+      localStorage.setItem('tend-theme', 'dark');
+    }
+  }
+</script>
 </body>
 </html>
