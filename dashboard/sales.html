@@ -1,0 +1,582 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Tend — Sales Pitch Guide | Kyros</title>
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+:root {
+  --bg: #FAFAF8;
+  --surface: #FFFFFF;
+  --border: rgba(0,0,0,0.08);
+  --fg: #1A1A1A;
+  --fg-secondary: #5A5A5A;
+  --fg-muted: #8A8A8A;
+  --accent: #5B8A6C;
+  --accent-soft: rgba(91,138,108,0.08);
+  --green: #1DB954;
+  --orange: #f59e0b;
+  --purple: #8b5cf6;
+  --blue: #3b82f6;
+  --slate: #4A5C6B;
+}
+
+body {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  background: var(--bg);
+  color: var(--fg);
+  line-height: 1.6;
+  padding: 48px 24px;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.back-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  color: var(--fg-muted);
+  text-decoration: none;
+  font-size: 14px;
+  margin-bottom: 24px;
+}
+.back-link:hover { color: var(--fg); }
+
+h1 { font-size: 32px; font-weight: 700; letter-spacing: -0.5px; margin-bottom: 8px; }
+.subtitle { color: var(--fg-muted); font-size: 14px; margin-bottom: 32px; }
+
+h2 {
+  font-size: 20px;
+  font-weight: 600;
+  margin: 48px 0 20px;
+  padding-bottom: 12px;
+  border-bottom: 1px solid var(--border);
+}
+
+h3 {
+  font-size: 15px;
+  font-weight: 600;
+  color: var(--fg);
+  margin: 28px 0 12px;
+}
+
+h4 {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--fg-muted);
+  margin: 20px 0 8px;
+}
+
+.card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 24px;
+  margin-bottom: 16px;
+}
+
+.highlight-card {
+  background: var(--accent-soft);
+  border: 1px solid rgba(91,138,108,0.2);
+  border-radius: 12px;
+  padding: 24px;
+  margin: 24px 0;
+}
+
+.pitch-box {
+  background: #1A1A1A;
+  color: #FAFAFA;
+  border-radius: 12px;
+  padding: 24px;
+  margin: 16px 0;
+  font-size: 15px;
+  line-height: 1.8;
+}
+
+.objection {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 20px;
+  margin-bottom: 12px;
+}
+
+.objection-q {
+  font-weight: 600;
+  color: var(--fg);
+  margin-bottom: 12px;
+  font-size: 15px;
+}
+
+.objection-a {
+  color: var(--fg-secondary);
+  font-size: 14px;
+  line-height: 1.7;
+  padding-left: 16px;
+  border-left: 3px solid var(--accent);
+}
+
+.table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 14px;
+  margin: 16px 0;
+}
+.table th, .table td {
+  text-align: left;
+  padding: 14px 12px;
+  border-bottom: 1px solid var(--border);
+}
+.table th { 
+  color: var(--fg-muted); 
+  font-weight: 500; 
+  font-size: 12px; 
+  text-transform: uppercase; 
+  letter-spacing: 0.5px; 
+}
+
+.tag {
+  display: inline-block;
+  padding: 4px 12px;
+  border-radius: 100px;
+  font-size: 12px;
+  font-weight: 500;
+}
+.tag-green { background: rgba(29,185,84,0.1); color: var(--green); }
+.tag-orange { background: rgba(245,158,11,0.1); color: var(--orange); }
+.tag-purple { background: rgba(139,92,246,0.1); color: var(--purple); }
+.tag-blue { background: rgba(59,130,246,0.1); color: var(--blue); }
+
+.industry-nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin: 16px 0 24px;
+}
+
+.industry-nav a {
+  padding: 8px 16px;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  text-decoration: none;
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--fg);
+  transition: all 0.2s;
+}
+.industry-nav a:hover {
+  border-color: var(--accent);
+  background: var(--accent-soft);
+}
+
+ul, ol { padding-left: 24px; margin: 12px 0; }
+li { margin-bottom: 8px; color: var(--fg-secondary); font-size: 14px; }
+li strong { color: var(--fg); }
+
+.toc {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 20px 24px;
+  margin-bottom: 32px;
+}
+
+.toc-title {
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--fg-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  margin-bottom: 12px;
+}
+
+.toc-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px 16px;
+}
+
+.toc-links a {
+  color: var(--fg-secondary);
+  text-decoration: none;
+  font-size: 14px;
+}
+.toc-links a:hover { color: var(--accent); }
+
+.footer {
+  text-align: center;
+  color: var(--fg-muted);
+  font-size: 12px;
+  padding: 48px 0 24px;
+  border-top: 1px solid var(--border);
+  margin-top: 48px;
+}
+
+@media (max-width: 600px) {
+  body { padding: 24px 16px; }
+  h1 { font-size: 24px; }
+  .industry-nav { flex-direction: column; }
+  .industry-nav a { text-align: center; }
+}
+</style>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+<a href="index.html" class="back-link">← Back to Dashboard</a>
+
+<h1>Sales Pitch Guide</h1>
+<p class="subtitle">For sales team education | March 2026</p>
+
+<!-- TOC -->
+<div class="toc">
+  <div class="toc-title">Quick Jump</div>
+  <div class="toc-links">
+    <a href="#pitch">The Pitch</a>
+    <span style="color: var(--border);">•</span>
+    <a href="#problem">Problem</a>
+    <span style="color: var(--border);">•</span>
+    <a href="#pricing">Pricing</a>
+    <span style="color: var(--border);">•</span>
+    <a href="#target">Target Customer</a>
+    <span style="color: var(--border);">•</span>
+    <a href="#differentiators">Differentiators</a>
+    <span style="color: var(--border);">•</span>
+    <a href="#objections">Objections</a>
+    <span style="color: var(--border);">•</span>
+    <a href="#industries">By Industry</a>
+    <span style="color: var(--border);">•</span>
+    <a href="#close">The Close</a>
+  </div>
+</div>
+
+<!-- THE ONE-LINER -->
+<h2 id="pitch">The Pitch</h2>
+
+<h3>One-Liner</h3>
+<div class="highlight-card">
+  <p style="font-size: 18px; font-weight: 600; text-align: center;">"We install AI that runs your business operations — and we manage it for you."</p>
+</div>
+
+<h3>30-Second Pitch</h3>
+<div class="pitch-box">
+  "Most businesses know AI can help, but they don't have time to figure it out — and they've been burned by tools that don't actually do anything.<br><br>
+  Tend is different. We come in, identify your highest-value workflow — usually lead response, scheduling, or follow-ups — and we build a real AI system that handles it. Not a chatbot. An actual operator that connects to your email, calendar, CRM, whatever you use.<br><br>
+  We set it up, we run it, we fix it when it breaks. You just see the results.<br><br>
+  It's $5K to set up, $2K/month to run. Most clients see ROI in the first 30 days."
+</div>
+
+<!-- THE PROBLEM -->
+<h2 id="problem">The Problem We Solve</h2>
+
+<div class="card">
+  <p style="font-size: 15px; margin-bottom: 16px;"><strong>Businesses are drowning in operational work:</strong></p>
+  <ul>
+    <li>3+ hours/day on emails, scheduling, follow-ups</li>
+    <li>Leads going cold because response time is too slow</li>
+    <li>Can't afford (or trust) more staff</li>
+    <li>Tried AI tools — they didn't stick</li>
+  </ul>
+  <p style="margin-top: 16px; font-size: 14px; color: var(--fg-secondary);"><strong>The real gap:</strong> It's not technology. It's implementation. Businesses don't need another tool — they need someone to make AI actually work inside their operations.</p>
+</div>
+
+<!-- PRICING -->
+<h2 id="pricing">Pricing</h2>
+
+<table class="table">
+  <thead>
+    <tr><th>Item</th><th>Amount</th></tr>
+  </thead>
+  <tbody>
+    <tr><td>Setup fee</td><td><strong>$5,000</strong></td></tr>
+    <tr><td>Monthly service</td><td><strong>$2,000/mo</strong></td></tr>
+    <tr><td>Day one payment</td><td>$7,000 (setup + month 1)</td></tr>
+    <tr><td>Minimum commitment</td><td>3 months</td></tr>
+    <tr><td><strong>Minimum deal value</strong></td><td><strong>$11,000</strong></td></tr>
+  </tbody>
+</table>
+
+<p style="font-size: 14px; color: var(--fg-secondary); margin-top: 12px;"><strong>After 3 months:</strong> Cancel anytime with 30 days notice. The integration keeps running — they own what they paid for.</p>
+
+<!-- TARGET CUSTOMER -->
+<h2 id="target">Target Customer</h2>
+
+<div class="card">
+  <h3 style="margin-top: 0;">Ideal Fit ✅</h3>
+  <ul>
+    <li>$5M–$100M revenue</li>
+    <li>Founder, owner, or head of ops</li>
+    <li>Clear operational pain (leads, scheduling, follow-ups)</li>
+    <li>Budget to solve it ($11K isn't a big decision)</li>
+    <li>Already tried some automation, hitting limits</li>
+  </ul>
+</div>
+
+<div class="card">
+  <h3 style="margin-top: 0;">Not a Fit ❌</h3>
+  <ul>
+    <li>Tiny businesses without budget</li>
+    <li>Enterprises with 6-month procurement</li>
+    <li>Anyone wanting "magic" without process change</li>
+  </ul>
+</div>
+
+<div class="card">
+  <h3 style="margin-top: 0;">Best Industries</h3>
+  <table class="table" style="margin: 0;">
+    <tbody>
+      <tr><td><strong>HVAC / Trades</strong></td><td>Missed calls = lost jobs</td></tr>
+      <tr><td><strong>Dental / Medical</strong></td><td>No-shows, admin overload</td></tr>
+      <tr><td><strong>Legal / Professional</strong></td><td>Slow intake, follow-up bottleneck</td></tr>
+      <tr><td><strong>Real Estate</strong></td><td>Lead volume overwhelm</td></tr>
+      <tr><td><strong>Local Services</strong></td><td>One-person show, no bandwidth</td></tr>
+    </tbody>
+  </table>
+</div>
+
+<!-- DIFFERENTIATORS -->
+<h2 id="differentiators">Key Differentiators</h2>
+
+<table class="table">
+  <thead>
+    <tr><th>Others</th><th>Tend</th></tr>
+  </thead>
+  <tbody>
+    <tr><td>Sell you a tool</td><td><strong>Build you a system</strong></td></tr>
+    <tr><td>You configure it</td><td><strong>We run it</strong></td></tr>
+    <tr><td>Chat widget</td><td><strong>Real workflow integration</strong></td></tr>
+    <tr><td>One-time setup</td><td><strong>Ongoing managed service</strong></td></tr>
+    <tr><td>Enterprise pricing</td><td><strong>SMB accessible</strong></td></tr>
+  </tbody>
+</table>
+
+<div class="highlight-card">
+  <p style="text-align: center; font-size: 15px;">"We're not a chatbot shop. We're not an enterprise consulting firm. We're a managed AI service that actually runs."</p>
+</div>
+
+<!-- GENERAL OBJECTIONS -->
+<h2 id="objections">Objection Handling — General</h2>
+
+<div class="objection">
+  <div class="objection-q">"Why can't I just use ChatGPT?"</div>
+  <div class="objection-a">You can. But having a tool isn't the same as having a system. ChatGPT doesn't connect to your CRM, respond to leads at 2am, or know your escalation rules. We build the system that does.</div>
+</div>
+
+<div class="objection">
+  <div class="objection-q">"Will AI replace my employees?"</div>
+  <div class="objection-a">No — this is employee amplification, not replacement. Your team focuses on high-value work. The AI handles the repetitive stuff they hate anyway.</div>
+</div>
+
+<div class="objection">
+  <div class="objection-q">"What if it makes mistakes?"</div>
+  <div class="objection-a">It will, at first. That's why we have human-in-the-loop checkpoints for anything high-stakes. And we're monitoring and tuning constantly. Mistakes get caught and fixed fast.</div>
+</div>
+
+<div class="objection">
+  <div class="objection-q">"Is my data safe?"</div>
+  <div class="objection-a">Yes. Scoped permissions — the AI only touches what it needs. We don't train on your data. Actions are logged and auditable. You own everything.</div>
+</div>
+
+<div class="objection">
+  <div class="objection-q">"I'm not technical. Can I use this?"</div>
+  <div class="objection-a">That's the whole point. We handle the tech. You describe how your business works. We make it happen.</div>
+</div>
+
+<div class="objection">
+  <div class="objection-q">"This seems expensive."</div>
+  <div class="objection-a">Compare it to hiring. A full-time admin is $40K+ with benefits, works 40 hours/week, calls in sick. Tend is $24K/year, works 24/7, never misses a lead. The math works.</div>
+</div>
+
+<div class="objection">
+  <div class="objection-q">"I've tried AI tools before and they didn't work."</div>
+  <div class="objection-a">Most AI tools are self-serve — you're on your own to figure it out. We're the opposite. We build it, we run it, we fix it. You just see the results.</div>
+</div>
+
+<!-- INDUSTRY OBJECTIONS -->
+<h2 id="industries">Industry-Specific Objections</h2>
+
+<div class="industry-nav">
+  <a href="#real-estate">🏠 Real Estate</a>
+  <a href="#office">🏢 Office</a>
+  <a href="#dental">🦷 Dental</a>
+  <a href="#ortho">🦷 Orthodontist</a>
+  <a href="#compliance">⚖️ Compliance</a>
+</div>
+
+<!-- REAL ESTATE -->
+<h3 id="real-estate">🏠 Real Estate</h3>
+
+<div class="objection">
+  <div class="objection-q">"My leads need a personal touch — AI will feel cold."</div>
+  <div class="objection-a">We're not replacing your relationship-building. We're making sure no lead goes cold while you're at a showing. The AI responds instantly, qualifies interest, and books a call with you. By the time you talk to them, they're already warm. You bring the personal touch — we make sure you get the chance to.</div>
+</div>
+
+<div class="objection">
+  <div class="objection-q">"I already have a CRM that does follow-ups."</div>
+  <div class="objection-a">CRMs send automated emails. Ours actually reads responses, answers questions, and knows when to escalate to you. It's the difference between a drip campaign and a conversation. Which one would you respond to?</div>
+</div>
+
+<div class="objection">
+  <div class="objection-q">"What about my IDX listings and showing schedules?"</div>
+  <div class="objection-a">We integrate directly. When a lead asks about a property, it pulls live listing data. When they want a showing, it checks your calendar and books it. No copy-paste, no double-booking.</div>
+</div>
+
+<div class="objection">
+  <div class="objection-q">"My brokerage has compliance rules about communication."</div>
+  <div class="objection-a">We build in approval gates. Anything that needs broker sign-off gets flagged before it sends. All communications are logged and auditable. Your compliance officer will love the paper trail.</div>
+</div>
+
+<!-- OFFICE -->
+<h3 id="office">🏢 Office / Professional Services</h3>
+
+<div class="objection">
+  <div class="objection-q">"We have complex services — AI can't explain what we do."</div>
+  <div class="objection-a">You're right that your services are nuanced. But most inbound leads ask the same 10 questions. We train the AI on your specific answers, your tone, your language. Complex questions get escalated to your team — but the routine ones get handled instantly.</div>
+</div>
+
+<div class="objection">
+  <div class="objection-q">"Our clients expect to talk to a human."</div>
+  <div class="objection-a">They will. The AI handles the first response, qualifies the inquiry, and books the call. By the time they're on the phone with you, they've already been taken care of. Most clients don't know — they just know they got a fast, helpful response.</div>
+</div>
+
+<div class="objection">
+  <div class="objection-q">"We bill by the hour — how does this save us money?"</div>
+  <div class="objection-a">How many hours does your team spend on scheduling, intake forms, and follow-up emails? That's billable time going to admin work. Free that up, and your team can bill more hours on actual client work.</div>
+</div>
+
+<div class="objection">
+  <div class="objection-q">"What about confidential client information?"</div>
+  <div class="objection-a">Scoped access. The AI only sees what it needs to do its job. Nothing gets stored outside your existing systems. We're SOC 2 aware in our practices and can walk through our security approach with your IT.</div>
+</div>
+
+<!-- DENTAL -->
+<h3 id="dental">🦷 Dental</h3>
+
+<div class="objection">
+  <div class="objection-q">"Patient trust is everything — I can't automate that."</div>
+  <div class="objection-a">We're not automating patient care. We're automating the 47 reminder calls your front desk makes every day. We're making sure new patient inquiries get a response in 60 seconds instead of 6 hours. Your team does the care — we handle the coordination.</div>
+</div>
+
+<div class="objection">
+  <div class="objection-q">"What about HIPAA?"</div>
+  <div class="objection-a">Everything we build is HIPAA-aware. We don't store PHI outside your existing systems. Communications are logged in your practice management software. We can walk through the technical controls with your compliance officer.</div>
+</div>
+
+<div class="objection">
+  <div class="objection-q">"My front desk handles this fine."</div>
+  <div class="objection-a">How many hours a day? Most dental offices spend 3-4 hours just on confirmations, rescheduling, and follow-ups. What if your front desk could spend that time on patient experience instead? That's the trade-off.</div>
+</div>
+
+<div class="objection">
+  <div class="objection-q">"What if it books the wrong appointment type?"</div>
+  <div class="objection-a">We build your booking rules into the system. New patient vs. cleaning vs. emergency — different availability, different prep. And anything unclear gets flagged for your team instead of auto-booked. You stay in control.</div>
+</div>
+
+<div class="objection">
+  <div class="objection-q">"We already use [Dentrix/Eaglesoft/Open Dental]."</div>
+  <div class="objection-a">We integrate with your existing system. We're not replacing your PMS — we're adding an intelligent layer on top that handles the communication your staff doesn't have time for.</div>
+</div>
+
+<!-- ORTHO -->
+<h3 id="ortho">🦷 Orthodontist</h3>
+
+<div class="objection">
+  <div class="objection-q">"Our treatment plans are long-term — AI can't manage that relationship."</div>
+  <div class="objection-a">Exactly why you need this. A 24-month treatment plan means 24 months of appointment reminders, retainer check-ins, and payment follow-ups. That's thousands of touchpoints per patient. We automate the routine ones so your team can focus on the in-office experience.</div>
+</div>
+
+<div class="objection">
+  <div class="objection-q">"Parents are the decision-makers, not the patients."</div>
+  <div class="objection-a">We know. The AI communicates with whoever is the primary contact — usually mom or dad. Different tone, different concerns. We tailor the messaging for parent communication: treatment progress, appointment reminders, payment plans.</div>
+</div>
+
+<div class="objection">
+  <div class="objection-q">"What about treatment progress updates?"</div>
+  <div class="objection-a">We can pull from your imaging software and send milestone updates: 'Here's where we started, here's where we are.' Parents love seeing progress. It reduces 'is this working?' calls and builds confidence in the treatment.</div>
+</div>
+
+<div class="objection">
+  <div class="objection-q">"Ortho is competitive in our area — I need to stand out."</div>
+  <div class="objection-a">Speed is a differentiator. When a parent inquires about braces, they're usually contacting 3-4 offices. The one that responds fastest and most helpfully wins. We make sure that's you — every time.</div>
+</div>
+
+<!-- COMPLIANCE -->
+<h3 id="compliance">⚖️ Compliance / Regulated Industries</h3>
+
+<div class="objection">
+  <div class="objection-q">"We're in a highly regulated industry — AI is risky."</div>
+  <div class="objection-a">That's why you need managed AI, not DIY tools. We build in approval gates, audit trails, and human checkpoints. Nothing goes out without proper oversight. You get the efficiency of AI with the control your regulators expect.</div>
+</div>
+
+<div class="objection">
+  <div class="objection-q">"Our legal team will never approve this."</div>
+  <div class="objection-a">We've worked with legal teams before. Everything is logged, every action is auditable, data stays in your systems. We'll provide documentation for your legal review and adjust controls to meet their requirements. Most legal teams are surprised how buttoned-up it is.</div>
+</div>
+
+<div class="objection">
+  <div class="objection-q">"What about record retention requirements?"</div>
+  <div class="objection-a">All communications are logged in your existing systems of record. We don't create shadow databases. Your retention policies stay intact — we just make the work happen faster.</div>
+</div>
+
+<div class="objection">
+  <div class="objection-q">"We have specific disclosure requirements in our communications."</div>
+  <div class="objection-a">We build those in. Required disclosures, compliance language, industry-specific disclaimers — they're part of the system from day one. We review them with your compliance team before go-live.</div>
+</div>
+
+<div class="objection">
+  <div class="objection-q">"If something goes wrong, who's liable?"</div>
+  <div class="objection-a">You maintain control over approvals and final sign-off on any high-stakes communication. We provide the system, monitoring, and support — but we're not making decisions that require your professional judgment. The AI handles the operational work; your licensed professionals handle the regulated decisions.</div>
+</div>
+
+<div class="objection">
+  <div class="objection-q">"How do we explain this to auditors?"</div>
+  <div class="objection-a">Clear documentation: what the AI does, what it doesn't, where human oversight happens, and full audit logs of every action. Auditors actually like this — it's more consistent and better documented than manual processes.</div>
+</div>
+
+<!-- THE CLOSE -->
+<h2 id="close">The Close</h2>
+
+<h3>Trial Close</h3>
+<div class="pitch-box">
+  "Based on what you've told me, it sounds like [lead response / scheduling / follow-up] is costing you the most time. If we could get that running automatically in the next 2 weeks, what would that free you up to do?"
+</div>
+
+<h3>Next Step</h3>
+<div class="pitch-box">
+  "Here's what I'd suggest: Let's book a 15-minute discovery call. I'll ask a few questions about your current workflow, and we'll see if there's a fit. If there is, we can have you live within 2 weeks. If not, no pressure — at least you'll know your options."
+</div>
+
+<h3>Urgency (Light)</h3>
+<div class="pitch-box">
+  "We're only taking on a handful of new clients this month — we want to make sure everyone gets full attention during onboarding. If the timing works, let's lock in a slot."
+</div>
+
+<h3>Sample Cold Outreach</h3>
+<div class="card">
+  <h4 style="margin-top: 0;">Email/DM</h4>
+  <p style="font-size: 14px; color: var(--fg-secondary); line-height: 1.7;">
+    "Hey [Name] — quick question: how long does it take your team to respond to a new lead?<br><br>
+    Asking because we help [industry] businesses cut that to under 60 seconds using AI that actually integrates with their tools (not a chatbot).<br><br>
+    We handle all the setup and run it for you. Most clients are live in 2 weeks.<br><br>
+    Worth a 15-min call to see if it fits? [cal.com link]"
+  </p>
+</div>
+
+<div class="card">
+  <h4 style="margin-top: 0;">Follow-up</h4>
+  <p style="font-size: 14px; color: var(--fg-secondary); line-height: 1.7;">
+    "Following up — we just helped a [similar business] go from 3-hour lead response to 12 seconds. Happy to share how if useful."
+  </p>
+</div>
+
+<!-- FOOTER -->
+<div class="footer">
+  <p><strong>Tend</strong> — Managed AI operators for business workflows</p>
+  <p style="margin-top: 8px;">A Kyros project · March 2026</p>
+</div>
+
+</body>
+</html>

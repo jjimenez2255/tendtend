@@ -1,0 +1,662 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Tend — Business Overview | Kyros</title>
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+:root {
+  --bg: #FAFAF8;
+  --surface: #FFFFFF;
+  --border: rgba(0,0,0,0.08);
+  --fg: #1A1A1A;
+  --fg-secondary: #5A5A5A;
+  --fg-muted: #8A8A8A;
+  --accent: #5B8A6C;
+  --accent-soft: rgba(91,138,108,0.08);
+  --green: #1DB954;
+  --orange: #f59e0b;
+  --purple: #8b5cf6;
+  --slate: #4A5C6B;
+}
+
+body {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  background: var(--bg);
+  color: var(--fg);
+  line-height: 1.6;
+  padding: 48px 24px;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 8px;
+}
+
+.logo-mark {
+  width: 40px;
+  height: 40px;
+  color: var(--fg);
+}
+
+h1 { font-size: 32px; font-weight: 700; letter-spacing: -0.5px; }
+.subtitle { color: var(--fg-muted); font-size: 14px; margin-bottom: 32px; }
+
+.quick-links {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 12px;
+  margin-bottom: 40px;
+}
+
+.quick-link {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 20px;
+  text-decoration: none;
+  text-align: center;
+  transition: all 0.2s;
+}
+
+.quick-link:hover { border-color: var(--accent); }
+.quick-link-icon { font-size: 24px; margin-bottom: 8px; }
+.quick-link-title { font-size: 15px; font-weight: 600; color: var(--fg); }
+.quick-link-desc { font-size: 12px; color: var(--fg-muted); }
+
+h2 {
+  font-size: 20px;
+  font-weight: 600;
+  margin: 48px 0 20px;
+  padding-bottom: 12px;
+  border-bottom: 1px solid var(--border);
+}
+
+h3 {
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--fg-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  margin: 32px 0 16px;
+}
+
+.card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 24px;
+  margin-bottom: 16px;
+}
+
+.highlight-card {
+  background: var(--accent-soft);
+  border: 1px solid rgba(91,138,108,0.2);
+  border-radius: 12px;
+  padding: 24px;
+  margin: 24px 0;
+}
+
+.highlight-card p { margin: 0; font-size: 15px; line-height: 1.7; }
+
+.list { list-style: none; }
+.list li {
+  padding: 12px 0;
+  border-bottom: 1px solid var(--border);
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 16px;
+}
+.list li:last-child { border-bottom: none; }
+.list-label { color: var(--fg-muted); font-size: 14px; flex-shrink: 0; }
+.list-value { font-weight: 500; text-align: right; }
+
+.table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 14px;
+  margin: 16px 0;
+}
+.table th, .table td {
+  text-align: left;
+  padding: 14px 12px;
+  border-bottom: 1px solid var(--border);
+}
+.table th { 
+  color: var(--fg-muted); 
+  font-weight: 500; 
+  font-size: 12px; 
+  text-transform: uppercase; 
+  letter-spacing: 0.5px; 
+}
+
+.tag {
+  display: inline-block;
+  padding: 4px 12px;
+  border-radius: 100px;
+  font-size: 12px;
+  font-weight: 500;
+}
+.tag-green { background: rgba(29,185,84,0.1); color: var(--green); }
+.tag-orange { background: rgba(245,158,11,0.1); color: var(--orange); }
+.tag-purple { background: rgba(139,92,246,0.1); color: var(--purple); }
+
+ol, ul { padding-left: 24px; margin: 16px 0; }
+li { margin-bottom: 10px; color: var(--fg-secondary); }
+li strong { color: var(--fg); }
+
+.pricing-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 16px;
+  margin: 24px 0;
+}
+
+.pricing-card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 24px;
+}
+
+.pricing-label { font-size: 12px; color: var(--fg-muted); text-transform: uppercase; letter-spacing: 0.5px; }
+.pricing-amount { font-size: 28px; font-weight: 700; margin: 8px 0; }
+.pricing-note { font-size: 13px; color: var(--fg-secondary); }
+
+.status-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 12px;
+  margin: 16px 0;
+}
+
+.status-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 14px;
+}
+
+.status-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--green);
+}
+
+.status-dot.pending { background: var(--orange); }
+
+.footer {
+  text-align: center;
+  color: var(--fg-muted);
+  font-size: 12px;
+  padding: 48px 0 24px;
+  border-top: 1px solid var(--border);
+  margin-top: 48px;
+}
+
+@media (max-width: 600px) {
+  body { padding: 24px 16px; }
+  .quick-links { grid-template-columns: 1fr; }
+  .pricing-grid { grid-template-columns: 1fr; }
+  .status-grid { grid-template-columns: 1fr; }
+  h1 { font-size: 24px; }
+}
+</style>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+<div class="header">
+  <svg class="logo-mark" viewBox="0 0 100 100">
+    <rect x="5" y="12" width="90" height="18" fill="currentColor"/>
+    <rect x="5" y="40" width="90" height="18" fill="currentColor"/>
+    <rect x="30" y="68" width="40" height="30" fill="currentColor"/>
+  </svg>
+  <h1>Tend</h1>
+</div>
+<p class="subtitle">Business Overview — March 2026 | A Kyros Project</p>
+
+<!-- Quick Links -->
+<div class="quick-links" style="grid-template-columns: repeat(5, 1fr);">
+  <a href="https://tend.team" target="_blank" class="quick-link">
+    <div class="quick-link-icon">🌐</div>
+    <div class="quick-link-title">tend.team</div>
+    <div class="quick-link-desc">Live Website</div>
+  </a>
+  <a href="sales.html" class="quick-link" style="border-color: var(--green);">
+    <div class="quick-link-icon">💰</div>
+    <div class="quick-link-title">Sales Pitch</div>
+    <div class="quick-link-desc">Scripts & Objections</div>
+  </a>
+  <a href="https://cal.com/clawdbotdfw/tend" target="_blank" class="quick-link">
+    <div class="quick-link-icon">📅</div>
+    <div class="quick-link-title">Book Discovery</div>
+    <div class="quick-link-desc">Cal.com Intake</div>
+  </a>
+  <a href="#analytics" class="quick-link">
+    <div class="quick-link-icon">📊</div>
+    <div class="quick-link-title">Analytics</div>
+    <div class="quick-link-desc">Google • Meta • Clarity</div>
+  </a>
+  <a href="#gtm" class="quick-link">
+    <div class="quick-link-icon">🚀</div>
+    <div class="quick-link-title">GTM Strategy</div>
+    <div class="quick-link-desc">Ads • Billboards • Local</div>
+  </a>
+</div>
+
+<!-- Table of Contents -->
+<div class="card" style="margin-bottom: 40px; padding: 20px 24px;">
+  <div style="font-size: 12px; font-weight: 600; color: var(--fg-muted); text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 12px;">Table of Contents</div>
+  <div style="display: flex; flex-wrap: wrap; gap: 8px 16px;">
+    <a href="#what" style="color: var(--fg-secondary); text-decoration: none; font-size: 14px;">What Tend Is</a>
+    <span style="color: var(--border);">•</span>
+    <a href="#problem" style="color: var(--fg-secondary); text-decoration: none; font-size: 14px;">Problem</a>
+    <span style="color: var(--border);">•</span>
+    <a href="#offer" style="color: var(--fg-secondary); text-decoration: none; font-size: 14px;">What We Sell</a>
+    <span style="color: var(--border);">•</span>
+    <a href="#pricing" style="color: var(--fg-secondary); text-decoration: none; font-size: 14px;">Pricing</a>
+    <span style="color: var(--border);">•</span>
+    <a href="#delivery" style="color: var(--fg-secondary); text-decoration: none; font-size: 14px;">Delivery</a>
+    <span style="color: var(--border);">•</span>
+    <a href="#market" style="color: var(--fg-secondary); text-decoration: none; font-size: 14px;">Target Market</a>
+    <span style="color: var(--border);">•</span>
+    <a href="#usecases" style="color: var(--fg-secondary); text-decoration: none; font-size: 14px;">Use Cases</a>
+    <span style="color: var(--border);">•</span>
+    <a href="#revenue" style="color: var(--fg-secondary); text-decoration: none; font-size: 14px;">Revenue Strategy</a>
+    <span style="color: var(--border);">•</span>
+    <a href="#competitive" style="color: var(--fg-secondary); text-decoration: none; font-size: 14px;">Competitive</a>
+    <span style="color: var(--border);">•</span>
+    <a href="#trust" style="color: var(--fg-secondary); text-decoration: none; font-size: 14px;">Trust & Control</a>
+    <span style="color: var(--border);">•</span>
+    <a href="#status" style="color: var(--fg-secondary); text-decoration: none; font-size: 14px;">Status</a>
+    <span style="color: var(--border);">•</span>
+    <a href="#analytics" style="color: var(--fg-secondary); text-decoration: none; font-size: 14px;">Analytics</a>
+    <span style="color: var(--border);">•</span>
+    <a href="#gtm" style="color: var(--fg-secondary); text-decoration: none; font-size: 14px;">GTM Strategy</a>
+    <span style="color: var(--border);">•</span>
+    <a href="#team" style="color: var(--fg-secondary); text-decoration: none; font-size: 14px;">Team</a>
+  </div>
+</div>
+
+<!-- WHAT TEND IS -->
+<h2 id="what">What Tend Is</h2>
+
+<div class="highlight-card">
+  <p><strong>We integrate AI into the workflows that run your business.</strong></p>
+  <p style="margin-top: 12px;">Not a chatbot. Not a tool you configure once and forget. Tend maps your existing workflows, builds the AI integrations that make them faster and more reliable, and manages them as your business evolves.</p>
+</div>
+
+<div class="card">
+  <h3 style="margin-top: 0;">The Positioning</h3>
+  <ul class="list">
+    <li><span class="list-label">What we are</span><span class="list-value">Managed AI integration service</span></li>
+    <li><span class="list-label">What we're not</span><span class="list-value">Chatbots, dashboards, or DIY tools</span></li>
+    <li><span class="list-label">How we're different</span><span class="list-value">We build, run, and maintain it for you</span></li>
+    <li><span class="list-label">Parent company</span><span class="list-value">Kyros</span></li>
+  </ul>
+</div>
+
+<!-- THE PROBLEM -->
+<h2 id="problem">The Problem We Solve</h2>
+
+<div class="card">
+  <p style="font-size: 15px; line-height: 1.7; margin-bottom: 16px;">Most businesses know AI can help. Few know how to deploy it safely inside real workflows.</p>
+  <p style="font-size: 15px; line-height: 1.7; margin-bottom: 16px;">The gap is not technology. The gap is <strong>implementation</strong>: scoping the right workflow, setting up proper controls, connecting to existing tools, and keeping it running reliably over time.</p>
+  <p style="font-size: 15px; line-height: 1.7;">That gap is expensive. Teams either waste months experimenting or overpay for enterprise solutions they don't need yet.</p>
+</div>
+
+<!-- WHAT WE SELL -->
+<h2 id="offer">What We Sell</h2>
+
+<h3>Entry Offer: One Agent, One Workflow, Managed</h3>
+<div class="card">
+  <p style="margin-bottom: 16px; font-size: 15px;">We start with a single, tightly scoped deployment:</p>
+  <ol>
+    <li><strong>Discovery:</strong> Identify the highest-value workflow to automate</li>
+    <li><strong>Design:</strong> Map permissions, escalation logic, and success criteria</li>
+    <li><strong>Deploy:</strong> Build and launch the operator in the client's environment</li>
+    <li><strong>Run:</strong> Monitor, tune, and support on an ongoing basis</li>
+  </ol>
+  <p style="margin-top: 16px; font-size: 14px; color: var(--fg-secondary);">This is intentionally narrow. One workflow, proven ROI, then expand.</p>
+</div>
+
+<h3>Expansion: Multi-Agent Systems</h3>
+<div class="card">
+  <p style="margin-bottom: 16px; font-size: 15px;">Once the first agent proves value, we layer in additional operators:</p>
+  <ul>
+    <li>Orchestrator coordinating specialist agents</li>
+    <li>Cross-workflow automation</li>
+    <li>Broader tool integrations</li>
+    <li>Higher support tiers</li>
+  </ul>
+  <p style="margin-top: 16px; font-size: 14px; color: var(--fg-secondary);">We earn the right to expand. We don't sell complexity upfront.</p>
+</div>
+
+<!-- COMMERCIAL STRUCTURE -->
+<h2 id="pricing">Commercial Structure</h2>
+
+<div class="pricing-grid">
+  <div class="pricing-card">
+    <div class="pricing-label">Setup Fee</div>
+    <div class="pricing-amount">$5,000</div>
+    <div class="pricing-note">Discovery, workflow mapping, permissions design, context setup, testing, integration, and launch</div>
+  </div>
+  <div class="pricing-card">
+    <div class="pricing-label">Monthly Service</div>
+    <div class="pricing-amount">$2,000<span style="font-size: 16px; font-weight: 400;">/mo</span></div>
+    <div class="pricing-note">Monitoring, tuning, support, exception handling, and performance reviews</div>
+  </div>
+</div>
+
+<div class="card">
+  <h3 style="margin-top: 0;">Deal Structure</h3>
+  <ul class="list">
+    <li><span class="list-label">Day one payment</span><span class="list-value">$7,000 (setup + month 1)</span></li>
+    <li><span class="list-label">Minimum contract</span><span class="list-value">3 months</span></li>
+    <li><span class="list-label">Minimum total deal</span><span class="list-value">$11,000</span></li>
+    <li><span class="list-label">After minimum</span><span class="list-value">Cancel with 30 days notice</span></li>
+  </ul>
+</div>
+
+<!-- DELIVERY METHODOLOGY -->
+<h2 id="delivery">Delivery Methodology</h2>
+
+<div class="card">
+  <ol>
+    <li><strong>Select the workflow</strong> — Find the pain point with clear inputs, outputs, and enough value to justify the investment.</li>
+    <li><strong>Scope the operator</strong> — Define what it does, what it doesn't, what tools it touches, and what needs human approval.</li>
+    <li><strong>Deploy the system</strong> — Set up the channel, context, integrations, permissions, and operating rules.</li>
+    <li><strong>Run with oversight</strong> — Monitor, support, tune, and handle exceptions. Monthly review loops with the client.</li>
+    <li><strong>Expand after proof</strong> — Add scope, specialist operators, and orchestration once the first deployment has demonstrated clear value.</li>
+  </ol>
+</div>
+
+<!-- TARGET MARKET -->
+<h2 id="market">Target Market</h2>
+
+<h3>Ideal Clients</h3>
+<div class="card">
+  <ul>
+    <li>Small to mid-market businesses ($5M–$100M revenue)</li>
+    <li>Teams with clear operational pain and budget to solve it</li>
+    <li>Founders, heads of ops, and overloaded operational leaders</li>
+    <li>Businesses already using some automation but hitting limits</li>
+  </ul>
+</div>
+
+<h3>Not Targeting (For Now)</h3>
+<div class="card">
+  <ul>
+    <li>Tiny businesses without meaningful budget</li>
+    <li>Large enterprises with 6+ month procurement cycles</li>
+    <li>Anyone looking for magic instead of operational leverage</li>
+  </ul>
+</div>
+
+<!-- USE CASES -->
+<h2 id="usecases">Use Cases</h2>
+
+<table class="table">
+  <thead>
+    <tr><th>Workflow</th><th>What It Does</th></tr>
+  </thead>
+  <tbody>
+    <tr><td><strong>Inbound lead qualification</strong></td><td>Qualify, score, and route incoming leads before they reach the sales team</td></tr>
+    <tr><td><strong>Meeting prep and follow-up</strong></td><td>Research, brief, summarize, and track action items automatically</td></tr>
+    <tr><td><strong>Support triage</strong></td><td>Categorize, prioritize, and route customer issues with escalation logic</td></tr>
+    <tr><td><strong>Internal ops coordination</strong></td><td>Status synthesis, reporting, and cross-team communication</td></tr>
+    <tr><td><strong>CRM and admin handling</strong></td><td>Data entry, record updates, and routine administrative processes</td></tr>
+  </tbody>
+</table>
+
+<!-- REVENUE STRATEGY -->
+<h2 id="revenue">Revenue Strategy</h2>
+
+<div class="highlight-card" style="background: rgba(139,92,246,0.06); border-color: rgba(139,92,246,0.2);">
+  <p><strong>The real opportunity isn't the $11K entry deals.</strong></p>
+  <p style="margin-top: 12px;">Tend is a <strong>MOAT</strong> — a wedge into larger consulting relationships. The managed AI operator proves value, builds trust, and opens the door to enterprise-scale engagements.</p>
+</div>
+
+<div class="card">
+  <h3 style="margin-top: 0;">The Flywheel</h3>
+  <ol>
+    <li><strong>Entry deal ($11K min)</strong> — Single workflow, low risk, fast proof of value</li>
+    <li><strong>Expansion ($2K+/mo ongoing)</strong> — Multi-agent systems, broader automation</li>
+    <li><strong>Enterprise consulting ($50K-$500K+)</strong> — Full AI transformation, custom builds, strategic advisory</li>
+  </ol>
+  <p style="margin-top: 16px; font-size: 14px; color: var(--fg-secondary);">Every Tend client is a warm lead for Kyros consulting. The entry offer de-risks the relationship and demonstrates capability before the big ask.</p>
+</div>
+
+<div class="card">
+  <h3 style="margin-top: 0;">Why This Works</h3>
+  <ul>
+    <li><strong>Trust is earned, not pitched</strong> — Clients see results before committing to larger engagements</li>
+    <li><strong>Land and expand</strong> — Small deal → proven value → budget unlocks for bigger projects</li>
+    <li><strong>Pipeline building</strong> — Every $11K deal is a potential $100K+ consulting relationship</li>
+    <li><strong>Competitive moat</strong> — Ongoing managed service creates switching costs and deep client knowledge</li>
+  </ul>
+</div>
+
+<!-- COMPETITIVE POSITION -->
+<h2 id="competitive">Competitive Position</h2>
+
+<div class="highlight-card">
+  <p>Most AI consultancies sell one of two things: <strong>generic chatbot deployments</strong> or <strong>bloated enterprise transformation programs</strong>.</p>
+  <p style="margin-top: 12px;">Tend sits in the middle.</p>
+</div>
+
+<div class="card">
+  <ul>
+    <li><strong>More operational than chatbot shops</strong> — We deploy into real workflows with real permissions, not just customer-facing chat windows</li>
+    <li><strong>More accessible than enterprise AI firms</strong> — No 6-figure contracts, no 6-month timelines, no procurement theater</li>
+    <li><strong>Managed, not abandoned</strong> — We don't build and walk away. Ongoing operation is the business model</li>
+  </ul>
+  <p style="margin-top: 16px; font-size: 14px; color: var(--fg-secondary);">The moat is execution speed and operational depth, not proprietary technology.</p>
+</div>
+
+<!-- TRUST AND CONTROL -->
+<h2 id="trust">Trust and Control</h2>
+
+<div class="card">
+  <p style="margin-bottom: 16px; font-size: 15px;">Every deployment includes:</p>
+  <ul>
+    <li><strong>Scoped access</strong> — Operators only touch what they're authorized to touch</li>
+    <li><strong>Approval gates</strong> — High-stakes actions require human sign-off</li>
+    <li><strong>Human oversight</strong> — Monitoring and exception handling are built into the service</li>
+    <li><strong>Audit-friendly operations</strong> — Actions are logged and reviewable</li>
+    <li><strong>Managed deployment</strong> — Tend operates and maintains the system</li>
+  </ul>
+  <p style="margin-top: 16px; font-size: 14px; color: var(--fg-secondary);">We are intentionally conservative about claims. We do not promise enterprise compliance certification or fully autonomous operations.</p>
+</div>
+
+<!-- CURRENT STATUS -->
+<h2 id="status">Current Status</h2>
+
+<div class="card">
+  <div class="status-grid">
+    <div class="status-item"><span class="status-dot"></span> Landing page deployed</div>
+    <div class="status-item"><span class="status-dot"></span> Intake form live</div>
+    <div class="status-item"><span class="status-dot"></span> Pricing finalized</div>
+    <div class="status-item"><span class="status-dot"></span> Delivery methodology documented</div>
+    <div class="status-item"><span class="status-dot"></span> Google Ads running</div>
+    <div class="status-item"><span class="status-dot"></span> Analytics tracking active</div>
+  </div>
+</div>
+
+<!-- ANALYTICS -->
+<h2 id="analytics">Analytics & Performance</h2>
+
+<h3>Quick Access</h3>
+<div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; margin-bottom: 24px;">
+  <a href="https://ads.google.com/aw/overview?ocid=1727465638" target="_blank" class="card" style="text-decoration: none; text-align: center; padding: 20px;">
+    <div style="font-size: 28px; margin-bottom: 8px;">🔵</div>
+    <div style="font-weight: 600; color: var(--fg);">Google Ads</div>
+    <div style="font-size: 12px; color: var(--fg-muted);">Account 771-499-1217</div>
+  </a>
+  <a href="https://adsmanager.facebook.com" target="_blank" class="card" style="text-decoration: none; text-align: center; padding: 20px;">
+    <div style="font-size: 28px; margin-bottom: 8px;">🟣</div>
+    <div style="font-weight: 600; color: var(--fg);">Meta Ads</div>
+    <div style="font-size: 12px; color: var(--fg-muted);">Facebook & Instagram</div>
+  </a>
+  <a href="https://clarity.microsoft.com/projects/view/vww1t6yauz/dashboard" target="_blank" class="card" style="text-decoration: none; text-align: center; padding: 20px;">
+    <div style="font-size: 28px; margin-bottom: 8px;">🟢</div>
+    <div style="font-weight: 600; color: var(--fg);">Clarity</div>
+    <div style="font-size: 12px; color: var(--fg-muted);">Heatmaps & Recordings</div>
+  </a>
+</div>
+
+<h3>Google Ads (Mar 8-19, 2026)</h3>
+<div class="card">
+  <ul class="list">
+    <li><span class="list-label">Total spend</span><span class="list-value">$214</span></li>
+    <li><span class="list-label">Clicks</span><span class="list-value">700</span></li>
+    <li><span class="list-label">Impressions</span><span class="list-value">22,900</span></li>
+    <li><span class="list-label">CTR</span><span class="list-value">3.05%</span></li>
+    <li><span class="list-label">Avg CPC</span><span class="list-value">$0.31</span></li>
+  </ul>
+</div>
+
+<h3>Heatmap Insights (Clarity)</h3>
+<div class="card">
+  <ul class="list">
+    <li><span class="list-label">Sessions</span><span class="list-value">73</span></li>
+    <li><span class="list-label">Unique users</span><span class="list-value">48</span></li>
+    <li><span class="list-label">Avg scroll depth</span><span class="list-value">41%</span></li>
+    <li><span class="list-label">Avg time on page</span><span class="list-value">2.9 min</span></li>
+    <li><span class="list-label">Dead clicks (friction)</span><span class="list-value" style="color: var(--orange);">27%</span></li>
+  </ul>
+</div>
+
+<h3>Conversion Funnel</h3>
+<div class="card">
+  <ul class="list">
+    <li><span class="list-label">Site visitors</span><span class="list-value">73</span></li>
+    <li><span class="list-label">Clicked booking link</span><span class="list-value">7 (9.6%)</span></li>
+    <li><span class="list-label">Discovery calls booked</span><span class="list-value" style="color: var(--orange);">0</span></li>
+    <li><span class="list-label">Cost per visitor</span><span class="list-value">$2.93</span></li>
+  </ul>
+</div>
+
+<!-- GTM / CREATIVE STRATEGY -->
+<h2 id="gtm">GTM & Creative Strategy</h2>
+
+<h3>Budget & Scaling Plan</h3>
+<table class="table">
+  <thead>
+    <tr><th>Phase</th><th>Daily</th><th>Monthly</th><th>Expected Deals</th></tr>
+  </thead>
+  <tbody>
+    <tr><td><strong>Week 1-2</strong> (Test)</td><td>$500</td><td>$7K</td><td>5-10</td></tr>
+    <tr><td><strong>Week 3-4</strong> (Scale)</td><td>$1,500</td><td>$21K</td><td>20-30</td></tr>
+    <tr><td><strong>Month 2</strong></td><td>$3,000</td><td>$90K</td><td>50-70</td></tr>
+    <tr><td><strong>Month 3</strong></td><td>$5,000</td><td>$150K</td><td>80-100</td></tr>
+  </tbody>
+</table>
+
+<h3>Channel Mix</h3>
+<table class="table">
+  <thead>
+    <tr><th>Channel</th><th>Budget %</th><th>Role</th><th>Status</th></tr>
+  </thead>
+  <tbody>
+    <tr><td><strong>Google Ads</strong></td><td>40%</td><td>High-intent capture</td><td><span class="tag tag-green">LIVE</span></td></tr>
+    <tr><td><strong>Meta (FB/IG)</strong></td><td>30%</td><td>Awareness + retargeting</td><td><span class="tag tag-orange">PENDING</span></td></tr>
+    <tr><td><strong>LinkedIn</strong></td><td>20%</td><td>B2B decision makers</td><td><span class="tag tag-purple">NEXT</span></td></tr>
+    <tr><td><strong>YouTube</strong></td><td>10%</td><td>Authority building</td><td><span class="tag tag-purple">NEXT</span></td></tr>
+  </tbody>
+</table>
+
+<h3>Billboards (DFW)</h3>
+<div class="card">
+  <p style="margin-bottom: 16px; font-size: 15px;"><strong>Target Locations:</strong></p>
+  <ul>
+    <li><strong>I-35E Dallas</strong> — 250K+ daily, commuters & business owners</li>
+    <li><strong>I-635 LBJ Freeway</strong> — 200K+ daily, North Dallas professionals</li>
+    <li><strong>US-75 Central Expressway</strong> — 180K+ daily, Plano/Richardson tech corridor</li>
+    <li><strong>DFW Airport corridor</strong> — High-value business travelers</li>
+  </ul>
+  <p style="margin-top: 16px; font-size: 14px; color: var(--fg-secondary);"><strong>Creative:</strong> High contrast, max 7 words, tend.team URL prominent</p>
+</div>
+
+<div class="card">
+  <h3 style="margin-top: 0;">Billboard Concepts</h3>
+  <ul>
+    <li><strong>"The Math"</strong> — YOUR RECEPTIONIST: $38,000/YEAR. THIS: $200/MONTH.</li>
+    <li><strong>"The 2AM Lead"</strong> — A LEAD CAME IN AT 2AM. WE REPLIED IN 12 SECONDS.</li>
+    <li><strong>"The Question"</strong> — HOW MANY LEADS DID YOU LOSE WHILE READING THIS?</li>
+    <li><strong>"DFW Local"</strong> — AI FOR DALLAS BUSINESSES. INSTALLED THIS WEEK.</li>
+  </ul>
+</div>
+
+<h3>Video Content</h3>
+<div class="card">
+  <ul>
+    <li><strong>Explainer video</strong> — 60-90 sec, "What Tend does" for cold traffic</li>
+    <li><strong>Demo/walkthrough</strong> — Screen recording of AI operator in action</li>
+    <li><strong>Testimonial clips</strong> — Client results (once we have clients)</li>
+    <li><strong>Behind-the-scenes</strong> — Team building integrations, humanizes the brand</li>
+  </ul>
+</div>
+
+<h3>Local DFW — Meetups & Influencers</h3>
+<div class="card">
+  <p style="margin-bottom: 16px; font-size: 15px;"><strong>Meetup Strategy:</strong></p>
+  <ul>
+    <li><strong>Dallas Entrepreneurs</strong> — Monthly events, sponsor or speak</li>
+    <li><strong>Fort Worth Business Network</strong> — Lunch & learns</li>
+    <li><strong>Plano Chamber of Commerce</strong> — SMB-heavy membership</li>
+    <li><strong>DFW Tech Happy Hours</strong> — Informal networking, demo opportunities</li>
+  </ul>
+</div>
+
+<div class="card">
+  <p style="margin-bottom: 16px; font-size: 15px;"><strong>Influencer Targets:</strong></p>
+  <ul>
+    <li><strong>Local business podcasts</strong> — Guest appearances, case study features</li>
+    <li><strong>DFW business coaches</strong> — Referral partnerships</li>
+    <li><strong>Industry-specific influencers</strong> — HVAC, dental, legal niches</li>
+    <li><strong>LinkedIn local voices</strong> — DFW business community thought leaders</li>
+  </ul>
+  <p style="margin-top: 16px; font-size: 14px; color: var(--fg-secondary);">Goal: Warm intros + credibility through trusted local voices</p>
+</div>
+
+<h3>Creative Assets Needed</h3>
+<div class="card">
+  <div class="status-grid">
+    <div class="status-item"><span class="status-dot"></span> Static ads (1080x1080, 1080x1920)</div>
+    <div class="status-item"><span class="status-dot pending"></span> Video explainer (60-90s)</div>
+    <div class="status-item"><span class="status-dot pending"></span> Billboard designs</div>
+    <div class="status-item"><span class="status-dot pending"></span> Demo walkthrough video</div>
+    <div class="status-item"><span class="status-dot"></span> Landing page live</div>
+    <div class="status-item"><span class="status-dot pending"></span> Case study template</div>
+  </div>
+</div>
+
+<!-- TEAM -->
+<h2 id="team">Team</h2>
+
+<div class="card">
+  <ul class="list">
+    <li><span class="list-label">Lead</span><span class="list-value">Thomas</span></li>
+    <li><span class="list-label">Marketing & GTM</span><span class="list-value">jj</span></li>
+    <li><span class="list-label">Product & UX</span><span class="list-value">Jakeh</span></li>
+    <li><span class="list-label">Support</span><span class="list-value">Will</span></li>
+  </ul>
+</div>
+
+<div class="footer">
+  <p><strong>Tend</strong> — Managed AI operators for business workflows</p>
+  <p style="margin-top: 8px;">A Kyros project · March 2026</p>
+</div>
+
+</body>
+</html>
