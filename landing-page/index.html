@@ -48,25 +48,26 @@ fbq('track', 'PageView');
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Source+Serif+4:ital,wght@0,300;0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
 
 <style>
 /* === BRAND KIT === */
 :root {
   --void-black: #000000;
-  --engine-charcoal: #141414;
-  --field-gray: #737373;
-  --canvas-white: #F2F2F2;
+  --engine-charcoal: #2A2A24;
+  --field-gray: #6B6B60;
+  --canvas-white: #F4F5F6;
   --signal-white: #FFFFFF;
-  --accent-blue: #3B82F6;
-  --accent-orange: #2563EB;
-  
+  --surface-warm: #ECECEA;
+  --accent-slate: #515143;
+
   --bg: var(--canvas-white);
   --surface: var(--signal-white);
-  --fg: var(--void-black);
-  --fg-muted: var(--field-gray);
-  
+  --fg: #2A2A2A;
+  --fg-muted: #7A7A6E;
+
   --font: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-serif: 'Source Serif 4', Georgia, 'Times New Roman', serif;
   --radius: 8px;
   --radius-lg: 16px;
 }
@@ -83,17 +84,32 @@ body {
 }
 
 /* === TYPOGRAPHY === */
-h1, h2, h3 {
+h1, h2 {
+  font-family: var(--font-serif);
   font-weight: 400;
-  letter-spacing: -0.02em;
-  line-height: 1.2;
+  letter-spacing: -0.01em;
+  line-height: 1.15;
+  color: var(--fg);
 }
 
-h1 { font-size: clamp(2rem, 5vw, 3rem); }
-h2 { font-size: clamp(1.5rem, 3vw, 2.25rem); }
-h3 { font-size: 1.125rem; font-weight: 500; }
+h3 {
+  font-family: var(--font-serif);
+  font-weight: 400;
+  letter-spacing: -0.01em;
+  line-height: 1.3;
+  color: var(--fg);
+}
 
-p { color: var(--fg-muted); }
+h1 { font-size: clamp(2.5rem, 6vw, 3.75rem); }
+h2 { font-size: clamp(1.75rem, 4vw, 2.75rem); }
+h3 { font-size: 1.125rem; }
+
+p {
+  font-family: var(--font-serif);
+  color: var(--fg-muted);
+  font-weight: 300;
+  line-height: 1.7;
+}
 
 a { color: var(--fg); }
 
@@ -105,6 +121,7 @@ a { color: var(--fg); }
 }
 
 .section-label {
+  font-family: var(--font);
   font-size: 11px;
   font-weight: 600;
   letter-spacing: 0.1em;
@@ -133,9 +150,9 @@ nav {
   right: 0;
   z-index: 100;
   padding: 16px 24px;
-  background: rgba(242, 242, 242, 0.9);
+  background: rgba(244, 245, 246, 0.92);
   backdrop-filter: blur(20px);
-  border-bottom: 1px solid rgba(0,0,0,0.05);
+  border-bottom: 1px solid rgba(0,0,0,0.04);
 }
 
 .nav-inner {
@@ -167,8 +184,8 @@ nav {
   font-weight: 600;
   letter-spacing: 0.05em;
   padding: 4px 8px;
-  background: var(--void-black);
-  color: var(--signal-white);
+  background: var(--engine-charcoal);
+  color: var(--canvas-white);
   border-radius: 4px;
   margin-left: 8px;
 }
@@ -240,26 +257,31 @@ nav {
   display: block;
   margin-top: 16px;
   padding: 14px;
-  background: var(--accent-blue);
+  background: var(--accent-slate);
   color: var(--signal-white);
   text-align: center;
   border-radius: 32px;
   font-weight: 500;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  font-size: 13px;
   border-bottom: none;
 }
 
 .nav-cta {
   padding: 10px 20px;
-  background: var(--void-black);
+  background: var(--accent-slate);
   color: var(--signal-white);
   text-decoration: none;
-  font-size: 14px;
+  font-size: 13px;
   font-weight: 500;
-  border-radius: var(--radius);
-  transition: opacity 0.2s;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  border-radius: 32px;
+  transition: background 0.2s;
 }
 
-.nav-cta:hover { opacity: 0.85; }
+.nav-cta:hover { background: #3F3F33; }
 
 /* === HERO === */
 .hero {
@@ -272,76 +294,93 @@ nav {
 }
 
 .hero-content {
-  max-width: 700px;
+  max-width: 780px;
 }
 
-.hero-content h1 { margin-bottom: 24px; }
+.hero-content h1 {
+  margin-bottom: 28px;
+}
 
 .hero-content > p {
-  font-size: 1.125rem;
-  margin-bottom: 40px;
-  line-height: 1.7;
+  font-size: 1.25rem;
+  margin-bottom: 48px;
+  line-height: 1.75;
+  max-width: 620px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
-.hero-badge {
+.nav-badge {
   display: inline-flex;
   align-items: center;
   gap: 8px;
+  padding: 8px 18px;
+  background: var(--signal-white);
+  border-radius: 40px;
+  font-family: var(--font);
   font-size: 13px;
-  font-weight: 500;
-  padding: 8px 16px;
-  background: var(--surface);
-  border: 1px solid rgba(0,0,0,0.08);
-  border-radius: 24px;
-  margin-bottom: 32px;
-  color: var(--fg-muted);
+  font-weight: 400;
+  color: var(--fg);
+  box-shadow: 0 1px 8px rgba(0,0,0,0.06);
 }
 
-.hero-badge .dot {
+.nav-badge-dot {
   width: 8px;
   height: 8px;
-  background: #22C55E;
+  background: #6ECF72;
   border-radius: 50%;
+  flex-shrink: 0;
 }
 
 .hero-ctas {
   display: flex;
   gap: 16px;
   justify-content: center;
+  margin-top: 48px;
 }
 
 .btn-primary {
   display: inline-flex;
   align-items: center;
-  gap: 8px;
-  padding: 16px 32px;
-  background: var(--accent-blue);
+  gap: 10px;
+  padding: 16px 36px;
+  background: var(--accent-slate);
   color: var(--signal-white);
   text-decoration: none;
-  font-size: 16px;
+  font-size: 13px;
   font-weight: 500;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
   border-radius: 32px;
-  transition: opacity 0.2s;
+  transition: background 0.2s;
 }
 
-.btn-primary:hover { opacity: 0.9; }
+.btn-primary .dot {
+  width: 8px;
+  height: 8px;
+  background: var(--signal-white);
+  border-radius: 50%;
+}
+
+.btn-primary:hover { background: #3F3F33; }
 
 .btn-secondary {
   display: inline-flex;
   align-items: center;
   gap: 8px;
   padding: 16px 32px;
-  background: var(--surface);
+  background: transparent;
   color: var(--fg-muted);
   text-decoration: none;
-  font-size: 16px;
-  font-weight: 500;
+  font-size: 14px;
+  font-weight: 400;
   border-radius: 32px;
+  border: 1px solid rgba(0,0,0,0.12);
   transition: all 0.2s;
 }
 
 .btn-secondary:hover {
-  background: rgba(255,255,255,0.8);
+  border-color: rgba(0,0,0,0.3);
   color: var(--fg);
 }
 
@@ -358,10 +397,10 @@ nav {
 }
 
 .problem-section > p {
-  max-width: 600px;
+  max-width: 640px;
   margin: 0 auto;
-  font-size: 1.125rem;
-  line-height: 1.7;
+  font-size: 1.2rem;
+  line-height: 1.75;
 }
 
 /* === ACTIVITY FEED === */
@@ -445,12 +484,12 @@ nav {
 }
 
 .trust-logos svg {
-  height: 24px;
+  height: 36px;
   width: auto;
 }
 
 .trust-logos img {
-  height: 24px;
+  height: 36px;
   width: auto;
   filter: grayscale(100%);
 }
@@ -493,225 +532,243 @@ nav {
 .stat { text-align: center; }
 
 .stat-value {
+  font-family: var(--font-serif);
   font-size: 2rem;
   font-weight: 400;
   letter-spacing: -0.02em;
 }
 
 .stat-label {
+  font-family: var(--font);
   font-size: 13px;
   color: var(--fg-muted);
   margin-top: 4px;
 }
 
-/* === FEATURES === */
+/* === FEATURES (BENTO) === */
 .features-grid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 24px;
-}
-
-.feature-card {
-  background: var(--surface);
-  border-radius: var(--radius-lg);
-  padding: 32px;
-}
-
-.feature-icon {
-  width: 40px;
-  height: 40px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background: var(--canvas-white);
-  border-radius: 10px;
-  margin-bottom: 20px;
-  font-size: 18px;
-}
-
-.feature-card h3 { margin-bottom: 12px; }
-
-.feature-card p {
-  font-size: 14px;
-  line-height: 1.7;
-}
-
-/* === PROCESS === */
-.process-grid {
-  display: grid;
-  grid-template-columns: repeat(5, 1fr);
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: auto auto;
   gap: 16px;
 }
 
-.step {
-  background: var(--surface);
+.feature-card {
+  background: var(--surface-warm);
   border-radius: var(--radius-lg);
-  padding: 28px 20px;
-  text-align: center;
+  padding: 32px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  position: relative;
+  min-height: 180px;
+}
+
+.feature-card:first-child {
+  grid-row: 1 / 3;
+  background: var(--accent-slate);
+  color: var(--signal-white);
+  min-height: 380px;
+}
+
+.feature-card:first-child h3 {
+  color: rgba(255,255,255,0.8);
+  font-size: 1.5rem;
+}
+
+.feature-card:first-child p {
+  color: rgba(255,255,255,0.7);
+}
+
+.feature-card .feature-tag {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  font-family: var(--font);
+  font-size: 11px;
+  font-weight: 600;
+  color: var(--fg-muted);
+  opacity: 0.5;
+}
+
+.feature-card:first-child .feature-tag {
+  color: rgba(255,255,255,0.4);
+}
+
+.feature-icon {
+  display: none;
+}
+
+.feature-card h3 {
+  font-family: var(--font-serif);
+  font-size: 1.25rem;
+  font-weight: 400;
+  color: var(--fg);
+  margin-bottom: 12px;
+}
+
+.feature-card p {
+  font-size: 0.9rem;
+  line-height: 1.7;
+}
+
+/* === PROCESS (BENTO + TIMELINE) === */
+.process-section {
+  background: #2A2A2A;
+  padding-top: 80px;
+  padding-bottom: 80px;
+  margin-top: 80px;
+  margin-bottom: 80px;
+  border-radius: var(--radius-lg);
+}
+
+.process-section .section-label {
+  color: var(--field-gray);
+}
+
+.process-section .section-header h2 {
+  color: var(--signal-white);
+}
+
+.process-section .section-header p {
+  color: rgba(255,255,255,0.6);
+}
+
+.process-wrapper {
+  position: relative;
+}
+
+.process-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: auto auto;
+  gap: 16px;
+  position: relative;
+}
+
+.step {
+  background: rgba(255,255,255,0.06);
+  border-radius: var(--radius-lg);
+  padding: 32px 28px;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  transition: background 0.5s ease, box-shadow 0.5s ease;
+}
+
+.step.active {
+  background: rgba(255,255,255,0.14);
+  box-shadow: 0 0 0 1px rgba(255,255,255,0.12);
+}
+
+/* First step spans 2 rows */
+.step:first-child {
+  grid-row: 1 / 3;
 }
 
 .step-num {
-  font-size: 12px;
+  font-family: var(--font);
+  font-size: 11px;
   font-weight: 600;
-  color: var(--fg-muted);
+  letter-spacing: 0.05em;
+  color: rgba(255,255,255,0.4);
   margin-bottom: 16px;
 }
 
 .step h3 {
-  font-size: 1rem;
+  font-family: var(--font-serif);
+  font-size: 1.25rem;
+  font-weight: 400;
   margin-bottom: 12px;
+  color: rgba(255,255,255,0.85);
 }
 
 .step p {
-  font-size: 13px;
-  line-height: 1.6;
+  font-size: 0.9rem;
+  line-height: 1.7;
+  margin-top: auto;
+  color: rgba(255,255,255,0.5);
+}
+
+/* Animated connecting line */
+.process-timeline {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 24px 0;
+  position: relative;
+  overflow: hidden;
+}
+
+.timeline-track {
+  width: 100%;
+  max-width: 800px;
+  height: 2px;
+  background: rgba(255,255,255,0.15);
+  border-radius: 2px;
+  position: relative;
+  overflow: hidden;
+}
+
+.timeline-progress {
+  height: 100%;
+  width: 0%;
+  background: var(--signal-white);
+  border-radius: 2px;
+  transition: width 1.5s cubic-bezier(0.22, 0.61, 0.36, 1);
+}
+
+.timeline-dots {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 2%;
+}
+
+.timeline-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: rgba(255,255,255,0.15);
+  border: 2px solid rgba(255,255,255,0.15);
+  transition: background 0.4s ease, border-color 0.4s ease;
+  z-index: 1;
+}
+
+.timeline-dot.active {
+  background: var(--signal-white);
+  border-color: var(--signal-white);
+}
+
+.timeline-labels {
+  display: flex;
+  justify-content: space-between;
+  max-width: 800px;
+  width: 100%;
+  margin: 12px auto 0;
+  padding: 0 2%;
+}
+
+.timeline-label {
+  font-family: var(--font);
+  font-size: 11px;
+  font-weight: 500;
+  color: rgba(255,255,255,0.35);
+  text-align: center;
+  letter-spacing: 0.03em;
+  transition: color 0.4s ease;
+}
+
+.timeline-label.active {
+  color: rgba(255,255,255,0.8);
 }
 
 /* === PRICING === */
-.pricing-grid {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 24px;
-  max-width: 800px;
-  margin: 0 auto;
-}
-
-.price-card {
-  background: var(--surface);
-  border-radius: var(--radius-lg);
-  padding: 40px;
-  display: flex;
-  flex-direction: column;
-}
-
-.price-card .price-cta {
-  margin-top: auto;
-}
-
-.price-card.dark {
-  background: var(--void-black);
-  color: var(--signal-white);
-}
-
-.price-card.dark .price-label,
-.price-card.dark .price-desc,
-.price-card.dark .price-list li {
-  color: rgba(255,255,255,0.7);
-}
-
-.price-card.dark .price-title,
-.price-card.dark .price-amount {
-  color: var(--signal-white);
-}
-
-.price-card.dark .price-list .check {
-  color: var(--signal-white);
-}
-
-.price-card.dark .price-list li {
-  border-color: rgba(255,255,255,0.1);
-}
-
-.price-card.dark .price-cta {
-  background: var(--signal-white);
-  color: var(--void-black);
-}
-
-.price-label {
-  font-size: 11px;
-  font-weight: 600;
-  letter-spacing: 0.05em;
-  text-transform: uppercase;
-  color: var(--fg-muted);
-}
-
-.price-title {
-  font-size: 1.25rem;
-  font-weight: 500;
-  margin: 8px 0;
-}
-
-.price-amount {
-  font-size: 2.5rem;
-  font-weight: 400;
-  letter-spacing: -0.02em;
-  margin: 16px 0;
-}
-
-.price-amount span {
-  font-size: 1rem;
-  color: var(--fg-muted);
-}
-
-.price-card.dark .price-amount span {
-  color: rgba(255,255,255,0.6);
-}
-
-.price-desc {
-  font-size: 14px;
-  margin-bottom: 24px;
-  color: var(--fg-muted);
-}
-
-.price-list {
-  list-style: none;
-  margin-bottom: 32px;
-}
-
-.price-list li {
-  padding: 10px 0;
-  font-size: 14px;
-  color: var(--fg-muted);
-  display: flex;
-  align-items: center;
-  gap: 12px;
-  border-bottom: 1px solid rgba(0,0,0,0.05);
-}
-
-.price-list li:last-child { border-bottom: none; }
-
-.price-list .check {
-  color: var(--void-black);
-  font-weight: 600;
-}
-
-.price-cta {
-  display: block;
-  width: 100%;
-  padding: 14px 24px;
-  background: var(--accent-blue);
-  color: var(--signal-white);
-  text-decoration: none;
-  text-align: center;
-  font-size: 14px;
-  font-weight: 500;
-  border-radius: 32px;
-  transition: opacity 0.2s;
-}
-
-.price-cta:hover { opacity: 0.9; }
-
-.price-cta.secondary {
-  background: transparent;
-  color: var(--fg-muted);
-  border: 1px solid var(--fg-muted);
-}
-
-.price-cta.secondary:hover {
-  color: var(--fg);
-  border-color: var(--fg);
-}
-
-.price-note {
-  text-align: center;
-  margin-top: 24px;
-  font-size: 14px;
-  color: var(--fg-muted);
-  max-width: 600px;
-  margin-left: auto;
-  margin-right: auto;
-}
-
 /* === FAQ ACCORDION === */
 .faq-list {
   max-width: 700px;
@@ -774,32 +831,222 @@ nav {
 /* === FINAL CTA === */
 .final-cta {
   text-align: center;
-  padding: 100px 24px;
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 80px 24px 0;
 }
 
-.final-cta h2 { margin-bottom: 16px; }
+.final-cta h2 { margin-bottom: 40px; }
 
-.final-cta > p {
-  font-size: 1.125rem;
-  margin-bottom: 32px;
-  max-width: 550px;
+.cta-cards {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 16px;
+  text-align: left;
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+.cta-bar {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  background: #F2EE8C;
+  color: #2A2A2A;
+  border-radius: 16px;
+  padding: 22px 32px;
+  margin-top: 16px;
+  max-width: 700px;
   margin-left: auto;
   margin-right: auto;
+  transition: background 0.2s ease, transform 0.2s ease;
+}
+
+.cta-bar:hover {
+  background: #EBE76C;
+  transform: translateY(-2px);
+}
+
+.cta-bar-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: #2A2A2A;
+  flex-shrink: 0;
+}
+
+.cta-bar-text {
+  font-family: var(--font);
+  font-size: 14px;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  flex: 1;
+  position: relative;
+}
+
+.cta-bar-text .cta-bar-label,
+.cta-bar-text .cta-bar-email {
+  transition: opacity 0.25s ease;
+}
+
+.cta-bar-text .cta-bar-email {
+  position: absolute;
+  left: 0;
+  top: 0;
+  opacity: 0;
+}
+
+.cta-bar:hover .cta-bar-text .cta-bar-label {
+  opacity: 0;
+}
+
+.cta-bar:hover .cta-bar-text .cta-bar-email {
+  opacity: 1;
+}
+
+.cta-bar-arrow {
+  font-size: 20px;
+  flex-shrink: 0;
+}
+
+.cta-card {
+  border-radius: var(--radius-lg);
+  padding: 36px;
+  display: flex;
+  flex-direction: column;
+  min-height: 320px;
+}
+
+.cta-card.dark {
+  background: var(--accent-slate);
+  color: var(--signal-white);
+}
+
+.cta-card.light {
+  background: var(--signal-white);
+  color: var(--fg);
+}
+
+.cta-card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: auto;
+}
+
+.cta-card-header h3 {
+  font-size: 1.5rem;
+  line-height: 1.25;
+  max-width: 200px;
+}
+
+.cta-card.dark .cta-card-header h3 {
+  color: var(--signal-white);
+}
+
+.cta-card-arrow {
+  font-size: 20px;
+  opacity: 0.6;
+  transition: opacity 0.2s, transform 0.2s;
+}
+
+.cta-card:hover .cta-card-arrow {
+  opacity: 1;
+  transform: translateX(4px);
+}
+
+.cta-card-steps {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  margin-top: 32px;
+}
+
+.cta-card-steps li {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-family: var(--font);
+  font-size: 14px;
+  font-weight: 400;
+}
+
+.cta-card.dark .cta-card-steps li {
+  color: rgba(255,255,255,0.8);
+}
+
+.cta-card.light .cta-card-steps li {
   color: var(--fg-muted);
+}
+
+.cta-step-icon {
+  width: 32px;
+  height: 32px;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 14px;
+  flex-shrink: 0;
+}
+
+.cta-card.dark .cta-step-icon {
+  background: rgba(255,255,255,0.15);
+}
+
+.cta-card.light .cta-step-icon {
+  background: var(--surface-warm);
 }
 
 /* === FOOTER === */
 footer {
-  padding: 40px 24px;
+  padding: 60px 24px 40px;
   text-align: center;
+  overflow: hidden;
 }
 
 .footer-logo {
-  font-size: 4rem;
+  font-family: var(--font);
+  font-size: clamp(12rem, 28vw, 28rem);
   font-weight: 200;
-  letter-spacing: 0.1em;
-  color: rgba(0,0,0,0.08);
+  letter-spacing: 0.12em;
+  color: rgba(0,0,0,0.05);
   margin-bottom: 24px;
+  line-height: 0.85;
+  white-space: nowrap;
+}
+
+.footer-locations {
+  margin-top: 40px;
+}
+
+.footer-locations-label {
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--fg-muted);
+  margin-bottom: 16px;
+}
+
+.footer-locations-list {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.footer-locations-list a {
+  font-family: var(--font);
+  font-size: 14px;
+  font-weight: 400;
+  color: var(--fg-muted);
+  text-decoration: none;
+  transition: color 0.2s;
+}
+
+.footer-locations-list a:hover {
+  color: var(--fg);
 }
 
 .footer-tagline {
@@ -820,25 +1067,236 @@ footer {
 
 .footer-links a:hover { color: var(--fg); }
 
+/* === ANIMATIONS === */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(32px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes slideInLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes slideInRight {
+  from {
+    opacity: 0;
+    transform: translateX(40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes scaleIn {
+  from {
+    opacity: 0;
+    transform: scale(0.92);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+/* Hero entrance */
+.hero-content h1 {
+  animation: fadeInUp 0.9s ease-out 0.1s both;
+}
+
+.hero-content > p {
+  animation: fadeInUp 0.9s ease-out 0.3s both;
+}
+
+.hero-ctas {
+  animation: fadeInUp 0.9s ease-out 0.5s both;
+}
+
+/* Scroll-triggered animations */
+.reveal {
+  opacity: 0;
+  transform: translateY(32px);
+  transition: opacity 0.7s ease-out, transform 0.7s ease-out;
+}
+
+.reveal.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.reveal-left {
+  opacity: 0;
+  transform: translateX(-32px);
+  transition: opacity 0.7s ease-out, transform 0.7s ease-out;
+}
+
+.reveal-left.visible {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.reveal-right {
+  opacity: 0;
+  transform: translateX(32px);
+  transition: opacity 0.7s ease-out, transform 0.7s ease-out;
+}
+
+.reveal-right.visible {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.reveal-scale {
+  opacity: 0;
+  transform: scale(0.92);
+  transition: opacity 0.7s ease-out, transform 0.7s ease-out;
+}
+
+.reveal-scale.visible {
+  opacity: 1;
+  transform: scale(1);
+}
+
+/* Staggered children */
+.stagger-children .feature-card,
+.stagger-children .step,
+.stagger-children .price-card {
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity 0.5s ease-out, transform 0.5s ease-out;
+}
+
+.stagger-children.visible .feature-card,
+.stagger-children.visible .step,
+.stagger-children.visible .price-card {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.stagger-children.visible .feature-card:nth-child(1),
+.stagger-children.visible .step:nth-child(1),
+.stagger-children.visible .price-card:nth-child(1) { transition-delay: 0s; }
+.stagger-children.visible .feature-card:nth-child(2),
+.stagger-children.visible .step:nth-child(2),
+.stagger-children.visible .price-card:nth-child(2) { transition-delay: 0.08s; }
+.stagger-children.visible .feature-card:nth-child(3),
+.stagger-children.visible .step:nth-child(3) { transition-delay: 0.16s; }
+.stagger-children.visible .feature-card:nth-child(4),
+.stagger-children.visible .step:nth-child(4) { transition-delay: 0.24s; }
+.stagger-children.visible .feature-card:nth-child(5),
+.stagger-children.visible .step:nth-child(5) { transition-delay: 0.32s; }
+.stagger-children.visible .feature-card:nth-child(6) { transition-delay: 0.4s; }
+
+/* === HERO ILLUSTRATION === */
+.hero-illustration {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 0 24px 80px;
+  animation: scaleIn 1s ease-out 0.7s both;
+}
+
+.hero-illustration svg {
+  width: 100%;
+  height: auto;
+}
+
 /* === RESPONSIVE === */
 @media (max-width: 900px) {
-  .features-grid { grid-template-columns: 1fr; }
-  .process-grid { grid-template-columns: 1fr; gap: 12px; }
-  .pricing-grid { grid-template-columns: 1fr; }
-  .pricing-grid .price-card { margin-bottom: 16px; }
+  .features-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+  .feature-card:first-child {
+    grid-row: auto;
+    min-height: 220px;
+  }
+  .process-grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+  }
+  .step:first-child { grid-row: auto; }
   .trust-stats { flex-wrap: wrap; gap: 32px; }
   .nav-links { display: none; }
   .nav-cta { display: none; }
+  .nav-badge { display: none; }
   .hamburger { display: flex; }
+  .final-cta { margin: 0; }
+  .cta-cards { grid-template-columns: 1fr; }
 }
 
 @media (max-width: 600px) {
-  .container { padding: 60px 20px; }
-  .hero { padding-top: 100px; min-height: auto; padding-bottom: 60px; }
+  .container { padding: 48px 16px; }
+  .hero { padding-top: 100px; min-height: auto; padding-bottom: 32px; }
+  .hero-content { max-width: 100%; }
+  h1 { font-size: 2rem; }
+  h2 { font-size: 1.5rem; }
+  .hero-content > p { font-size: 1.05rem; }
   .hero-ctas { flex-direction: column; }
   .btn-primary, .btn-secondary { width: 100%; justify-content: center; }
-  .trust-section { padding: 32px 24px; }
-  .problem-section { padding: 48px 24px; }
+  .trust-section { padding: 28px 20px; }
+  .trust-stats { gap: 24px; }
+  .trust-quote blockquote { font-size: 1rem; }
+  .problem-section { padding: 40px 20px; }
+  .problem-section > p { font-size: 1rem; }
+  .hero-illustration { padding: 0 8px 40px; }
+  .process-grid { grid-template-columns: 1fr; }
+  .step:first-child { grid-row: auto; }
+  .timeline-labels { padding: 0; font-size: 9px; }
+  .timeline-label { font-size: 9px; }
+  .step { padding: 24px 16px; }
+  .features-grid { grid-template-columns: 1fr; }
+  .feature-card { padding: 24px 20px; min-height: auto; }
+  .feature-card:first-child { min-height: auto; grid-row: auto; }
+  .feature-card p { font-size: 0.9rem; }
+  .price-card { padding: 32px 24px; }
+  .final-cta { padding: 48px 16px 0; }
+  .cta-cards { grid-template-columns: 1fr; }
+  .cta-card { min-height: 260px; }
+  footer { padding: 40px 16px 32px; }
+  .footer-logo { letter-spacing: 0.06em; }
+  .footer-locations { margin-top: 32px; }
+  .activity-feed { padding: 16px; font-size: 12px; }
+  .activity-line { gap: 10px; }
+  .section-header p { font-size: 0.95rem; }
+}
+
+/* Reduce motion for accessibility */
+@media (prefers-reduced-motion: reduce) {
+  .hero-content h1,
+  .hero-content > p,
+  .hero-ctas,
+  .hero-illustration {
+    animation: none;
+  }
+  .reveal, .reveal-left, .reveal-right, .reveal-scale {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+  .stagger-children .feature-card,
+  .stagger-children .step,
+  .stagger-children .price-card {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
 }
 </style>
 </head>
@@ -858,9 +1316,12 @@ footer {
     <ul class="nav-links">
       <li><a href="#features">Features</a></li>
       <li><a href="#how">How it works</a></li>
-      <li><a href="#pricing">Pricing</a></li>
+      <li><a href="#faq">FAQ</a></li>
     </ul>
-    <a href="https://cal.com/clawdbotdfw/15min" class="nav-cta">Book a Discovery Call</a>
+    <div class="nav-badge">
+      <span class="nav-badge-dot"></span>
+      Now accepting clients
+    </div>
     <button class="hamburger" onclick="openMobileMenu()">
       <span></span>
       <span></span>
@@ -871,7 +1332,7 @@ footer {
   <div class="mobile-menu" id="mobileMenu">
     <a href="#features" onclick="closeMobileMenu()">Features</a>
     <a href="#how" onclick="closeMobileMenu()">How it works</a>
-    <a href="#pricing" onclick="closeMobileMenu()">Pricing</a>
+    <a href="#faq" onclick="closeMobileMenu()">FAQ</a>
     <a href="https://cal.com/clawdbotdfw/15min" class="mobile-cta">Book a Discovery Call</a>
   </div>
 </nav>
@@ -879,18 +1340,84 @@ footer {
 <!-- HERO -->
 <section class="container hero">
   <div class="hero-content">
-    <span class="hero-badge"><span class="dot"></span> Now accepting clients</span>
-    <h1>We integrate AI into the workflows that run your business.</h1>
-    <p>Not a chatbot. Not a tool you configure once and forget. Tend maps your existing workflows, builds the AI integrations that make them faster and more reliable, and manages them as your business evolves.</p>
+    <h1>Tend installs AI to run your company. The right&nbsp;way.</h1>
+    <p>We integrate AI into the workflows that run your business. Not a chatbot. Mapped to your tools, managed as you evolve.</p>
     <div class="hero-ctas">
-      <a href="https://cal.com/clawdbotdfw/15min" class="btn-primary">Book a Discovery Call</a>
-      <a href="#how" class="btn-secondary">See how it works</a>
+      <a href="https://cal.com/clawdbotdfw/15min" class="btn-primary"><span class="dot"></span> Book Discovery Call</a>
     </div>
   </div>
 </section>
 
+<!-- HERO ILLUSTRATION -->
+<div class="hero-illustration">
+  <svg viewBox="0 0 900 340" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <style>
+      .illo-piece, .illo-leaning, .illo-dots {
+        opacity: 1;
+        transition: transform 0.1s linear;
+      }
+    </style>
+
+    <!-- Leaning block (left) — falls and leans into place -->
+    <g class="illo-leaning" transform-origin="110 320">
+      <rect x="80" y="60" width="60" height="260" rx="2" fill="#3A3A3A"/>
+    </g>
+    <!-- Large notebook -->
+    <g class="illo-piece">
+      <rect x="210" y="20" width="200" height="300" rx="3" fill="#3A3A3A"/>
+      <line x1="230" y1="20" x2="230" y2="320" stroke="rgba(244,245,246,0.12)" stroke-width="1.5"/>
+    </g>
+    <!-- Dot grid panel -->
+    <g class="illo-dots">
+      <rect x="430" y="20" width="130" height="300" rx="2" fill="none" stroke="#3A3A3A" stroke-width="1"/>
+      <g fill="#3A3A3A">
+        <circle cx="452" cy="46" r="2.5"/><circle cx="472" cy="46" r="2.5"/><circle cx="492" cy="46" r="2.5"/><circle cx="512" cy="46" r="2.5"/><circle cx="532" cy="46" r="2.5"/>
+        <circle cx="452" cy="66" r="2.5"/><circle cx="472" cy="66" r="2.5"/><circle cx="492" cy="66" r="2.5"/><circle cx="512" cy="66" r="2.5"/><circle cx="532" cy="66" r="2.5"/>
+        <circle cx="452" cy="86" r="2.5"/><circle cx="472" cy="86" r="2.5"/><circle cx="492" cy="86" r="2.5"/><circle cx="512" cy="86" r="2.5"/><circle cx="532" cy="86" r="2.5"/>
+        <circle cx="452" cy="106" r="2.5"/><circle cx="472" cy="106" r="2.5"/><circle cx="492" cy="106" r="2.5"/><circle cx="512" cy="106" r="2.5"/><circle cx="532" cy="106" r="2.5"/>
+        <circle cx="452" cy="126" r="2.5"/><circle cx="472" cy="126" r="2.5"/><circle cx="492" cy="126" r="2.5"/><circle cx="512" cy="126" r="2.5"/><circle cx="532" cy="126" r="2.5"/>
+        <circle cx="452" cy="146" r="2.5"/><circle cx="472" cy="146" r="2.5"/><circle cx="492" cy="146" r="2.5"/><circle cx="512" cy="146" r="2.5"/><circle cx="532" cy="146" r="2.5"/>
+        <circle cx="452" cy="166" r="2.5"/><circle cx="472" cy="166" r="2.5"/><circle cx="492" cy="166" r="2.5"/><circle cx="512" cy="166" r="2.5"/><circle cx="532" cy="166" r="2.5"/>
+        <circle cx="452" cy="186" r="2.5"/><circle cx="472" cy="186" r="2.5"/><circle cx="492" cy="186" r="2.5"/><circle cx="512" cy="186" r="2.5"/><circle cx="532" cy="186" r="2.5"/>
+        <circle cx="452" cy="206" r="2.5"/><circle cx="472" cy="206" r="2.5"/><circle cx="492" cy="206" r="2.5"/><circle cx="512" cy="206" r="2.5"/><circle cx="532" cy="206" r="2.5"/>
+        <circle cx="452" cy="226" r="2.5"/><circle cx="472" cy="226" r="2.5"/><circle cx="492" cy="226" r="2.5"/><circle cx="512" cy="226" r="2.5"/><circle cx="532" cy="226" r="2.5"/>
+        <circle cx="452" cy="246" r="2.5"/><circle cx="472" cy="246" r="2.5"/><circle cx="492" cy="246" r="2.5"/><circle cx="512" cy="246" r="2.5"/><circle cx="532" cy="246" r="2.5"/>
+        <circle cx="452" cy="266" r="2.5"/><circle cx="472" cy="266" r="2.5"/><circle cx="492" cy="266" r="2.5"/><circle cx="512" cy="266" r="2.5"/><circle cx="532" cy="266" r="2.5"/>
+        <circle cx="452" cy="286" r="2.5"/><circle cx="472" cy="286" r="2.5"/><circle cx="492" cy="286" r="2.5"/><circle cx="512" cy="286" r="2.5"/><circle cx="532" cy="286" r="2.5"/>
+        <circle cx="452" cy="306" r="2.5"/><circle cx="472" cy="306" r="2.5"/><circle cx="492" cy="306" r="2.5"/><circle cx="512" cy="306" r="2.5"/><circle cx="532" cy="306" r="2.5"/>
+      </g>
+    </g>
+    <!-- Small blocks (stacked) -->
+    <g class="illo-piece">
+      <rect x="580" y="80" width="90" height="240" rx="2" fill="#3A3A3A"/>
+      <line x1="580" y1="160" x2="670" y2="160" stroke="rgba(244,245,246,0.12)" stroke-width="1"/>
+      <line x1="580" y1="240" x2="670" y2="240" stroke="rgba(244,245,246,0.12)" stroke-width="1"/>
+    </g>
+    <!-- Vertical lines panel -->
+    <g class="illo-piece">
+      <rect x="690" y="20" width="70" height="300" rx="2" fill="none"/>
+      <g stroke="#3A3A3A" stroke-width="1.2" opacity="0.5">
+        <line x1="700" y1="20" x2="700" y2="320"/>
+        <line x1="706" y1="20" x2="706" y2="320"/>
+        <line x1="712" y1="20" x2="712" y2="320"/>
+        <line x1="718" y1="20" x2="718" y2="320"/>
+        <line x1="724" y1="20" x2="724" y2="320"/>
+        <line x1="730" y1="20" x2="730" y2="320"/>
+        <line x1="736" y1="20" x2="736" y2="320"/>
+        <line x1="742" y1="20" x2="742" y2="320"/>
+        <line x1="748" y1="20" x2="748" y2="320"/>
+        <line x1="754" y1="20" x2="754" y2="320"/>
+      </g>
+    </g>
+    <!-- Thin tall block (far right) -->
+    <g class="illo-piece">
+      <rect x="770" y="40" width="40" height="280" rx="2" fill="#3A3A3A"/>
+    </g>
+  </svg>
+</div>
+
 <!-- PROBLEM -->
-<section class="container" style="padding-top: 40px;">
+<section class="container reveal" style="padding-top: 40px;">
   <div class="problem-section">
     <h2>The technology is ready. The integration work is where most teams stall.</h2>
     <p>Identifying the right workflow, connecting your real tools, handling exceptions, maintaining reliability over time — that's the hard part. Most businesses know AI could help. Few have the infrastructure and expertise to make it run without breaking. That's what Tend does.</p>
@@ -898,7 +1425,7 @@ footer {
 </section>
 
 <!-- ACTIVITY FEED -->
-<section class="container activity-section">
+<section class="container activity-section reveal-scale">
   <div class="activity-feed">
     <div class="header">
       <span class="window-dot red"></span>
@@ -916,31 +1443,8 @@ footer {
 </section>
 
 <!-- TRUST -->
-<section class="container">
+<section class="container reveal">
   <div class="trust-section">
-    <div class="trust-quote">
-      <blockquote>"Our COO is an AI agent named Alfred. He tracks our pipeline, monitors our ads, preps meeting briefs, and sends us a morning update every day. We don't sell anything we don't use ourselves."</blockquote>
-      <cite>— The Tend Team</cite>
-    </div>
-    <div class="trust-stats">
-      <div class="stat">
-        <div class="stat-value">24/7</div>
-        <div class="stat-label">Always running</div>
-      </div>
-      <div class="stat">
-        <div class="stat-value">2 weeks</div>
-        <div class="stat-label">To running</div>
-      </div>
-      <div class="stat">
-        <div class="stat-value">$0</div>
-        <div class="stat-label">Per-user fees</div>
-      </div>
-      <div class="stat">
-        <div class="stat-value">Local</div>
-        <div class="stat-label">Managed service</div>
-      </div>
-    </div>
-    
     <div class="trust-tools">
       <div class="trust-tools-label">Connects to tools you already use</div>
       <div class="trust-logos">
@@ -965,129 +1469,105 @@ footer {
 
 <!-- FEATURES -->
 <section class="container" id="features">
-  <div class="section-header">
+  <div class="section-header reveal">
     <div class="section-label">What We Do</div>
     <h2>Built different than the rest.</h2>
     <p>Not a chatbot shop. Not an enterprise consulting firm. A managed AI integration service that actually runs.</p>
   </div>
-  
-  <div class="features-grid">
+
+  <div class="features-grid stagger-children">
     <div class="feature-card">
-      <div class="feature-icon">◎</div>
+      <span class="feature-tag">A</span>
       <h3>One workflow, proven first</h3>
-      <p>We don't try to automate everything. We identify the workflow with the highest ROI — lead response, scheduling, client follow-up — and build the integration that makes it reliable. Expand after proof.</p>
+      <p>We identify the workflow with the highest ROI — lead response, scheduling, client follow-up — and build the integration that makes it reliable. Expand after proof.</p>
     </div>
     <div class="feature-card">
-      <div class="feature-icon">⬢</div>
-      <h3>Connected to your actual tools</h3>
-      <p>Email, calendar, CRM, Slack — connected with scoped API access. Not a sandbox environment or a demo. Real integrations that touch your live systems, tested before anything goes into production.</p>
+      <span class="feature-tag">B</span>
+      <h3>Connected to your tools</h3>
+      <p>Email, calendar, CRM, Slack — connected with scoped API access. Real integrations that touch your live systems.</p>
     </div>
     <div class="feature-card">
-      <div class="feature-icon">◈</div>
+      <span class="feature-tag">D</span>
       <h3>Human oversight built in</h3>
-      <p>Every integration has defined escalation points. Actions with real business consequences require your approval until you've established trust with the system. You stay in control of what matters.</p>
+      <p>Actions with real business consequences require your approval until you trust the system.</p>
     </div>
     <div class="feature-card">
-      <div class="feature-icon">◇</div>
+      <span class="feature-tag">C</span>
       <h3>Live in days, not months</h3>
-      <p>No six-month implementation cycle. We scope the integration, build it, and have it running in your actual workflows within one to two weeks.</p>
+      <p>We scope the integration, build it, and have it running in your actual workflows within two weeks.</p>
     </div>
     <div class="feature-card">
-      <div class="feature-icon">⬡</div>
+      <span class="feature-tag">E</span>
       <h3>Maintained, not handed off</h3>
-      <p>The integration is only as good as the team behind it. We monitor, recalibrate, and update what we build as your workflows change — that's the ongoing service.</p>
-    </div>
-    <div class="feature-card">
-      <div class="feature-icon">⊞</div>
-      <h3>Expand when ready</h3>
-      <p>Once the first integration is proven, we add more. Broader workflow coverage, multi-system orchestration, deeper automation — built incrementally on a foundation that actually works.</p>
+      <p>We monitor, recalibrate, and update what we build as your workflows change.</p>
     </div>
   </div>
 </section>
 
 <!-- PROCESS -->
-<section class="container" id="how">
-  <div class="section-header">
+<section class="container process-section" id="how">
+  <div class="section-header reveal">
     <div class="section-label">How It Works</div>
     <h2>From call to running in two weeks.</h2>
     <p>No endless meetings. No six-month implementations. We move fast.</p>
   </div>
-  
-  <div class="process-grid">
+
+  <!-- Animated timeline -->
+  <div class="process-timeline reveal" id="processTimeline">
+    <div class="timeline-track">
+      <div class="timeline-progress" id="timelineProgress"></div>
+      <div class="timeline-dots">
+        <span class="timeline-dot" data-step="0"></span>
+        <span class="timeline-dot" data-step="1"></span>
+        <span class="timeline-dot" data-step="2"></span>
+        <span class="timeline-dot" data-step="3"></span>
+        <span class="timeline-dot" data-step="4"></span>
+      </div>
+    </div>
+  </div>
+  <div class="timeline-labels">
+    <span class="timeline-label" data-step="0">Discovery</span>
+    <span class="timeline-label" data-step="1">Scope</span>
+    <span class="timeline-label" data-step="2">Build</span>
+    <span class="timeline-label" data-step="3">Run</span>
+    <span class="timeline-label" data-step="4">Expand</span>
+  </div>
+
+  <!-- Bento grid -->
+  <div class="process-grid stagger-children">
     <div class="step">
       <div class="step-num">01</div>
       <h3>Discovery</h3>
-      <p>Thirty minutes to map the workflow that's costing you the most. We understand your tools, your team, and where the real friction is before we write a line of integration logic.</p>
+      <p>Thirty minutes to map the workflow that's costing you the most. We understand your tools, your team, and where the real friction is.</p>
     </div>
     <div class="step">
       <div class="step-num">02</div>
       <h3>Scope</h3>
-      <p>We define exactly what the integration does, what it escalates, and what requires your sign-off. You review and approve the scope before any build work starts.</p>
+      <p>We define exactly what the integration does, what it escalates, and what requires your sign-off before any build work starts.</p>
     </div>
     <div class="step">
       <div class="step-num">03</div>
       <h3>Build</h3>
-      <p>One to two weeks. We connect your tools, configure permissions, implement the integration logic, and test against real data before anything goes live.</p>
+      <p>One to two weeks. We connect your tools, configure permissions, and test against real data before anything goes live.</p>
     </div>
     <div class="step">
       <div class="step-num">04</div>
       <h3>Run</h3>
-      <p>Continuous monitoring, performance reviews, and exception handling. When something falls outside expected behavior, we handle it — not you.</p>
+      <p>Continuous monitoring, performance reviews, and exception handling. We handle it — not you.</p>
     </div>
     <div class="step">
       <div class="step-num">05</div>
       <h3>Expand</h3>
-      <p>Once the first integration is delivering results, we scope the next one. Each addition builds on a foundation that's already proven in your environment.</p>
+      <p>Once the first integration delivers results, we scope the next one. Each addition builds on proven foundations.</p>
     </div>
   </div>
 </section>
 
 <!-- PRICING -->
-<section class="container" id="pricing">
-  <div class="section-header">
-    <div class="section-label">Pricing</div>
-    <h2>Simple. Transparent.</h2>
-    <p>One setup fee. One monthly cost. Less than a part-time hire that still makes mistakes.</p>
-  </div>
-  
-  <div class="pricing-grid">
-    <div class="price-card">
-      <div class="price-label">One-time</div>
-      <div class="price-title">Setup</div>
-      <div class="price-amount">$5,000<span> minimum</span></div>
-      <p class="price-desc">Discovery, workflow scoping, integration build, tool connections, and go-live. Complex or multi-system workflows are scoped and priced based on requirements.</p>
-      <ul class="price-list">
-        <li><span class="check">✓</span> Discovery call</li>
-        <li><span class="check">✓</span> Workflow scoping</li>
-        <li><span class="check">✓</span> Integration build</li>
-        <li><span class="check">✓</span> Tool connections</li>
-        <li><span class="check">✓</span> Launch + handoff</li>
-      </ul>
-      <a href="https://cal.com/clawdbotdfw/15min" class="price-cta">Book a Discovery Call</a>
-    </div>
-    
-    <div class="price-card">
-      <div class="price-label">Monthly</div>
-      <div class="price-title">Managed Service</div>
-      <div class="price-amount">$2,000<span>/month minimum</span></div>
-      <p class="price-desc">Ongoing monitoring, recalibration, exception handling, and monthly performance reviews. The work that keeps the integration reliable as your business changes.</p>
-      <ul class="price-list">
-        <li><span class="check">✓</span> Monitoring & tuning</li>
-        <li><span class="check">✓</span> Exception handling</li>
-        <li><span class="check">✓</span> Monthly reviews</li>
-        <li><span class="check">✓</span> Support</li>
-        <li><span class="check">✓</span> 3-month minimum</li>
-      </ul>
-      <a href="#faq" class="price-cta secondary">Learn More</a>
-    </div>
-  </div>
-  
-  <p class="price-note">Day-one payment is $7,000 — setup plus first month. Minimum engagement is three months, totaling $11,000. After that, cancel with 30 days notice. The integration keeps running — you own what you paid for.</p>
-</section>
 
 <!-- FAQ -->
 <section class="container" id="faq">
-  <div class="section-header">
+  <div class="section-header reveal">
     <div class="section-label">FAQ</div>
     <h2>Common questions</h2>
   </div>
@@ -1095,34 +1575,44 @@ footer {
   <div class="faq-list">
     <div class="faq-item">
       <button class="faq-question">
-        How is this different from ChatGPT or Copilot?
+        Is my data safe?
         <span class="faq-icon">+</span>
       </button>
       <div class="faq-answer">
-        <p>General-purpose AI tools are interfaces you use manually. What we build is an active integration layer — connected to your real tools, running continuously, with defined behavior and escalation logic. You don't use it like a chat window. It runs as part of your workflow.</p>
+        <p>Integrations run with scoped permissions, minimum access for the defined workflow. Every external action is logged. We don't use your data for model training. Your environment is fully isolated.</p>
       </div>
     </div>
-    
+
+    <div class="faq-item">
+      <button class="faq-question">
+        How is this different from Claude or GPT?
+        <span class="faq-icon">+</span>
+      </button>
+      <div class="faq-answer">
+        <p>General-purpose AI tools are interfaces you use manually. What we build is an active integration layer connected to your real tools, running continuously, with defined behavior and escalation logic. You don't use it like a chat window. It runs as part of your workflow.</p>
+      </div>
+    </div>
+
     <div class="faq-item">
       <button class="faq-question">
         Do I need to be technical?
         <span class="faq-icon">+</span>
       </button>
       <div class="faq-answer">
-        <p>No. You describe how your business works. We handle the integration architecture, the tool connections, and the ongoing maintenance. You interact with the output — faster workflows, handled follow-ups, fewer things falling through the cracks.</p>
+        <p>No. You describe how your business works. We handle the integration architecture, the tool connections, and the ongoing maintenance. You interact with the output: faster workflows, handled follow-ups, fewer things falling through the cracks.</p>
       </div>
     </div>
-    
+
     <div class="faq-item">
       <button class="faq-question">
         How fast does it get useful?
         <span class="faq-icon">+</span>
       </button>
       <div class="faq-answer">
-        <p>The first integration is live in one to two weeks. The first month is where it tightens — we calibrate behavior against real usage and handle edge cases as they surface. Most clients see reliable, stable operation by end of month one.</p>
+        <p>The first integration is live in one to two weeks. The first month is where it tightens. We calibrate behavior against real usage and handle edge cases as they surface. Most clients see reliable, stable operation by end of month one.</p>
       </div>
     </div>
-    
+
     <div class="faq-item">
       <button class="faq-question">
         What happens when something breaks?
@@ -1132,17 +1622,7 @@ footer {
         <p>We catch most issues before you see them. When something outside the expected parameters surfaces, it escalates to you rather than failing silently. Infrastructure issues are resolved the same business day.</p>
       </div>
     </div>
-    
-    <div class="faq-item">
-      <button class="faq-question">
-        Is my data safe?
-        <span class="faq-icon">+</span>
-      </button>
-      <div class="faq-answer">
-        <p>Integrations run with scoped permissions — minimum access for the defined workflow. Every external action is logged. We don't use your data for model training. Your environment is fully isolated.</p>
-      </div>
-    </div>
-    
+
     <div class="faq-item">
       <button class="faq-question">
         What if I want to cancel?
@@ -1156,10 +1636,26 @@ footer {
 </section>
 
 <!-- FINAL CTA -->
-<section class="final-cta">
-  <h2>Your first AI integration is two weeks away.</h2>
-  <p>Thirty minutes to map the workflow — then we build it, connect it, and run it for you.</p>
-  <a href="https://cal.com/clawdbotdfw/15min" class="btn-primary">Book a Discovery Call →</a>
+<section class="final-cta reveal">
+  <h2>Ready to get started?</h2>
+  <div class="cta-cards">
+    <a href="https://cal.com/clawdbotdfw/15min" class="cta-card dark" style="text-decoration:none">
+      <div class="cta-card-header">
+        <h3>Book a discovery call</h3>
+        <span class="cta-card-arrow">&rarr;</span>
+      </div>
+      <ul class="cta-card-steps">
+        <li><span class="cta-step-icon">01</span> Map your workflow</li>
+        <li><span class="cta-step-icon">02</span> We scope the integration</li>
+        <li><span class="cta-step-icon">03</span> Live in two weeks</li>
+      </ul>
+    </a>
+  </div>
+  <a href="mailto:hello@tend.team" class="cta-bar" style="text-decoration:none">
+    <span class="cta-bar-dot"></span>
+    <span class="cta-bar-text"><span class="cta-bar-label">SEND US A MESSAGE</span><span class="cta-bar-email">HELLO@TEND.TEAM</span></span>
+    <span class="cta-bar-arrow">&#8599;</span>
+  </a>
 </section>
 
 <!-- FOOTER -->
@@ -1168,6 +1664,13 @@ footer {
   <div class="footer-tagline">AI integration for business workflows.</div>
   <div class="footer-links">
     © 2026 Tend · <a href="mailto:hello@tend.team">hello@tend.team</a>
+  </div>
+  <div class="footer-locations">
+    <div class="footer-locations-label">Locations</div>
+    <div class="footer-locations-list">
+      <a href="https://www.google.com/maps/place/Dallas,+TX" target="_blank" rel="noopener">Dallas</a>
+      <a href="https://www.google.com/maps/place/Orange+County,+CA" target="_blank" rel="noopener">Orange County</a>
+    </div>
   </div>
 </footer>
 
@@ -1194,6 +1697,100 @@ function openMobileMenu() {
 function closeMobileMenu() {
   document.getElementById('mobileMenu').classList.remove('open');
 }
+
+// Scroll Reveal
+const revealObserver = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add('visible');
+    }
+  });
+}, { threshold: 0.15, rootMargin: '0px 0px -40px 0px' });
+
+document.querySelectorAll('.reveal, .reveal-left, .reveal-right, .reveal-scale, .stagger-children').forEach(el => {
+  revealObserver.observe(el);
+});
+
+// Activity feed typewriter — lines appear one by one
+const feedObserver = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      const lines = entry.target.querySelectorAll('.activity-line');
+      lines.forEach((line, i) => {
+        line.style.opacity = '0';
+        line.style.transform = 'translateX(-12px)';
+        line.style.transition = 'opacity 0.4s ease-out, transform 0.4s ease-out';
+        setTimeout(() => {
+          line.style.opacity = '1';
+          line.style.transform = 'translateX(0)';
+        }, 200 + i * 120);
+      });
+      feedObserver.unobserve(entry.target);
+    }
+  });
+}, { threshold: 0.3 });
+
+document.querySelectorAll('.activity-feed').forEach(el => feedObserver.observe(el));
+
+// Parallax on hero illustration pieces — each moves at a different rate on scroll
+const heroIllustration = document.querySelector('.hero-illustration');
+if (heroIllustration && window.matchMedia('(prefers-reduced-motion: no-preference)').matches) {
+  const illoLeaning = heroIllustration.querySelector('.illo-leaning');
+  const illoNotebook = heroIllustration.querySelectorAll('.illo-piece')[0];
+  const illoDots = heroIllustration.querySelector('.illo-dots');
+  const illoStack = heroIllustration.querySelectorAll('.illo-piece')[1];
+  const illoLines = heroIllustration.querySelectorAll('.illo-piece')[2];
+  const illoThin = heroIllustration.querySelectorAll('.illo-piece')[3];
+
+  window.addEventListener('scroll', () => {
+    const scrollY = window.scrollY;
+    if (illoLeaning) illoLeaning.style.transform = `rotate(${-12 + scrollY * 0.02}deg) translateY(${scrollY * -0.15}px)`;
+    if (illoNotebook) illoNotebook.style.transform = `translateY(${scrollY * -0.08}px)`;
+    if (illoDots) illoDots.style.transform = `translateY(${scrollY * -0.12}px)`;
+    if (illoStack) illoStack.style.transform = `translateY(${scrollY * -0.18}px)`;
+    if (illoLines) illoLines.style.transform = `translateX(${scrollY * 0.03}px) translateY(${scrollY * -0.06}px)`;
+    if (illoThin) illoThin.style.transform = `translateY(${scrollY * -0.22}px)`;
+  }, { passive: true });
+}
+
+// Timeline animation
+const timelineObserver = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      const progress = document.getElementById('timelineProgress');
+      const dots = document.querySelectorAll('.timeline-dot');
+      const labels = document.querySelectorAll('.timeline-label');
+      const cards = document.querySelectorAll('.process-grid .step');
+      const steps = [0, 25, 50, 75, 100];
+
+      dots.forEach((dot, i) => {
+        setTimeout(() => {
+          progress.style.width = steps[i] + '%';
+          dot.classList.add('active');
+          labels[i].classList.add('active');
+          if (cards[i]) cards[i].classList.add('active');
+        }, 400 + i * 350);
+      });
+
+      timelineObserver.unobserve(entry.target);
+    }
+  });
+}, { threshold: 0.3 });
+
+const timeline = document.getElementById('processTimeline');
+if (timeline) timelineObserver.observe(timeline);
+
+// Nav background transition on scroll
+const nav = document.querySelector('nav');
+window.addEventListener('scroll', () => {
+  if (window.scrollY > 60) {
+    nav.style.borderBottomColor = 'rgba(0,0,0,0.08)';
+    nav.style.background = 'rgba(244, 245, 246, 0.96)';
+  } else {
+    nav.style.borderBottomColor = 'rgba(0,0,0,0.04)';
+    nav.style.background = 'rgba(244, 245, 246, 0.92)';
+  }
+}, { passive: true });
 </script>
 
 </body>
