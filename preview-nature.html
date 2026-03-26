@@ -263,9 +263,38 @@ nav {
   justify-content: center;
   text-align: center;
   padding-top: 80px;
+  position: relative;
+  overflow: hidden;
+}
+
+.hero::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url('hero-bg.jpg');
+  background-size: cover;
+  background-position: center top;
+  filter: saturate(0.7);
+  z-index: 0;
+}
+
+.hero::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(245, 245, 243, 0.82);
+  z-index: 1;
 }
 
 .hero-content {
+  position: relative;
+  z-index: 2;
   max-width: 700px;
 }
 
@@ -1350,4 +1379,3 @@ function closeMobileMenu() {
 
 </body>
 </html>
-
