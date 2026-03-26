@@ -1,0 +1,615 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=AW-18002968891"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'AW-18002968891');
+  gtag('config', 'G-TEXBWRKN36');
+</script>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AI Automation for DFW Businesses | Tend</title>
+<meta name="description" content="AI automation for small businesses in Dallas-Fort Worth. We install and manage AI employees that handle leads, appointments, and follow-ups 24/7. Serving the entire DFW metroplex.">
+
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect x='10' y='15' width='80' height='14' fill='black'/><rect x='10' y='38' width='80' height='14' fill='black'/><rect x='38' y='62' width='24' height='24' fill='black'/></svg>">
+
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://withtend.ai/dfw">
+<meta property="og:title" content="AI Automation for DFW Businesses | Tend">
+<meta property="og:description" content="AI automation for small businesses in Dallas-Fort Worth. We install AI employees that work 24/7.">
+<meta property="og:image" content="https://withtend.ai/og-image.png">
+
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="AI Automation for DFW Businesses | Tend">
+<meta name="twitter:description" content="AI automation for small businesses in Dallas-Fort Worth.">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+<style>
+:root {
+  --void-black: #000000;
+  --engine-charcoal: #141414;
+  --field-gray: #737373;
+  --canvas-white: #F2F2F2;
+  --signal-white: #FFFFFF;
+  --accent-blue: #2563EB;
+  
+  --bg: var(--canvas-white);
+  --surface: var(--signal-white);
+  --fg: var(--void-black);
+  --fg-muted: var(--field-gray);
+  
+  --font: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  --radius: 8px;
+  --radius-lg: 16px;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: var(--font);
+  background: var(--bg);
+  color: var(--fg);
+  -webkit-font-smoothing: antialiased;
+  line-height: 1.6;
+  background-image: radial-gradient(circle, rgba(0,0,0,0.08) 1px, transparent 1px);
+  background-size: 24px 24px;
+}
+
+h1, h2, h3 {
+  font-weight: 400;
+  letter-spacing: -0.02em;
+  line-height: 1.2;
+}
+
+/* NAV */
+nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  padding: 16px 32px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: rgba(242, 242, 242, 0.9);
+  backdrop-filter: blur(10px);
+  z-index: 100;
+  border-bottom: 1px solid rgba(0,0,0,0.05);
+}
+
+.logo {
+  font-size: 20px;
+  font-weight: 600;
+  text-decoration: none;
+  color: var(--fg);
+}
+
+.nav-cta {
+  background: var(--fg);
+  color: var(--bg);
+  padding: 10px 20px;
+  border-radius: var(--radius);
+  text-decoration: none;
+  font-size: 14px;
+  font-weight: 500;
+  transition: transform 0.2s;
+}
+
+.nav-cta:hover {
+  transform: translateY(-2px);
+}
+
+/* HERO */
+.hero {
+  min-height: 90vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 120px 24px 80px;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.hero-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: var(--surface);
+  padding: 8px 16px;
+  border-radius: 100px;
+  font-size: 13px;
+  font-weight: 500;
+  margin-bottom: 32px;
+  border: 1px solid rgba(0,0,0,0.08);
+}
+
+.hero-badge span {
+  color: var(--accent-blue);
+}
+
+.hero h1 {
+  font-size: clamp(2.5rem, 6vw, 4rem);
+  font-weight: 300;
+  margin-bottom: 24px;
+  letter-spacing: -0.03em;
+}
+
+.hero h1 strong {
+  font-weight: 600;
+}
+
+.hero p {
+  font-size: 18px;
+  color: var(--fg-muted);
+  max-width: 600px;
+  margin-bottom: 40px;
+}
+
+.hero-cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: var(--fg);
+  color: var(--bg);
+  padding: 16px 32px;
+  border-radius: var(--radius);
+  text-decoration: none;
+  font-size: 16px;
+  font-weight: 500;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.hero-cta:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(0,0,0,0.15);
+}
+
+/* SECTIONS */
+section {
+  padding: 80px 24px;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.section-title {
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--fg-muted);
+  margin-bottom: 16px;
+}
+
+section h2 {
+  font-size: clamp(1.75rem, 4vw, 2.5rem);
+  margin-bottom: 24px;
+  font-weight: 400;
+}
+
+/* STATS */
+.stats {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 24px;
+  margin: 48px 0;
+}
+
+.stat {
+  background: var(--surface);
+  padding: 32px;
+  border-radius: var(--radius-lg);
+  text-align: center;
+  border: 1px solid rgba(0,0,0,0.05);
+}
+
+.stat-num {
+  font-size: 48px;
+  font-weight: 600;
+  letter-spacing: -0.03em;
+  margin-bottom: 8px;
+}
+
+.stat-label {
+  font-size: 14px;
+  color: var(--fg-muted);
+}
+
+/* AREAS SERVED */
+.areas {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin: 32px 0;
+}
+
+.area-tag {
+  background: var(--surface);
+  padding: 10px 20px;
+  border-radius: 100px;
+  font-size: 14px;
+  border: 1px solid rgba(0,0,0,0.08);
+}
+
+/* VERTICALS */
+.verticals {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 24px;
+  margin: 48px 0;
+}
+
+.vertical {
+  background: var(--surface);
+  padding: 32px;
+  border-radius: var(--radius-lg);
+  border: 1px solid rgba(0,0,0,0.05);
+}
+
+.vertical-icon {
+  font-size: 32px;
+  margin-bottom: 16px;
+}
+
+.vertical h3 {
+  font-size: 18px;
+  font-weight: 600;
+  margin-bottom: 12px;
+}
+
+.vertical p {
+  font-size: 14px;
+  color: var(--fg-muted);
+  line-height: 1.7;
+}
+
+/* HOW IT WORKS */
+.process {
+  position: relative;
+  padding: 48px 0;
+}
+
+.process-line {
+  position: absolute;
+  top: 85px;
+  left: 24px;
+  right: 24px;
+  height: 2px;
+  background: linear-gradient(90deg, var(--fg) 0%, var(--fg) 100%);
+  opacity: 0.1;
+  z-index: 0;
+}
+
+.process-steps {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 32px;
+  position: relative;
+  z-index: 1;
+}
+
+.step {
+  text-align: center;
+}
+
+.step-num {
+  width: 48px;
+  height: 48px;
+  background: var(--fg);
+  color: var(--bg);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 18px;
+  font-weight: 600;
+  margin: 0 auto 16px;
+}
+
+.step h4 {
+  font-size: 16px;
+  font-weight: 600;
+  margin-bottom: 8px;
+}
+
+.step p {
+  font-size: 13px;
+  color: var(--fg-muted);
+}
+
+/* PRICING */
+.pricing-card {
+  background: var(--fg);
+  color: var(--bg);
+  padding: 48px;
+  border-radius: var(--radius-lg);
+  text-align: center;
+  margin: 48px 0;
+}
+
+.pricing-card h3 {
+  font-size: 14px;
+  font-weight: 500;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  opacity: 0.7;
+  margin-bottom: 16px;
+}
+
+.price {
+  font-size: 48px;
+  font-weight: 600;
+  margin-bottom: 8px;
+}
+
+.price-sub {
+  font-size: 18px;
+  opacity: 0.7;
+  margin-bottom: 32px;
+}
+
+.pricing-features {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 16px 32px;
+  margin-bottom: 32px;
+  font-size: 14px;
+  opacity: 0.9;
+}
+
+.pricing-cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: var(--bg);
+  color: var(--fg);
+  padding: 16px 32px;
+  border-radius: var(--radius);
+  text-decoration: none;
+  font-size: 16px;
+  font-weight: 500;
+  transition: transform 0.2s;
+}
+
+.pricing-cta:hover {
+  transform: translateY(-2px);
+}
+
+/* CTA SECTION */
+.cta-section {
+  text-align: center;
+  padding: 80px 24px;
+  background: var(--surface);
+  border-radius: var(--radius-lg);
+  margin: 48px 0;
+}
+
+.cta-section h2 {
+  margin-bottom: 16px;
+}
+
+.cta-section p {
+  color: var(--fg-muted);
+  margin-bottom: 32px;
+}
+
+/* FOOTER */
+footer {
+  padding: 48px 24px;
+  text-align: center;
+  border-top: 1px solid rgba(0,0,0,0.08);
+}
+
+footer p {
+  font-size: 14px;
+  color: var(--fg-muted);
+}
+
+footer a {
+  color: var(--fg);
+  text-decoration: none;
+}
+
+@media (max-width: 600px) {
+  nav { padding: 12px 16px; }
+  .hero { padding: 100px 16px 60px; }
+  section { padding: 60px 16px; }
+  .process-line { display: none; }
+}
+</style>
+</head>
+<body>
+
+<nav>
+  <a href="https://withtend.ai" class="logo">Tend</a>
+  <a href="https://cal.com/tend/intro" class="nav-cta">Book a Call</a>
+</nav>
+
+<div class="hero">
+  <div class="hero-badge">📍 <span>Serving Dallas-Fort Worth</span></div>
+  <h1>AI Automation for <strong>DFW Businesses</strong></h1>
+  <p>We install AI employees for small businesses across the Dallas-Fort Worth metroplex. Respond to leads instantly, book appointments automatically, and never miss an opportunity — 24/7.</p>
+  <a href="https://cal.com/tend/intro" class="hero-cta">Schedule a Discovery Call →</a>
+</div>
+
+<section>
+  <div class="section-title">The DFW Problem</div>
+  <h2>Your leads can't wait. Neither can your competitors.</h2>
+  <p style="color: var(--fg-muted); max-width: 700px; margin-bottom: 32px;">
+    In the DFW market, speed wins. When a homeowner in Plano needs AC repair or a buyer in Fort Worth wants to see a house, they call the first business that answers. If you're on a job site, in a meeting, or asleep — that lead is gone.
+  </p>
+  
+  <div class="stats">
+    <div class="stat">
+      <div class="stat-num">78%</div>
+      <div class="stat-label">of buyers go with the first responder</div>
+    </div>
+    <div class="stat">
+      <div class="stat-num">5 min</div>
+      <div class="stat-label">before a lead goes cold</div>
+    </div>
+    <div class="stat">
+      <div class="stat-num">24/7</div>
+      <div class="stat-label">your AI never sleeps</div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="section-title">Areas We Serve</div>
+  <h2>The entire DFW metroplex</h2>
+  <p style="color: var(--fg-muted); margin-bottom: 16px;">We serve businesses across Dallas-Fort Worth and surrounding cities.</p>
+  
+  <div class="areas">
+    <span class="area-tag">Dallas</span>
+    <span class="area-tag">Fort Worth</span>
+    <span class="area-tag">Arlington</span>
+    <span class="area-tag">Plano</span>
+    <span class="area-tag">Irving</span>
+    <span class="area-tag">Frisco</span>
+    <span class="area-tag">McKinney</span>
+    <span class="area-tag">Denton</span>
+    <span class="area-tag">Garland</span>
+    <span class="area-tag">Grand Prairie</span>
+    <span class="area-tag">Richardson</span>
+    <span class="area-tag">Carrollton</span>
+    <span class="area-tag">Lewisville</span>
+    <span class="area-tag">Allen</span>
+    <span class="area-tag">Flower Mound</span>
+    <span class="area-tag">Mesquite</span>
+    <span class="area-tag">Grapevine</span>
+    <span class="area-tag">Southlake</span>
+  </div>
+</section>
+
+<section>
+  <div class="section-title">Who We Help</div>
+  <h2>Built for DFW service businesses</h2>
+  
+  <div class="verticals">
+    <div class="vertical">
+      <div class="vertical-icon">🔧</div>
+      <h3>Home Services</h3>
+      <p>HVAC, plumbing, electrical, roofing. Your AI answers calls while you're on the job, books estimates, and follows up automatically. One booked job pays for a month of service.</p>
+    </div>
+    <div class="vertical">
+      <div class="vertical-icon">🏠</div>
+      <h3>Real Estate</h3>
+      <p>Agents and brokerages. Your AI responds to leads in seconds, answers property questions, and books showings. Never lose a deal to a faster competitor again.</p>
+    </div>
+    <div class="vertical">
+      <div class="vertical-icon">📈</div>
+      <h3>Agencies</h3>
+      <p>Marketing, creative, consulting. Your AI handles client check-ins, status updates, and follow-ups. Reclaim 30% of your time for actual billable work.</p>
+    </div>
+    <div class="vertical">
+      <div class="vertical-icon">🏢</div>
+      <h3>Professional Services</h3>
+      <p>Law firms, accountants, consultants. Your AI qualifies leads, schedules consultations, and manages client communication around the clock.</p>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="section-title">How It Works</div>
+  <h2>Up and running in days, not months</h2>
+  
+  <div class="process">
+    <div class="process-line"></div>
+    <div class="process-steps">
+      <div class="step">
+        <div class="step-num">1</div>
+        <h4>Discovery</h4>
+        <p>30-min call to learn your workflows and pain points</p>
+      </div>
+      <div class="step">
+        <div class="step-num">2</div>
+        <h4>Configure</h4>
+        <p>We build your AI agent and train it on your business</p>
+      </div>
+      <div class="step">
+        <div class="step-num">3</div>
+        <h4>Install</h4>
+        <p>Mac mini delivered to your DFW office, connected to your tools</p>
+      </div>
+      <div class="step">
+        <div class="step-num">4</div>
+        <h4>Go Live</h4>
+        <p>Your AI starts working immediately — we manage everything</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="section-title">Investment</div>
+  <h2>Less than a part-time hire</h2>
+  
+  <div class="pricing-card">
+    <h3>Complete AI Employee</h3>
+    <div class="price">$5,000</div>
+    <div class="price-sub">setup + $2,000/month</div>
+    <div class="pricing-features">
+      <span>✓ Mac mini hardware</span>
+      <span>✓ AI agent configured</span>
+      <span>✓ 24/7 operation</span>
+      <span>✓ Ongoing management</span>
+      <span>✓ Usage included</span>
+      <span>✓ Local support</span>
+    </div>
+    <a href="https://cal.com/tend/intro" class="pricing-cta">Book Discovery Call</a>
+  </div>
+  
+  <p style="text-align: center; color: var(--fg-muted); font-size: 14px;">
+    One booked HVAC job or closed real estate deal pays for months of service.
+  </p>
+</section>
+
+<section>
+  <div class="cta-section">
+    <h2>Ready to stop missing leads?</h2>
+    <p>Join DFW businesses that never miss an opportunity. Schedule a 15-minute discovery call.</p>
+    <a href="https://cal.com/tend/intro" class="hero-cta">Book a Call →</a>
+  </div>
+</section>
+
+<footer>
+  <p><a href="https://withtend.ai">Tend</a> · AI automation for small businesses · Serving Dallas-Fort Worth</p>
+</footer>
+
+<!-- LocalBusiness Schema -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "LocalBusiness",
+  "name": "Tend",
+  "description": "AI automation services for small businesses in Dallas-Fort Worth",
+  "url": "https://withtend.ai/dfw",
+  "areaServed": [
+    {"@type": "City", "name": "Dallas", "addressRegion": "TX"},
+    {"@type": "City", "name": "Fort Worth", "addressRegion": "TX"},
+    {"@type": "City", "name": "Arlington", "addressRegion": "TX"},
+    {"@type": "City", "name": "Plano", "addressRegion": "TX"},
+    {"@type": "City", "name": "Irving", "addressRegion": "TX"},
+    {"@type": "City", "name": "Frisco", "addressRegion": "TX"},
+    {"@type": "City", "name": "McKinney", "addressRegion": "TX"},
+    {"@type": "City", "name": "Denton", "addressRegion": "TX"}
+  ],
+  "priceRange": "$$$",
+  "serviceType": ["AI Automation", "Business Automation", "AI Integration"]
+}
+</script>
+
+</body>
+</html>
