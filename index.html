@@ -36,43 +36,38 @@ fbq('track', 'PageView');
 
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Tend | AI Integration for Business Workflows</title>
+<title>Tend — AI Integration for Business Workflows</title>
 <meta name="description" content="We integrate AI into the workflows that run your business. Not a chatbot. Mapped to your tools, managed as you evolve.">
 
 <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect x='10' y='15' width='80' height='14' fill='black'/><rect x='10' y='38' width='80' height='14' fill='black'/><rect x='38' y='62' width='24' height='24' fill='black'/></svg>">
 
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://tend.team">
-<meta property="og:title" content="Tend | AI Integration for Business Workflows">
+<meta property="og:title" content="Tend — AI Integration for Business Workflows">
 <meta property="og:description" content="We integrate AI into the workflows that run your business. Mapped to your tools, managed as you evolve.">
-<meta property="og:image" content="https://tend.team/og-image.png">
-<meta property="og:image:width" content="1200">
-<meta property="og:image:height" content="630">
-
-<meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="Tend | AI Integration for Business Workflows">
-<meta name="twitter:description" content="We integrate AI into the workflows that run your business.">
-<meta name="twitter:image" content="https://tend.team/og-image.png">
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Source+Serif+4:ital,wght@0,300;0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
 
 <style>
+/* === BRAND KIT === */
 :root {
   --void-black: #000000;
-  --engine-charcoal: #141414;
-  --field-gray: #737373;
-  --canvas-white: #F2F2F2;
+  --engine-charcoal: #2A2A24;
+  --field-gray: #6B6B60;
+  --canvas-white: #F4F5F6;
   --signal-white: #FFFFFF;
-  --accent-blue: #2563EB;
-  
+  --surface-warm: #ECECEA;
+  --accent-slate: #515143;
+
   --bg: var(--canvas-white);
   --surface: var(--signal-white);
-  --fg: var(--void-black);
-  --fg-muted: var(--field-gray);
-  
+  --fg: #2A2A2A;
+  --fg-muted: #7A7A6E;
+
   --font: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-serif: 'Source Serif 4', Georgia, 'Times New Roman', serif;
   --radius: 8px;
   --radius-lg: 16px;
 }
@@ -86,23 +81,39 @@ body {
   color: var(--fg);
   -webkit-font-smoothing: antialiased;
   line-height: 1.6;
-  background-image: radial-gradient(circle, rgba(0,0,0,0.08) 1px, transparent 1px);
-  background-size: 24px 24px;
 }
 
-h1, h2, h3 {
+/* === TYPOGRAPHY === */
+h1, h2 {
+  font-family: var(--font-serif);
   font-weight: 400;
-  letter-spacing: -0.02em;
-  line-height: 1.2;
+  letter-spacing: -0.01em;
+  line-height: 1.15;
+  color: var(--fg);
 }
 
-h1 { font-size: clamp(2rem, 5vw, 3rem); }
-h2 { font-size: clamp(1.5rem, 3vw, 2.25rem); }
-h3 { font-size: 1.125rem; font-weight: 500; }
+h3 {
+  font-family: var(--font-serif);
+  font-weight: 400;
+  letter-spacing: -0.01em;
+  line-height: 1.3;
+  color: var(--fg);
+}
 
-p { color: var(--fg-muted); }
+h1 { font-size: clamp(2.5rem, 6vw, 3.75rem); }
+h2 { font-size: clamp(1.75rem, 4vw, 2.75rem); }
+h3 { font-size: 1.125rem; }
+
+p {
+  font-family: var(--font-serif);
+  color: var(--fg-muted);
+  font-weight: 300;
+  line-height: 1.7;
+}
+
 a { color: var(--fg); }
 
+/* === LAYOUT === */
 .container {
   max-width: 1000px;
   margin: 0 auto;
@@ -110,6 +121,7 @@ a { color: var(--fg); }
 }
 
 .section-label {
+  font-family: var(--font);
   font-size: 11px;
   font-weight: 600;
   letter-spacing: 0.1em;
@@ -130,7 +142,7 @@ a { color: var(--fg); }
   margin-right: auto;
 }
 
-/* NAV */
+/* === NAV === */
 nav {
   position: fixed;
   top: 0;
@@ -138,9 +150,9 @@ nav {
   right: 0;
   z-index: 100;
   padding: 16px 24px;
-  background: rgba(242, 242, 242, 0.9);
+  background: rgba(244, 245, 246, 0.92);
   backdrop-filter: blur(20px);
-  border-bottom: 1px solid rgba(0,0,0,0.05);
+  border-bottom: 1px solid rgba(0,0,0,0.04);
 }
 
 .nav-inner {
@@ -165,6 +177,17 @@ nav {
   font-size: 18px;
   font-weight: 400;
   letter-spacing: 0.05em;
+}
+
+.nav-tag {
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  padding: 4px 8px;
+  background: var(--engine-charcoal);
+  color: var(--canvas-white);
+  border-radius: 4px;
+  margin-left: 8px;
 }
 
 .nav-links {
@@ -234,28 +257,33 @@ nav {
   display: block;
   margin-top: 16px;
   padding: 14px;
-  background: var(--void-black);
+  background: var(--accent-slate);
   color: var(--signal-white);
   text-align: center;
   border-radius: 32px;
   font-weight: 500;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  font-size: 13px;
   border-bottom: none;
 }
 
 .nav-cta {
   padding: 10px 20px;
-  background: var(--void-black);
+  background: var(--accent-slate);
   color: var(--signal-white);
   text-decoration: none;
-  font-size: 14px;
+  font-size: 13px;
   font-weight: 500;
-  border-radius: var(--radius);
-  transition: all 0.2s;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  border-radius: 32px;
+  transition: background 0.2s;
 }
 
-.nav-cta:hover { background: var(--engine-charcoal); }
+.nav-cta:hover { background: #3F3F33; }
 
-/* HERO */
+/* === HERO === */
 .hero {
   min-height: 100vh;
   display: flex;
@@ -266,143 +294,118 @@ nav {
 }
 
 .hero-content {
-  max-width: 700px;
+  max-width: 780px;
 }
 
-.hero-content h1 { margin-bottom: 24px; }
+.hero-content h1 {
+  margin-bottom: 28px;
+}
 
 .hero-content > p {
-  font-size: 1.125rem;
-  margin-bottom: 40px;
-  line-height: 1.7;
+  font-size: 1.25rem;
+  margin-bottom: 48px;
+  line-height: 1.75;
+  max-width: 620px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
-.hero-badge {
+.nav-badge {
   display: inline-flex;
   align-items: center;
   gap: 8px;
+  padding: 8px 18px;
+  background: var(--signal-white);
+  border-radius: 40px;
+  font-family: var(--font);
   font-size: 13px;
-  font-weight: 500;
-  padding: 8px 16px;
-  background: var(--surface);
-  border: 1px solid rgba(0,0,0,0.08);
-  border-radius: 24px;
-  margin-bottom: 32px;
-  color: var(--fg-muted);
+  font-weight: 400;
+  color: var(--fg);
+  box-shadow: 0 1px 8px rgba(0,0,0,0.06);
 }
 
-.hero-badge .dot {
+.nav-badge-dot {
   width: 8px;
   height: 8px;
-  background: #22C55E;
+  background: #6ECF72;
   border-radius: 50%;
-  animation: pulse 2s infinite;
-}
-
-@keyframes pulse {
-  0%, 100% { opacity: 1; }
-  50% { opacity: 0.5; }
+  flex-shrink: 0;
 }
 
 .hero-ctas {
   display: flex;
   gap: 16px;
   justify-content: center;
+  margin-top: 48px;
 }
 
-/* BUTTONS - stronger CTA */
 .btn-primary {
   display: inline-flex;
   align-items: center;
-  gap: 8px;
-  padding: 18px 36px;
-  background: var(--void-black);
+  gap: 10px;
+  padding: 16px 36px;
+  background: var(--accent-slate);
   color: var(--signal-white);
   text-decoration: none;
-  font-size: 16px;
-  font-weight: 600;
+  font-size: 13px;
+  font-weight: 500;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
   border-radius: 32px;
-  transition: all 0.2s;
-  box-shadow: 0 4px 14px rgba(0,0,0,0.2);
+  transition: background 0.2s;
 }
 
-.btn-primary:hover { 
-  background: var(--engine-charcoal);
-  transform: translateY(-1px);
-  box-shadow: 0 6px 20px rgba(0,0,0,0.25);
+.btn-primary .dot {
+  width: 8px;
+  height: 8px;
+  background: var(--signal-white);
+  border-radius: 50%;
 }
+
+.btn-primary:hover { background: #3F3F33; }
 
 .btn-secondary {
   display: inline-flex;
   align-items: center;
   gap: 8px;
-  padding: 18px 36px;
-  background: var(--surface);
+  padding: 16px 32px;
+  background: transparent;
   color: var(--fg-muted);
   text-decoration: none;
-  font-size: 16px;
-  font-weight: 500;
+  font-size: 14px;
+  font-weight: 400;
   border-radius: 32px;
+  border: 1px solid rgba(0,0,0,0.12);
   transition: all 0.2s;
 }
 
 .btn-secondary:hover {
-  background: rgba(255,255,255,0.8);
+  border-color: rgba(0,0,0,0.3);
   color: var(--fg);
 }
 
-/* LAYERED SHOWCASE */
-.layered-showcase {
-  position: relative;
-  padding: 60px 0;
-}
-
-.showcase-wrapper {
-  position: relative;
-  max-width: 900px;
-  margin: 0 auto;
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 40px;
-  align-items: start;
-}
-
-/* Problem card */
+/* === PROBLEM SECTION === */
 .problem-section {
   background: var(--surface);
   border-radius: var(--radius-lg);
-  padding: 48px 40px;
-  box-shadow: 0 4px 40px rgba(0,0,0,0.06);
-  position: relative;
-  z-index: 2;
-}
-
-.problem-section::before {
-  content: '';
-  position: absolute;
-  top: 12px;
-  left: 12px;
-  right: -12px;
-  bottom: -12px;
-  background: rgba(0,0,0,0.03);
-  border-radius: var(--radius-lg);
-  z-index: -1;
+  padding: 64px 48px;
+  text-align: center;
 }
 
 .problem-section h2 {
   margin-bottom: 16px;
-  font-size: 1.5rem;
 }
 
 .problem-section > p {
-  font-size: 1rem;
-  line-height: 1.7;
+  max-width: 640px;
+  margin: 0 auto;
+  font-size: 1.2rem;
+  line-height: 1.75;
 }
 
-/* Activity feed stack */
-.activity-stack {
-  position: relative;
-  padding-top: 20px;
+/* === ACTIVITY FEED === */
+.activity-section {
+  padding-top: 0;
 }
 
 .activity-feed {
@@ -412,21 +415,8 @@ nav {
   color: var(--signal-white);
   font-size: 13px;
   font-family: 'SF Mono', 'Monaco', 'Consolas', monospace;
-  position: relative;
-  z-index: 3;
-  box-shadow: 0 20px 60px rgba(0,0,0,0.2);
-}
-
-.activity-feed::before {
-  content: '';
-  position: absolute;
-  top: 8px;
-  left: 8px;
-  right: -8px;
-  bottom: -8px;
-  background: rgba(0,0,0,0.15);
-  border-radius: var(--radius-lg);
-  z-index: -1;
+  max-width: 600px;
+  margin: 0 auto;
 }
 
 .activity-feed .header {
@@ -461,63 +451,11 @@ nav {
 
 .activity-text { color: rgba(255,255,255,0.85); }
 
-/* Floating notification cards */
-.float-card {
-  position: absolute;
-  background: var(--surface);
-  border-radius: 12px;
-  padding: 16px 20px;
-  box-shadow: 0 8px 30px rgba(0,0,0,0.12);
-  font-size: 13px;
-  z-index: 4;
-  display: flex;
-  align-items: center;
-  gap: 12px;
-}
-
-.float-card .icon {
-  width: 32px;
-  height: 32px;
-  background: #22C55E;
-  border-radius: 8px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: white;
-  font-size: 14px;
-}
-
-.float-card .icon.blue { background: var(--accent-blue); }
-.float-card .icon.orange { background: #F59E0B; }
-
-.float-card .text { color: var(--fg); font-weight: 500; }
-.float-card .sub { color: var(--fg-muted); font-size: 12px; }
-
-.float-card-1 {
-  top: -20px;
-  right: -30px;
-  transform: rotate(3deg);
-}
-
-.float-card-2 {
-  bottom: 40px;
-  left: -40px;
-  transform: rotate(-2deg);
-}
-
-.float-card-3 {
-  bottom: -30px;
-  right: 60px;
-  transform: rotate(1deg);
-}
-
-/* TRUST STATS */
+/* === TRUST STATS === */
 .trust-section {
   background: var(--surface);
   border-radius: var(--radius-lg);
   padding: 48px;
-  position: relative;
-  overflow: visible;
 }
 
 .trust-tools {
@@ -546,8 +484,14 @@ nav {
 }
 
 .trust-logos svg {
-  height: 24px;
+  height: 36px;
   width: auto;
+}
+
+.trust-logos img {
+  height: 36px;
+  width: auto;
+  filter: grayscale(100%);
 }
 
 .trust-credibility {
@@ -588,203 +532,244 @@ nav {
 .stat { text-align: center; }
 
 .stat-value {
+  font-family: var(--font-serif);
   font-size: 2rem;
-  font-weight: 500;
+  font-weight: 400;
   letter-spacing: -0.02em;
 }
 
 .stat-label {
+  font-family: var(--font);
   font-size: 13px;
   color: var(--fg-muted);
   margin-top: 4px;
 }
 
-/* FEATURES - scannable */
+/* === FEATURES (BENTO) === */
 .features-grid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 24px;
-}
-
-.feature-card {
-  background: var(--surface);
-  border-radius: var(--radius-lg);
-  padding: 32px;
-}
-
-.feature-icon {
-  width: 48px;
-  height: 48px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background: var(--void-black);
-  color: var(--signal-white);
-  border-radius: 12px;
-  margin-bottom: 20px;
-  font-size: 20px;
-}
-
-.feature-card h3 { 
-  margin-bottom: 12px;
-  font-weight: 600;
-}
-
-.feature-card p {
-  font-size: 14px;
-  line-height: 1.7;
-}
-
-.feature-card strong {
-  color: var(--fg);
-  font-weight: 500;
-}
-
-/* PROCESS - bigger steps */
-.process-grid {
-  display: grid;
-  grid-template-columns: repeat(5, 1fr);
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: auto auto;
   gap: 16px;
 }
 
-.step {
-  background: var(--surface);
+.feature-card {
+  background: var(--surface-warm);
   border-radius: var(--radius-lg);
-  padding: 32px 24px;
-  text-align: center;
+  padding: 32px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  position: relative;
+  min-height: 180px;
+}
+
+.feature-card:first-child {
+  grid-row: 1 / 3;
+  background: var(--accent-slate);
+  color: var(--signal-white);
+  min-height: 380px;
+}
+
+.feature-card:first-child h3 {
+  color: rgba(255,255,255,0.8);
+  font-size: 1.5rem;
+}
+
+.feature-card:first-child p {
+  color: rgba(255,255,255,0.7);
+}
+
+.feature-card .feature-tag {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  font-family: var(--font);
+  font-size: 11px;
+  font-weight: 600;
+  color: var(--fg-muted);
+  opacity: 0.5;
+}
+
+.feature-card:first-child .feature-tag {
+  color: rgba(255,255,255,0.4);
+}
+
+.feature-icon {
+  display: none;
+}
+
+.feature-card h3 {
+  font-family: var(--font-serif);
+  font-size: 1.25rem;
+  font-weight: 400;
+  color: var(--fg);
+  margin-bottom: 12px;
+}
+
+.feature-card p {
+  font-size: 0.9rem;
+  line-height: 1.7;
+}
+
+/* === PROCESS (BENTO + TIMELINE) === */
+.process-section {
+  background: #2A2A2A;
+  padding-top: 80px;
+  padding-bottom: 80px;
+  margin-top: 80px;
+  margin-bottom: 80px;
+  border-radius: var(--radius-lg);
+}
+
+.process-section .section-label {
+  color: var(--field-gray);
+}
+
+.process-section .section-header h2 {
+  color: var(--signal-white);
+}
+
+.process-section .section-header p {
+  color: rgba(255,255,255,0.6);
+}
+
+.process-wrapper {
   position: relative;
 }
 
+.process-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: auto auto;
+  gap: 16px;
+  position: relative;
+}
+
+.step {
+  background: rgba(255,255,255,0.06);
+  border-radius: var(--radius-lg);
+  padding: 32px 28px;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  transition: background 0.5s ease, box-shadow 0.5s ease;
+}
+
+.step.active {
+  background: rgba(255,255,255,0.14);
+  box-shadow: 0 0 0 1px rgba(255,255,255,0.12);
+}
+
+/* First step spans 2 rows */
+.step:first-child {
+  grid-row: 1 / 3;
+}
+
 .step-num {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  width: 32px;
-  height: 32px;
-  background: var(--void-black);
-  color: var(--signal-white);
-  border-radius: 50%;
-  font-size: 12px;
+  font-family: var(--font);
+  font-size: 11px;
   font-weight: 600;
+  letter-spacing: 0.05em;
+  color: rgba(255,255,255,0.4);
   margin-bottom: 16px;
 }
 
 .step h3 {
-  font-size: 1rem;
+  font-family: var(--font-serif);
+  font-size: 1.25rem;
+  font-weight: 400;
   margin-bottom: 12px;
-  font-weight: 600;
+  color: rgba(255,255,255,0.85);
 }
 
 .step p {
-  font-size: 13px;
-  line-height: 1.6;
-}
-
-/* PRICING */
-.pricing-grid {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 24px;
-  max-width: 800px;
-  margin: 0 auto;
-}
-
-.price-card {
-  background: var(--surface);
-  border-radius: var(--radius-lg);
-  padding: 40px;
-  display: flex;
-  flex-direction: column;
-}
-
-.price-card .price-cta {
+  font-size: 0.9rem;
+  line-height: 1.7;
   margin-top: auto;
+  color: rgba(255,255,255,0.5);
 }
 
-.price-label {
-  font-size: 11px;
-  font-weight: 600;
-  letter-spacing: 0.05em;
-  text-transform: uppercase;
-  color: var(--fg-muted);
-}
-
-.price-title {
-  font-size: 1.25rem;
-  font-weight: 600;
-  margin: 8px 0;
-}
-
-.price-amount {
-  font-size: 2.5rem;
-  font-weight: 500;
-  letter-spacing: -0.02em;
-  margin: 16px 0;
-}
-
-.price-amount span {
-  font-size: 1rem;
-  color: var(--fg-muted);
-}
-
-.price-desc {
-  font-size: 14px;
-  margin-bottom: 24px;
-  color: var(--fg-muted);
-}
-
-.price-list {
-  list-style: none;
-  margin-bottom: 32px;
-}
-
-.price-list li {
-  padding: 10px 0;
-  font-size: 14px;
-  color: var(--fg-muted);
+/* Animated connecting line */
+.process-timeline {
   display: flex;
   align-items: center;
-  gap: 12px;
-  border-bottom: 1px solid rgba(0,0,0,0.05);
+  justify-content: center;
+  padding: 24px 0;
+  position: relative;
+  overflow: hidden;
 }
 
-.price-list li:last-child { border-bottom: none; }
-
-.price-list .check {
-  color: #22C55E;
-  font-weight: 600;
-}
-
-.price-cta {
-  display: block;
+.timeline-track {
   width: 100%;
-  padding: 16px 24px;
-  background: var(--void-black);
-  color: var(--signal-white);
-  text-decoration: none;
+  max-width: 800px;
+  height: 2px;
+  background: rgba(255,255,255,0.15);
+  border-radius: 2px;
+  position: relative;
+  overflow: hidden;
+}
+
+.timeline-progress {
+  height: 100%;
+  width: 0%;
+  background: var(--signal-white);
+  border-radius: 2px;
+  transition: width 1.5s cubic-bezier(0.22, 0.61, 0.36, 1);
+}
+
+.timeline-dots {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 2%;
+}
+
+.timeline-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: rgba(255,255,255,0.15);
+  border: 2px solid rgba(255,255,255,0.15);
+  transition: background 0.4s ease, border-color 0.4s ease;
+  z-index: 1;
+}
+
+.timeline-dot.active {
+  background: var(--signal-white);
+  border-color: var(--signal-white);
+}
+
+.timeline-labels {
+  display: flex;
+  justify-content: space-between;
+  max-width: 800px;
+  width: 100%;
+  margin: 12px auto 0;
+  padding: 0 2%;
+}
+
+.timeline-label {
+  font-family: var(--font);
+  font-size: 11px;
+  font-weight: 500;
+  color: rgba(255,255,255,0.35);
   text-align: center;
-  font-size: 14px;
-  font-weight: 600;
-  border-radius: 32px;
-  transition: all 0.2s;
+  letter-spacing: 0.03em;
+  transition: color 0.4s ease;
 }
 
-.price-cta:hover { 
-  background: var(--engine-charcoal);
+.timeline-label.active {
+  color: rgba(255,255,255,0.8);
 }
 
-.price-note {
-  text-align: center;
-  margin-top: 32px;
-  font-size: 14px;
-  color: var(--fg-muted);
-  max-width: 600px;
-  margin-left: auto;
-  margin-right: auto;
-  line-height: 1.7;
-}
-
-/* FAQ - scannable answers */
+/* === PRICING === */
+/* === FAQ ACCORDION === */
 .faq-list {
   max-width: 700px;
   margin: 0 auto;
@@ -843,48 +828,233 @@ nav {
   line-height: 1.7;
 }
 
-.faq-answer strong {
-  color: var(--fg);
-  font-weight: 500;
-}
-
-/* FINAL CTA - stronger visual */
+/* === FINAL CTA === */
 .final-cta {
   text-align: center;
-  padding: 100px 24px;
-  background: var(--surface);
-  border-radius: var(--radius-lg);
-  margin: 0 24px;
   max-width: 1000px;
-  margin-left: auto;
-  margin-right: auto;
+  margin: 0 auto;
+  padding: 80px 24px 0;
 }
 
-.final-cta h2 { 
-  margin-bottom: 16px;
-  font-weight: 500;
+.final-cta h2 { margin-bottom: 40px; }
+
+.cta-cards {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 16px;
+  text-align: left;
+  max-width: 700px;
+  margin: 0 auto;
 }
 
-.final-cta > p {
-  font-size: 1.125rem;
-  margin-bottom: 32px;
-  max-width: 500px;
+.cta-bar {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  background: #F2EE8C;
+  color: #2A2A2A;
+  border-radius: 16px;
+  padding: 22px 32px;
+  margin-top: 16px;
+  max-width: 700px;
   margin-left: auto;
   margin-right: auto;
+  transition: background 0.2s ease, transform 0.2s ease;
+}
+
+.cta-bar:hover {
+  background: #EBE76C;
+  transform: translateY(-2px);
+}
+
+.cta-bar-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: #2A2A2A;
+  flex-shrink: 0;
+}
+
+.cta-bar-text {
+  font-family: var(--font);
+  font-size: 14px;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  flex: 1;
+  position: relative;
+}
+
+.cta-bar-text .cta-bar-label,
+.cta-bar-text .cta-bar-email {
+  transition: opacity 0.25s ease;
+}
+
+.cta-bar-text .cta-bar-email {
+  position: absolute;
+  left: 0;
+  top: 0;
+  opacity: 0;
+}
+
+.cta-bar:hover .cta-bar-text .cta-bar-label {
+  opacity: 0;
+}
+
+.cta-bar:hover .cta-bar-text .cta-bar-email {
+  opacity: 1;
+}
+
+.cta-bar-arrow {
+  font-size: 20px;
+  flex-shrink: 0;
+}
+
+.cta-card {
+  border-radius: var(--radius-lg);
+  padding: 36px;
+  display: flex;
+  flex-direction: column;
+  min-height: 320px;
+}
+
+.cta-card.dark {
+  background: var(--accent-slate);
+  color: var(--signal-white);
+}
+
+.cta-card.light {
+  background: var(--signal-white);
+  color: var(--fg);
+}
+
+.cta-card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: auto;
+}
+
+.cta-card-header h3 {
+  font-size: 1.5rem;
+  line-height: 1.25;
+  max-width: 200px;
+}
+
+.cta-card.dark .cta-card-header h3 {
+  color: var(--signal-white);
+}
+
+.cta-card-arrow {
+  font-size: 20px;
+  opacity: 0.6;
+  transition: opacity 0.2s, transform 0.2s;
+}
+
+.cta-card:hover .cta-card-arrow {
+  opacity: 1;
+  transform: translateX(4px);
+}
+
+.cta-card-steps {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  margin-top: 32px;
+}
+
+.cta-card-steps li {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-family: var(--font);
+  font-size: 14px;
+  font-weight: 400;
+}
+
+.cta-card.dark .cta-card-steps li {
+  color: rgba(255,255,255,0.8);
+}
+
+.cta-card.light .cta-card-steps li {
   color: var(--fg-muted);
 }
 
-/* FOOTER */
+.cta-step-icon {
+  width: 32px;
+  height: 32px;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 14px;
+  flex-shrink: 0;
+}
+
+.cta-card.dark .cta-step-icon {
+  background: rgba(255,255,255,0.15);
+}
+
+.cta-card.light .cta-step-icon {
+  background: var(--surface-warm);
+}
+
+/* === FOOTER === */
 footer {
   padding: 60px 24px 40px;
   text-align: center;
+  overflow: hidden;
 }
 
 .footer-logo {
-  font-size: 3rem;
+  font-family: var(--font);
+  font-size: clamp(6rem, 28vw, 28rem);
   font-weight: 200;
+  letter-spacing: 0.12em;
+  color: rgba(0,0,0,0.05);
+  margin-bottom: 24px;
+  line-height: 0.85;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: clip;
+  max-width: 100%;
+}
+
+.footer-locations {
+  margin-top: 40px;
+}
+
+.footer-locations-label {
+  font-size: 12px;
+  font-weight: 500;
   letter-spacing: 0.1em;
-  color: rgba(0,0,0,0.08);
+  text-transform: uppercase;
+  color: var(--fg-muted);
+  margin-bottom: 16px;
+}
+
+.footer-locations-list {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.footer-locations-list a {
+  font-family: var(--font);
+  font-size: 14px;
+  font-weight: 400;
+  color: var(--fg-muted);
+  text-decoration: none;
+  transition: color 0.2s;
+}
+
+.footer-locations-list a:hover {
+  color: var(--fg);
+}
+
+.footer-tagline {
+  font-size: 14px;
+  color: var(--fg-muted);
   margin-bottom: 16px;
 }
 
@@ -900,55 +1070,236 @@ footer {
 
 .footer-links a:hover { color: var(--fg); }
 
-/* RESPONSIVE */
-@media (max-width: 900px) {
-  .features-grid { grid-template-columns: 1fr; }
-  .process-grid { 
-    grid-template-columns: 1fr; 
-    gap: 16px;
-    max-width: 400px;
-    margin: 0 auto;
+/* === ANIMATIONS === */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(32px);
   }
-  .pricing-grid { grid-template-columns: 1fr; }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes slideInLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes slideInRight {
+  from {
+    opacity: 0;
+    transform: translateX(40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes scaleIn {
+  from {
+    opacity: 0;
+    transform: scale(0.92);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+/* Hero entrance */
+.hero-content h1 {
+  animation: fadeInUp 0.9s ease-out 0.1s both;
+}
+
+.hero-content > p {
+  animation: fadeInUp 0.9s ease-out 0.3s both;
+}
+
+.hero-ctas {
+  animation: fadeInUp 0.9s ease-out 0.5s both;
+}
+
+/* Scroll-triggered animations */
+.reveal {
+  opacity: 0;
+  transform: translateY(32px);
+  transition: opacity 0.7s ease-out, transform 0.7s ease-out;
+}
+
+.reveal.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.reveal-left {
+  opacity: 0;
+  transform: translateX(-32px);
+  transition: opacity 0.7s ease-out, transform 0.7s ease-out;
+}
+
+.reveal-left.visible {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.reveal-right {
+  opacity: 0;
+  transform: translateX(32px);
+  transition: opacity 0.7s ease-out, transform 0.7s ease-out;
+}
+
+.reveal-right.visible {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.reveal-scale {
+  opacity: 0;
+  transform: scale(0.92);
+  transition: opacity 0.7s ease-out, transform 0.7s ease-out;
+}
+
+.reveal-scale.visible {
+  opacity: 1;
+  transform: scale(1);
+}
+
+/* Staggered children */
+.stagger-children .feature-card,
+.stagger-children .step,
+.stagger-children .price-card {
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity 0.5s ease-out, transform 0.5s ease-out;
+}
+
+.stagger-children.visible .feature-card,
+.stagger-children.visible .step,
+.stagger-children.visible .price-card {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.stagger-children.visible .feature-card:nth-child(1),
+.stagger-children.visible .step:nth-child(1),
+.stagger-children.visible .price-card:nth-child(1) { transition-delay: 0s; }
+.stagger-children.visible .feature-card:nth-child(2),
+.stagger-children.visible .step:nth-child(2),
+.stagger-children.visible .price-card:nth-child(2) { transition-delay: 0.08s; }
+.stagger-children.visible .feature-card:nth-child(3),
+.stagger-children.visible .step:nth-child(3) { transition-delay: 0.16s; }
+.stagger-children.visible .feature-card:nth-child(4),
+.stagger-children.visible .step:nth-child(4) { transition-delay: 0.24s; }
+.stagger-children.visible .feature-card:nth-child(5),
+.stagger-children.visible .step:nth-child(5) { transition-delay: 0.32s; }
+.stagger-children.visible .feature-card:nth-child(6) { transition-delay: 0.4s; }
+
+/* === HERO ILLUSTRATION === */
+.hero-illustration {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 0 24px 80px;
+  animation: scaleIn 1s ease-out 0.7s both;
+}
+
+.hero-illustration svg {
+  width: 100%;
+  height: auto;
+}
+
+/* === RESPONSIVE === */
+@media (max-width: 900px) {
+  .features-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+  .feature-card:first-child {
+    grid-row: auto;
+    min-height: 220px;
+  }
+  .process-grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+  }
+  .step:first-child { grid-row: auto; }
   .trust-stats { flex-wrap: wrap; gap: 32px; }
   .nav-links { display: none; }
   .nav-cta { display: none; }
+  .nav-badge { display: none; }
   .hamburger { display: flex; }
-  
-  .showcase-wrapper {
-    grid-template-columns: 1fr;
-    gap: 60px;
-  }
-  .float-card-1 { right: 10px; top: -10px; }
-  .float-card-2 { left: 10px; bottom: 60px; }
+  .final-cta { margin: 0; }
+  .cta-cards { grid-template-columns: 1fr; }
 }
 
 @media (max-width: 600px) {
-  .container { padding: 60px 20px; }
-  .hero { padding-top: 100px; min-height: auto; padding-bottom: 60px; }
+  .container { padding: 48px 16px; }
+  .hero { padding-top: 100px; min-height: auto; padding-bottom: 32px; }
+  .hero-content { max-width: 100%; }
+  h1 { font-size: 2rem; }
+  h2 { font-size: 1.5rem; }
+  .hero-content > p { font-size: 1.05rem; }
   .hero-ctas { flex-direction: column; }
   .btn-primary, .btn-secondary { width: 100%; justify-content: center; }
-  .trust-section { padding: 32px 24px; }
-  .problem-section { padding: 32px 24px; }
-  .final-cta { margin: 0 16px; padding: 60px 24px; }
-  
-  .float-card { 
-    padding: 10px 14px !important;
-    font-size: 11px !important;
-    transform: rotate(0deg) !important;
+  .trust-section { padding: 28px 20px; }
+  .trust-stats { gap: 24px; }
+  .trust-quote blockquote { font-size: 1rem; }
+  .problem-section { padding: 40px 20px; }
+  .problem-section > p { font-size: 1rem; }
+  .hero-illustration { padding: 0 0 40px; max-width: 100%; }
+  .process-grid { grid-template-columns: 1fr; }
+  .step:first-child { grid-row: auto; }
+  .timeline-labels { padding: 0; font-size: 9px; }
+  .timeline-label { font-size: 9px; }
+  .step { padding: 24px 16px; }
+  .features-grid { grid-template-columns: 1fr; }
+  .feature-card { padding: 24px 20px; min-height: auto; }
+  .feature-card:first-child { min-height: auto; grid-row: auto; }
+  .feature-card p { font-size: 0.9rem; }
+  .price-card { padding: 32px 24px; }
+  .final-cta { padding: 48px 16px 0; }
+  .cta-cards { grid-template-columns: 1fr; }
+  .cta-card { min-height: 260px; }
+  footer { padding: 40px 16px 32px; }
+  .footer-logo { letter-spacing: 0.06em; font-size: clamp(4rem, 22vw, 12rem); }
+  .footer-locations { margin-top: 32px; }
+  .activity-feed { padding: 16px; font-size: 12px; }
+  .activity-line { gap: 10px; }
+  .section-header p { font-size: 0.95rem; }
+}
+
+/* Reduce motion for accessibility */
+@media (prefers-reduced-motion: reduce) {
+  .hero-content h1,
+  .hero-content > p,
+  .hero-ctas,
+  .hero-illustration {
+    animation: none;
   }
-  .float-card .icon {
-    width: 26px !important;
-    height: 26px !important;
-    font-size: 12px !important;
+  .reveal, .reveal-left, .reveal-right, .reveal-scale {
+    opacity: 1;
+    transform: none;
+    transition: none;
   }
-  .float-card .text { font-size: 12px !important; }
-  .float-card .sub { font-size: 10px !important; }
-  
-  .float-card-1 { right: 5px !important; top: -15px !important; }
-  .float-card-2 { left: 5px !important; bottom: -20px !important; }
-  
-  .activity-stack { padding-top: 30px; }
+  .stagger-children .feature-card,
+  .stagger-children .step,
+  .stagger-children .price-card {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
 }
 </style>
 </head>
@@ -968,278 +1319,262 @@ footer {
     <ul class="nav-links">
       <li><a href="#features">Features</a></li>
       <li><a href="#how">How it works</a></li>
-      <li><a href="#pricing">Pricing</a></li>
       <li><a href="#faq">FAQ</a></li>
       <li><a href="/blog/ai-vs-hiring-small-business.html">Blog</a></li>
     </ul>
-    <a href="https://cal.com/clawdbotdfw/15min" class="nav-cta">Book a Call</a>
+    <div class="nav-badge">
+      <span class="nav-badge-dot"></span>
+      Now accepting clients
+    </div>
+    <a href="https://tend-demo-production.up.railway.app" class="nav-cta" style="margin-right: 0;">Login</a>
     <button class="hamburger" onclick="openMobileMenu()">
       <span></span>
       <span></span>
       <span></span>
     </button>
   </div>
+  <!-- Mobile Menu -->
   <div class="mobile-menu" id="mobileMenu">
     <a href="#features" onclick="closeMobileMenu()">Features</a>
     <a href="#how" onclick="closeMobileMenu()">How it works</a>
-    <a href="#pricing" onclick="closeMobileMenu()">Pricing</a>
     <a href="#faq" onclick="closeMobileMenu()">FAQ</a>
     <a href="/blog/ai-vs-hiring-small-business.html" onclick="closeMobileMenu()">Blog</a>
     <a href="https://cal.com/clawdbotdfw/15min" class="mobile-cta">Book a Discovery Call</a>
+    <a href="https://tend-demo-production.up.railway.app" class="mobile-cta" style="background: transparent; border: 1px solid rgba(0,0,0,0.15); color: inherit; margin-top: 8px;">Login</a>
   </div>
 </nav>
 
 <!-- HERO -->
 <section class="container hero">
   <div class="hero-content">
-    <a href="#pricing" class="hero-badge" style="text-decoration: none; cursor: pointer;"><span class="dot"></span> Now accepting clients</a>
-    <h1>We integrate AI into the workflows that run your business.</h1>
-    <p>Not a chatbot. Not a tool you configure once and forget. Tend maps your existing workflows, builds the AI integrations that make them faster and more reliable, and manages them as your business evolves.</p>
+    <h1>Tend installs AI to run your company. The right&nbsp;way.</h1>
+    <p>We integrate AI into the workflows that run your business. Not a chatbot. Mapped to your tools, managed as you evolve.</p>
     <div class="hero-ctas">
-      <a href="https://cal.com/clawdbotdfw/15min" class="btn-primary">Book a Discovery Call →</a>
-      <a href="#how" class="btn-secondary">See how it works</a>
+      <a href="https://cal.com/clawdbotdfw/15min" class="btn-primary"><span class="dot"></span> Book Discovery Call</a>
     </div>
   </div>
 </section>
 
-<!-- LAYERED SHOWCASE -->
-<section class="container layered-showcase">
-  <div class="showcase-wrapper">
-    
-    <!-- Problem Card -->
-    <div class="problem-section">
-      <h2>The technology is ready. The integration work is where most teams stall.</h2>
-      <p>Identifying the right workflow, connecting your real tools, handling exceptions, maintaining reliability over time. That's the hard part. Most businesses know AI could help. Few have the infrastructure and expertise to make it run without breaking. That's what Tend does.</p>
+<!-- HERO ILLUSTRATION -->
+<div class="hero-illustration">
+  <svg viewBox="50 0 780 340" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <style>
+      .illo-piece, .illo-leaning, .illo-dots {
+        opacity: 1;
+        transition: transform 0.1s linear;
+      }
+    </style>
+
+    <!-- Leaning block (left) — falls and leans into place -->
+    <g class="illo-leaning" transform-origin="110 320">
+      <rect x="80" y="60" width="60" height="260" rx="2" fill="#3A3A3A"/>
+    </g>
+    <!-- Large notebook -->
+    <g class="illo-piece">
+      <rect x="210" y="20" width="200" height="300" rx="3" fill="#3A3A3A"/>
+      <line x1="230" y1="20" x2="230" y2="320" stroke="rgba(244,245,246,0.12)" stroke-width="1.5"/>
+    </g>
+    <!-- Dot grid panel -->
+    <g class="illo-dots">
+      <rect x="430" y="20" width="130" height="300" rx="2" fill="none" stroke="#3A3A3A" stroke-width="1"/>
+      <g fill="#3A3A3A">
+        <circle cx="452" cy="46" r="2.5"/><circle cx="472" cy="46" r="2.5"/><circle cx="492" cy="46" r="2.5"/><circle cx="512" cy="46" r="2.5"/><circle cx="532" cy="46" r="2.5"/>
+        <circle cx="452" cy="66" r="2.5"/><circle cx="472" cy="66" r="2.5"/><circle cx="492" cy="66" r="2.5"/><circle cx="512" cy="66" r="2.5"/><circle cx="532" cy="66" r="2.5"/>
+        <circle cx="452" cy="86" r="2.5"/><circle cx="472" cy="86" r="2.5"/><circle cx="492" cy="86" r="2.5"/><circle cx="512" cy="86" r="2.5"/><circle cx="532" cy="86" r="2.5"/>
+        <circle cx="452" cy="106" r="2.5"/><circle cx="472" cy="106" r="2.5"/><circle cx="492" cy="106" r="2.5"/><circle cx="512" cy="106" r="2.5"/><circle cx="532" cy="106" r="2.5"/>
+        <circle cx="452" cy="126" r="2.5"/><circle cx="472" cy="126" r="2.5"/><circle cx="492" cy="126" r="2.5"/><circle cx="512" cy="126" r="2.5"/><circle cx="532" cy="126" r="2.5"/>
+        <circle cx="452" cy="146" r="2.5"/><circle cx="472" cy="146" r="2.5"/><circle cx="492" cy="146" r="2.5"/><circle cx="512" cy="146" r="2.5"/><circle cx="532" cy="146" r="2.5"/>
+        <circle cx="452" cy="166" r="2.5"/><circle cx="472" cy="166" r="2.5"/><circle cx="492" cy="166" r="2.5"/><circle cx="512" cy="166" r="2.5"/><circle cx="532" cy="166" r="2.5"/>
+        <circle cx="452" cy="186" r="2.5"/><circle cx="472" cy="186" r="2.5"/><circle cx="492" cy="186" r="2.5"/><circle cx="512" cy="186" r="2.5"/><circle cx="532" cy="186" r="2.5"/>
+        <circle cx="452" cy="206" r="2.5"/><circle cx="472" cy="206" r="2.5"/><circle cx="492" cy="206" r="2.5"/><circle cx="512" cy="206" r="2.5"/><circle cx="532" cy="206" r="2.5"/>
+        <circle cx="452" cy="226" r="2.5"/><circle cx="472" cy="226" r="2.5"/><circle cx="492" cy="226" r="2.5"/><circle cx="512" cy="226" r="2.5"/><circle cx="532" cy="226" r="2.5"/>
+        <circle cx="452" cy="246" r="2.5"/><circle cx="472" cy="246" r="2.5"/><circle cx="492" cy="246" r="2.5"/><circle cx="512" cy="246" r="2.5"/><circle cx="532" cy="246" r="2.5"/>
+        <circle cx="452" cy="266" r="2.5"/><circle cx="472" cy="266" r="2.5"/><circle cx="492" cy="266" r="2.5"/><circle cx="512" cy="266" r="2.5"/><circle cx="532" cy="266" r="2.5"/>
+        <circle cx="452" cy="286" r="2.5"/><circle cx="472" cy="286" r="2.5"/><circle cx="492" cy="286" r="2.5"/><circle cx="512" cy="286" r="2.5"/><circle cx="532" cy="286" r="2.5"/>
+        <circle cx="452" cy="306" r="2.5"/><circle cx="472" cy="306" r="2.5"/><circle cx="492" cy="306" r="2.5"/><circle cx="512" cy="306" r="2.5"/><circle cx="532" cy="306" r="2.5"/>
+      </g>
+    </g>
+    <!-- Small blocks (stacked) -->
+    <g class="illo-piece">
+      <rect x="580" y="80" width="90" height="240" rx="2" fill="#3A3A3A"/>
+      <line x1="580" y1="160" x2="670" y2="160" stroke="rgba(244,245,246,0.12)" stroke-width="1"/>
+      <line x1="580" y1="240" x2="670" y2="240" stroke="rgba(244,245,246,0.12)" stroke-width="1"/>
+    </g>
+    <!-- Vertical lines panel -->
+    <g class="illo-piece">
+      <rect x="690" y="20" width="70" height="300" rx="2" fill="none"/>
+      <g stroke="#3A3A3A" stroke-width="1.2" opacity="0.5">
+        <line x1="700" y1="20" x2="700" y2="320"/>
+        <line x1="706" y1="20" x2="706" y2="320"/>
+        <line x1="712" y1="20" x2="712" y2="320"/>
+        <line x1="718" y1="20" x2="718" y2="320"/>
+        <line x1="724" y1="20" x2="724" y2="320"/>
+        <line x1="730" y1="20" x2="730" y2="320"/>
+        <line x1="736" y1="20" x2="736" y2="320"/>
+        <line x1="742" y1="20" x2="742" y2="320"/>
+        <line x1="748" y1="20" x2="748" y2="320"/>
+        <line x1="754" y1="20" x2="754" y2="320"/>
+      </g>
+    </g>
+    <!-- Thin tall block (far right) -->
+    <g class="illo-piece">
+      <rect x="770" y="40" width="40" height="280" rx="2" fill="#3A3A3A"/>
+    </g>
+  </svg>
+</div>
+
+<!-- PROBLEM -->
+<section class="container reveal" style="padding-top: 40px;">
+  <div class="problem-section">
+    <h2>The technology is ready. The integration work is where most teams stall.</h2>
+    <p>Identifying the right workflow, connecting your real tools, handling exceptions, maintaining reliability over time — that's the hard part. Most businesses know AI could help. Few have the infrastructure and expertise to make it run without breaking. That's what Tend does.</p>
+  </div>
+</section>
+
+<!-- ACTIVITY FEED -->
+<section class="container activity-section reveal-scale">
+  <div class="activity-feed">
+    <div class="header">
+      <span class="window-dot red"></span>
+      <span class="window-dot yellow"></span>
+      <span class="window-dot green"></span>
     </div>
-    
-    <!-- Activity Feed Stack -->
-    <div class="activity-stack">
-      <div class="activity-feed">
-        <div class="header">
-          <span class="window-dot red"></span>
-          <span class="window-dot yellow"></span>
-          <span class="window-dot green"></span>
-        </div>
-        <div class="activity-line"><span class="activity-time">09:01</span><span class="activity-text">New lead auto-replied in 12s</span></div>
-        <div class="activity-line"><span class="activity-time">09:14</span><span class="activity-text">Invoice #1087 sent and paid</span></div>
-        <div class="activity-line"><span class="activity-time">09:22</span><span class="activity-text">Rescheduled → Tue 2:30 PM</span></div>
-        <div class="activity-line"><span class="activity-time">10:01</span><span class="activity-text">Weekly report sent, revenue +18%</span></div>
-        <div class="activity-line"><span class="activity-time">10:45</span><span class="activity-text">Follow-up sent to 6 leads</span></div>
-        <div class="activity-line"><span class="activity-time">12:00</span><span class="activity-text">✓ 47 actions today</span></div>
-      </div>
-      
-      <!-- Floating cards -->
-      <div class="float-card float-card-1">
-        <div class="icon">✓</div>
-        <div>
-          <div class="text">Lead converted</div>
-          <div class="sub">Martinez Roofing</div>
-        </div>
-      </div>
-      
-      <div class="float-card float-card-2">
-        <div class="icon blue">↗</div>
-        <div>
-          <div class="text">+18% revenue</div>
-          <div class="sub">Week over week</div>
-        </div>
-      </div>
-    </div>
-    
+    <div class="activity-line"><span class="activity-time">09:01 AM</span><span class="activity-text">New lead from Google Ads — auto-replied in 12s</span></div>
+    <div class="activity-line"><span class="activity-time">09:14 AM</span><span class="activity-text">Invoice #1087 sent to Martinez Roofing — paid</span></div>
+    <div class="activity-line"><span class="activity-time">09:22 AM</span><span class="activity-text">Rescheduled Johnson consult → Tue 2:30 PM</span></div>
+    <div class="activity-line"><span class="activity-time">10:01 AM</span><span class="activity-text">Weekly report compiled — revenue up 18% WoW</span></div>
+    <div class="activity-line"><span class="activity-time">10:45 AM</span><span class="activity-text">Follow-up sent to 6 cold leads from last Thursday</span></div>
+    <div class="activity-line"><span class="activity-time">11:30 AM</span><span class="activity-text">Appointment confirmed: Davis Electric, Wed 10 AM</span></div>
+    <div class="activity-line"><span class="activity-time">12:00 PM</span><span class="activity-text">✓ All tasks running   0 issues   47 actions today</span></div>
   </div>
 </section>
 
 <!-- TRUST -->
-<section class="container" style="position: relative;">
+<section class="container reveal">
   <div class="trust-section">
-    <!-- Floating cards -->
-    <div class="float-card" style="position: absolute; top: -20px; right: 40px; transform: rotate(2deg); z-index: 10;">
-      <div class="icon">⚡</div>
-      <div>
-        <div class="text">47 actions</div>
-        <div class="sub">Today</div>
-      </div>
-    </div>
-    <div class="float-card" style="position: absolute; bottom: 80px; left: -30px; transform: rotate(-3deg); z-index: 10;">
-      <div class="icon" style="background: #22C55E;">✓</div>
-      <div>
-        <div class="text">0 issues</div>
-        <div class="sub">All systems running</div>
-      </div>
-    </div>
-    
-    <div class="trust-quote">
-      <blockquote>"Our COO is an AI agent named Alfred. He tracks our pipeline, monitors our ads, preps meeting briefs, and sends us a morning update every day. We don't sell anything we don't use ourselves."</blockquote>
-      <cite>— The Tend Team</cite>
-    </div>
-    <div class="trust-stats">
-      <div class="stat">
-        <div class="stat-value">24/7</div>
-        <div class="stat-label">Always running</div>
-      </div>
-      <div class="stat">
-        <div class="stat-value">2 weeks</div>
-        <div class="stat-label">To live</div>
-      </div>
-      <div class="stat">
-        <div class="stat-value">$0</div>
-        <div class="stat-label">Per-user fees</div>
-      </div>
-      <div class="stat">
-        <div class="stat-value">100%</div>
-        <div class="stat-label">Managed</div>
-      </div>
-    </div>
-    
     <div class="trust-tools">
       <div class="trust-tools-label">Connects to tools you already use</div>
       <div class="trust-logos">
+        <!-- Gmail -->
         <svg viewBox="0 0 24 24" fill="currentColor"><path d="M24 5.457v13.909c0 .904-.732 1.636-1.636 1.636h-3.819V11.73L12 16.64l-6.545-4.91v9.273H1.636A1.636 1.636 0 0 1 0 19.366V5.457c0-2.023 2.309-3.178 3.927-1.964L5.455 4.64 12 9.548l6.545-4.91 1.528-1.145C21.69 2.28 24 3.434 24 5.457z"/></svg>
-        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M18.316 5.684H24v12.632h-5.684V5.684zM5.684 24h12.632v-5.684H5.684V24zM18.316 5.684V0H1.895A1.894 1.894 0 0 0 0 1.895v16.421h5.684V5.684h12.632z"/></svg>
-        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M5.042 15.165a2.528 2.528 0 0 1-2.52 2.523A2.528 2.528 0 0 1 0 15.165a2.527 2.527 0 0 1 2.522-2.52h2.52v2.52zM6.313 15.165a2.527 2.527 0 0 1 2.521-2.52 2.527 2.527 0 0 1 2.521 2.52v6.313A2.528 2.528 0 0 1 8.834 24a2.528 2.528 0 0 1-2.521-2.522v-6.313z"/></svg>
-        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M18.164 7.93V5.084a2.198 2.198 0 0 0 1.267-1.984v-.066A2.2 2.2 0 0 0 17.238.84h-.067a2.2 2.2 0 0 0-2.193 2.193v.067c0 .843.476 1.576 1.252 1.973v2.86a6.153 6.153 0 0 0-2.81 1.593l-7.4-5.756a2.636 2.636 0 0 0 .107-.725 2.669 2.669 0 1 0-2.669 2.669c.434 0 .842-.112 1.204-.298l7.281 5.664a6.197 6.197 0 1 0 4.838-10.146z"/></svg>
-        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M4.459 4.208c.746.606 1.026.56 2.428.466l13.215-.793c.28 0 .047-.28-.046-.326L17.86 1.968c-.42-.326-.981-.7-2.055-.607L3.01 2.295c-.466.046-.56.28-.374.466z"/></svg>
+        <!-- Google Calendar -->
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M18.316 5.684H24v12.632h-5.684V5.684zM5.684 24h12.632v-5.684H5.684V24zM18.316 5.684V0H1.895A1.894 1.894 0 0 0 0 1.895v16.421h5.684V5.684h12.632zm-7.207 6.25v-.065c.272-.144.5-.349.687-.617s.279-.595.279-.982c0-.379-.099-.72-.3-1.025a2.05 2.05 0 0 0-.832-.714 2.703 2.703 0 0 0-1.197-.257c-.6 0-1.094.156-1.481.467-.386.311-.587.72-.587 1.23h1.281c0-.236.082-.434.248-.593.167-.159.388-.238.665-.238.282 0 .502.078.656.238.156.156.234.359.234.607 0 .259-.083.469-.248.629a.903.903 0 0 1-.678.243h-.539v.986h.557c.3 0 .54.089.717.266.177.177.266.416.266.717 0 .27-.086.491-.26.665a.936.936 0 0 1-.686.26c-.282 0-.507-.086-.672-.256-.166-.17-.249-.395-.249-.673h-1.282c.003.617.198 1.101.585 1.452.39.35.907.526 1.553.526.449 0 .847-.088 1.193-.264.346-.176.614-.42.805-.731.191-.311.286-.661.286-1.052 0-.399-.105-.738-.314-1.016a1.872 1.872 0 0 0-.833-.625zM22.105 0h-3.789v5.684H24V1.895A1.894 1.894 0 0 0 22.105 0z"/></svg>
+        <!-- Slack -->
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M5.042 15.165a2.528 2.528 0 0 1-2.52 2.523A2.528 2.528 0 0 1 0 15.165a2.527 2.527 0 0 1 2.522-2.52h2.52v2.52zM6.313 15.165a2.527 2.527 0 0 1 2.521-2.52 2.527 2.527 0 0 1 2.521 2.52v6.313A2.528 2.528 0 0 1 8.834 24a2.528 2.528 0 0 1-2.521-2.522v-6.313zM8.834 5.042a2.528 2.528 0 0 1-2.521-2.52A2.528 2.528 0 0 1 8.834 0a2.528 2.528 0 0 1 2.521 2.522v2.52H8.834zM8.834 6.313a2.528 2.528 0 0 1 2.521 2.521 2.528 2.528 0 0 1-2.521 2.521H2.522A2.528 2.528 0 0 1 0 8.834a2.528 2.528 0 0 1 2.522-2.521h6.312zM18.956 8.834a2.528 2.528 0 0 1 2.522-2.521A2.528 2.528 0 0 1 24 8.834a2.528 2.528 0 0 1-2.522 2.521h-2.522V8.834zM17.688 8.834a2.528 2.528 0 0 1-2.523 2.521 2.527 2.527 0 0 1-2.52-2.521V2.522A2.527 2.527 0 0 1 15.165 0a2.528 2.528 0 0 1 2.523 2.522v6.312zM15.165 18.956a2.528 2.528 0 0 1 2.523 2.522A2.528 2.528 0 0 1 15.165 24a2.527 2.527 0 0 1-2.52-2.522v-2.522h2.52zM15.165 17.688a2.527 2.527 0 0 1-2.52-2.523 2.526 2.526 0 0 1 2.52-2.52h6.313A2.527 2.527 0 0 1 24 15.165a2.528 2.528 0 0 1-2.522 2.523h-6.313z"/></svg>
+        <!-- HubSpot -->
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M18.164 7.93V5.084a2.198 2.198 0 0 0 1.267-1.984v-.066A2.2 2.2 0 0 0 17.238.84h-.067a2.2 2.2 0 0 0-2.193 2.193v.067a2.196 2.196 0 0 0 1.252 1.973v2.86a6.153 6.153 0 0 0-2.81 1.593l-7.4-5.756a2.636 2.636 0 0 0 .107-.725 2.669 2.669 0 1 0-2.669 2.669c.434 0 .842-.112 1.204-.298l7.281 5.664a6.105 6.105 0 0 0-.376 2.122c0 .752.14 1.47.387 2.136l-2.286 1.588a2.2 2.2 0 0 0-1.325-.458 2.222 2.222 0 1 0 2.222 2.222c0-.152-.017-.3-.046-.445l2.376-1.65a6.197 6.197 0 1 0 4.838-10.146z"/></svg>
+        <!-- Notion -->
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M4.459 4.208c.746.606 1.026.56 2.428.466l13.215-.793c.28 0 .047-.28-.046-.326L17.86 1.968c-.42-.326-.981-.7-2.055-.607L3.01 2.295c-.466.046-.56.28-.374.466zm.793 3.08v13.904c0 .747.373 1.027 1.214.98l14.523-.84c.841-.046.935-.56.935-1.167V6.354c0-.606-.233-.933-.748-.887l-15.177.887c-.56.047-.747.327-.747.933zm14.337.745c.093.42 0 .84-.42.888l-.7.14v10.264c-.608.327-1.168.514-1.635.514-.748 0-.935-.234-1.495-.933l-4.577-7.186v6.952l1.448.327s0 .84-1.168.84l-3.22.186c-.094-.186 0-.653.327-.746l.84-.233V9.854L7.822 9.76c-.094-.42.14-1.026.793-1.073l3.456-.233 4.764 7.279v-6.44l-1.215-.14c-.093-.514.28-.887.747-.933zM1.936 1.035l13.31-.98c1.634-.14 2.055-.047 3.082.7l4.249 2.986c.7.513.934.653.934 1.213v16.378c0 1.026-.373 1.634-1.68 1.726l-15.458.934c-.98.047-1.448-.093-1.962-.747l-3.129-4.06c-.56-.747-.793-1.306-.793-1.96V2.667c0-.839.374-1.54 1.447-1.632z"/></svg>
+        <!-- Zapier -->
         <svg viewBox="0 0 24 24" fill="currentColor"><path d="M15.633 1.927l-3.186 6.559-3.187-6.559a10.79 10.79 0 0 0-2.413.732l2.64 8.108H5.115a10.717 10.717 0 0 0 0 2.466h4.372l-2.64 8.108a10.79 10.79 0 0 0 2.413.732l3.187-6.559 3.186 6.559a10.79 10.79 0 0 0 2.413-.732l-2.64-8.108h4.372a10.717 10.717 0 0 0 0-2.466h-4.372l2.64-8.108a10.79 10.79 0 0 0-2.413-.732z"/></svg>
       </div>
     </div>
     
-    <p class="trust-credibility">Built by the team at <strong>Kyros</strong>. 10+ years building AI, crypto, and business systems.</p>
+    <p class="trust-credibility">Built by the team at <strong>Kyros</strong> — 10+ years building AI, crypto, and business systems.</p>
   </div>
 </section>
 
 <!-- FEATURES -->
 <section class="container" id="features">
-  <div class="section-header">
+  <div class="section-header reveal">
     <div class="section-label">What We Do</div>
     <h2>Built different than the rest.</h2>
     <p>Not a chatbot shop. Not an enterprise consulting firm. A managed AI integration service that actually runs.</p>
   </div>
-  
-  <div class="features-grid">
+
+  <div class="features-grid stagger-children">
     <div class="feature-card">
-      <div class="feature-icon">◎</div>
+      <span class="feature-tag">A</span>
       <h3>One workflow, proven first</h3>
-      <p><strong>We start with your highest-ROI workflow:</strong> lead response, scheduling, client follow-up. We build an integration that's reliable before we expand.</p>
+      <p>We identify the workflow with the highest ROI — lead response, scheduling, client follow-up — and build the integration that makes it reliable. Expand after proof.</p>
     </div>
     <div class="feature-card">
-      <div class="feature-icon">⬢</div>
-      <h3>Connected to your actual tools</h3>
-      <p><strong>Your email, calendar, CRM, Slack</strong> connected with scoped API access. Real integrations touching live systems, tested before production.</p>
+      <span class="feature-tag">B</span>
+      <h3>Connected to your tools</h3>
+      <p>Email, calendar, CRM, Slack — connected with scoped API access. Real integrations that touch your live systems.</p>
     </div>
     <div class="feature-card">
-      <div class="feature-icon">◈</div>
+      <span class="feature-tag">D</span>
       <h3>Human oversight built in</h3>
-      <p><strong>Approval gates on high-stakes actions.</strong> Every integration has defined escalation points. You stay in control of what matters.</p>
+      <p>Actions with real business consequences require your approval until you trust the system.</p>
     </div>
     <div class="feature-card">
-      <div class="feature-icon">◇</div>
+      <span class="feature-tag">C</span>
       <h3>Live in days, not months</h3>
-      <p><strong>No six-month implementation cycle.</strong> We scope, build, and deploy within one to two weeks. Running in your actual workflows.</p>
+      <p>We scope the integration, build it, and have it running in your actual workflows within two weeks.</p>
     </div>
     <div class="feature-card">
-      <div class="feature-icon">⬡</div>
+      <span class="feature-tag">E</span>
       <h3>Maintained, not handed off</h3>
-      <p><strong>We don't build and walk away.</strong> Monitoring, recalibration, updates as your workflows change. That's the ongoing service.</p>
-    </div>
-    <div class="feature-card">
-      <div class="feature-icon">⊞</div>
-      <h3>Expand when ready</h3>
-      <p><strong>After the first integration proves itself,</strong> we add more. Broader automation, multi-system orchestration built on a foundation that works.</p>
+      <p>We monitor, recalibrate, and update what we build as your workflows change.</p>
     </div>
   </div>
 </section>
 
 <!-- PROCESS -->
-<section class="container" id="how">
-  <div class="section-header">
+<section class="container process-section" id="how">
+  <div class="section-header reveal">
     <div class="section-label">How It Works</div>
     <h2>From call to running in two weeks.</h2>
     <p>No endless meetings. No six-month implementations. We move fast.</p>
   </div>
-  
-  <div class="process-grid">
+
+  <!-- Animated timeline -->
+  <div class="process-timeline reveal" id="processTimeline">
+    <div class="timeline-track">
+      <div class="timeline-progress" id="timelineProgress"></div>
+      <div class="timeline-dots">
+        <span class="timeline-dot" data-step="0"></span>
+        <span class="timeline-dot" data-step="1"></span>
+        <span class="timeline-dot" data-step="2"></span>
+        <span class="timeline-dot" data-step="3"></span>
+        <span class="timeline-dot" data-step="4"></span>
+      </div>
+    </div>
+  </div>
+  <div class="timeline-labels">
+    <span class="timeline-label" data-step="0">Discovery</span>
+    <span class="timeline-label" data-step="1">Scope</span>
+    <span class="timeline-label" data-step="2">Build</span>
+    <span class="timeline-label" data-step="3">Run</span>
+    <span class="timeline-label" data-step="4">Expand</span>
+  </div>
+
+  <!-- Bento grid -->
+  <div class="process-grid stagger-children">
     <div class="step">
       <div class="step-num">01</div>
       <h3>Discovery</h3>
-      <p>30 minutes to map your most expensive workflow. We understand your tools, team, and friction points.</p>
+      <p>Thirty minutes to map the workflow that's costing you the most. We understand your tools, your team, and where the real friction is.</p>
     </div>
     <div class="step">
       <div class="step-num">02</div>
       <h3>Scope</h3>
-      <p>We define exactly what the integration does, what it escalates, and what needs your approval.</p>
+      <p>We define exactly what the integration does, what it escalates, and what requires your sign-off before any build work starts.</p>
     </div>
     <div class="step">
       <div class="step-num">03</div>
       <h3>Build</h3>
-      <p>1-2 weeks. Connect tools, configure permissions, test against real data before going live.</p>
+      <p>One to two weeks. We connect your tools, configure permissions, and test against real data before anything goes live.</p>
     </div>
     <div class="step">
       <div class="step-num">04</div>
       <h3>Run</h3>
-      <p>Continuous monitoring and exception handling. When something breaks, we fix it. Not you.</p>
+      <p>Continuous monitoring, performance reviews, and exception handling. We handle it — not you.</p>
     </div>
     <div class="step">
       <div class="step-num">05</div>
       <h3>Expand</h3>
-      <p>First integration working? We scope the next one. Each builds on proven foundation.</p>
+      <p>Once the first integration delivers results, we scope the next one. Each addition builds on proven foundations.</p>
     </div>
   </div>
 </section>
 
 <!-- PRICING -->
-<section class="container" id="pricing">
-  <div class="section-header">
-    <div class="section-label">Pricing</div>
-    <h2>Simple. Transparent.</h2>
-    <p>One setup fee. One monthly cost. Less than a part-time hire that still makes mistakes.</p>
-  </div>
-  
-  <div class="pricing-grid" style="position: relative;">
-    <!-- Floating card -->
-    <div class="float-card" style="position: absolute; top: -25px; left: 50%; transform: translateX(-50%) rotate(-1deg); z-index: 10;">
-      <div class="icon orange">★</div>
-      <div>
-        <div class="text">No per-seat fees</div>
-        <div class="sub">Flat monthly rate</div>
-      </div>
-    </div>
-    <div class="price-card">
-      <div class="price-label">One-time</div>
-      <div class="price-title">Setup</div>
-      <div class="price-amount">$5,000<span> min</span></div>
-      <p class="price-desc">Discovery, workflow scoping, integration build, tool connections, and go-live.</p>
-      <ul class="price-list">
-        <li><span class="check">✓</span> Discovery call</li>
-        <li><span class="check">✓</span> Workflow scoping</li>
-        <li><span class="check">✓</span> Integration build</li>
-        <li><span class="check">✓</span> Tool connections</li>
-        <li><span class="check">✓</span> Launch + handoff</li>
-      </ul>
-      <a href="https://cal.com/clawdbotdfw/15min" class="price-cta">Book a Discovery Call</a>
-    </div>
-    
-    <div class="price-card">
-      <div class="price-label">Monthly</div>
-      <div class="price-title">Managed Service</div>
-      <div class="price-amount">$2,000<span>/mo min</span></div>
-      <p class="price-desc">Ongoing monitoring, recalibration, exception handling, and monthly reviews.</p>
-      <ul class="price-list">
-        <li><span class="check">✓</span> Monitoring & tuning</li>
-        <li><span class="check">✓</span> Exception handling</li>
-        <li><span class="check">✓</span> Monthly reviews</li>
-        <li><span class="check">✓</span> Priority support</li>
-        <li><span class="check">✓</span> 3-month minimum</li>
-      </ul>
-      <a href="https://cal.com/clawdbotdfw/15min" class="price-cta">Book a Discovery Call</a>
-    </div>
-  </div>
-  
-  <p class="price-note"><strong>Day one: $7,000</strong> (setup + first month). <strong>Minimum engagement: $11,000</strong> over 3 months. After that, cancel with 30 days notice. The integration keeps running. You own what you paid for.</p>
-</section>
 
 <!-- FAQ -->
 <section class="container" id="faq">
-  <div class="section-header">
+  <div class="section-header reveal">
     <div class="section-label">FAQ</div>
     <h2>Common questions</h2>
   </div>
@@ -1247,100 +1582,121 @@ footer {
   <div class="faq-list">
     <div class="faq-item">
       <button class="faq-question">
-        How is this different from ChatGPT or Copilot?
+        Is my data safe?
         <span class="faq-icon">+</span>
       </button>
       <div class="faq-answer">
-        <p><strong>Those are tools you use manually.</strong> We build active integrations connected to your real tools, running continuously, with defined behavior and escalation logic. It runs as part of your workflow, not as a chat window.</p>
+        <p>Integrations run with scoped permissions, minimum access for the defined workflow. Every external action is logged. We don't use your data for model training. Your environment is fully isolated.</p>
       </div>
     </div>
-    
+
+    <div class="faq-item">
+      <button class="faq-question">
+        How is this different from Claude or GPT?
+        <span class="faq-icon">+</span>
+      </button>
+      <div class="faq-answer">
+        <p>General-purpose AI tools are interfaces you use manually. What we build is an active integration layer connected to your real tools, running continuously, with defined behavior and escalation logic. You don't use it like a chat window. It runs as part of your workflow.</p>
+      </div>
+    </div>
+
     <div class="faq-item">
       <button class="faq-question">
         Do I need to be technical?
         <span class="faq-icon">+</span>
       </button>
       <div class="faq-answer">
-        <p><strong>No.</strong> You describe how your business works. We handle the architecture, tool connections, and ongoing maintenance. You interact with the output — faster workflows, fewer dropped balls.</p>
+        <p>No. You describe how your business works. We handle the integration architecture, the tool connections, and the ongoing maintenance. You interact with the output: faster workflows, handled follow-ups, fewer things falling through the cracks.</p>
       </div>
     </div>
-    
+
     <div class="faq-item">
       <button class="faq-question">
         How fast does it get useful?
         <span class="faq-icon">+</span>
       </button>
       <div class="faq-answer">
-        <p><strong>Live in 1-2 weeks.</strong> The first month is calibration — we tune behavior against real usage. Most clients see stable, reliable operation by end of month one.</p>
+        <p>The first integration is live in one to two weeks. The first month is where it tightens. We calibrate behavior against real usage and handle edge cases as they surface. Most clients see reliable, stable operation by end of month one.</p>
       </div>
     </div>
-    
+
     <div class="faq-item">
       <button class="faq-question">
         What happens when something breaks?
         <span class="faq-icon">+</span>
       </button>
       <div class="faq-answer">
-        <p><strong>We catch most issues before you see them.</strong> When something unexpected happens, it escalates to you rather than failing silently. Infrastructure issues resolved same business day.</p>
+        <p>We catch most issues before you see them. When something outside the expected parameters surfaces, it escalates to you rather than failing silently. Infrastructure issues are resolved the same business day.</p>
       </div>
     </div>
-    
-    <div class="faq-item">
-      <button class="faq-question">
-        Is my data safe?
-        <span class="faq-icon">+</span>
-      </button>
-      <div class="faq-answer">
-        <p><strong>Yes.</strong> Scoped permissions — minimum access for the workflow. Every action logged. We don't train on your data. Your environment is fully isolated.</p>
-      </div>
-    </div>
-    
+
     <div class="faq-item">
       <button class="faq-question">
         What if I want to cancel?
         <span class="faq-icon">+</span>
       </button>
       <div class="faq-answer">
-        <p><strong>After 3 months, cancel anytime</strong> with 30 days notice. The integration keeps running. You own everything we built.</p>
+        <p>After the three-month minimum, cancel with 30 days notice. The integration keeps running. You retain ownership of everything we built.</p>
       </div>
     </div>
   </div>
 </section>
 
 <!-- FINAL CTA -->
-<section class="container" style="padding-bottom: 40px;">
-  <div class="final-cta" style="position: relative; overflow: visible;">
-    <!-- Floating testimonial -->
-    <div class="float-card" style="position: absolute; top: -30px; right: 60px; transform: rotate(2deg); z-index: 10; max-width: 200px;">
-      <div>
-        <div class="text" style="font-style: italic;">"Best decision we made"</div>
-        <div class="sub">— Early client</div>
+<section class="final-cta reveal">
+  <h2>Ready to get started?</h2>
+  <div class="cta-cards">
+    <a href="https://cal.com/clawdbotdfw/15min" class="cta-card dark" style="text-decoration:none">
+      <div class="cta-card-header">
+        <h3>Book a discovery call</h3>
+        <span class="cta-card-arrow">&rarr;</span>
       </div>
-    </div>
-    <h2>Your first AI integration is two weeks away.</h2>
-    <p>30 minutes to map the workflow — then we build it, connect it, and run it for you.</p>
-    <a href="https://cal.com/clawdbotdfw/15min" class="btn-primary">Book a Discovery Call →</a>
+      <ul class="cta-card-steps">
+        <li><span class="cta-step-icon">01</span> Map your workflow</li>
+        <li><span class="cta-step-icon">02</span> We scope the integration</li>
+        <li><span class="cta-step-icon">03</span> Live in two weeks</li>
+      </ul>
+    </a>
   </div>
+  <a href="mailto:hello@tend.team" class="cta-bar" style="text-decoration:none">
+    <span class="cta-bar-dot"></span>
+    <span class="cta-bar-text"><span class="cta-bar-label">SEND US A MESSAGE</span><span class="cta-bar-email">HELLO@TEND.TEAM</span></span>
+    <span class="cta-bar-arrow">&#8599;</span>
+  </a>
 </section>
 
 <!-- FOOTER -->
 <footer>
   <div class="footer-logo">tend</div>
+  <div class="footer-tagline">AI integration for business workflows.</div>
   <div class="footer-links">
-    © 2026 Tend · <a href="mailto:hello@withtend.ai">hello@withtend.ai</a>
+    © 2026 Tend · <a href="mailto:hello@tend.team">hello@tend.team</a>
+  </div>
+  <div class="footer-locations">
+    <div class="footer-locations-label">Locations</div>
+    <div class="footer-locations-list">
+      <a href="https://www.google.com/maps/place/Dallas,+TX" target="_blank" rel="noopener">Dallas</a>
+      <a href="https://www.google.com/maps/place/Orange+County,+CA" target="_blank" rel="noopener">Orange County</a>
+    </div>
   </div>
 </footer>
 
 <script>
+// FAQ Accordion
 document.querySelectorAll('.faq-question').forEach(button => {
   button.addEventListener('click', () => {
     const item = button.parentElement;
     const isOpen = item.classList.contains('open');
+    
+    // Close all others
     document.querySelectorAll('.faq-item').forEach(i => i.classList.remove('open'));
+    
+    // Toggle current
     if (!isOpen) item.classList.add('open');
   });
 });
 
+// Mobile Menu
 function openMobileMenu() {
   document.getElementById('mobileMenu').classList.toggle('open');
 }
@@ -1348,8 +1704,101 @@ function openMobileMenu() {
 function closeMobileMenu() {
   document.getElementById('mobileMenu').classList.remove('open');
 }
+
+// Scroll Reveal
+const revealObserver = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add('visible');
+    }
+  });
+}, { threshold: 0.15, rootMargin: '0px 0px -40px 0px' });
+
+document.querySelectorAll('.reveal, .reveal-left, .reveal-right, .reveal-scale, .stagger-children').forEach(el => {
+  revealObserver.observe(el);
+});
+
+// Activity feed typewriter — lines appear one by one
+const feedObserver = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      const lines = entry.target.querySelectorAll('.activity-line');
+      lines.forEach((line, i) => {
+        line.style.opacity = '0';
+        line.style.transform = 'translateX(-12px)';
+        line.style.transition = 'opacity 0.4s ease-out, transform 0.4s ease-out';
+        setTimeout(() => {
+          line.style.opacity = '1';
+          line.style.transform = 'translateX(0)';
+        }, 200 + i * 120);
+      });
+      feedObserver.unobserve(entry.target);
+    }
+  });
+}, { threshold: 0.3 });
+
+document.querySelectorAll('.activity-feed').forEach(el => feedObserver.observe(el));
+
+// Parallax on hero illustration pieces — each moves at a different rate on scroll
+const heroIllustration = document.querySelector('.hero-illustration');
+if (heroIllustration && window.matchMedia('(prefers-reduced-motion: no-preference)').matches) {
+  const illoLeaning = heroIllustration.querySelector('.illo-leaning');
+  const illoNotebook = heroIllustration.querySelectorAll('.illo-piece')[0];
+  const illoDots = heroIllustration.querySelector('.illo-dots');
+  const illoStack = heroIllustration.querySelectorAll('.illo-piece')[1];
+  const illoLines = heroIllustration.querySelectorAll('.illo-piece')[2];
+  const illoThin = heroIllustration.querySelectorAll('.illo-piece')[3];
+
+  window.addEventListener('scroll', () => {
+    const scrollY = window.scrollY;
+    if (illoLeaning) illoLeaning.style.transform = `rotate(${-12 + scrollY * 0.02}deg) translateY(${scrollY * -0.15}px)`;
+    if (illoNotebook) illoNotebook.style.transform = `translateY(${scrollY * -0.08}px)`;
+    if (illoDots) illoDots.style.transform = `translateY(${scrollY * -0.12}px)`;
+    if (illoStack) illoStack.style.transform = `translateY(${scrollY * -0.18}px)`;
+    if (illoLines) illoLines.style.transform = `translateX(${scrollY * 0.03}px) translateY(${scrollY * -0.06}px)`;
+    if (illoThin) illoThin.style.transform = `translateY(${scrollY * -0.22}px)`;
+  }, { passive: true });
+}
+
+// Timeline animation
+const timelineObserver = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      const progress = document.getElementById('timelineProgress');
+      const dots = document.querySelectorAll('.timeline-dot');
+      const labels = document.querySelectorAll('.timeline-label');
+      const cards = document.querySelectorAll('.process-grid .step');
+      const steps = [0, 25, 50, 75, 100];
+
+      dots.forEach((dot, i) => {
+        setTimeout(() => {
+          progress.style.width = steps[i] + '%';
+          dot.classList.add('active');
+          labels[i].classList.add('active');
+          if (cards[i]) cards[i].classList.add('active');
+        }, 400 + i * 350);
+      });
+
+      timelineObserver.unobserve(entry.target);
+    }
+  });
+}, { threshold: 0.3 });
+
+const timeline = document.getElementById('processTimeline');
+if (timeline) timelineObserver.observe(timeline);
+
+// Nav background transition on scroll
+const nav = document.querySelector('nav');
+window.addEventListener('scroll', () => {
+  if (window.scrollY > 60) {
+    nav.style.borderBottomColor = 'rgba(0,0,0,0.08)';
+    nav.style.background = 'rgba(244, 245, 246, 0.96)';
+  } else {
+    nav.style.borderBottomColor = 'rgba(0,0,0,0.04)';
+    nav.style.background = 'rgba(244, 245, 246, 0.92)';
+  }
+}, { passive: true });
 </script>
 
 </body>
 </html>
-
