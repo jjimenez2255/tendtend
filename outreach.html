@@ -1,0 +1,642 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Sales Outreach | Cold Email & DM Automation | Tend</title>
+    <meta name="description" content="We install AI that does your cold outreach. Personalized emails, automated follow-ups, objection handling. You close the deals.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: 'Inter', -apple-system, sans-serif;
+            background: #0a0a0a;
+            color: #e5e5e5;
+            line-height: 1.6;
+        }
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+        
+        /* Hero */
+        .hero {
+            padding: 80px 0 60px;
+            text-align: center;
+        }
+        .badge {
+            display: inline-block;
+            background: rgba(99, 102, 241, 0.15);
+            color: #818cf8;
+            font-size: 12px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            padding: 8px 16px;
+            border-radius: 20px;
+            margin-bottom: 24px;
+        }
+        h1 {
+            font-size: clamp(36px, 6vw, 56px);
+            font-weight: 700;
+            line-height: 1.1;
+            margin-bottom: 20px;
+            color: #fff;
+        }
+        .highlight { color: #818cf8; }
+        .subtitle {
+            font-size: 20px;
+            color: #888;
+            max-width: 600px;
+            margin: 0 auto 32px;
+        }
+        .cta-btn {
+            display: inline-block;
+            background: #fff;
+            color: #0a0a0a;
+            font-size: 16px;
+            font-weight: 600;
+            padding: 16px 32px;
+            border-radius: 8px;
+            text-decoration: none;
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+        .cta-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 30px rgba(255,255,255,0.15);
+        }
+        
+        /* Problem */
+        .problem {
+            padding: 60px 0;
+            border-top: 1px solid #1a1a1a;
+        }
+        .problem h2 {
+            font-size: 28px;
+            font-weight: 600;
+            margin-bottom: 32px;
+            color: #fff;
+        }
+        .problem-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 24px;
+        }
+        .problem-card {
+            background: #111;
+            border: 1px solid #222;
+            border-radius: 12px;
+            padding: 24px;
+        }
+        .problem-card .icon {
+            font-size: 28px;
+            margin-bottom: 12px;
+        }
+        .problem-card h3 {
+            font-size: 18px;
+            font-weight: 600;
+            margin-bottom: 8px;
+            color: #fff;
+        }
+        .problem-card p {
+            font-size: 15px;
+            color: #888;
+        }
+        
+        /* Solution */
+        .solution {
+            padding: 60px 0;
+            border-top: 1px solid #1a1a1a;
+        }
+        .solution h2 {
+            font-size: 28px;
+            font-weight: 600;
+            margin-bottom: 16px;
+            color: #fff;
+        }
+        .solution .lead {
+            font-size: 18px;
+            color: #888;
+            margin-bottom: 40px;
+            max-width: 700px;
+        }
+        .flow {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 16px;
+            justify-content: center;
+            margin-bottom: 48px;
+        }
+        .flow-step {
+            background: #111;
+            border: 1px solid #222;
+            border-radius: 8px;
+            padding: 16px 24px;
+            text-align: center;
+            min-width: 140px;
+        }
+        .flow-step .num {
+            font-size: 12px;
+            color: #818cf8;
+            font-weight: 600;
+            margin-bottom: 4px;
+        }
+        .flow-step .name {
+            font-size: 15px;
+            font-weight: 600;
+            color: #fff;
+        }
+        .flow-arrow {
+            display: flex;
+            align-items: center;
+            color: #444;
+            font-size: 20px;
+        }
+        @media (max-width: 768px) {
+            .flow-arrow { display: none; }
+        }
+        
+        /* Features */
+        .features {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 24px;
+        }
+        .feature {
+            background: linear-gradient(135deg, #111 0%, #0a0a0a 100%);
+            border: 1px solid #222;
+            border-radius: 16px;
+            padding: 32px;
+        }
+        .feature h3 {
+            font-size: 20px;
+            font-weight: 600;
+            margin-bottom: 12px;
+            color: #fff;
+        }
+        .feature p {
+            font-size: 15px;
+            color: #888;
+            margin-bottom: 16px;
+        }
+        .feature ul {
+            list-style: none;
+        }
+        .feature li {
+            font-size: 14px;
+            color: #aaa;
+            padding: 6px 0;
+            padding-left: 20px;
+            position: relative;
+        }
+        .feature li:before {
+            content: "✓";
+            position: absolute;
+            left: 0;
+            color: #22c55e;
+        }
+        
+        /* How it works */
+        .how-it-works {
+            padding: 60px 0;
+            border-top: 1px solid #1a1a1a;
+        }
+        .how-it-works h2 {
+            font-size: 28px;
+            font-weight: 600;
+            margin-bottom: 40px;
+            color: #fff;
+            text-align: center;
+        }
+        .steps {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 32px;
+        }
+        .step {
+            text-align: center;
+        }
+        .step .num {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 48px;
+            height: 48px;
+            background: #818cf8;
+            color: #fff;
+            font-size: 20px;
+            font-weight: 700;
+            border-radius: 50%;
+            margin-bottom: 16px;
+        }
+        .step h3 {
+            font-size: 18px;
+            font-weight: 600;
+            margin-bottom: 8px;
+            color: #fff;
+        }
+        .step p {
+            font-size: 15px;
+            color: #888;
+        }
+        
+        /* What you get */
+        .what-you-get {
+            padding: 60px 0;
+            border-top: 1px solid #1a1a1a;
+        }
+        .what-you-get h2 {
+            font-size: 28px;
+            font-weight: 600;
+            margin-bottom: 32px;
+            color: #fff;
+        }
+        .deliverables {
+            background: #111;
+            border: 1px solid #222;
+            border-radius: 16px;
+            padding: 32px;
+        }
+        .deliverables ul {
+            list-style: none;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 16px;
+        }
+        .deliverables li {
+            font-size: 16px;
+            color: #e5e5e5;
+            padding: 12px 0;
+            padding-left: 32px;
+            position: relative;
+            border-bottom: 1px solid #1a1a1a;
+        }
+        .deliverables li:before {
+            content: "✓";
+            position: absolute;
+            left: 0;
+            color: #22c55e;
+            font-weight: bold;
+        }
+        
+        /* Pricing */
+        .pricing {
+            padding: 60px 0;
+            border-top: 1px solid #1a1a1a;
+            text-align: center;
+        }
+        .pricing h2 {
+            font-size: 28px;
+            font-weight: 600;
+            margin-bottom: 16px;
+            color: #fff;
+        }
+        .pricing .lead {
+            font-size: 18px;
+            color: #888;
+            margin-bottom: 40px;
+        }
+        .price-card {
+            background: linear-gradient(135deg, #1a1a2e 0%, #111 100%);
+            border: 1px solid #333;
+            border-radius: 20px;
+            padding: 40px;
+            max-width: 500px;
+            margin: 0 auto;
+        }
+        .price-card h3 {
+            font-size: 24px;
+            font-weight: 600;
+            margin-bottom: 8px;
+            color: #fff;
+        }
+        .price-card .price {
+            font-size: 48px;
+            font-weight: 700;
+            color: #fff;
+            margin-bottom: 8px;
+        }
+        .price-card .price span {
+            font-size: 18px;
+            font-weight: 400;
+            color: #888;
+        }
+        .price-card .note {
+            font-size: 14px;
+            color: #888;
+            margin-bottom: 24px;
+        }
+        .price-card ul {
+            list-style: none;
+            text-align: left;
+            margin-bottom: 32px;
+        }
+        .price-card li {
+            font-size: 15px;
+            color: #ccc;
+            padding: 10px 0;
+            padding-left: 28px;
+            position: relative;
+            border-bottom: 1px solid #222;
+        }
+        .price-card li:before {
+            content: "✓";
+            position: absolute;
+            left: 0;
+            color: #22c55e;
+        }
+        
+        /* FAQ */
+        .faq {
+            padding: 60px 0;
+            border-top: 1px solid #1a1a1a;
+        }
+        .faq h2 {
+            font-size: 28px;
+            font-weight: 600;
+            margin-bottom: 32px;
+            color: #fff;
+            text-align: center;
+        }
+        .faq-item {
+            background: #111;
+            border: 1px solid #222;
+            border-radius: 12px;
+            padding: 24px;
+            margin-bottom: 16px;
+        }
+        .faq-item h3 {
+            font-size: 17px;
+            font-weight: 600;
+            margin-bottom: 12px;
+            color: #fff;
+        }
+        .faq-item p {
+            font-size: 15px;
+            color: #888;
+        }
+        
+        /* CTA */
+        .final-cta {
+            padding: 80px 0;
+            text-align: center;
+            border-top: 1px solid #1a1a1a;
+        }
+        .final-cta h2 {
+            font-size: 32px;
+            font-weight: 700;
+            margin-bottom: 16px;
+            color: #fff;
+        }
+        .final-cta p {
+            font-size: 18px;
+            color: #888;
+            margin-bottom: 32px;
+        }
+        
+        /* Footer */
+        footer {
+            padding: 40px 0;
+            border-top: 1px solid #1a1a1a;
+            text-align: center;
+            font-size: 14px;
+            color: #666;
+        }
+        footer a {
+            color: #888;
+            text-decoration: none;
+        }
+    </style>
+    
+    <!-- Schema Markup -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Service",
+        "name": "AI Sales Outreach Automation",
+        "provider": {
+            "@type": "LocalBusiness",
+            "name": "Tend",
+            "url": "https://withtend.ai"
+        },
+        "description": "We install AI that handles your cold outreach - personalized emails, automated follow-ups, and objection handling.",
+        "areaServed": ["Dallas", "Fort Worth", "DFW", "Texas"],
+        "serviceType": "AI Sales Automation"
+    }
+    </script>
+</head>
+<body>
+    <div class="container">
+        <!-- Hero -->
+        <section class="hero">
+            <div class="badge">AI Sales Automation</div>
+            <h1>Your AI sends the emails.<br><span class="highlight">You close the deals.</span></h1>
+            <p class="subtitle">We install an AI agent that researches prospects, writes personalized outreach, and handles follow-ups automatically. You just approve and close.</p>
+            <a href="https://cal.com/jonathanjimenez/15" class="cta-btn">Book Free Strategy Call</a>
+        </section>
+        
+        <!-- Problem -->
+        <section class="problem">
+            <h2>Cold outreach is broken for most SMBs</h2>
+            <div class="problem-grid">
+                <div class="problem-card">
+                    <div class="icon">⏰</div>
+                    <h3>It takes forever</h3>
+                    <p>Researching prospects, writing emails, following up. Hours every day that should go to closing deals.</p>
+                </div>
+                <div class="problem-card">
+                    <div class="icon">📉</div>
+                    <h3>Templates don't work</h3>
+                    <p>Generic emails get ignored. But personalizing every message? Nobody has time for that.</p>
+                </div>
+                <div class="problem-card">
+                    <div class="icon">💸</div>
+                    <h3>SDRs are expensive</h3>
+                    <p>A junior sales rep costs $50K+/year. Most small businesses can't justify that cost.</p>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Solution -->
+        <section class="solution">
+            <h2>What if AI did all of it?</h2>
+            <p class="lead">Not templates. Not mail merge. An actual AI agent that researches, writes, and follows up — like a tireless SDR that works 24/7.</p>
+            
+            <div class="flow">
+                <div class="flow-step">
+                    <div class="num">01</div>
+                    <div class="name">Research</div>
+                </div>
+                <div class="flow-arrow">→</div>
+                <div class="flow-step">
+                    <div class="num">02</div>
+                    <div class="name">Personalize</div>
+                </div>
+                <div class="flow-arrow">→</div>
+                <div class="flow-step">
+                    <div class="num">03</div>
+                    <div class="name">Send</div>
+                </div>
+                <div class="flow-arrow">→</div>
+                <div class="flow-step">
+                    <div class="num">04</div>
+                    <div class="name">Follow Up</div>
+                </div>
+                <div class="flow-arrow">→</div>
+                <div class="flow-step">
+                    <div class="num">05</div>
+                    <div class="name">You Close</div>
+                </div>
+            </div>
+            
+            <div class="features">
+                <div class="feature">
+                    <h3>🔍 Prospect Research</h3>
+                    <p>AI researches every prospect before outreach begins.</p>
+                    <ul>
+                        <li>LinkedIn activity & recent posts</li>
+                        <li>Company news & launches</li>
+                        <li>Pain points relevant to your offer</li>
+                        <li>Personalization brief for each contact</li>
+                    </ul>
+                </div>
+                <div class="feature">
+                    <h3>✉️ Personalized Outreach</h3>
+                    <p>Every email is written specifically for that prospect.</p>
+                    <ul>
+                        <li>Under 100 words (proven to convert)</li>
+                        <li>References their actual work</li>
+                        <li>One clear ask, low friction</li>
+                        <li>No "just checking in" garbage</li>
+                    </ul>
+                </div>
+                <div class="feature">
+                    <h3>🔄 Automated Follow-Ups</h3>
+                    <p>3-touch sequence that adds value every time.</p>
+                    <ul>
+                        <li>Each follow-up shares new insight</li>
+                        <li>Different angle on every touch</li>
+                        <li>Graceful exit that leaves door open</li>
+                        <li>Spaced 3-5 days apart automatically</li>
+                    </ul>
+                </div>
+                <div class="feature">
+                    <h3>💬 Objection Handling</h3>
+                    <p>AI drafts responses to common pushback.</p>
+                    <ul>
+                        <li>"Too expensive" → Value reframe</li>
+                        <li>"Not interested" → Graceful exit</li>
+                        <li>"Bad timing" → Future follow-up</li>
+                        <li>You approve before sending</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+        
+        <!-- How it works -->
+        <section class="how-it-works">
+            <h2>How We Set It Up</h2>
+            <div class="steps">
+                <div class="step">
+                    <div class="num">1</div>
+                    <h3>Strategy Call</h3>
+                    <p>We learn your offer, target market, and what makes prospects say yes.</p>
+                </div>
+                <div class="step">
+                    <div class="num">2</div>
+                    <h3>System Install</h3>
+                    <p>We configure your AI agent, email infrastructure, and prospect lists.</p>
+                </div>
+                <div class="step">
+                    <div class="num">3</div>
+                    <h3>Test & Tune</h3>
+                    <p>Run initial campaigns, analyze responses, optimize messaging.</p>
+                </div>
+                <div class="step">
+                    <div class="num">4</div>
+                    <h3>You Scale</h3>
+                    <p>System runs on autopilot. You focus on closing the warm leads it generates.</p>
+                </div>
+            </div>
+        </section>
+        
+        <!-- What you get -->
+        <section class="what-you-get">
+            <h2>What's Included</h2>
+            <div class="deliverables">
+                <ul>
+                    <li>AI outreach agent configured for your business</li>
+                    <li>Email infrastructure setup (deliverability optimized)</li>
+                    <li>Custom prospect research prompts</li>
+                    <li>Personalized email templates trained on your voice</li>
+                    <li>3-touch follow-up sequence</li>
+                    <li>Objection response library</li>
+                    <li>CRM integration (HubSpot, Pipedrive, or Airtable)</li>
+                    <li>Approval dashboard (you review before sending)</li>
+                    <li>Weekly performance reports</li>
+                    <li>30 days of optimization support</li>
+                </ul>
+            </div>
+        </section>
+        
+        <!-- Pricing -->
+        <section class="pricing">
+            <h2>Simple Pricing</h2>
+            <p class="lead">One-time setup. No monthly minimums.</p>
+            <div class="price-card">
+                <h3>Outreach System Install</h3>
+                <div class="price">$3,500 <span>one-time</span></div>
+                <div class="note">+ $500/mo for ongoing optimization (optional)</div>
+                <ul>
+                    <li>Full system install & configuration</li>
+                    <li>AI agent trained on your offer</li>
+                    <li>Email infrastructure setup</li>
+                    <li>First 500 prospects researched</li>
+                    <li>30 days of support & tuning</li>
+                    <li>You own everything we build</li>
+                </ul>
+                <a href="https://cal.com/jonathanjimenez/15" class="cta-btn">Book Strategy Call</a>
+            </div>
+        </section>
+        
+        <!-- FAQ -->
+        <section class="faq">
+            <h2>Questions</h2>
+            <div class="faq-item">
+                <h3>How is this different from Instantly or Smartlead?</h3>
+                <p>Those tools send emails. We install an AI that writes them. Every email is personalized based on actual prospect research — not mail merge fields. The AI also handles follow-ups and objection responses.</p>
+            </div>
+            <div class="faq-item">
+                <h3>Do I need to approve every email?</h3>
+                <p>That's up to you. Most clients review the first batch, then let the system run once they're confident in the output. You always have an approval dashboard if you want it.</p>
+            </div>
+            <div class="faq-item">
+                <h3>Will this get my domain blacklisted?</h3>
+                <p>No. We set up proper email infrastructure — dedicated sending domains, warm-up sequences, and volume limits. Deliverability is built into the system.</p>
+            </div>
+            <div class="faq-item">
+                <h3>What if I already have a CRM?</h3>
+                <p>We integrate with it. HubSpot, Pipedrive, Salesforce, or even a simple spreadsheet. Leads flow directly into your existing workflow.</p>
+            </div>
+            <div class="faq-item">
+                <h3>How fast can this be set up?</h3>
+                <p>Most installs take 5-7 business days. You'll have your first campaigns running within two weeks of our strategy call.</p>
+            </div>
+        </section>
+        
+        <!-- Final CTA -->
+        <section class="final-cta">
+            <h2>Stop writing cold emails manually.</h2>
+            <p>Let AI do the outreach. You close the deals.</p>
+            <a href="https://cal.com/jonathanjimenez/15" class="cta-btn">Book Free Strategy Call</a>
+        </section>
+        
+        <!-- Footer -->
+        <footer>
+            <p>© 2026 Tend · <a href="/">Home</a> · <a href="/dallas.html">Dallas</a> · <a href="mailto:hello@withtend.ai">Contact</a></p>
+        </footer>
+    </div>
+</body>
+</html>
